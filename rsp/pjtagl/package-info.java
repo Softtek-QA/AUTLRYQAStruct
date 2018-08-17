@@ -2,7 +2,8 @@
  * 
  */
 /**
- * Projetos que implementam metodologias ágeis no desenvolvimento, abordagens e arquitetura.
+ * Projetos que implementam metodologias ágeis no desenvolvimento, abordagens e
+ * arquitetura.
  * 
  * @author Softtek - QA
  *
