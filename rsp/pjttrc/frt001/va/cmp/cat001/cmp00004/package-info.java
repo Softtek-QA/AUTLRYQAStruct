@@ -7,4 +7,4 @@
  * @author Softtek-QA
  *
  */
-package br.lry.qa.rsp.pjttrc.frt001.va.cmp.cat001.CMP00004;
+package br.lry.qa.rsp.pjttrc.frt001.va.cmp.cat001.cmp00004;
