@@ -15,5 +15,6 @@ package br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001;
  *
  */
 public class AUTVA03ConsultaStatusPedido {
+	public AUTVA03ConsultaStatusPedido (){}
 
 }
