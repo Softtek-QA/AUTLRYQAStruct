@@ -143,6 +143,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	
 	@Test
 	public void AUTVA02GeradorPedido() {
+		//Fluxos de testes básicos - VA - Pedidos
 		autFluxoSaidaCaixaPagamentoDinheiro();
 		autFluxoSaidaCaixaPagamentoCartao();
 		autFluxoSaidaRetiraInternaImediataPagamentoDinheiro();
