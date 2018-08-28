@@ -142,19 +142,6 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	String cpfCliente = autGetCurrentParameter("AUT_CPF_CLIENTE_CADASTRADO").toString();
 
 	
-	
-	/*
-	@Test
-	public void AUTVA02GeradorPedido() {
-		//Fluxos de testes básicos - VA - Pedidos
-		autFluxoSaidaCaixaPagamentoDinheiro();
-		autFluxoSaidaCaixaPagamentoCartao();
-		autFluxoSaidaRetiraInternaImediataPagamentoDinheiro();
-		autFluxoSaidaRetiraInternaImediataPagamentoCartao();
-		autFluxoSaidaRetiraExternaImediataPagamentoDinheiro();
-		autFluxoSaidaRetiraExternaImediataPagamentoCartao();
-	}
-	*/
 
 	@Test
 	/*
@@ -192,10 +179,9 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaMeioPagamento.Avancar").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaResumo.FecharPopUp").click();
-		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADOR_PEDIDO001");
+		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADORPEDIDOS001");
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.FinalizarAplicacao.Sair").click();
 		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();
-		
 	}
 	
 
@@ -235,11 +221,9 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaMeioPagamento.Avancar").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaResumo.FecharPopUp").click();
-		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADOR_PEDIDO001");	
+		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADORPEDIDOS001");	
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.FinalizarAplicacao.Sair").click();
-		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();
-		
-		
+		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();	
 	}
 	
 
@@ -278,11 +262,9 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaMeioPagamento.Avancar").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaResumo.FecharPopUp").click();
-		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADOR_PEDIDO001");	
+		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADORPEDIDOS001");	
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.FinalizarAplicacao.Sair").click();
-		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();
-		
-		
+		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();	
 	}
 	
 
@@ -321,11 +303,9 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaMeioPagamento.Avancar").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaResumo.FecharPopUp").click();
-		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADOR_PEDIDO001");	
+		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADORPEDIDOS001");	
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.FinalizarAplicacao.Sair").click();
 		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();
-		
-		
 	}
 	
 	
@@ -365,10 +345,9 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaMeioPagamento.Avancar").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaResumo.FecharPopUp").click();
-		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADOR_PEDIDO001");	
+		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADORPEDIDOS001");	
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.FinalizarAplicacao.Sair").click();
 		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();
-		
 	}
 	
 
@@ -407,10 +386,9 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaMeioPagamento.Avancar").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaResumo.FecharPopUp").click();
-		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADOR_PEDIDO001");	
+		AUT_AGENT_SILK4J.verifyAsset("CHECKPOINT-AUTVA02GERADORPEDIDOS001");	
 		AUT_AGENT_SILK4J.<DomElement>find("VA02.FinalizarAplicacao.Sair").click();
 		AUT_AGENT_SILK4J.<AccessibleControl>find("VA02.Fechar").click();
-		
 	}	
 	
 	
