@@ -106,6 +106,8 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		}
 	}
 	
+	
+	//Test
 	public enum AUT_VA_TIPO_RETIRADA{
 		REITRADA_EXTERNA_AGENDADA,
 		REITRADA_EXTERNA_IMEDIATA,
