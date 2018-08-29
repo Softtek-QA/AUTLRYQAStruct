@@ -44,6 +44,10 @@ public class AUTVA03ConsultaStatusPedido extends AUTVALogin{
 		DomElement emEdição = desktop.<DomElement>find("VA.CadastroClientesDados.Em edição");
 		Assert.assertEquals("Em edição", emEdição.getText());
 		//end recording
+		
+		
+		
+		
 
 	}
 	
