@@ -526,5 +526,4 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	}	
 	
 	
-	
 }
