@@ -30,11 +30,13 @@ import com.borland.silktest.jtf.win32.AccessibleControl;
  * @author Softtek - QA
  *
  */
+
+
 public class AUTVA02GeradorPedido extends AUTVALogin {
 
 	private Desktop AUT_AGENT_SILK4J = new Desktop();
 
-	
+
 	public enum AUT_VA_MEIOS_PAGAMENTO{
 		CARTAO_CREDITO,
 		CARTAO_CELEBRE,
