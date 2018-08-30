@@ -34,15 +34,17 @@ public class AUTVA03ConsultaStatusPedido extends AUTVALogin{
 	@Test
 	public void AUTVA03ConsultaStatusPedido() {
 
+		autStartLoginDefault();
 		//start recording 
 		desktop.<DomElement>find("VA.TelaInicialLoja.BotaoFecharAprovacaoComercial").click();
-		desktop.<DomElement>find("VA.TelaInicialLoja.BotaoRecuperarCarrinho").click();
-		desktop.<DomElement>find("VA.PesquisarCarrinhos.BotaoFiltroCarrinho").click();
-		desktop.<DomElement>find("VA.PesquisarCarrinhos.OpcoesDeFiltro").click();
-		desktop.<DomTextField>find("VA.PesquisarCarrinhos.OpcoesDeFiltro.InformacoesDeFiltro").setText("0000218387");
-		desktop.<DomButton>find("VA.PesquisarCarrinhos.OpcoesDeFiltro.Buscar").click();
-		DomElement emEdição = desktop.<DomElement>find("VA.CadastroClientesDados.Em edição");
-		Assert.assertEquals("Em edição", emEdição.getText());
+		desktop.<DomElement>find("VA.TelaInicialLoja.BotaoRecuperarPedido").click();
+		desktop.<DomElement>find("VA.TelaPedidos.BotaoFiltroPedido").click();
+		desktop.<DomElement>find("VA.TelaPedidos.OpcoesDeFiltro").click();
+		desktop.<DomRadioButton>find("VA.TelaPedidos.OpcoesDeFiltro.OpcaoNumeroPedidoVenda").click();
+		desktop.<DomTextField>find("VA.TelaPedidos.OpcoesDeFiltro.InformacoesDeFiltro").setText("0999130657");
+		desktop.<DomButton>find("VA.TelaPedidos.OpcoesDeFiltro.Buscar").click();
+		DomElement AguardandoAprovacaoComercial = desktop.<DomElement>find("VA.CadastroClientesDados.AguardandoAprovacaoComercial");
+		Assert.assertEquals("Aguardando aprovação comercial", AguardandoAprovacaoComercial.getText());
 		//end recording
 		
 		
