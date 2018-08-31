@@ -152,7 +152,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	
 	
 
-	@Test
+	//@Test
 	/*
 	 *  GERACAO PEDIDO FLUXO DE SAIDA CAIXA E MEIO DE PAGAMENTO DINHEIRO
 	 */
@@ -238,7 +238,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	
 	
 	
-	@Test
+	//@Test
 	/*
 	 *  GERACAO PEDIDO FLUXO DE SAIDA CAIXA E MEIO DE PAGAMENTO CARTAO CREDITO
 	 */
@@ -278,7 +278,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	}
 	
 
-	@Test
+	//@Test
 	/*
 	 *  GERACAO PEDIDO FLUXO DE SAIDA RETIRADA INTERNA IMEDIATA E MEIO DE PAGAMENTO DINHEIRO
 	 */
@@ -405,7 +405,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	
 	
 
-	@Test
+	//@Test
 	/*
 	 *  GERACAO PEDIDO FLUXO DE SAIDA RETIRADA EXTERNA IMEDIATA E MEIO DE PAGAMENTO DINHEIRO
 	 */
@@ -446,7 +446,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	}
 	
 	
-	@Test
+	//@Test
 		/*
 		 *  GERACAO PEDIDO FLUXO DE SAIDA RETIRADA EXTERNA IMEDIATA E MEIO DE PAGAMENTO CARTAO CREDITO
 		 */
@@ -487,7 +487,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 		}	
 	
 
-	@Test
+	//@Test
 	/*
 	 *  GERACAO PEDIDO FLUXO DE SAIDA RETIRADA EXTERNA IMEDIATA E MEIO DE PAGAMENTO CARTAO CREDITO
 	 */
