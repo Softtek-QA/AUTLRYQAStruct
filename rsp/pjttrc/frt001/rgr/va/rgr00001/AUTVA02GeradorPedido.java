@@ -114,7 +114,6 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	}
 	
 	
-	//Test
 	public enum AUT_VA_TIPO_RETIRADA{
 		REITRADA_EXTERNA_AGENDADA,
 		REITRADA_EXTERNA_IMEDIATA,
@@ -152,7 +151,7 @@ public class AUTVA02GeradorPedido extends AUTVALogin {
 	
 	
 
-	//@Test
+	@Test
 	/*
 	 *  GERACAO PEDIDO FLUXO DE SAIDA CAIXA E MEIO DE PAGAMENTO DINHEIRO
 	 */
