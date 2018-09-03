@@ -14,7 +14,6 @@ import com.borland.silktest.silk4j.playback.TestResult;
 import com.borland.silktest.silk4j.playback.TestRunResultProcessor;
 
 import br.lry.components.va.AUTVACadastros;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TESTS_OPTIONS;
 import br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001.AUTVA01CadastroCliente;
 
 
