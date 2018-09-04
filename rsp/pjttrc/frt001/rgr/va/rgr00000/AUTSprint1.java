@@ -22,6 +22,8 @@ import com.borland.silktest.silk4j.playback.TestRunResultProcessor;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
+import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_MEIOS_PAGAMENTO;
+import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_PLANO_PAGAMENTO;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 import br.lry.components.va.AUTVAGeradorPedido;
 import br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001.AUTVA01CadastroCliente;
@@ -65,7 +67,7 @@ public class AUTSprint1{
 		return pedidos;
 	}
 	
-	@Test
+	//@Test
 	public void AUT_CT000_HMC_CADASTRO_USUARIOS_VA() {
 		cadastrosHMC = new AUTHMCCadastros();
 		cadastrosHMC.autCadastrarUsuarioHMC();
@@ -78,28 +80,32 @@ public class AUTSprint1{
 		cadastros = autGetIncludeClientManagement();
 	}
 	
-	@Test
+	//@Test
 	public void AUT_CT002_CADASTRO_PESSOA_FISICA() {
 		cadastros.autInitClientMenuCadastroPF();
 	}
 	
 	
-	@Test
+	//@Test
 	public void AUT_CT003_CADASTRO_PESSOA_ESTRANGEIRO() {
 		cadastros.autInitClientMenuCadastroExtrangeiro();
 	}
 
-	@Test
+	//@Test
 	public void AUT_CT004_CADASTRO_PESSOA_JURIDICA() {
 		cadastros.autInitClientMenuCadastroPJ();
 	}
 
+	
 	@Test
 	public void AUT_CT005_CONFIGURACAO_PARAMETROS_PEDIDOS() {
 		USUARIO_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_USER").toString();
 		SENHA_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_PASSWORD").toString();
 		pedidos = autGetRequestsManagement();		
-		pedidos.AUT_CLIENT_DOC_CPF = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_CPF").toString();
+		
+		//pedidos.AUT_CLIENT_DOC_CNPJ = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
+		pedidos.AUT_CLIENT_DOC_CNPJ = "55581477258";
+		
 		pedidos.AUT_CLIENT_DOC_CNPJ = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_CNPJ").toString();
 		pedidos.AUT_CLIENT_DOC_PASSAPORT = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_PASSAPORTE").toString();	
 		pedidos.AUT_VA_USER = USUARIO_GLOBAL;
@@ -107,47 +113,54 @@ public class AUTSprint1{
 		pedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;			
 	}
 	
+	
+	
 	@Test
-	public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENT_PF() {
-		pedidos.autCaixaPagDinheiro();
+	public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENTE_PF() {
+		pedidos.autCaixa(AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString());
 	}
+	
+	//@Test
+	//public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENT_PF() {
+	//	pedidos.autCaixaPagDinheiro();
+	//}
 
-	@Test
+	//@Test
 	public void AUT_CT007_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CLIENT_PF() {
 		pedidos.autCaixaPagCartaoCredito();
 	}
 
-	@Test
+	//@Test
 	public void AUT_CT008_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CELEBRE_CLIENT_PF() {
 		pedidos.autCaixaPagCartaoCelebre();
 	}
 
-	@Test
+	//@Test
 	public void AUT_CT009_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
 		pedidos.autRetiraInternaImediataPagCartaoCredito();
 	}
 
-	@Test
+	//@Test
 	public void AUT_CT0010_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
 		pedidos.autRetiraInternaImediataPagCartaoCelebre();
 	}
 	
-	@Test
+	//@Test
 	public void AUT_CT011_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
 		pedidos.autRetiraInternaImediataPagDinheiro();
 	}
 
-	@Test
+	//@Test
 	public void AUT_CT012_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagCartaoCredito();
 	}
 
-	@Test
+	//@Test
 	public void AUT_CT013_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagCartaoCelebre();
 	}
 	
-	@Test
+	//@Test
 	public void AUT_CT014_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagDinheiro();
 	}	
