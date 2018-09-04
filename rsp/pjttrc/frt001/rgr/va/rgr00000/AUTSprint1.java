@@ -19,6 +19,7 @@ import com.borland.silktest.jtf.internal.JunitUtil;
 import com.borland.silktest.silk4j.playback.TestResult;
 import com.borland.silktest.silk4j.playback.TestRunResultProcessor;
 
+import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
@@ -37,6 +38,8 @@ import br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001.AUTVA01CadastroCliente;
 public class AUTSprint1{	
 	public static AUTVACadastros cadastros = null; //Define a suite de testes focados em cadastros de clientes nas lojas
 	public static AUTVAGeradorPedido pedidos = null; //Define a suite de testes para criação de pedidos	
+	public static AUTHMCCadastros cadastrosHMC = null;
+	
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
 	
 	/**
@@ -64,47 +67,38 @@ public class AUTSprint1{
 	}
 	
 	@Test
-	public void AUT_CT000_CADASTROS_CONFIGURACAO() {
+	public void AUT_CT000_HMC_CADASTRO_USUARIOS_VA() {
+		cadastrosHMC = new AUTHMCCadastros();
+		cadastrosHMC.autCadastrarUsuarioHMC();
+	}
+	
+	
+	
+	@Test
+	public void AUT_CT001_CADASTROS_CONFIGURACAO() {
 		cadastros = autGetIncludeClientManagement();
 	}
-	/**
-	 * 
-	 * Executa os procedimentos para cadastro de cliente - Pessoa Física
-	 * 
-	 * 
-	 */
+	
 	@Test
-	public void AUT_CT001_CADASTRO_PESSOA_FISICA() {
+	public void AUT_CT002_CADASTRO_PESSOA_FISICA() {
 		cadastros.autInitClientMenuCadastroPF();
 	}
 	
 	
-	/**
-	 * 
-	 * Executa os procedimentos para cadastro de cliente - Pessoa Estrangeira
-	 * 
-	 * 
-	 */
-	//@Test
-	public void AUT_CT002_CADASTRO_PESSOA_ESTRANGEIRO() {
+	@Test
+	public void AUT_CT003_CADASTRO_PESSOA_ESTRANGEIRO() {
 		cadastros.autInitClientMenuCadastroExtrangeiro();
 	}
 
-	/**
-	 * 
-	 * Executa os procedimentos para cadastro de cliente - Pessoa Jurídica
-	 * 
-	 */
-	//@Test
-	public void AUT_CT003_CADASTRO_PESSOA_JURIDICA() {
+	@Test
+	public void AUT_CT004_CADASTRO_PESSOA_JURIDICA() {
 		cadastros.autInitClientMenuCadastroPJ();
 	}
 
-
 	@Test
-	public void AUT_CT004_CONFIGURACAO_PARAMETROS_PEDIDOS() {
-		USUARIO_GLOBAL = autGetIncludeClientManagement().autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_USER").toString();
-		SENHA_GLOBAL = autGetIncludeClientManagement().autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_PASSWORD").toString();
+	public void AUT_CT005_CONFIGURACAO_PARAMETROS_PEDIDOS() {
+		USUARIO_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_USER").toString();
+		SENHA_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_PASSWORD").toString();
 		pedidos = autGetRequestsManagement();		
 		pedidos.AUT_CLIENT_DOC_CPF = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_CPF").toString();
 		pedidos.AUT_CLIENT_DOC_CNPJ = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_CNPJ").toString();
@@ -115,49 +109,50 @@ public class AUTSprint1{
 	}
 	
 	@Test
-	public void AUT_CT005_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENT_PF() {
+	public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENT_PF() {
 		pedidos.autCaixaPagDinheiro();
 	}
 
 	@Test
-	public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CLIENT_PF() {
+	public void AUT_CT007_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CLIENT_PF() {
 		pedidos.autCaixaPagCartaoCredito();
 	}
 
 	@Test
-	public void AUT_CT007_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CELEBRE_CLIENT_PF() {
+	public void AUT_CT008_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CELEBRE_CLIENT_PF() {
 		pedidos.autCaixaPagCartaoCelebre();
 	}
 
 	@Test
-	public void AUT_CT008_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
+	public void AUT_CT009_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
 		pedidos.autRetiraInternaImediataPagCartaoCredito();
 	}
 
 	@Test
-	public void AUT_CT009_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
+	public void AUT_CT0010_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
 		pedidos.autRetiraInternaImediataPagCartaoCelebre();
 	}
 	
 	@Test
-	public void AUT_CT010_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
+	public void AUT_CT011_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
 		pedidos.autRetiraInternaImediataPagDinheiro();
 	}
 
 	@Test
-	public void AUT_CT011_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
+	public void AUT_CT012_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagCartaoCredito();
 	}
 
 	@Test
-	public void AUT_CT012_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
+	public void AUT_CT013_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagCartaoCelebre();
 	}
 	
 	@Test
-	public void AUT_CT013_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
+	public void AUT_CT014_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagDinheiro();
 	}
+	
 	
 	/**
 	 * 
