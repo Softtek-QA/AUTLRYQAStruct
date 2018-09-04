@@ -38,8 +38,7 @@ import br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001.AUTVA01CadastroCliente;
 public class AUTSprint1{	
 	public static AUTVACadastros cadastros = null; //Define a suite de testes focados em cadastros de clientes nas lojas
 	public static AUTVAGeradorPedido pedidos = null; //Define a suite de testes para criação de pedidos	
-	public static AUTHMCCadastros cadastrosHMC = null;
-	
+	public static AUTHMCCadastros cadastrosHMC = null;	
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
 	
 	/**
@@ -73,7 +72,7 @@ public class AUTSprint1{
 	}
 	
 	
-	
+	/*
 	@Test
 	public void AUT_CT001_CADASTROS_CONFIGURACAO() {
 		cadastros = autGetIncludeClientManagement();
@@ -151,8 +150,8 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CT014_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagDinheiro();
-	}
-	
+	}	
+	*/
 	
 	/**
 	 * 
