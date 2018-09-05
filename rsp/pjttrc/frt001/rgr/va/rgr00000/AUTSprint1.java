@@ -22,6 +22,7 @@ import com.borland.silktest.silk4j.playback.TestRunResultProcessor;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
+import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_FLUXO_SAIDA;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_MEIOS_PAGAMENTO;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_PLANO_PAGAMENTO;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
@@ -64,7 +65,7 @@ public class AUTSprint1{
 	 * 
 	 */
 	public AUTVAGeradorPedido autGetRequestsManagement() {		
-		pedidos = new AUTVAGeradorPedido(USUARIO_GLOBAL,SENHA_GLOBAL);
+		pedidos = new AUTVAGeradorPedido();
 		return pedidos;
 	}
 	
@@ -81,7 +82,7 @@ public class AUTSprint1{
 		cadastros = autGetIncludeClientManagement();
 	}
 	
-	//@Test
+	@Test
 	public void AUT_CT002_CADASTRO_PESSOA_FISICA() {
 		cadastros.autInitClientMenuCadastroPF();
 	}
@@ -103,38 +104,41 @@ public class AUTSprint1{
 		USUARIO_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_USER").toString();
 		SENHA_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_PASSWORD").toString();
 		pedidos = autGetRequestsManagement();		
-		
-		//pedidos.AUT_CLIENT_DOC_CNPJ = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
-		pedidos.AUT_CLIENT_DOC_CNPJ = "55581477258";
-		
+		pedidos.AUT_CLIENT_DOC_CPF = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
 		pedidos.AUT_CLIENT_DOC_CNPJ = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_CNPJ").toString();
 		pedidos.AUT_CLIENT_DOC_PASSAPORT = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_PASSAPORTE").toString();	
 		pedidos.AUT_VA_USER = USUARIO_GLOBAL;
 		pedidos.AUT_VA_PASSWORD = SENHA_GLOBAL;
-		pedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;			
+		pedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;		
+		
 	}
 	
 	
-	
+	/**
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA CAIXA E PAGAMENTO EM DINHEIRO, PARA CLIENTE PF
+	 */
 	@Test
 	public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENTE_PF() {
-		pedidos.autCaixa(AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString());
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString());
+		//pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), meioPagamento, planoPagamento);
 	}
 	
-	//@Test
-	//public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENT_PF() {
-	//	pedidos.autCaixaPagDinheiro();
-	//}
-
-	//@Test
+	
+	/**
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA CAIXA E PAGAMENTO EM CARTAO DE CRÉDITO, PARA CLIENTE PF
+	 */
+	@Test
 	public void AUT_CT007_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CLIENT_PF() {
-		pedidos.autCaixaPagCartaoCredito();
+		//pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X);
 	}
 
-	//@Test
+	
+	/**
+	@Test
 	public void AUT_CT008_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CELEBRE_CLIENT_PF() {
-		pedidos.autCaixaPagCartaoCelebre();
+		pedidos.autCaixa(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_MEIOS_PAGAMENTO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_2X.toString());
 	}
+
 
 	//@Test
 	public void AUT_CT009_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
@@ -165,7 +169,7 @@ public class AUTSprint1{
 	public void AUT_CT014_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
 		pedidos.autRetiraExternaImediataPagDinheiro();
 	}
-	
+	*/
 	
 	/**
 	 * 
