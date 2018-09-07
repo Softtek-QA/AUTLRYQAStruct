@@ -39,144 +39,76 @@ import br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001.AUTVA01CadastroCliente;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTSprint1{	
-	public static AUTVACadastros cadastros = null; //Define a suite de testes focados em cadastros de clientes nas lojas
-	public static AUTVAGeradorPedido pedidos = null; //Define a suite de testes para criação de pedidos	
 	public static AUTHMCCadastros cadastrosHMC = null;	
+	public static AUTVACadastros cadastrosVA = null;
+	
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
+	public static String AUT_LOJA_CADASTRO ="0035";	
 	
 	/**
 	 * 
-	 * Retorna o gerenciador de componentes automatizados para módulo de cadastro
-	 * 
-	 * @return AUTVACadastros - Objeto para gerenciamento de cadastros
+	 * Configura os parametros de inicialização para realização de cadastros no HMC 
 	 * 
 	 */
-	public AUTVACadastros autGetIncludeClientManagement() {
-		return new AUTVACadastros();
-	}
-	
-	
-	/**
-	 * 
-	 * Retorna o gerenciador de componentes automatizados de pedidos
-	 * 
-	 * @return AUTVAGeradorPedido - Gerenciador de pedidos
-	 * 
-	 */
-	public AUTVAGeradorPedido autGetRequestsManagement() {		
-		pedidos = new AUTVAGeradorPedido();
-		return pedidos;
-	}
-	
-	//@Test
-	public void AUT_CT000_HMC_CADASTRO_USUARIOS_VA() {
+	@Test
+	public void AUT_CT000_CONFIG_HMC_CADASTROS() {
 		cadastrosHMC = new AUTHMCCadastros();
-		cadastrosHMC.autCadastrarUsuarioHMC();
 	}
-	
-	
-	/*
-	@Test
-	public void AUT_CT001_CADASTROS_CONFIGURACAO() {
-		cadastros = autGetIncludeClientManagement();
-	}
-	
-	@Test
-	public void AUT_CT002_CADASTRO_PESSOA_FISICA() {
-		cadastros.autInitClientMenuCadastroPF();
-	}
-	
-	
-	//@Test
-	public void AUT_CT003_CADASTRO_PESSOA_ESTRANGEIRO() {
-		cadastros.autInitClientMenuCadastroExtrangeiro();
-	}
-
-	//@Test
-	public void AUT_CT004_CADASTRO_PESSOA_JURIDICA() {
-		cadastros.autInitClientMenuCadastroPJ();
-	}
-
-	
-	@Test
-	public void AUT_CT005_CONFIGURACAO_PARAMETROS_PEDIDOS() {
-		USUARIO_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_USER").toString();
-		SENHA_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_PASSWORD").toString();
-		pedidos = autGetRequestsManagement();		
-		pedidos.AUT_CLIENT_DOC_CPF = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
-		pedidos.AUT_CLIENT_DOC_CNPJ = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_CNPJ").toString();
-		pedidos.AUT_CLIENT_DOC_PASSAPORT = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_PASSAPORTE").toString();	
-		pedidos.AUT_VA_USER = USUARIO_GLOBAL;
-		pedidos.AUT_VA_PASSWORD = SENHA_GLOBAL;
-		pedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;		
-		
-	}
-	
 	
 	/**
-	 * GERACAO DE PEDIDO FLUXO DE SAIDA CAIXA E PAGAMENTO EM DINHEIRO, PARA CLIENTE PF
+	 * 
+	 * Executa os procedimentos de cadastro para loja-0035
+	 * 
 	 */
-	@Test
-	public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENTE_PF() {
-		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString());
-		//pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), meioPagamento, planoPagamento);
-	}
-	
-	
-	/**
-	 * GERACAO DE PEDIDO FLUXO DE SAIDA CAIXA E PAGAMENTO EM CARTAO DE CRÉDITO, PARA CLIENTE PF
-	 */
-	@Test
-	public void AUT_CT007_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CLIENT_PF() {
-		//pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X);
-	}
-
-	
-	/**
-	@Test
-	public void AUT_CT008_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CELEBRE_CLIENT_PF() {
-		pedidos.autCaixa(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_MEIOS_PAGAMENTO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_2X.toString());
-	}
-
-
-	//@Test
-	public void AUT_CT009_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
-		pedidos.autRetiraInternaImediataPagCartaoCredito();
-	}
-
-	//@Test
-	public void AUT_CT0010_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
-		pedidos.autRetiraInternaImediataPagCartaoCelebre();
-	}
-	
-	//@Test
-	public void AUT_CT011_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
-		pedidos.autRetiraInternaImediataPagDinheiro();
-	}
-
-	//@Test
-	public void AUT_CT012_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CLIENT_PF() {
-		pedidos.autRetiraExternaImediataPagCartaoCredito();
-	}
-
-	//@Test
-	public void AUT_CT013_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
-		pedidos.autRetiraExternaImediataPagCartaoCelebre();
-	}
-	
-	//@Test
-	public void AUT_CT014_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
-		pedidos.autRetiraExternaImediataPagDinheiro();
+		@Test
+	public void AUT_CT000_HMC_CADASTRO_USUARIO_LOJA_0035() {
+		AUT_LOJA_CADASTRO = "0035";
+		cadastrosHMC.autCadastrarUsuarioHMC(AUT_LOJA_CADASTRO);
 	}	
-	*/
+
 	
 	/**
 	 * 
-	 * Construtor padrão da classe
+	 * Configura os parametros de inicialização para cadastros de clientes-VA
 	 * 
 	 */
-	public AUTSprint1() {
-		super();
-		
+	@Test
+	public void AUT_CT001_VA_CONFIG_CADASTRO_CLIENTES() {
+		cadastrosVA = new AUTVACadastros();
+		cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT);
+		cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT);		
+	}	
+	
+	/**
+	 * 
+	 * Executa procedimentos para cadastro de cliente - Pessoa Física
+	 * 
+	 */
+	@Test
+	public void AUT_CT002_VA_CADASTRO_CLIENTE_PF_0035() {
+		cadastrosVA.autInitClientMenuCadastroPF();
 	}
+
+	
+	/**
+	 * 
+	 * Executa procedimentos para cadastro de cliente - Pessoa Jurídica
+	 * 
+	 */
+	@Test
+	public void AUT_CT003_VA_CADASTRO_CLIENTE_PJ_LJ0035() {
+		cadastrosVA.autInitClientMenuCadastroPJ();
+	}
+
+	
+	/**
+	 * 
+	 * Executa procedimentos para cadastro de cliente - Estrangeiro
+	 * 
+	 */
+	@Test
+	public void AUT_CT004_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LJ0035() {
+		cadastrosVA.autInitClientMenuCadastroExtrangeiro();
+	}
+	
 }
