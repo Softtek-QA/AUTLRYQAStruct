@@ -54,12 +54,53 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CT00000_CONFIG() {
 		cadastrosHMC = new AUTHMCCadastros();
+<<<<<<< HEAD
 		cadastrosVA = new AUTVACadastros();
 		geradorPedidos = new AUTVAGeradorPedido();		
+=======
+		cadastrosHMC.autCadastrarUsuarioHMC();
+	}
+	
+	
+	@Test
+	public void AUT_CT001_CADASTROS_CONFIGURACAO() {
+		cadastros = autGetIncludeClientManagement();
+	}
+	
+	@Test
+	public void AUT_CT002_CADASTRO_PESSOA_FISICA() {
+		cadastros.autInitClientMenuCadastroPF();
+	}
+	
+	
+	@Test
+	public void AUT_CT003_CADASTRO_PESSOA_ESTRANGEIRO() {
+		cadastros.autInitClientMenuCadastroExtrangeiro();
+	}
+
+	@Test
+	public void AUT_CT004_CADASTRO_PESSOA_JURIDICA() {
+		cadastros.autInitClientMenuCadastroPJ();
+	}
+	
+	
+	@Test
+	public void AUT_CT005_CONFIGURACAO_PARAMETROS_PEDIDOS() {
+		USUARIO_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_USER").toString();
+		SENHA_GLOBAL = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN,"AUT_PASSWORD").toString();
+		pedidos = autGetRequestsManagement();		
+		pedidos.AUT_CLIENT_DOC_CPF = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
+		pedidos.AUT_CLIENT_DOC_CNPJ = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_CNPJ").toString();
+		pedidos.AUT_CLIENT_DOC_PASSAPORT = cadastros.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS,"AUT_PASSAPORTE").toString();	
+		pedidos.AUT_VA_USER = USUARIO_GLOBAL;
+		pedidos.AUT_VA_PASSWORD = SENHA_GLOBAL;
+		pedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;		
+>>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	}
 	
 	
 	/**
+<<<<<<< HEAD
 	  * 
 	  * Executa os procedimentos de cadastro
 	  * 
@@ -69,7 +110,19 @@ public class AUTSprint1{
 	  AUT_LOJA_CADASTRO = "0035";
 	  cadastrosHMC.autCadastrarUsuarioHMC(AUT_LOJA_CADASTRO);
 	 }
+=======
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA CAIXA E PAGAMENTO EM DINHEIRO, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT006_GERAR_PEDIDO_CAIXA_PAG_DINHEIRO_CLIENTE_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString());
+		
+	}
+	
+	
+>>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
+<<<<<<< HEAD
 	  * 
 	  * Configura os parametros de inicialização para cadastros de clientes-VA
 	  * 
@@ -80,7 +133,18 @@ public class AUTSprint1{
 	  cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT);  
 	 
 	 }
+=======
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA CAIXA E PAGAMENTO EM CARTAO DE CRÉDITO, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT007_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CREDITO_CLIENT_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString());
+	}
+
+	
+>>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
+<<<<<<< HEAD
 	  * 
 	  * Executa procedimentos para cadastro de cliente - Pessoa Física
 	  * 
@@ -90,7 +154,18 @@ public class AUTSprint1{
 	  cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_TIPO_CADASTRO", AUT_VA_CADASTROS.FISICA);
 	  cadastrosVA.autInitClientMenuCadastroPF();
 	 }
+=======
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA CAIXA E PAGAMENTO EM CARTAO CELEBRE, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT008_GERAR_PEDIDO_CAIXA_PAG_CARTAO_CELEBRE_CLIENT_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_2X.toString());
+	}
+
+	
+>>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
+<<<<<<< HEAD
 	  * 
 	  * Executa procedimentos para cadastro de cliente - Pessoa Jurídica
 	  * 
@@ -446,4 +521,71 @@ public class AUTSprint1{
 	 }
 
 	 
+=======
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA RETIRA INTERNA IMEDIATA E PAGAMENTO EM DINHEIRO, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT009_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString());
+	}
+
+	
+	/**
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA RETIRA INTERNA IMEDIATA E PAGAMENTO EM CARTAO DE CRÉDITO, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT010_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CREDITO_CLIENT_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString());
+	}
+	
+	
+	/**
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA RETIRA INTERNA IMEDIATA E PAGAMENTO EM CARTAO CELEBRE, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT011_GERAR_PEDIDO_RET_INTERNA_IMED_PAG_CARTAO_CELEBRE_CLIET_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_2X.toString());
+	}
+	
+	
+	
+	/**
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA RETIRA EXTERNA IMEDIATA E PAGAMENTO EM DINHEIRO, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT012_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_DINHEIRO_CLIENT_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString());
+	}
+	
+	
+
+	/**
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA RETIRA EXTERNA IMEDIATA E PAGAMENTO CARTAO DE CRÉDITO, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT013_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CREDITO_CLIENT_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString());
+	}
+
+	
+	/**
+	 * GERACAO DE PEDIDO FLUXO DE SAIDA RETIRA EXTERNA IMEDIATA E PAGAMENTO CARTAO CELEBRE, PARA CLIENTE PF
+	 */
+	@Test
+	public void AUT_CT014_GERAR_PEDIDO_RET_EXTERNA_IMED_PAG_CARTAO_CELEBRE_CLIENT_PF() {
+		pedidos.autVAGeracaoPedidos(USUARIO_GLOBAL, SENHA_GLOBAL, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_2X.toString());
+	}
+	
+	
+	
+		/**
+	 * 
+	 * Construtor padrão da classe
+	 * 
+	 */
+	public AUTSprint1() {
+		super();
+		
+	}
+>>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 }
