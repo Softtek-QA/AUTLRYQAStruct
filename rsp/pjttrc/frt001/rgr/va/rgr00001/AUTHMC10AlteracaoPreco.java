@@ -2,6 +2,7 @@ package br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001;
 
 import org.junit.Test;
 
+import com.borland.silktest.jtf.win32.AccessibleControl;
 import com.borland.silktest.jtf.xbrowser.DomElement;
 import com.borland.silktest.jtf.xbrowser.DomLink;
 import com.borland.silktest.jtf.xbrowser.DomListBox;
@@ -370,6 +371,8 @@ public class AUTHMC10AlteracaoPreco extends AUTHMCLogin{
 		}
 	}
 	
+	
+	
 	@Test
 	public void autHMCAlteracaoPreco(String codigoItem, String precoItem, AUT_PRECOS_LOJAS loja) {
 		
@@ -388,6 +391,7 @@ public class AUTHMC10AlteracaoPreco extends AUTHMCLogin{
 		AUT_AGENT_SILK4J.<DomTextField>find(loja.toString()).clearText();
 		AUT_AGENT_SILK4J.<DomTextField>find(loja.toString()).setText(precoItem);
 		AUT_AGENT_SILK4J.<DomElement>find("HMC.Produto.Salvar").click();
-			
+		
+		AUT_AGENT_SILK4J.<AccessibleControl>find("HMC.Fechar").click();	
 	}
 }
