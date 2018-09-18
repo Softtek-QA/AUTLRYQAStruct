@@ -50,10 +50,10 @@ public class AUTSprint1{
 		cadastrosVA = new AUTVACadastros();
 		geradorPedidos = new AUTVAGeradorPedido();	
 		consultaStatusPedido = new AUTVA03ConsultaStatusPedido();
-		cadastrosHMC.autSetHostExecution(hostExec);
-		cadastrosVA.autSetHostExecution(hostExec);
-		geradorPedidos.autSetHostExecution(hostExec);
-		consultaStatusPedido.autSetHostExecution(hostExec);
+		//cadastrosHMC.autSetHostExecution(hostExec);
+		//cadastrosVA.autSetHostExecution(hostExec);
+		//geradorPedidos.autSetHostExecution(hostExec);
+		//consultaStatusPedido.autSetHostExecution(hostExec);
 	}
 
 
@@ -823,10 +823,10 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Cartão de Crédito
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Caixa - Cartão de Crédito
 	 */
-	public void AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}	 
 	
@@ -888,10 +888,10 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Cartão de Celebre/Próprio
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Caixa - Cartão de Celebre/Próprio
 	 */ 
-	public void AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -954,10 +954,10 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1018,10 +1018,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Cartão de Crédito
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Interna Imediata - Cartão de Crédito
 	 */
-	public void AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1083,10 +1083,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Cartão de Celebre/Próprio
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Interna Imediata - Cartão de Celebre/Próprio
 	 */ 
-	public void AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1148,10 +1148,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1214,10 +1214,10 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Cartão de Crédito
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Externa Imediata - Cartão de Crédito
 	 */
-	public void AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1278,10 +1278,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Cartão de Celebre/Próprio
+	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Externa Imediata - Cartão de Celebre/Próprio
 	 */ 
-	public void AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 
@@ -1349,7 +1349,7 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para estrangeiro - Fluxo de saída - Caixa - Pagamento em Dinheiro
+	 * Executa procedimentos de criação de pedido para pessoa estrangeiro - Fluxo de saída - Caixa - Pagamento em Dinheiro
 	 */
 	public void AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035() {
 		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
@@ -1415,10 +1415,10 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Cartão de Crédito
+	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Caixa - Cartão de Crédito
 	 */
-	public void AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}	 
 	
@@ -1482,8 +1482,8 @@ public class AUTSprint1{
 	/**
 	 *  Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Caixa - Cartão de Celebre/Próprio
 	 */ 
-	public void AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1547,10 +1547,10 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
+	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1611,10 +1611,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Cartão de Crédito
+	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Interna Imediata - Cartão de Crédito
 	 */
-	public void AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1676,10 +1676,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Cartão de Celebre/Próprio
+	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Interna Imediata - Cartão de Celebre/Próprio
 	 */ 
-	public void AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1741,10 +1741,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
+	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1806,10 +1806,10 @@ public class AUTSprint1{
 
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Cartão de Crédito
+	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Externa Imediata - Cartão de Crédito
 	 */
-	public void AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
@@ -1871,10 +1871,10 @@ public class AUTSprint1{
 	
 	@Test
 	/**
-	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Cartão de Celebre/Próprio
+	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Externa Imediata - Cartão de Celebre/Próprio
 	 */ 
-	public void AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
-		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
+	public void AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035() {
+		geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 
