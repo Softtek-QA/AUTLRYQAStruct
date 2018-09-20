@@ -148,7 +148,7 @@ public class AUTSprint2 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00012 - Classificar um cliente PJ já cadastrado como Exceção
 	 */
@@ -158,12 +158,14 @@ public class AUTSprint2 {
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
 	public void AUT_CN00013_VA_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
-				//Fazendo				###################################################			
+		//cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
+		//cadastrosVA.autCadastroClientePJExcecao();
+		cadastrosVA.autCadastroFilhoPJExcecao();
 	}
 	
 	
