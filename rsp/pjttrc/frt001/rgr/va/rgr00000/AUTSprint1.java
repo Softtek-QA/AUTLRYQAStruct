@@ -73,14 +73,14 @@ public class AUTSprint1{
 	 * Executa procedimentos de consulta de produto
 	 * 
 	 */
-	@Test
+	//@Test
 	public void AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035() {
 		AUTSAPConsultaEstoque estoqueProcess = new AUTSAPConsultaEstoque();
 		
 		estoqueProcess.autGetStorageMaterial("0035",geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM").toString()); 			 
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * Executa procedimentos para consulta de material de preço do material PDV
@@ -166,12 +166,12 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT.toString());
 	}
 	
-	@Test
+	//@Test
 	public void AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035() {
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -184,7 +184,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -193,7 +193,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -210,7 +210,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -228,7 +228,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}	 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -236,7 +236,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -249,7 +249,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -258,7 +258,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -275,7 +275,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -294,7 +294,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -302,7 +302,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -315,7 +315,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -324,7 +324,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -341,7 +341,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -359,7 +359,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -367,7 +367,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -380,7 +380,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -389,7 +389,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -406,7 +406,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -426,7 +426,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -434,7 +434,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -447,7 +447,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -456,7 +456,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -473,7 +473,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -492,7 +492,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -500,7 +500,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -513,7 +513,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -522,7 +522,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -539,7 +539,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -558,7 +558,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -567,7 +567,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -580,7 +580,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -589,7 +589,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -606,7 +606,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -624,7 +624,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -632,7 +632,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -645,7 +645,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -654,7 +654,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -671,7 +671,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -688,7 +688,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -696,7 +696,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -709,7 +709,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -718,7 +718,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -735,7 +735,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -766,7 +766,7 @@ public class AUTSprint1{
 	}
 	
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -774,7 +774,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -787,7 +787,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -796,7 +796,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -813,7 +813,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -830,7 +830,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}	 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -838,7 +838,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -851,7 +851,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -860,7 +860,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -877,7 +877,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -896,7 +896,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -904,7 +904,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -917,7 +917,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -926,7 +926,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -943,7 +943,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -961,7 +961,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -969,7 +969,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -982,7 +982,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -991,7 +991,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1008,7 +1008,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1026,7 +1026,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1034,7 +1034,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1047,7 +1047,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1056,7 +1056,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1073,7 +1073,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1091,7 +1091,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1099,7 +1099,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1112,7 +1112,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1121,7 +1121,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1138,7 +1138,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1156,7 +1156,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1164,7 +1164,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1177,7 +1177,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1186,7 +1186,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1203,7 +1203,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1221,7 +1221,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1229,7 +1229,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1242,7 +1242,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1251,7 +1251,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1268,7 +1268,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1285,7 +1285,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1293,7 +1293,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1306,7 +1306,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1315,7 +1315,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1332,7 +1332,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1358,7 +1358,7 @@ public class AUTSprint1{
 	
 	
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1366,7 +1366,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1379,7 +1379,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1388,7 +1388,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1405,7 +1405,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1422,7 +1422,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}	 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1430,7 +1430,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1443,7 +1443,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1452,7 +1452,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1469,7 +1469,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1488,7 +1488,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1496,7 +1496,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1509,7 +1509,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1518,7 +1518,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1535,7 +1535,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1554,7 +1554,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1562,7 +1562,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1575,7 +1575,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1584,7 +1584,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1601,7 +1601,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1619,7 +1619,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1627,7 +1627,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1640,7 +1640,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1649,7 +1649,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1666,7 +1666,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1684,7 +1684,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1692,7 +1692,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1705,7 +1705,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1714,7 +1714,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 *  Devolução do pedido no PDV 
 	 */
@@ -1731,7 +1731,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1749,7 +1749,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1757,7 +1757,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1770,7 +1770,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1779,7 +1779,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1796,7 +1796,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1813,7 +1813,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1821,7 +1821,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1834,7 +1834,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1843,7 +1843,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1860,7 +1860,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1878,7 +1878,7 @@ public class AUTSprint1{
 		geradorPedidos.autVAGeracaoPedidos(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1886,7 +1886,7 @@ public class AUTSprint1{
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -1899,7 +1899,7 @@ public class AUTSprint1{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1908,7 +1908,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -1925,7 +1925,7 @@ public class AUTSprint1{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
