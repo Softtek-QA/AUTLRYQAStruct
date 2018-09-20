@@ -75,7 +75,7 @@ public class AUTSprint2 {
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 -Realizar um cadastro de um cliente adicionando mais de um telefone
 	 */
@@ -130,7 +130,7 @@ public class AUTSprint2 {
 	}
 	
 
-	@Test
+	//@Test
 	/**
 	 * CN00010 - Realizar cadastro com mais de um endereço
 	 */
@@ -139,12 +139,14 @@ public class AUTSprint2 {
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00011 - Cadastrar um cliente PJ e classificá-lo como Exceção
 	 */
 	public void AUT_CN00011_VA_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO() {
-				//Fazendo				###################################################			
+		cadastrosVA.autCadastroClientePJExcecao();
+		
+			//Fazendo				###################################################			
 	}
 	
 	

@@ -10,6 +10,9 @@ import org.junit.runners.MethodSorters;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
+import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_CONTATO;
+import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_ENDERECO;
+import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_RESIDENCIA;
 import br.lry.components.va.AUTVAGeradorPedido;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_FLUXO_SAIDA;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_MEIOS_PAGAMENTO;
@@ -114,7 +117,7 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035() {
 		cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_TIPO_CADASTRO", AUT_VA_CADASTROS.FISICA);
-		cadastrosVA.autInitClientMenuCadastroPF();
+		cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
 		cadastrosVA.autLogoutApplication();
 	}
 	/**
@@ -124,7 +127,7 @@ public class AUTSprint1{
 	 */
 	@Test
 	public void AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035() {
-		cadastrosVA.autInitClientMenuCadastroPJ();
+		cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
 		cadastrosVA.autLogoutApplication();
 	}
 	/**
@@ -134,7 +137,7 @@ public class AUTSprint1{
 	 */
 	@Test
 	public void AUT_CN00007_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
-		cadastrosVA.autInitClientMenuCadastroExtrangeiro();
+		cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.ESTRANGEIRO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
 		cadastrosVA.autLogoutApplication();
 	}
 	
