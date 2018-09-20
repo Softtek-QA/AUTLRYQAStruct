@@ -139,23 +139,22 @@ public class AUTSprint2 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00011 - Cadastrar um cliente PJ e classificá-lo como Exceção
 	 */
 	public void AUT_CN00011_VA_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO() {
-		cadastrosVA.autCadastroClientePJExcecao();
-		
-			//Fazendo				###################################################			
+			//Fazendo				###################################################	
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00012 - Classificar um cliente PJ já cadastrado como Exceção
 	 */
 	public void AUT_CN00012_VA_CLASSIFICAR_CLIENTE_PJ_COMO_EXCECAO() {
-				//Fazendo				###################################################			
+		cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
+		cadastrosVA.autCadastroClientePJExcecao();
 	}
 	
 	
