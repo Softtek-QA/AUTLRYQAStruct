@@ -7,6 +7,7 @@ import org.junit.runners.MethodSorters;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
+import br.lry.components.va.AUTVACadastros.AUT_VA_PROPRIEDADE_RESIDENCIA;
 import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_CONTATO;
 import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_ENDERECO;
 import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_RESIDENCIA;
@@ -90,7 +91,7 @@ public class AUTSprint2 {
 	 */
 	public void AUT_CN00005_VA_CADASTRO_CLIENTE_PF_PREVIAMENTE_CADASTRADO() {
 		cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CONDOMINIO);
-				//Feh fazendo				###################################################
+		//Fazendo				###################################################			
 	}
 	
 	
@@ -99,7 +100,8 @@ public class AUTSprint2 {
 	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
 	 */
 	public void AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_PREVIAMENTE_CADASTRADO() {
-				//Feh fazendo				###################################################			
+			//Fazendo				###################################################			
+
 	}
 	
 	
@@ -144,7 +146,9 @@ public class AUTSprint2 {
 	 * CN00011 - Cadastrar um cliente PJ e classificá-lo como Exceção
 	 */
 	public void AUT_CN00011_VA_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO() {
-			//Fazendo				###################################################	
+		cadastrosVA.autCadastroClienteMultiplosEnderecosVA(AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CASA, AUT_VA_TIPO_ENDERECO.COBRANCA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
+		cadastrosVA.autCadastroClientePJExcecao();
+			//Fazendo				###################################################			
 	}
 	
 	
@@ -155,6 +159,8 @@ public class AUTSprint2 {
 	public void AUT_CN00012_VA_CLASSIFICAR_CLIENTE_PJ_COMO_EXCECAO() {
 		cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
 		cadastrosVA.autCadastroClientePJExcecao();
+			//Fazendo				###################################################			
+
 	}
 	
 	
@@ -165,7 +171,7 @@ public class AUTSprint2 {
 	public void AUT_CN00013_VA_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
 		//cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
 		//cadastrosVA.autCadastroClientePJExcecao();
-		cadastrosVA.autCadastroFilhoPJExcecao();
+		cadastrosVA.autCadastroFilhoPJExcecao(AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO, AUT_VA_PROPRIEDADE_RESIDENCIA.FINANCIADA);
 	}
 	
 	
