@@ -29,7 +29,7 @@ public class AUTSprint2 {
 	
 	/**
 	 * 
-	 * Configura os parametros de inicialização para realização de cadastros no HMC
+	 * Configuração dos parametros de inicialização para realização de cadastro de usuário no HMC
 	 * 
 	 */
 	@Test
@@ -42,7 +42,6 @@ public class AUTSprint2 {
 	
 	/**
 	 * Executa os procedimentos de cadastro de usuário no HMC
-	 * 
 	 */
 	//@Test
 	public void AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035() {
@@ -91,6 +90,7 @@ public class AUTSprint2 {
 	 */
 	public void AUT_CN00005_VA_CADASTRO_CLIENTE_PF_PREVIAMENTE_CADASTRADO() {
 		cadastrosVA.autCadastroClienteVA(AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CONDOMINIO);
+		//cadastrosVA.autCadastroCPFCadastrado(numeroDocumento);
 		//Fazendo				###################################################			
 	}
 	
