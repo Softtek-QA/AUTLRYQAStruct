@@ -15,6 +15,9 @@ import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
+import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_CONTATO;
+import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_ENDERECO;
+import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_RESIDENCIA;
 import br.lry.components.va.AUTVAGeradorPedido;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_FLUXO_SAIDA;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_MEIOS_PAGAMENTO;
@@ -38,7 +41,6 @@ import junit.framework.JUnit4TestAdapter;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTSprint1{	
-	public static AUTFWKTestObjectBase gerTests;
 	public static AUTHMCCadastros cadastrosHMC;	
 	public static AUTVACadastros cadastrosVA;
 	public static AUTVAGeradorPedido geradorPedidos;
@@ -46,6 +48,9 @@ public class AUTSprint1{
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
 	public static String AUT_LOJA_CADASTRO ="0035";	
 	String hostExec = "192.168.0.116";
+
+
+
 
 	@Test
 	public void AUT_00001_FRT001() {
@@ -63,8 +68,15 @@ public class AUTSprint1{
 		cadastrosVA = new AUTVACadastros();
 		geradorPedidos = new AUTVAGeradorPedido();	
 		consultaStatusPedido = new AUTVA03ConsultaStatusPedido();
+
+
+
 		gerTests = new AUTFWKTestObjectBase();
 		gerTests.autInitConfigurationProjectExecution(AUTSprint1.class,AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
+		//cadastrosHMC.autSetHostExecution(hostExec);
+		//cadastrosVA.autSetHostExecution(hostExec);
+		//geradorPedidos.autSetHostExecution(hostExec);
+		//consultaStatusPedido.autSetHostExecution(hostExec);
 	}
 
 	/**
