@@ -6,9 +6,6 @@ package br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001;
 import org.junit.Test;
 
 import br.lry.components.va.AUTVACadastros;
-import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_ENDERECO;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_RESIDENCIA;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
 /**

@@ -126,7 +126,7 @@ public class AUTSprint2 {
 	 * CN00009 - Realizar cadastro de cliente por cep invalido
 	 */
 	public void AUT_CN00009_VA_CADASTRO_CLIENTE_PF_COM_CEP_INVALIDO() {
-				//Fazendo				###################################################			
+		cadastrosVA.autCadastroClienteInvalidoVA();		
 	}
 	
 
@@ -139,7 +139,7 @@ public class AUTSprint2 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00011 - Cadastrar um cliente PJ e classificá-lo como Exceção
 	 */
@@ -166,6 +166,5 @@ public class AUTSprint2 {
 	public void AUT_CN00013_VA_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
 				//Fazendo				###################################################			
 	}
-	
 	
 }

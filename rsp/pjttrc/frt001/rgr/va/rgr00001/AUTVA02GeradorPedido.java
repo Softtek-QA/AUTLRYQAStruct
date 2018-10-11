@@ -3,7 +3,6 @@
  */
 package br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001;
 
-import org.junit.After;
 import org.junit.Test;
 
 import com.borland.silktest.jtf.Desktop;
@@ -16,7 +15,6 @@ import com.borland.silktest.jtf.xbrowser.DomTextField;
 
 import br.lry.components.va.AUTVALogin;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
-import br.lry.functions.AUTProjectsFunctions;
 
 import com.borland.silktest.jtf.win32.AccessibleControl;
 

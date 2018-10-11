@@ -14,9 +14,6 @@ import com.borland.silktest.jtf.xbrowser.DomRadioButton;
 import com.borland.silktest.jtf.xbrowser.DomTextField;
 
 import br.lry.components.va.AUTVACadastros;
-import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_ENDERECO;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_RESIDENCIA;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 import br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001.AUTVA02GeradorPedido.AUT_VA_MEIOS_PAGAMENTO;
 import br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001.AUTVA02GeradorPedido.AUT_VA_PLANO_PAGAMENTO;

@@ -6,7 +6,6 @@ import com.borland.silktest.jtf.win32.AccessibleControl;
 import com.borland.silktest.jtf.xbrowser.DomElement;
 import com.borland.silktest.jtf.xbrowser.DomLink;
 import com.borland.silktest.jtf.xbrowser.DomListBox;
-import com.borland.silktest.jtf.xbrowser.DomTableRow;
 import com.borland.silktest.jtf.xbrowser.DomTextField;
 
 import br.lry.components.hmc.AUTHMCLogin;
