@@ -15,9 +15,6 @@ import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_CONTATO;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_ENDERECO;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_RESIDENCIA;
 import br.lry.components.va.AUTVAGeradorPedido;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_FLUXO_SAIDA;
 import br.lry.components.va.AUTVAGeradorPedido.AUT_VA_MEIOS_PAGAMENTO;
@@ -40,7 +37,8 @@ import junit.framework.JUnit4TestAdapter;
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class AUTSprint1{	
+public class AUTSprint1_V2{	
+	public static AUTFWKTestObjectBase gerTests;
 	public static AUTHMCCadastros cadastrosHMC;	
 	public static AUTVACadastros cadastrosVA;
 	public static AUTVAGeradorPedido geradorPedidos;
@@ -49,14 +47,21 @@ public class AUTSprint1{
 	public static String AUT_LOJA_CADASTRO ="0035";	
 	String hostExec = "192.168.0.116";
 
-
-
-
 	@Test
 	public void AUT_00001_FRT001() {
 
 	}
+	
+	//@Test
+	public void AUT_00011_FRT011() {
 
+	}
+
+	//@Test
+	public void AUT_00012_FRT012() {
+
+	}
+	
 	/**
 	 * 
 	 * Configura os parametros de inicialização para realização de cadastros no HMC
@@ -68,37 +73,51 @@ public class AUTSprint1{
 		cadastrosVA = new AUTVACadastros();
 		geradorPedidos = new AUTVAGeradorPedido();	
 		consultaStatusPedido = new AUTVA03ConsultaStatusPedido();
-
-
-
 		gerTests = new AUTFWKTestObjectBase();
-		gerTests.autInitConfigurationProjectExecution(AUTSprint1.class,AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
-		//cadastrosHMC.autSetHostExecution(hostExec);
-		//cadastrosVA.autSetHostExecution(hostExec);
-		//geradorPedidos.autSetHostExecution(hostExec);
-		//consultaStatusPedido.autSetHostExecution(hostExec);
+		gerTests.autInitConfigurationProjectExecution(AUTSprint1_V2.class,AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
 	}
 
+	
 	/**
-	 * 
+	 * 1
 	 * Executa os procedimentos de cadastro
 	 * 
 	 */
 	@Test
-	public void AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035() {
+	public void AUT_CN00001A_HMC_CADASTRO_USUARIO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00001A_HMC_CADASTRO_USUARIO_LOJA0035"});
 			AUT_LOJA_CADASTRO = "0035";
 			cadastrosHMC.autCadastrarUsuarioHMC(AUT_LOJA_CADASTRO);
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00001A_HMC_CADASTRO_USUARIO_LOJA0035"});
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00001A_HMC_CADASTRO_USUARIO_LOJA0035"});
+		}
+	}
+
+	@Test
+	/**
+	 * 8
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_CN00001_PDV_LOGIN_LOJA0035() {				
+		try {
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00001_PDV_LOGIN_LOJA0035"});															
+			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
+			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
+			parametrosConfig.put("AUT_OPERADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_OPERADOR"));
+			parametrosConfig.put("AUT_PWD_OPERADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_OPERADOR"));
+			pdvConsultaItem.autStartLogin(parametrosConfig.get("AUT_OPERADOR").toString(), parametrosConfig.get("AUT_PWD_OPERADOR").toString());
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00001_PDV_LOGIN_LOJA0035"});				
+		}
+		catch(java.lang.Exception e) {
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00001_PDV_LOGIN_LOJA0035"});															
 		}
 	}
 
 	/**
-	 * 
+	 * 2
 	 * Executa procedimentos de consulta de produto
 	 * 
 	 */
@@ -107,26 +126,23 @@ public class AUTSprint1{
 		try {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});
 			AUTSAPConsultaEstoque estoqueProcess = new AUTSAPConsultaEstoque();
-
 			estoqueProcess.autGetStorageMaterial("0035",geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM").toString()); 			 		
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});
-
 		}
 		catch(java.lang.Exception e) {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});			
 		}
-
 	}
 
-	//@Test
+	@Test
 	/**
-	 * 
+	 * 3
 	 * Executa procedimentos para consulta de material de preço do material PDV
 	 * 
 	 */
 	public void AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});
 
 			AUTPDVConsultaPrecoItem pdvConsultaItem = new AUTPDVConsultaPrecoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
@@ -166,6 +182,7 @@ public class AUTSprint1{
 
 
 	/**
+	 * 4
 	 * 
 	 * Executa procedimentos para cadastro de cliente - Pessoa Física
 	 * 
@@ -196,7 +213,7 @@ public class AUTSprint1{
 	 * Executa procedimentos para cadastro de cliente - Pessoa Jurídica
 	 * 
 	 */
-	@Test
+	//@Test
 	public void AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035() {
 		try {
 			try {
@@ -221,7 +238,7 @@ public class AUTSprint1{
 		}
 	}
 	/**
-	 * 
+	 * 5
 	 * Executa procedimentos para cadastro de cliente - Estrangeiro
 	 * 
 	 */
@@ -275,7 +292,7 @@ public class AUTSprint1{
 	}
 
 	/**
-	 * 
+	 * 6
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Pagamento em Dinheiro
 	 * 
 	 */
@@ -293,6 +310,10 @@ public class AUTSprint1{
 		}
 	}
 
+	/**
+	 * 7
+	 * 
+	 */
 	@Test
 	public void AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
@@ -305,9 +326,10 @@ public class AUTSprint1{
 		}		
 	}
 
-	
-	//@Test
+		
+	@Test
 	/**
+	 * 8
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035() {				
@@ -320,9 +342,15 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_OPERADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_OPERADOR"));
 			parametrosConfig.put("AUT_PWD_OPERADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_OPERADOR"));
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
-			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
-			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																		
+			pdvConsultaItem.autStartProcess(parametrosConfig);	
+			
+			if(pdvConsultaItem.AUT_STATUS_EXECUTION) {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});		
+			}
+			else {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_FAILED.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});						
+			}
+			
 		}
 		catch(java.lang.Exception e) {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});															
@@ -332,23 +360,27 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 9
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00012_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});															
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});															
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});															
 		}
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");
 	}
 
 
-	//@Test
+	@Test
 	/**
+	 * 10
+	 * 
 	 * Devolução do pedido no PDV
 	 */
 	public void AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
@@ -360,7 +392,7 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PEDIDO", Integer.parseInt(geradorPedidos.AUT_NUMERO_PEDIDO));	
 			parametrosConfig.put("AUT_LOJA_DEVOLUCAO","0035");
 			Integer qtd = Integer.parseInt(geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_QUANTIDADE_ITEM").toString());			
-			parametrosConfig.put("AUT_ITEM_QUANTIDADE",++qtd);
+			parametrosConfig.put("AUT_ITEM_QUANTIDADE",geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_QUANTIDADE_ITEM").toString());
 			parametrosConfig.put("AUT_DD","11");
 			parametrosConfig.put("AUT_TELEFONE","912123434");
 			parametrosConfig.put("AUT_OPERADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_OPERADOR"));
@@ -368,8 +400,9 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
-			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																		
+			pdvConsultaItem.autStartProcess(parametrosConfig);	
+			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});		
 		}
 		catch(java.lang.Exception e) {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																	
@@ -379,22 +412,24 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 11
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00014_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																	
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																	
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																			
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																				
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																				
 		}
 	}
 
 
-	@Test
+	//@Test
 	/**
+	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Cartão de Crédito
 	 */
 	public void AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
@@ -409,8 +444,9 @@ public class AUTSprint1{
 		}
 	}	 
 
-	@Test
+	//@Test
 	/**
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
 	public void AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035() {
@@ -426,6 +462,8 @@ public class AUTSprint1{
 
 	//@Test
 	/**
+	 * 
+	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
@@ -440,7 +478,15 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
-			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
+			pdvConsultaItem.autStartProcess(parametrosConfig);
+			if(pdvConsultaItem.AUT_STATUS_EXECUTION) {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});		
+			}
+			else {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_FAILED.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});						
+			}			
+
+			
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																										
 		}
 		catch(java.lang.Exception e) {
@@ -450,24 +496,27 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
+	 * 
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00018_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																										
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																										
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																												
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																												
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																													
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																													
 		}		
 	}
 
 
 	//@Test
 	/**
+	 * 
 	 * Devolução do pedido no PDV
 	 */
 	public void AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
@@ -486,7 +535,14 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
-			pdvConsultaItem.autStartProcess(parametrosConfig);				
+			pdvConsultaItem.autStartProcess(parametrosConfig);		
+			if(pdvConsultaItem.AUT_STATUS_EXECUTION) {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});		
+			}
+			else {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_FAILED.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});						
+			}			
+
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																
 		}
 		catch(java.lang.Exception e) {
@@ -495,23 +551,27 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00020_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																			
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																			
 		}
 	}
 
 
-	@Test
+	
+	
+	
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Cartão Celebre/Próprio
 	 */ 
@@ -528,7 +588,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -559,7 +619,15 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
-			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
+			pdvConsultaItem.autStartProcess(parametrosConfig);		
+			
+			if(pdvConsultaItem.AUT_STATUS_EXECUTION) {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});		
+			}
+			else {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_FAILED.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});						
+			}
+			
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
@@ -569,7 +637,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -606,7 +674,15 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
-			pdvConsultaItem.autStartProcess(parametrosConfig);				
+			pdvConsultaItem.autStartProcess(parametrosConfig);		
+			
+			if(pdvConsultaItem.AUT_STATUS_EXECUTION) {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});		
+			}
+			else {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_FAILED.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});						
+			}
+			
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
@@ -616,7 +692,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -634,6 +710,7 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 12
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
 	public void AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
@@ -650,6 +727,8 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 13
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
 	public void AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035() {
@@ -664,8 +743,10 @@ public class AUTSprint1{
 
 	}
 
-	//@Test
+	@Test
 	/**
+	 * 14
+	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
@@ -680,8 +761,15 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
-			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			pdvConsultaItem.autStartProcess(parametrosConfig);
+			
+			if(pdvConsultaItem.AUT_STATUS_EXECUTION) {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});		
+			}
+			else {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_FAILED.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});						
+			}
+			
 		}
 		catch(java.lang.Exception e) {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
@@ -692,9 +780,11 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 15
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00030_VA_CONSULTA_PEDIDO_PAGAMENTOLOJA0035() {
 		try {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
@@ -706,8 +796,9 @@ public class AUTSprint1{
 	}
 
 
-	//@Test
+	@Test
 	/**
+	 * 16
 	 * Devolução do pedido no PDV
 	 */
 	public void AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
@@ -726,8 +817,14 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
-			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			pdvConsultaItem.autStartProcess(parametrosConfig);	
+			
+			if(pdvConsultaItem.AUT_STATUS_EXECUTION) {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});		
+			}
+			else {
+				gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_FAILED.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});						
+			}
 		}
 		catch(java.lang.Exception e) {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
@@ -738,9 +835,11 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 17
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00032_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
@@ -754,7 +853,7 @@ public class AUTSprint1{
 
 
 
-	@Test
+	//@Test
 	/** 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Cartão de Crédito
 	 */
@@ -768,11 +867,10 @@ public class AUTSprint1{
 		catch(java.lang.Exception e) {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
 		}
-
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -814,7 +912,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -861,7 +959,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -878,7 +976,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/** 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Cartão Celebre/Próprio
 	 */ 
@@ -896,7 +994,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -938,7 +1036,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -985,7 +1083,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1004,6 +1102,7 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 18
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
 	 */
 	public void AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
@@ -1022,6 +1121,8 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 19
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
 	public void AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035() {
@@ -1037,8 +1138,10 @@ public class AUTSprint1{
 	}
 
 
-	//@Test
+	@Test
 	/**
+	 * 20
+	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
@@ -1063,11 +1166,13 @@ public class AUTSprint1{
 	}
 
 
-	//@Test
+	@Test
 	/**
+	 * 21
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00048_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00048_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
 		try {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
@@ -1080,8 +1185,10 @@ public class AUTSprint1{
 	}
 
 
-	//@Test
+	@Test
 	/**
+	 * 22
+	 * 
 	 * Devolução do pedido no PDV
 	 */
 	public void AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
@@ -1112,9 +1219,11 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 23
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00050_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
@@ -1127,7 +1236,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Cartão de Crédito
 	 */
@@ -1144,7 +1253,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1186,7 +1295,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1234,7 +1343,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1250,7 +1359,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Cartão de Celebre/Próprio
 	 */ 
@@ -1267,7 +1376,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1309,7 +1418,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1356,7 +1465,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1385,7 +1494,7 @@ public class AUTSprint1{
 
 
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Caixa - Pagamento em Dinheiro
 	 */
@@ -1403,7 +1512,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1445,7 +1554,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1492,7 +1601,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1508,7 +1617,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Caixa - Cartão de Crédito
 	 */
@@ -1525,7 +1634,7 @@ public class AUTSprint1{
 
 	}	 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1566,7 +1675,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1613,7 +1722,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1630,7 +1739,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Caixa - Cartão de Celebre/Próprio
 	 */ 
@@ -1648,7 +1757,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1689,7 +1798,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1735,7 +1844,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1751,7 +1860,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
@@ -1768,7 +1877,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1810,7 +1919,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1857,7 +1966,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1873,7 +1982,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Interna Imediata - Cartão de Crédito
 	 */
@@ -1891,7 +2000,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1933,7 +2042,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1980,7 +2089,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -1996,7 +2105,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Interna Imediata - Cartão de Celebre/Próprio
 	 */ 
@@ -2014,7 +2123,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2056,7 +2165,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2102,7 +2211,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2118,7 +2227,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
 	 */
@@ -2136,7 +2245,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2178,7 +2287,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2226,7 +2335,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2243,7 +2352,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Externa Imediata - Cartão de Crédito
 	 */
@@ -2260,7 +2369,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2303,7 +2412,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2350,7 +2459,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2366,7 +2475,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Retirada Externa Imediata - Cartão de Celebre/Próprio
 	 */ 
@@ -2382,7 +2491,7 @@ public class AUTSprint1{
 		}
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2425,7 +2534,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2472,7 +2581,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2497,6 +2606,8 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 24
+	 * 
 	 * Executa procedimentos de criação de pedido para pessoa estrangeiro - Fluxo de saída - Caixa - Pagamento em Dinheiro
 	 */
 	public void AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035() {
@@ -2516,6 +2627,7 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 25
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
 	public void AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035() {
@@ -2530,8 +2642,9 @@ public class AUTSprint1{
 
 	}
 
-	//@Test
+	@Test
 	/**
+	 * 26
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
@@ -2558,23 +2671,26 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 27
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00119_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																						
 		}
 
 	}
 
 
-	//@Test
+	@Test
 	/**
+	 * 28
+	 * 
 	 * Devolução do pedido no PDV
 	 */
 	public void AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
@@ -2605,22 +2721,26 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 29
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00121_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 
 	}
 
 	@Test
 	/**
+	 * 31
+	 * 
 	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Caixa - Cartão de Crédito
 	 */
 	public void AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035() {
@@ -2638,6 +2758,7 @@ public class AUTSprint1{
 
 	@Test
 	/**
+	 * 32
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
 	public void AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035() {
@@ -2654,6 +2775,8 @@ public class AUTSprint1{
 
 	//@Test
 	/**
+	 * 33
+	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
@@ -2679,24 +2802,27 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
+	 * 34
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00125_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																						
 		}
 	}
 
 
 	//@Test
 	/**
+	 * 35
 	 * Devolução do pedido no PDV
 	 */
 	public void AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
@@ -2725,24 +2851,26 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
+	 * 36
+	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00127_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 *  Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Caixa - Cartão de Celebre/Próprio
 	 */ 
@@ -2759,7 +2887,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2801,7 +2929,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2848,7 +2976,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -2897,7 +3025,7 @@ public class AUTSprint1{
 
 	}
 
-	//@Test
+	@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -2927,7 +3055,7 @@ public class AUTSprint1{
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00137_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
 		try {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
@@ -2939,7 +3067,7 @@ public class AUTSprint1{
 	}
 
 
-	//@Test
+	@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -2973,14 +3101,14 @@ public class AUTSprint1{
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00139_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 
 	}
@@ -3045,7 +3173,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3092,7 +3220,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3108,7 +3236,7 @@ public class AUTSprint1{
 
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Interna Imediata - Cartão de Celebre/Próprio
 	 */ 
@@ -3126,7 +3254,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3169,7 +3297,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3217,7 +3345,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3266,7 +3394,7 @@ public class AUTSprint1{
 		}
 	}
 
-	//@Test
+	@Test
 	/**
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
@@ -3296,20 +3424,20 @@ public class AUTSprint1{
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00155_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035"});																																						
 		}
 
 	}
 
 
-	//@Test
+	@Test
 	/**
 	 * Devolução do pedido no PDV
 	 */
@@ -3343,14 +3471,14 @@ public class AUTSprint1{
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00157_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035"});																																						
 		}
 
 	}
@@ -3414,7 +3542,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3462,7 +3590,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3479,7 +3607,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Executa procedimentos de criação de pedido para pessoa estrangeira - Fluxo de saída - Retirada Externa Imediata - Cartão de Celebre/Próprio
 	 */ 
@@ -3495,7 +3623,7 @@ public class AUTSprint1{
 		}
 	}
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3538,7 +3666,7 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
@@ -3585,11 +3713,11 @@ public class AUTSprint1{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 */
-	public void AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035() {
+	public void AUT_CN00169A_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
@@ -3598,8 +3726,29 @@ public class AUTSprint1{
 		catch(java.lang.Exception e) {
 			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
-
 	}
 
-
+	@Test
+	/**
+	 * 8
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_CN00169_PDV_LOGOUT_LOJA0035() {				
+		try {
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00169_PDV_LOGOUT_LOJA0035"});															
+			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
+			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
+			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
+			parametrosConfig.put("AUT_PEDIDO", Integer.parseInt(geradorPedidos.AUT_NUMERO_PEDIDO));		
+			parametrosConfig.put("AUT_OPERADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_OPERADOR"));
+			parametrosConfig.put("AUT_PWD_OPERADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_OPERADOR"));
+			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
+			pdvConsultaItem.autPDVLogout(parametrosConfig.get("AUT_COORDENADOR").toString(), parametrosConfig.get("AUT_PWD_OPERADOR").toString());
+			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00169_PDV_LOGOUT_LOJA0035"});				
+		}
+		catch(java.lang.Exception e) {
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00169_PDV_LOGOUT_LOJA0035"});															
+		}
+	}
 }

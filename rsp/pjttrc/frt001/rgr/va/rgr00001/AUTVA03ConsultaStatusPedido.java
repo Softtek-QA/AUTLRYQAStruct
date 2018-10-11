@@ -27,13 +27,27 @@ import org.junit.Assert;
  *
  */
 public class AUTVA03ConsultaStatusPedido extends AUTVALogin{
+<<<<<<< HEAD
+	
+=======
 
+>>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
 	 * SCRIPT DE CONSULTA DE STATUS DE PEDIDO
 	 */
 	@Test
 	public void AUTVA03ConsultaStatusPedido(String numeroPedido, String statusPedido) {
+<<<<<<< HEAD
+		try {
+			autLogoutApplication();
+		}
+		catch(java.lang.Exception e) {
+			
+		}
+		autStartLoginDefaultVA();
+=======
 		autStartLoginDefault();
+>>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaInicialLoja.BotaoRecuperarPedido").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.BotaoFiltroPedido").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.OpcoesDeFiltro").click();
