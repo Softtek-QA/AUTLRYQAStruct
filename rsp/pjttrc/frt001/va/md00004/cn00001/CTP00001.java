@@ -18,12 +18,11 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 public class CTP00001 extends  AUTVABaseComponent {
 	
 	
-	@Test
 	public void cn0001() {
 		 autGetDataFlow().autInitDataFlow();
 		 CMP00001(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001));
-		 //CMP00009(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001));
-		 //CMP00022();
+		 CMP00036(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001));
+		 CMP00022();
 	}
 
 }
