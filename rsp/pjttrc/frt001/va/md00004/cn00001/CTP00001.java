@@ -5,7 +5,6 @@ import java.util.HashMap;
 import org.junit.Test;
 
 import br.lry.components.AUTVABaseComponent;
-import br.lry.components.safe.AUTSafeLogin;
 import br.lry.dataflow.AUTDataFlow;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
@@ -19,7 +18,7 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 public class CTP00001 extends  AUTVABaseComponent {
 	
 	@Test
-	public void cn0001() {
+	public void cn00001() {
 		 autGetDataFlow().autInitDataFlow();
 		 CMP00001(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001));
 		 CMP00036(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001));
