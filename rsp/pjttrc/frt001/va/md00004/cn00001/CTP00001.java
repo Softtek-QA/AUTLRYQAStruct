@@ -17,7 +17,6 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
  */
 public class CTP00001 extends  AUTVABaseComponent {
 	
-	
 	@Test
 	public void cn00001() {
 		 autGetDataFlow().autInitDataFlow();
