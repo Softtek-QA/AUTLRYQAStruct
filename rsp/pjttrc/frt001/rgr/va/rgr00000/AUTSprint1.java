@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
 
 import com.borland.silktest.jtf.SilkTestSuite;
 
-import br.lry.components.AUTBaseComponent.AUT_TEST_OPERATIONS;
+import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
 import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.va.AUTVACadastros;
@@ -45,6 +45,7 @@ public class AUTSprint1{
 	public static AUTVACadastros cadastrosVA;
 	public static AUTVAGeradorPedido geradorPedidos;
 	public static AUTVA03ConsultaStatusPedido consultaStatusPedido;
+	public static AUTFWKTestObjectBase gerTests;
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
 	public static String AUT_LOJA_CADASTRO ="0035";	
 	String hostExec = "192.168.0.116";
@@ -87,13 +88,13 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
 			AUT_LOJA_CADASTRO = "0035";
 			cadastrosHMC.autCadastrarUsuarioHMC(AUT_LOJA_CADASTRO);
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00001_HMC_CADASTRO_USUARIO_LOJA0035"});
 		}
 	}
 
@@ -105,15 +106,15 @@ public class AUTSprint1{
 	//@Test
 	public void AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});
 			AUTSAPConsultaEstoque estoqueProcess = new AUTSAPConsultaEstoque();
 
 			estoqueProcess.autGetStorageMaterial("0035",geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM").toString()); 			 		
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});
 
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00002_SAP_CONSULTA_ESTOQUE_PRODUTO_LOJA0035"});			
 		}
 
 	}
@@ -126,7 +127,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});
 
 			AUTPDVConsultaPrecoItem pdvConsultaItem = new AUTPDVConsultaPrecoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
@@ -137,11 +138,11 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});
 
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00003_PDV_CONSULTA_PRECO_MATERIAL_LOJA0035"});			
 		}
 	}	
 
@@ -154,13 +155,13 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CN00004_VA_CONFIG_CADASTRO_CLIENTES() {		
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00004_VA_CONFIG_CADASTRO_CLIENTES"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00004_VA_CONFIG_CADASTRO_CLIENTES"});
 			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT);
 			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT);  				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00004_VA_CONFIG_CADASTRO_CLIENTES"});
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00004_VA_CONFIG_CADASTRO_CLIENTES"});
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00004_VA_CONFIG_CADASTRO_CLIENTES"});			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00004_VA_CONFIG_CADASTRO_CLIENTES"});			
 		}	
 	}
 
@@ -173,11 +174,11 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035() {		
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035"});			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035"});			
 			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_TIPO_CADASTRO", AUT_VA_CADASTROS.FISICA);
 			cadastrosVA.autInitClientMenuCadastroPF();
 			cadastrosVA.autLogoutApplication();			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035"});			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035"});			
 		}catch(java.lang.Exception e) {
 			try {
 				cadastrosVA.autLogoutApplication();
@@ -187,7 +188,7 @@ public class AUTSprint1{
 			}
 			System.out.println(e.getMessage());
 			e.printStackTrace();
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035"});			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00005_VA_CADASTRO_CLIENTE_PF_LOJA0035"});			
 		}
 	}
 	
@@ -205,10 +206,10 @@ public class AUTSprint1{
 			catch(java.lang.Exception e1) {
 
 			}
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035"});	
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035"});	
 			cadastrosVA.autInitClientMenuCadastroPJ();
 			cadastrosVA.autLogoutApplication();			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035"});			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035"});			
 
 		}catch(java.lang.Exception e) {
 			try {
@@ -217,7 +218,7 @@ public class AUTSprint1{
 			catch(java.lang.Exception e1) {
 
 			}
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035"});					
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00006_VA_CADASTRO_CLIENTE_PJ_LOJA0035"});					
 		}
 	}
 	/**
@@ -234,10 +235,10 @@ public class AUTSprint1{
 			catch(java.lang.Exception e) {
 				
 			}
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00007_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035"});						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00007_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035"});						
 			cadastrosVA.autInitClientMenuCadastroExtrangeiro();
 			cadastrosVA.autLogoutApplication();
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00007_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035"});						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00007_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035"});						
 		}
 		catch(java.lang.Exception e) {
 			try {
@@ -246,7 +247,7 @@ public class AUTSprint1{
 			catch(java.lang.Exception e2) {
 
 			}
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00007_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035"});						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00007_VA_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035"});						
 		}
 	}
 
@@ -259,7 +260,7 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CN00008_VA_CONFIG_GERADOR_PEDIDOS_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00008_VA_CONFIG_GERADOR_PEDIDOS_LOJA0035"});						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00008_VA_CONFIG_GERADOR_PEDIDOS_LOJA0035"});						
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.AUT_CLIENT_DOC_CNPJ = cadastrosVA.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
 			geradorPedidos.AUT_CLIENT_DOC_CPF = cadastrosVA.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ").toString();
@@ -267,10 +268,10 @@ public class AUTSprint1{
 
 			geradorPedidos.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_USER", cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT);
 			geradorPedidos.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_PASSWORD", cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00008_VA_CONFIG_GERADOR_PEDIDOS_LOJA0035"});								
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00008_VA_CONFIG_GERADOR_PEDIDOS_LOJA0035"});								
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00008_VA_CONFIG_GERADOR_PEDIDOS_LOJA0035"});									
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00008_VA_CONFIG_GERADOR_PEDIDOS_LOJA0035"});									
 		}		
 	}
 
@@ -282,26 +283,26 @@ public class AUTSprint1{
 	@Test
 	public void AUT_CN00009_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00009_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});									
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00009_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});									
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT.toString());			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00009_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});									
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00009_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});									
 
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00009_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});												
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00009_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});												
 		}
 	}
 
 	@Test
 	public void AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035"});												
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035"});												
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035"});												
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035"});												
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035"});												
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00010_VA_CONSULTA_PEDIDO_LOJA0035"});												
 		}		
 	}
 
@@ -312,7 +313,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035() {				
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});															
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -322,10 +323,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_COORDENADOR"));
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																		
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																		
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00011_PDV_PAGAMENTO_PEDIDO_LOJA0035"});															
 		}
 	}
 
@@ -336,12 +337,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00012_VA_CONSULTA_PEDIDO_LOJA0035"});															
 		}
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");
 	}
@@ -353,7 +354,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});															
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});															
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -369,10 +370,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																		
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																		
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																	
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00013_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																	
 		}
 	}
 
@@ -383,12 +384,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																	
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																	
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																			
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																				
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00014_VA_CONSULTA_PEDIDO_LOJA0035"});																				
 		}
 	}
 
@@ -399,13 +400,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																				
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																				
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																				
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																				
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																							
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00015_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																							
 		}
 	}	 
 
@@ -415,12 +416,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035"});																							
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035"});																							
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035"});																							
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035"});																							
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035"});																							
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00016_VA_CONSULTA_PEDIDO_LOJA0035"});																							
 		}
 	}
 
@@ -430,7 +431,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																							
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																							
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -441,10 +442,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																										
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																										
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																										
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00017_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																										
 		}
 
 	}
@@ -456,12 +457,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																										
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																										
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																												
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																												
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																													
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00018_VA_CONSULTA_PEDIDO_LOJA0035"});																													
 		}		
 	}
 
@@ -472,7 +473,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																													
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																													
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -487,10 +488,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00019_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																
 		}		
 	}
 
@@ -501,12 +502,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00020_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 		}
 	}
 
@@ -517,13 +518,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00021_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00021_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00021_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00021_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00021_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00021_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00021_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
 		}
 	}
 
@@ -534,12 +535,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00022_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00022_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00022_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00022_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00022_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00022_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00022_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -549,7 +550,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -560,10 +561,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00023_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -575,12 +576,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00024_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00024_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00024_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00024_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00024_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00024_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00024_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -592,7 +593,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -607,10 +608,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00025_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -622,12 +623,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00026_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00026_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00026_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00026_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00026_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00026_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00026_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -638,13 +639,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00027_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
 		}
 	}
 
@@ -654,12 +655,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00028_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -670,7 +671,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -681,10 +682,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -696,12 +697,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00030_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -712,7 +713,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -727,10 +728,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00031_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -742,12 +743,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00032_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -760,13 +761,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00033_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
 		}
 
 	}
@@ -778,12 +779,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00034_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00034_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00034_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00034_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00034_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00034_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00034_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -794,7 +795,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00035_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00035_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00035_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -805,10 +806,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00035_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00035_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00035_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00035_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -820,12 +821,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00036_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00036_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00036_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00036_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00036_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00036_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00036_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -837,7 +838,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00037_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00037_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00037_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -852,10 +853,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00037_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00037_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00037_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00037_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -867,12 +868,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00038_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00038_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00038_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00038_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00038_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00038_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00038_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -884,13 +885,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00039_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00039_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00039_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00039_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00039_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00039_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00039_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
 		}
 
 	}
@@ -902,12 +903,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00040_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00040_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00040_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00040_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00040_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00040_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00040_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -918,7 +919,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00041_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00041_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00041_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -929,10 +930,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00041_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00041_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00041_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00041_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -944,12 +945,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00042_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00042_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00042_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00042_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00042_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00042_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00042_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -961,7 +962,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00043_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00043_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00043_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -976,10 +977,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00043_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00043_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00043_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00043_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -991,11 +992,11 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00044_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00044_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00044_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00044_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00044_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00044_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00044_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 		consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");
@@ -1008,13 +1009,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00045_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PF_LOJA0035"});																																						
 		}
 
 	}
@@ -1026,12 +1027,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00046_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1043,7 +1044,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1054,10 +1055,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00047_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1069,12 +1070,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00048_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00029_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1086,7 +1087,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1101,10 +1102,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00049_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1116,12 +1117,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00050_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1133,13 +1134,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00051_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00051_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00051_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00051_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00051_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00051_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00051_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PF_LOJA0035"});																																						
 		}
 
 	}
@@ -1150,12 +1151,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00052_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00052_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00052_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00052_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00052_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00052_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00052_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1166,7 +1167,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00053_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00053_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00053_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1177,10 +1178,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00053_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00053_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00053_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00053_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1192,12 +1193,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00054_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00054_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00054_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00054_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00054_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00054_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00054_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1209,7 +1210,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00056_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00056_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00056_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1225,10 +1226,10 @@ public class AUTSprint1{
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);	
 
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00056_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00056_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00056_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00056_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1240,12 +1241,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00055_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00055_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00055_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00055_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00055_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00055_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00055_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1256,13 +1257,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00056_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00056_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00056_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00056_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00056_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00056_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00056_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PF_LOJA0035"});																																						
 		}
 
 	}
@@ -1273,12 +1274,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00057_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00057_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00057_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00057_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00057_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00057_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00057_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1289,7 +1290,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00058_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00058_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00058_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1300,10 +1301,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00058_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00058_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00058_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00058_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1315,12 +1316,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00059_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00059_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00059_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00059_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00059_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00059_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00059_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1332,7 +1333,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00060_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00060_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00060_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1347,10 +1348,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00060_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00060_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00060_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00060_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1362,12 +1363,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00061_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00061_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00061_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00061_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00061_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00061_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00061_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1391,13 +1392,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00062_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00062_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00062_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT.toString());			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00062_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00062_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00062_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00062_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
 		}
 
 	}
@@ -1409,12 +1410,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00063_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00063_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00063_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00063_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00063_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00063_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00063_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1425,7 +1426,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00064_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00064_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00064_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1436,10 +1437,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00064_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00064_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00064_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00064_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1451,12 +1452,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00065_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00065_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00065_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00065_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00065_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00065_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00065_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1468,7 +1469,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00066_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00066_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00066_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1483,10 +1484,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00066_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00066_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00066_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00066_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1498,12 +1499,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00067_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00067_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00067_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00067_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00067_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00067_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00067_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1514,13 +1515,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00068_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
 		}
 
 	}	 
@@ -1531,12 +1532,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00069_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00069_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00069_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00069_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00069_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00069_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00069_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1547,7 +1548,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00070_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00070_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00070_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1558,10 +1559,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00070_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00070_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00070_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00070_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -1572,12 +1573,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00071_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00071_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00071_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00071_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00071_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00071_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00071_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1589,7 +1590,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00072_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00072_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00072_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1604,10 +1605,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00072_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00072_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00072_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00072_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1619,12 +1620,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00073_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00073_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00073_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00073_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00073_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00073_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00073_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1636,13 +1637,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00074_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
 		}
 
 	}
@@ -1654,12 +1655,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00075_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00075_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00075_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00075_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00075_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00075_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00075_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1670,7 +1671,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00076_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00076_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00076_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1681,10 +1682,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00076_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00076_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00076_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00076_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -1695,12 +1696,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00077_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00077_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00077_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00077_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00077_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00077_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00077_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -1711,7 +1712,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00078_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00078_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00078_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1726,10 +1727,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00078_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00078_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00078_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00078_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1741,12 +1742,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00079_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00079_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00079_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00079_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00079_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00079_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00079_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -1757,13 +1758,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);		
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00080_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
 		}
 
 	}
@@ -1774,12 +1775,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00081_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00081_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00081_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00081_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00081_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00081_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00081_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1790,7 +1791,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00082_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00082_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00082_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1801,10 +1802,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00082_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00082_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00082_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00082_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1816,12 +1817,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00083_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00083_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00083_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00083_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00083_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00083_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00083_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1833,7 +1834,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00084_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00084_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00084_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1848,10 +1849,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00084_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00084_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00084_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00084_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1863,12 +1864,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00085_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00085_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00085_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00085_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00085_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00085_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00085_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1879,13 +1880,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00086_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
 		}
 
 	}
@@ -1897,12 +1898,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00087_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00087_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00087_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00087_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00087_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00087_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00087_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1913,7 +1914,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00088_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00088_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00088_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1924,10 +1925,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00088_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00088_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00088_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00088_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1939,12 +1940,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00089_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00089_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00089_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00089_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00089_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00089_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00089_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1956,7 +1957,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00090_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00090_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00090_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -1971,10 +1972,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00090_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00090_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00090_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00090_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -1986,12 +1987,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00091_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00091_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00091_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00091_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00091_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00091_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00091_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2002,13 +2003,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00092_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
 		}
 
 	}
@@ -2020,12 +2021,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00093_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00093_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00093_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00093_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00093_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00093_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00093_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2036,7 +2037,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00094_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00094_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00094_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2047,10 +2048,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00094_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00094_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00094_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00094_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2062,12 +2063,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00095_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00095_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00095_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00095_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00095_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00095_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00095_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2079,7 +2080,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00096_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00096_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00096_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2094,10 +2095,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00096_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00096_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00096_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00096_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -2108,12 +2109,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00097_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00097_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00097_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00097_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00097_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00097_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00097_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2124,13 +2125,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00098_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PJ_LOJA0035"});																																						
 		}
 
 	}
@@ -2142,12 +2143,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00099_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00099_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00099_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00099_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00099_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00099_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00099_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -2157,7 +2158,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00100_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00100_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00100_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2169,10 +2170,10 @@ public class AUTSprint1{
 
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00100_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00100_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00100_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00100_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2184,12 +2185,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00101_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00101_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00101_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00101_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00101_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00101_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00101_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2201,7 +2202,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00102_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00102_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00102_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2217,10 +2218,10 @@ public class AUTSprint1{
 
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00102_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00102_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00102_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00102_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2232,12 +2233,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00103_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00103_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00103_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00103_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00103_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00103_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00103_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2249,13 +2250,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00104_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PJ_LOJA0035"});																																						
 		}
 
 	}
@@ -2266,12 +2267,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00105_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00105_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00105_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00105_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00105_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00105_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00105_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2282,7 +2283,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00106_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00106_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00106_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2294,10 +2295,10 @@ public class AUTSprint1{
 
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00106_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00106_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00106_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00106_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2309,12 +2310,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00107_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00107_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00107_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00107_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00107_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00107_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00107_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -2325,7 +2326,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00108_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00108_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00108_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2341,10 +2342,10 @@ public class AUTSprint1{
 
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00108_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00108_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00108_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00108_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2356,12 +2357,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00109_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00109_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00109_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00109_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00109_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00109_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00109_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2372,13 +2373,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00110_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PJ_LOJA0035"});																																						
 		}
 	}
 
@@ -2388,12 +2389,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00111_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00111_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00111_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00111_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00111_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00111_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00111_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2404,7 +2405,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00112_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00112_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00112_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2416,10 +2417,10 @@ public class AUTSprint1{
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 		
 
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00112_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00112_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00112_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00112_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2431,12 +2432,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00113_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00113_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00113_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00113_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00113_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00113_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00113_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2448,7 +2449,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00114_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00114_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00114_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2463,10 +2464,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00114_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00114_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00114_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00114_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2478,12 +2479,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00115_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00115_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00115_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00115_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00115_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00115_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00115_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2501,13 +2502,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_PASSAPORTE_OUTPUT.toString(),AUT_VA_CADASTROS.ESTRANGEIRO.toString());			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00116_VA_PEDIDO_SD_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035"});																																						
 		}
 
 	}
@@ -2520,12 +2521,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035"});																																					consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035"});																																					consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00117_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2536,7 +2537,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2547,10 +2548,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00118_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2562,12 +2563,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00119_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2579,7 +2580,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2594,10 +2595,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00120_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2609,12 +2610,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00121_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2625,13 +2626,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00122_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
 		}
 
 	}	 
@@ -2642,12 +2643,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00123_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2658,7 +2659,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
@@ -2670,10 +2671,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00124_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2685,12 +2686,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00125_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -2701,7 +2702,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2716,10 +2717,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00126_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2731,12 +2732,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00127_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2748,13 +2749,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.CAIXA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00128_VA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
 		}
 	}
 
@@ -2765,12 +2766,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00129_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00129_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00129_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00129_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00129_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00129_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00129_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2781,7 +2782,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00130_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00130_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00130_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2792,10 +2793,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00130_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00130_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00130_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00130_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2807,12 +2808,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00131_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00131_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00131_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00131_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00131_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00131_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00131_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2824,7 +2825,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00132_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00132_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00132_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2839,10 +2840,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00132_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00132_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00132_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00132_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2854,12 +2855,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00133_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00133_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00133_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00133_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00133_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00133_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00133_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -2871,13 +2872,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00134_VA_RETIRADA_INTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
 		}
 	}
 
@@ -2887,12 +2888,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00135_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00135_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00135_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00135_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00135_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00135_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00135_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2903,7 +2904,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00136_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00136_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00136_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2914,10 +2915,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00136_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00136_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00136_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00136_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2929,12 +2930,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00137_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -2945,7 +2946,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00138_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00138_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00138_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -2960,10 +2961,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00138_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00138_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00138_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00138_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2975,12 +2976,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00139_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -2991,13 +2992,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00140_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
 		}
 
 	}
@@ -3009,12 +3010,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00141_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00141_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00141_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00141_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00141_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00141_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00141_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3025,7 +3026,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00142_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00142_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00142_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3036,10 +3037,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00142_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00142_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00142_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00142_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3051,12 +3052,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00143_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00143_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00143_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00143_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00143_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00143_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00143_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3068,7 +3069,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00144_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00144_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00144_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3083,10 +3084,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00144_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00144_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00144_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00144_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3098,12 +3099,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00145_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00145_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00145_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00145_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00145_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00145_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00145_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3114,13 +3115,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00146_VA_RETIRADA_INTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
 		}
 
 	}
@@ -3132,12 +3133,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00147_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00147_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00147_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00147_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00147_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00147_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00147_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3148,7 +3149,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00148_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00148_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00148_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3160,10 +3161,10 @@ public class AUTSprint1{
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 		
 
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00148_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00148_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00148_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00148_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3175,12 +3176,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00149_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00149_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00149_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00149_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00149_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00149_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00149_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3192,7 +3193,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00150_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00150_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00150_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3208,10 +3209,10 @@ public class AUTSprint1{
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);	
 
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00150_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00150_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00150_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00150_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3223,12 +3224,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00151_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00151_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00151_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00151_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00151_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00151_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00151_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3239,13 +3240,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00152_VA_RETIRADA_EXTERNA_IMEDIATA_SD_CAIXA_PAG_DINHEIRO_PE_LOJA0035"});																																						
 		}
 
 	}
@@ -3257,12 +3258,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00153_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00153_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00153_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00153_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00153_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00153_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00153_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 	}
 
@@ -3272,7 +3273,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00154_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00154_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00154_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3283,10 +3284,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00154_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00154_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00154_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00154_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3298,12 +3299,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00155_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3315,7 +3316,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00156_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00156_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00156_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3330,10 +3331,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00156_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00156_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00156_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00156_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3345,12 +3346,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00157_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3361,13 +3362,13 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CREDITO.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00158_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CREDITO_PE_LOJA0035"});																																						
 		}
 
 	}
@@ -3378,12 +3379,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00159_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00159_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00159_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00159_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00159_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00159_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00159_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3394,7 +3395,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00160_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00160_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00160_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3405,10 +3406,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00160_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00160_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00160_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00160_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3420,12 +3421,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00161_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00161_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00161_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00161_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00161_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00161_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00161_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3437,7 +3438,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00162_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00162_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00162_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3453,10 +3454,10 @@ public class AUTSprint1{
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);	
 
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00162_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00162_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00162_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00162_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3468,12 +3469,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00163_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00163_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00163_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00163_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00163_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00163_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00163_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3485,13 +3486,13 @@ public class AUTSprint1{
 	 */ 
 	public void AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																			
 			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.CARTAO_CELEBRE.toString(), AUT_VA_PLANO_PAGAMENTO.SEM_JUROS_CELEBRE_1X.toString(),cadastrosVA.AUT_NUMERO_DOC_CPF_OUTPUT);			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00164_VA_RETIRADA_EXTERNA_IMEDIATA_PEDIDO_SD_CAIXA_PAG_CARTAO_CELEBRE_PROPRIO_PE_LOJA0035"});																																						
 		}
 	}
 
@@ -3501,12 +3502,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00165_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00165_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00165_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00165_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00165_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00165_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00165_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3518,7 +3519,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00166_PDV_PAGAMENTO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00166_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00166_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																			
 			AUTPDVPagamentoPedido pdvConsultaItem = new AUTPDVPagamentoPedido();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3529,10 +3530,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);			 					
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00166_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00166_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00166_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00166_PDV_PAGAMENTO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3544,12 +3545,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00167_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00167_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00167_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Faturado Total");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00167_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00167_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00167_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00167_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3561,7 +3562,7 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00168_PDV_DEVOLUCAO_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00168_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00168_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																			
 			AUTPDVDevolucaoItem pdvConsultaItem = new AUTPDVDevolucaoItem();
 			java.util.HashMap<String,Object> parametrosConfig = new java.util.HashMap<String,Object>();
 			parametrosConfig.put("AUT_MATERIAL", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM"));
@@ -3576,10 +3577,10 @@ public class AUTSprint1{
 			parametrosConfig.put("AUT_PWD_COORDENADOR", geradorPedidos.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_PDV_LINX, "AUT_PWD_COORDENADOR"));
 
 			pdvConsultaItem.autStartProcess(parametrosConfig);				
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00168_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00168_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00168_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00168_PDV_DEVOLUCAO_PEDIDO_LOJA0035"});																																						
 		}
 
 	}
@@ -3591,12 +3592,12 @@ public class AUTSprint1{
 	 */
 	public void AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_EXECUTANDO.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																			
 			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_PASSED.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 		catch(java.lang.Exception e) {
-			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_TEST_OPERATIONS.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
+			gerTests.autGetProjectManagerOverview().autExecSubStatementsDefault(AUT_SYNC_EXECUTION_STATE.UPDATE_TABLE_PROJECT_DETAIL_ERRO.toString(), new Object[] {"AUT_CN00169_VA_CONSULTA_PEDIDO_LOJA0035"});																																						
 		}
 
 	}

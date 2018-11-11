@@ -30,17 +30,12 @@ import org.junit.Assert;
  *
  */
 public class AUTVA03ConsultaStatusPedido extends AUTVALogin{
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
 	 * SCRIPT DE CONSULTA DE STATUS DE PEDIDO
 	 */
 	@Test
 	public void AUTVA03ConsultaStatusPedido(String numeroPedido, String statusPedido) {
-<<<<<<< HEAD
+		autInsertScreenByScenario();
 		try {
 			autLogoutApplication();
 		}
@@ -48,22 +43,23 @@ public class AUTVA03ConsultaStatusPedido extends AUTVALogin{
 			
 		}
 		autStartLoginDefaultVA();
-=======
+		autInsertScreenByScenario();
 		autStartLoginDefault();
->>>>>>> branch 'master' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
+		autInsertScreenByScenario();
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaInicialLoja.BotaoRecuperarPedido").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.BotaoFiltroPedido").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.OpcoesDeFiltro").click();
 		AUT_AGENT_SILK4J.<DomRadioButton>find("VA.TelaPedidos.OpcoesDeFiltro.OpcaoNumeroPedidoVenda").select();
 		AUT_AGENT_SILK4J.<DomTextField>find("VA.TelaPedidos.OpcoesDeFiltro.InformacoesDeFiltro").setText(numeroPedido);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.TelaPedidos.OpcoesDeFiltro.Buscar").click();
-
+		autInsertScreenByScenario();
 		DomElement status = AUT_AGENT_SILK4J.<DomElement>find("VA.Validacao.Status");
 
 		Assert.assertTrue(status.getText().contains(statusPedido));
 		if(status.getText().contains(statusPedido)) {
 			status.waitForProperty("Text",status.getText(), 20000);
 		}
+		autInsertScreenByScenario();
 		
 		AUT_AGENT_SILK4J.<DomElement>find("VA.FinalizarAplicacao.Sair").click();
 		AUT_AGENT_SILK4J.<AccessibleControl>find("VA.Fechar").click();
