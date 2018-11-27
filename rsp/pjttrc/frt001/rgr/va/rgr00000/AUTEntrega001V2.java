@@ -17,6 +17,7 @@ import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
 import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 import br.lry.components.hmc.AUTHMCCadastros;
 import br.lry.components.pdv.AUTPDVBaseServices;
+import br.lry.components.sap.AUTSAPBaseServices;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
 import br.lry.components.va.AUTVAGeradorPedido;
@@ -80,6 +81,8 @@ public class AUTEntrega001V2{
 	public static AUTVAGeradorPedido geradorPedidos;
 	public static AUTVA03ConsultaStatusPedido consultaStatusPedido;
 	public static br.lry.components.pdv.AUTPDVBaseServices pdv;
+	public static br.lry.components.sap.AUTSAPBaseServices sap;
+	public static br.lry.components.safe.AUTSafeBaseServices safe;
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
 	public static String AUT_LOJA_CADASTRO ="0035";	
 	
@@ -103,6 +106,7 @@ public class AUTEntrega001V2{
 		consultaStatusPedido = new AUTVA03ConsultaStatusPedido();
 		gerTests = new AUTFWKTestObjectBase();
 		pdv = new AUTPDVBaseServices();	
+		sap = new AUTSAPBaseServices();
 		gerTests.autInitConfigurationProjectExecution(AUTEntrega001V2.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
 		gerTests.autSetDesktopAgent(cadastrosHMC.AUT_AGENT_SILK4J);
 	}
@@ -113,12 +117,12 @@ public class AUTEntrega001V2{
 	 * Executa os procedimentos de cadastro
 	 * 
 	 */
-	@Test
+	//@Test
 	public void AUT_IT00001_STHMC_ID00009_FRT009_CN00001A_CADASTRO_USUARIO_LOJA0035() {
 		try {	
 			//cadastrosHMC.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);					
 			AUT_LOJA_CADASTRO = "0035";
-			cadastrosHMC.autCadastrarUsuarioHMC(AUT_LOJA_CADASTRO);			
+			cadastrosHMC.autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);			
 			//cadastrosHMC.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -247,7 +251,7 @@ public class AUTEntrega001V2{
 	 * Executa procedimentos para cadastro de cliente - Estrangeiro
 	 * 
 	 */
-	@Test
+	//@Test
 	public void AUT_IT00007_STVA_ID00009_FRT009_CN00007_CADASTRO_CLIENTE_PJ_LOJA0035() {
 		//cadastrosVA.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
@@ -302,7 +306,7 @@ public class AUTEntrega001V2{
 	 * Executa procedimentos de criação de pedido para pessoa jurídica - Fluxo de saída - Caixa - Pagamento em Dinheiro
 	 * 
 	 */
-	@Test
+	//@Test
 	public void AUT_IT00009_STVA_ID00009_FRT009_CN00009_PEDIDO_CAIXA_SD_PAG_DINHEIRO_PJ_LOJA0035() {
 		try {
 			//geradorPedidos.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
@@ -316,7 +320,7 @@ public class AUTEntrega001V2{
 	}
 	
 	
-	@Test
+	//@Test
 	public void AUT_IT00010_STVA_ID00009_FRT009_CN00010_RETIRADA_EXTERNA_IMEDIATA_SD_PAG_DINHEIRO_PJ_LOJA0035() {
 		try {
 			//geradorPedidos.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -329,19 +333,179 @@ public class AUTEntrega001V2{
 		}
 	}
 	
-	
-	@Test
-	public void AUT_IT00011_STVA_ID00009_FRT009_CN00011_RETIRADA_INTERNA_IMEDIATA_SD_PAG_DINHEIRO_PJ_LOJA0035() {
+	//@Test
+	/**
+	 * 
+	 * 15
+	 * 
+	 * Consulta de status do pedido no VA - Vendas Assistidas
+	 */
+	public void AUT_IT00011_STVA_ID00009_FRT009_CN00015_CONSULTA_PEDIDO_LOJA0035() {
 		try {
-			//geradorPedidos.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			geradorPedidos.AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;			
-			geradorPedidos.autVAGeracaoPedidosV2(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),cadastrosVA.AUT_NUMERO_DOC_CNPJ_OUTPUT);			
-			//geradorPedidos.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
-			//geradorPedidos.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+		}
+
+	}
+
+
+	@Test
+	/**
+	 * 16
+	 * 
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_IT00012_STPDV_ID00009_FRT009_CN00016_PAGAMENTO_PEDIDO_LOJA0035() {
+		try {
+			//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
+			pdv.autStartPagamentoPedido(geradorPedidos.AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
+			if(pdv.autPDVPagamentos().AUT_STATUS_EXECUTION) {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
+			}
+			else {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
+			}
+		}
+		catch(java.lang.Exception e) {
+			if(pdv.autPDVPagamentos().AUT_STATUS_EXECUTION) {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
+			}
+			else {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
+			}		
 		}
 	}
+
+
+	//@Test
+	/**
+	 * 17
+	 * 
+	 * Consulta de status do pedido no VA - Vendas Assistidas
+	 */
+	public void AUT_IT00013_STVA_ID00009_FRT009_CN00017_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
+		try {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Pago");			
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+		}
+		catch(java.lang.Exception e) {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+		}
+	}
+
+	@Test
+	/**
+	 * 10
+	 * 
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_IT00013_STPDV_ID00009_FRT009_CN00010_PAGAMENTO_PEDIDO_LOJA0035() {				
+		try {
+			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
+			pdv.autStartPagamentoPedido(geradorPedidos.AUT_NUMERO_PEDIDO);
+			if(pdv.autPDVPagamentos().AUT_STATUS_EXECUTION) {
+				pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
+			}
+			else {
+				pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
+			}
+		}
+		catch(java.lang.Exception e) {
+			if(pdv.autPDVPagamentos().AUT_STATUS_EXECUTION) {
+				pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
+			}
+			else {
+				pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
+			}		
+		}
+	}
+
+	
+	@Test
+	public void AUT_IT00014_STSAP_ID00009_FRT009_CN00017_PEDIDO_FATURA_FLX_SD_EXTERNA_IMEDIATA_LOJA0035() {
+		try {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+			sap.autSAPFaturamentos().AUT_SAP_RUNTIME_PARAMETERS = sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP);
+			sap.autSAPFaturamentos().autSetParameter("AUT_PEDIDO", "939413");
+			sap.autSAPFaturamentos().autFaturarPedido(sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP));
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+		}
+		catch(java.lang.Exception e) {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+		}
+	}
+
+	
+	@Test
+	/**
+	 * 
+	 * 17
+	 * 
+	 * Consulta de status do pedido no VA - Vendas Assistidas
+	 * 
+	 */
+	public void AUT_IT00015_STVA_ID00009_FRT009_CN00017_CONSULTA_PEDIDO_PAGAMENTO_LOJA0035() {
+		try {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+			consultaStatusPedido.AUTVAConsultaStatusPedidoCompleto(sap.autSAPFaturamentos().autGetParameter("AUT_PEDIDO").toString(), "Liberado para expedição");			
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+		}
+		catch(java.lang.Exception e) {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+		}
+	}
+	//@Test
+	/**
+	 * 18
+	 * 
+	 * Devolução do pedido no PDV
+	 */
+	public void AUT_IT00015_STPDV_ID00009_FRT009_CN00018_DEVOLUCAO_PEDIDO_LOJA0035() {
+		try {
+			//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+			pdv.autStartDevolucaoItem(geradorPedidos.AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
+			if(pdv.autPDVDevolucoes().AUT_STATUS_EXECUTION) {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+			}
+			else {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+			}	
+		}
+		catch(java.lang.Exception e) {
+			if(pdv.autPDVDevolucoes().AUT_STATUS_EXECUTION) {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+			}
+			else {
+				//pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+			}	
+		}
+	}
+
+
+	//@Test
+	/**
+	 * 19
+	 * 
+	 * Consulta de status do pedido no VA - Vendas Assistidas
+	 */
+	public void AUT_IT00016_STVA_ID00009_FRT009_CN00019_CONSULTA_PEDIDO_DEVOLUCAO_LOJA0035() {
+		try {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+			consultaStatusPedido.AUTVA03ConsultaStatusPedido(geradorPedidos.AUT_NUMERO_PEDIDO, "Devolvido");			
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+		}
+		catch(java.lang.Exception e) {
+			//consultaStatusPedido.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+		}
+	}
+
+	
+	
 	
 	
 	/**
@@ -379,7 +543,7 @@ public class AUTEntrega001V2{
 	}
 
 	
-	//@Test
+	@Test
 	/**
 	 * 10
 	 * 
@@ -407,7 +571,7 @@ public class AUTEntrega001V2{
 	}
 
 
-	//@Test
+	@Test
 	/**
 	 * 11
 	 * 
