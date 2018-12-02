@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00000;
+package br.lry.qa.rsp.pjttrc.entregas;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -26,7 +26,7 @@ import br.stk.framework.tests.AUTFWKTestObjectBase;
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class AUTEntrega005 {
+public class AUTEntrega004 {
 	public static AUTHMCCadastros cadastrosHMC;	
 	public static AUTVACadastros cadastrosVA;
 	public static String USUARIO_GLOBAL = "00000000", SENHA_GLOBAL="1234";
@@ -56,7 +56,7 @@ public class AUTEntrega005 {
 		cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT = cadastrosHMC.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD").toString();
 		gerTests = new AUTFWKTestObjectBase();
 				
-		gerTests.autInitConfigurationProjectExecution(AUTEntrega005.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
+		gerTests.autInitConfigurationProjectExecution(AUTEntrega004.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
 	
 	}
 	
