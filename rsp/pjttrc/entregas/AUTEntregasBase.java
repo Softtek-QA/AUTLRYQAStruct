@@ -6,6 +6,8 @@
  */
 package br.lry.qa.rsp.pjttrc.entregas;
 
+import com.sun.org.apache.xerces.internal.parsers.SecurityConfiguration;
+
 import br.lry.components.AUTBaseComponent;
 
 /**
@@ -14,6 +16,7 @@ import br.lry.components.AUTBaseComponent;
  *
  */
 public class AUTEntregasBase extends AUTBaseComponent {
+	java.lang.Class currentSuite = null; 
 	br.lry.qa.rsp.pjttrc.entregas.AUTVAWorkFlowEndToEnd0001 entEndToEnd = null;	
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega001 ent1 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega002 ent2 = null;
@@ -26,6 +29,32 @@ public class AUTEntregasBase extends AUTBaseComponent {
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega009 ent9 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega010 ent10 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega011 ent11 = null;
+	
+	public void autSetCurrentSuite(Class suite) {
+		currentSuite = suite;
+	}
+	
+	public boolean autLoaderCurrentSuite() {
+		try {
+			System.out.println("AUT INFO: LOADER SUITE TESTS : START");
+			if(currentSuite==null) { //Para tratamentos futuros
+				autInitConfigurationProjectExecution(currentSuite,AUT_TEST_STATUS_EXECUCAO.WAIT);
+			}
+			else {
+				autInitConfigurationProjectExecution(currentSuite,AUT_TEST_STATUS_EXECUCAO.WAIT);				
+			}
+			
+			System.out.println("AUT INFO: LOADER SUITE TESTS : END");
+			return true;
+		}
+		catch(java.lang.Exception e) {
+			System.out.println("AUT ERROR: LOADER SUITE TESTS");
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 	
 	
 	/**

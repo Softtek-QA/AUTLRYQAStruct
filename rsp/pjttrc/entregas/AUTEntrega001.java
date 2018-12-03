@@ -205,7 +205,7 @@ public class AUTEntrega001{
 	
 	public void AUT_INIT() {
 		AUT_00001_FRT001();
-		AUT_AUT_IT00000_STCFG_ID00001_FRT001_CN00000();
+		AUT_AUT_IT99999_STCFG_ID00001_FRT001_CN00000();
 	}
 	/**
 	 * 
@@ -234,7 +234,14 @@ public class AUTEntrega001{
 		AUT_LOJA_CADASTRO = "0035";
 	}
 
-	
+	public void AUT_AUT_IT99999_STCFG_ID00001_FRT001_CN00000() {	
+		hmc = new AUTHMCBaseServices();
+		pdv = new AUTPDVBaseServices();	
+		safe = new AUTSafeBaseServices();
+		sap = new AUTSAPBaseServices();
+		va = new AUTVABaseServices();
+		AUT_LOJA_CADASTRO = "0035";
+	}
 	/**
 	 * 
 	 * Executa os procedimentos de cadastro

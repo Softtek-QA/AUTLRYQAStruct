@@ -39,7 +39,7 @@ public class AUTEntrega002 {
 	
 	public void AUT_INIT() {
 		AUT_00004_FRT004();
-		AUT_IT00000_STCFG_ID00003_FRT003_CN00000_CONFIG();		
+		AUT_IT99999_STCFG_ID00003_FRT003_CN00000_CONFIG();	
 	}
 	
 	@Test
@@ -67,7 +67,15 @@ public class AUTEntrega002 {
 	
 	}
 	
-	
+	public void AUT_IT99999_STCFG_ID00003_FRT003_CN00000_CONFIG() {
+		
+		hmc = new AUTHMCBaseServices();
+		va = new AUTVABaseServices();
+			
+		hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT = hmc.autHMCCadastros().autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER").toString();
+		hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT = hmc.autHMCCadastros().autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD").toString();
+		gerTests = new AUTFWKTestObjectBase();					
+	}
 	/**
 	 * Executa os procedimentos de cadastro de usuário no HMC
 	 */

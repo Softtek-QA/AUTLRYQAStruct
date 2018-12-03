@@ -196,6 +196,8 @@ public class AUTVAWorkFlowEndToEnd0001{
 
 	@Test
 	public void AUT_CFG_INIT() {
+		entregas.autSetCurrentSuite(AUTVAWorkFlowEndToEnd0001.class);
+		entregas.autLoaderCurrentSuite();
 		entregas.autEntrega001().AUT_INIT();
 		entregas.autEntrega002().AUT_INIT();
 	}
