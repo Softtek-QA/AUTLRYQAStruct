@@ -200,7 +200,9 @@ public class AUTVAWorkFlowEndToEnd0001{
 		entregas.autLoaderCurrentSuite();
 		entregas.autEntrega001().AUT_INIT();
 		entregas.autEntrega002().AUT_INIT();
+		entregas.autEntrega003().AUT_INIT();
 	}
+	
 	
 	/**
 	 * 
@@ -1808,5 +1810,277 @@ public class AUTVAWorkFlowEndToEnd0001{
 		}		
 	}	
 	
+	
+	
+	
+	
+	
+	
+	
+	//***********************************************************************************************************************	
+	//***********************************************************************************************************************	
+	//*********       LEROY MERLIN: ENTREGA 3 --> MÓDULO : TELEVENDAS - WORKFLOW END-TO-END       *****************************
+	//*********																					 ****************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+	//***********************************************************************************************************************
+
+	
+	@Test
+	/**
+	 * 01
+	 * 
+	 * CN00001 - Realizar a troca de loja utilizando usuario televenda
+	 */
+	public void AUT_IT00100_STVA_ID00009_FRT009_CN00001_TROCA_LOJA_LOJA0045() {
+		try{			
+			entregas.autEntrega003().AUT_IT00001_STVA_ID00009_FRT009_CN00001_TROCA_LOJA_LOJA0045();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 02
+	 * 
+	 * CN00002 - Pedido Televendas pagamento Cart Créd e ign. Antifraude
+	 */
+	public void AUT_IT00101_STVA_ID00009_FRT009_CN00002_IGNORAR_ANTIFRAUDE_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00002_STVA_ID00009_FRT009_CN00002_IGNORAR_ANTIFRAUDE_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	@Test
+	/**
+	 * 03
+	 * 
+	 * CN00004 - Pedido Televendas pagamento Cart Créd e Apro. Auto. antifraude
+	 */
+	public void AUT_IT00102_STVA_ID00009_FRT009_CN00003_APROVAR_ANTIFRAUDE_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00003_STVA_ID00009_FRT009_CN00003_APROVAR_ANTIFRAUDE_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	@Test
+	/**
+	 * 04
+	 * 
+	 * CN00004 - Pedido Televendas pagamento Cart Créd e Apr. Auto. Antifraude
+	 */
+	public void AUT_IT00103_STVA_ID00009_FRT009_CN00004_APROVAR_AUTO_ANTIFRAUDE_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00004_STVA_ID00009_FRT009_CN00004_APROVAR_AUTO_ANTIFRAUDE_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 06
+	 * 
+	 * CN00006 - Cartão caindo na antifraude e reprovando
+	 */
+	public void AUT_IT00104_STVA_ID00009_FRT009_CN00005_CARTAO_ANTIFRAUDE_REPROVA_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00005_STVA_ID00009_FRT009_CN00005_CARTAO_ANTIFRAUDE_REPROVA_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 07
+	 * 
+	 * CN00007 - Cartão caindo na antifraude e reprovando
+	 */
+	public void AUT_IT00105_STVA_ID00009_FRT009_CN00006_CARTAO_ANTIFRAUDE_REPROVA_ATIVA_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00006_STVA_ID00009_FRT009_CN00006_CARTAO_ANTIFRAUDE_REPROVA_ATIVA_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	@Test
+	/**
+	 * 08
+	 * 
+	 * CN00008 - Pedido Televendas pag Cart Créd e Voucher pedido aprov comercial
+	 */
+	public void AUT_IT00106_STVA_ID00009_FRT009_CN00007_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00007_STVA_ID00009_FRT009_CN00007_PEDIDO_APROVACAO_COMERCIAL_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 09
+	 * 
+	 * CTP00001 - Pedido Televendas pag Cart Créd e Voucher pedido reeditado
+	 */
+	public void AUT_IT00107_STVA_ID00009_FRT009_CN00008_PEDIDO_REEDITADO_Voucher_LOJA0045() {
+		try{			
+			entregas.autEntrega003().AUT_IT00008_STVA_ID00009_FRT009_CN00008_PEDIDO_REEDITADO_Voucher_LOJA0045();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 11
+	 * 
+	 * CN00011 - Pedido Televendas pag Cart Créd e Vale Créd cart antifra e reprov
+	 */
+	public void AUT_IT00108_STVA_ID00009_FRT009_CN00009_PEDIDO_ANTIFRAUDE_REPROVADO_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00009_STVA_ID00009_FRT009_CN00009_PEDIDO_ANTIFRAUDE_REPROVADO_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}	
+	
+	
+	@Test
+	/**
+	 * 12
+	 * 
+	 * CN00012 - Pedido Televenda pag Cart Créd e Vale Créd ign. antifraude e rep.
+	 */
+	public void AUT_IT00109_STVA_ID00009_FRT009_CN00010_PEDIDO_IGNORAR_ANTIFRAUDE_REPROVADO_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00010_STVA_ID00009_FRT009_CN00010_PEDIDO_IGNORAR_ANTIFRAUDE_REPROVADO_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 13
+	 * 
+	 * CN00013 - Pedido Televenda pag Cart Créd e Vale Créd, na aprov. Comercial
+	 */
+	public void AUT_IT00110_STVA_ID00009_FRT009_CN00011_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00011_STVA_ID00009_FRT009_CN00011_PEDIDO_APROVACAO_COMERCIAL_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}	
+	
+	@Test
+	/**
+	 * 14
+	 * 
+	 * CN00014 - Pedido Televenda pag Cart Créd e Vale Créd, pedido reeditado
+	 */
+	public void AUT_IT00111_STVA_ID00009_FRT009_CN00012_PEDIDO_REEDITADO_LOJA0045() {
+		try{			
+			entregas.autEntrega003().AUT_IT00012_STVA_ID00009_FRT009_CN00012_PEDIDO_REEDITADO_LOJA0045();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	
+	@Test
+	/**
+	 * 15
+	 * 
+	 * CN00015 - Pedido Televendas com loja diferente do pedido e depois editandow
+	 */
+	public void AUT_IT00112_STVA_ID00009_FRT009_CN00013_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_EDITANDO_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00013_STVA_ID00009_FRT009_CN00013_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_EDITANDO_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 16
+	 * 
+	 * CN00016 -Pedido Televendas com loja diferente do pedido e depois copiando
+	 */
+	public void AUT_IT00113_STVA_ID00009_FRT009_CN00014_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_LOJA0045() {
+		try{			
+			entregas.autEntrega003().AUT_IT00014_STVA_ID00009_FRT009_CN00014_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_LOJA0045();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	@Test
+	/**
+	 * 17
+	 * 
+	 * CN00017 - Usuário televendas copiando um pedido do canal Loja
+	 */
+	public void AUT_IT00114_STVA_ID00009_FRT0097_CN00015_COPIAR_PEDIDO_CANAL_LOJA_LOJA0045() {
+		try{			
+			entregas.autEntrega003().AUT_IT00015_STVA_ID00009_FRT0097_CN00015_COPIAR_PEDIDO_CANAL_LOJA_LOJA0045();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 18
+	 * 
+	 * CN00018 - Pedido do canal televendas com opção de pagamento "Pagar na loja"
+	 */
+	public void AUT_IT000115_STVA_ID00009_FRT009_CN00016_PEDIDO_TELEVENDAS_PAGAR_LOJA_LOJA0035() {
+		try{			
+			entregas.autEntrega003().AUT_IT00016_STVA_ID00009_FRT009_CN00016_PEDIDO_TELEVENDAS_PAGAR_LOJA_LOJA0035();
+		}
+		catch(java.lang.Exception e) {
+			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);
+		}
+	}
 }
 

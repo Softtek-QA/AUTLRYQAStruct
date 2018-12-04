@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.lry.components.va;
+package br.lry.qa.rsp.pjttrc.frt001.rgr.va.rgr00001;
 
 import com.borland.silktest.jtf.Desktop;
 import com.borland.silktest.jtf.TestObject;
@@ -13,6 +13,7 @@ import com.borland.silktest.jtf.xbrowser.DomLink;
 import com.borland.silktest.jtf.xbrowser.DomTextField;
 
 import br.lry.components.AUTBaseComponent;
+import br.lry.components.AUTVABaseComponent;
 
 import com.borland.silktest.jtf.xbrowser.BrowserWindow;
 import com.borland.silktest.jtf.xbrowser.DomButton;
@@ -30,7 +31,26 @@ import org.junit.Assert;
  * @author Softtek - QA
  *
  */
-public class AUTVA03ConsultaStatusPedido extends AUTVALogin{
+public class AUTVA03ConsultaStatusPedido extends AUTVABaseComponent{
+	
+	public boolean AUTVA03ConsultaPedido(String numeroPedido) {
+		try {
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.BotaoFiltroPedido").click();
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.OpcoesDeFiltro").click();
+			AUT_AGENT_SILK4J.<DomRadioButton>find("VA.TelaPedidos.OpcoesDeFiltro.OpcaoNumeroPedidoVenda").select();
+			AUT_AGENT_SILK4J.<DomTextField>find("VA.TelaPedidos.OpcoesDeFiltro.InformacoesDeFiltro").setText(numeroPedido);
+			AUT_AGENT_SILK4J.<DomButton>find("VA.TelaPedidos.OpcoesDeFiltro.Buscar").click();
+
+			return true;
+		
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+			return false;
+		}
+
+	}
+
 	/**
 	 * SCRIPT DE CONSULTA DE STATUS DE PEDIDO
 	 */
@@ -45,7 +65,7 @@ public class AUTVA03ConsultaStatusPedido extends AUTVALogin{
 		}
 		autStartLoginDefaultVA();
 		autInsertScreenByScenario();
-		autStartLoginDefault();
+		//autStartLoginDefault();
 		autInsertScreenByScenario();
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaInicialLoja.BotaoRecuperarPedido").click();
 		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.BotaoFiltroPedido").click();

@@ -1,380 +1,396 @@
+/**
+ * 
+ */
 package br.lry.qa.rsp.pjttrc.entregas;
+
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
-import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
-import br.lry.components.hmc.AUTHMCCadastros;
-import br.lry.components.va.AUTVACadastros;
-import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
-import br.lry.components.va.AUTVACadastros.AUT_VA_PROPRIEDADE_RESIDENCIA;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_CLIENTE_INVALIDO;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_CONTATO;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_ENDERECO;
-import br.lry.components.va.AUTVACadastros.AUT_VA_TIPO_RESIDENCIA;
-import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
-import br.lry.functions.AUTProjectsFunctions;
-import br.stk.framework.tests.AUTFWKTestObjectBase;
+
 
 /**
  * 
- *Regressivo de testes Cadatros de Cliente - Vendas Assistidas
+ *Regressivo de testes integrados - Vendas Assistidas - Televendas
  * 
  * @author Softtek-QA
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class AUTEntrega003 {
-	public static AUTHMCCadastros cadastrosHMC;	
-	public static AUTVACadastros cadastrosVA;
-	public static String USUARIO_GLOBAL = "00000000", SENHA_GLOBAL="1234";
-	public static String AUT_LOJA_CADASTRO ="0035";	
-	public static AUTFWKTestObjectBase gerTests;
+public class AUTEntrega003{	
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00001.CN00001 cn00001;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00002.CN00002 cn00002;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00003.CN00003 cn00003;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004.CN00004 cn00004;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00006.CN00006 cn00006;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00007.CN00007 cn00007;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00008.CN00008 cn00008;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00009.CN00009 cn00009;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00011.CN00011 cn00011;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00012.CN00012 cn00012;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00013.CN00013 cn00013;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00014.CN00014 cn00014;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00015.CN00015 cn00015;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00016.CN00016 cn00016;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017.CN00017 cn00017;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00018.CN00018 cn00018;
+
+
+
 	String hostExec = "192.168.0.116";
-	private String numCPF;
 	
-	@Test
-	public void AUT_00004_FRT004() {
+	
+//	@Test
+	public void AUT_00001_FRT001() {
 		
 	}
 	
+	public void AUT_INIT() {
+		 AUT_CFG_ID00009_FRT009_CN00000();
+	}
 	
 	/**
 	 * 
-	 * Configuração dos parametros de inicialização para realização de cadastro de usuário no HMC
 	 * 
+	 * Mapeamento das configurações para execução dos cenários do módulo de Televendas
+	 * @param parametro - Parametros de entrada do sistema
+	 * @return
 	 */
 	@Test
-	public void AUT_IT00000_STCFG_ID00004_FRT004_CN00000_CONFIG() {
-		
-		cadastrosHMC = new AUTHMCCadastros();
-		cadastrosVA = new AUTVACadastros();
-			
-		cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT = cadastrosHMC.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER").toString();
-		cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT = cadastrosHMC.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD").toString();
-		gerTests = new AUTFWKTestObjectBase();
-				
-		gerTests.autInitConfigurationProjectExecution(AUTEntrega003.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
-	
-	}
-	
-	
-	/**
-	 * Executa os procedimentos de cadastro de usuário no HMC
-	 */
-	@Test
-	public void AUT_IT00001_STHMC_ID00004_FRT004_CN00001_CADASTRO_USUARIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			AUT_LOJA_CADASTRO = "0035";
-			cadastrosHMC.autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-	
-	/**
-	 * 
-	 * Configura os parametros de inicialização para cadastros de clientes-VA
-	 * 
-	 */
-	@Test
-	public void AUT_IT00002_STCFG_ID00004_FRT004_CN00002_VA_CADASTRO_CLIENTES() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT);
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT);  
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN, "AUT_USER_ID", cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT);
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN, "AUT_NOVA_SENHA", cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT);
-		
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_USER", cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT);
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_PASSWORD", cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);			
-		}
-		
-	}
-			
-	@Test
-	/**
-	 * CN00001 - Realizar um cadastro de um cliente Pessoa Juridica
-	 */
-	public void AUT_IT00003_STVA_ID00004_FRT004_CN00003_CADASTRO_CLIENTE_PJ_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.COMERCIAL, AUT_VA_TIPO_RESIDENCIA.DEPOSITO_OU_GALPAO);	
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-	
-	@Test
-	/**
-	 * CN00002 - Realizar um cadastro de um cliente Pessoa Fisica
-	 */
-	public void AUT_IT00004_STVA_ID00004_FRT004_CN00004_CADASTRO_CLIENTE_PF_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.CASA);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		}
-	}
-	
-	
-	@Test
-	/**
-	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
-	 */
-	public void AUT_IT00005_STVA_ID00004_FRT004_CN00005_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.ESTRANGEIRO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-			}
+	public void AUT_CFG_ID00009_FRT009_CN00000() {	
+		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00001.CN00001();
+		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00002.CN00002();
+		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00003.CN00003();
+		cn00004 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004.CN00004();
+		cn00006 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00006.CN00006();
+		cn00008 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00008.CN00008();
+		cn00009 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00009.CN00009();
+		cn00011 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00011.CN00011();
+		cn00012 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00012.CN00012();
+		cn00013 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00013.CN00013();
+		cn00014 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00014.CN00014();
+		cn00015 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00015.CN00015();
+		cn00016 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00016.CN00016();
+		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017.CN00017();
+		cn00018 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00018.CN00018();
 	}
 
 	
 	@Test
 	/**
-	 * CN00004 -Realizar um cadastro de um cliente adicionando mais de um telefone
+	 * 01
+	 * 
+	 * CN00001 - Realizar a troca de loja utilizando usuario televenda
 	 */
-	public void AUT_IT00006_STVA_ID00004_FRT004_CN00006_CADASTRO_CLIENTE_VARIOS_TELEFONES_LOJA00035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClienteMultiplosTelefonesVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.FISICA_ATUALIZACAO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-	
-	@Test
-	/**
-	 * CN00005 - Realizar um cadastro de um cliente com um CPF que já cadastrado
-	 */
-	public void AUT_IT00007_STVA_ID00004_FRT004_CN00007_REQUISITO_CADASTRO_CLIENTE_PF_PREVIAMENTE_CADASTRADO() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);			
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.FISICA_ATUALIZACAO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CONDOMINIO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+	public void AUT_IT00001_STVA_ID00009_FRT009_CN00001_TROCA_LOJA_LOJA0045() {
+		try {
 			
+			cn00001.autStartProcess();
+
 		}
+
 		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
-
 	
 	
 	@Test
 	/**
-	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
+	 * 02
+	 * 
+	 * CN00002 - Pedido Televendas pagamento Cart Créd e ign. Antifraude
 	 */
-	public void AUT_IT00008_STVA_ID00004_FRT004_CN00008_CADASTRO_CLIENTE_PJ_PREVIAMENTE_CADASTRADO() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.JURIDICA_ATUALIZACAO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CONDOMINIO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
+	public void AUT_IT00002_STVA_ID00009_FRT009_CN00002_IGNORAR_ANTIFRAUDE_LOJA0035() {
+		try {
+			
+			cn00002.autStartProcess();
+
+		}
+
 		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	/**
+	 * 03
+	 * 
+	 * CN00004 - Pedido Televendas pagamento Cart Créd e Apro. Auto. antifraude
+	 */
+	public void AUT_IT00003_STVA_ID00009_FRT009_CN00003_APROVAR_ANTIFRAUDE_LOJA0035() {
+		try {
+			
+			cn00003.autStartProcess();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	/**
+	 * 04
+	 * 
+	 * CN00004 - Pedido Televendas pagamento Cart Créd e Apr. Auto. Antifraude
+	 */
+	public void AUT_IT00004_STVA_ID00009_FRT009_CN00004_APROVAR_AUTO_ANTIFRAUDE_LOJA0035() {
+		try {
+			
+			cn00004.autStartProcess();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 06
+	 * 
+	 * CN00006 - Cartão caindo na antifraude e reprovando
+	 */
+	public void AUT_IT00005_STVA_ID00009_FRT009_CN00005_CARTAO_ANTIFRAUDE_REPROVA_LOJA0035() {
+		try {
+			
+			cn00006.autStartProcess06();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 07
+	 * 
+	 * CN00007 - Cartão caindo na antifraude e reprovando
+	 */
+	public void AUT_IT00006_STVA_ID00009_FRT009_CN00006_CARTAO_ANTIFRAUDE_REPROVA_ATIVA_LOJA0035() {
+		try {
+			
+			cn00007.autStartProcess07();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	/**
+	 * 08
+	 * 
+	 * CN00008 - Pedido Televendas pag Cart Créd e Voucher pedido aprov comercial
+	 */
+	public void AUT_IT00007_STVA_ID00009_FRT009_CN00007_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
+		try {
+			
+			cn00008.autStartProcess08();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 09
+	 * 
+	 * CTP00001 - Pedido Televendas pag Cart Créd e Voucher pedido reeditado
+	 */
+	public void AUT_IT00008_STVA_ID00009_FRT009_CN00008_PEDIDO_REEDITADO_Voucher_LOJA0045() {
+		try {
+			
+			cn00009.autStartProcess();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 11
+	 * 
+	 * CN00011 - Pedido Televendas pag Cart Créd e Vale Créd cart antifra e reprov
+	 */
+	public void AUT_IT00009_STVA_ID00009_FRT009_CN00009_PEDIDO_ANTIFRAUDE_REPROVADO_LOJA0035() {
+		try {
+			
+			cn00011.autStartProcess11();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}	
 	
 	
 	@Test
 	/**
-	 * CN00007 - Realizar cadastro de cliente utilizando "Não sei meu cep"
+	 * 12
+	 * 
+	 * CN00012 - Pedido Televenda pag Cart Créd e Vale Créd ign. antifraude e rep.
 	 */
-	public void AUT_IT00009_STVA_ID00004_FRT004_CN00009_CADASTRO_CLIENTE_NAO_SEI_CEP() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF", AUTProjectsFunctions.gerarCPF());
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.CASA);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-	
-	@Test
-	/**
-	 * CN00008 - Realizar cadastro de cliente por um cpf invalido
-	 */
-	public void AUT_IT00010_STVA_ID00004_FRT004_CN00010_CADASTRO_CLIENTE_PF_COM_CPF_INVALIDO() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClienteInvalido(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_TIPO_CLIENTE_INVALIDO.CPF);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-	
-	@Test
-	/**
-	 * CN00009 - Realizar cadastro de cliente por cep invalido
-	 */
-	public void AUT_IT00011_STVA_ID00004_FRT004_CN00011_CADASTRO_CLIENTE_PF_COM_CEP_INVALIDO() {
+	public void AUT_IT00010_STVA_ID00009_FRT009_CN00010_PEDIDO_IGNORAR_ANTIFRAUDE_REPROVADO_LOJA0035() {
 		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF", AUTProjectsFunctions.gerarCPF());
-			cadastrosVA.autCadastroClienteCEPInvalido(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-
-	@Test
-	/**
-	 * CN00010 - Realizar cadastro com mais de um endereço
-	 */
-	public void AUT_IT00012_STVA_ID00004_FRT004_CN00012_CADASTRO_CLIENTE_PF_COM_VARIOS_ENDERECOS() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF", AUTProjectsFunctions.gerarCPF());
-			cadastrosVA.autCadastroClienteMultiplosEnderecosVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CASA, AUT_VA_TIPO_ENDERECO.COBRANCA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
-		}
-	}
-	
-
-	
-	@Test
-	public void AUT_IT00013_STVA_ID00004_FRT004_CN00013_REQUISITO_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO(){
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.COMERCIAL, AUT_VA_TIPO_RESIDENCIA.DEPOSITO_OU_GALPAO);
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", AUTProjectsFunctions.gerarCNPJ());
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
-		}		
-	}
-	
-	
-	@Test
-	/**
-	 * CN00011 - Cadastrar um cliente PJ e classificá-lo como Exceção
-	 */
-	public void AUT_IT00014_STVA_ID00004_FRT004_CN00014_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", cadastrosVA.AUT_NUMERO_DOC_CNPJ_OUTPUT);
-			cadastrosVA.autCadastroClientePJExcecao(cadastrosVA.AUT_NUMERO_DOC_CNPJ_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, false);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		
-		}
-	}
-	
-	
-	@Test
-	/**
-	 * CN00012 - Classificar um cliente PJ já cadastrado como Exceção
-	 */
-	public void AUT_IT00015_STVA_ID00004_FRT004_CN00015_CLASSIFICAR_CLIENTE_PJ_COMO_EXCECAO() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			
-			cadastrosVA.autCadastroClientePJExcecao(cadastrosVA.AUT_NUMERO_DOC_CNPJ_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, true);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
+			cn00012.autStartProcess12();
 
 		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-	
-	
-	@Test
-	/**
-	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
-	 */
-	public void AUT_IT00016_STVA_ID00004_FRT004_CN00016A_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", AUTProjectsFunctions.gerarCNPJ());
-			cadastrosVA.autCadastroClienteVA(cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.COMERCIAL, AUT_VA_TIPO_RESIDENCIA.DEPOSITO_OU_GALPAO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-			
 
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 	
 	
 	@Test
 	/**
-	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
+	 * 13
+	 * 
+	 * CN00013 - Pedido Televenda pag Cart Créd e Vale Créd, na aprov. Comercial
 	 */
-	public void AUT_IT00017_STVA_ID00004_FRT004_CN00016B_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
+	public void AUT_IT00011_STVA_ID00009_FRT009_CN00011_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
 		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autCadastroClientePJExcecao(cadastrosVA.AUT_NUMERO_DOC_CNPJ_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, false);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 		
-	}
+			cn00013.autStartProcess();
 
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}	
+	
 	@Test
 	/**
-	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
+	 * 14
+	 * 
+	 * CN00014 - Pedido Televenda pag Cart Créd e Vale Créd, pedido reeditado
 	 */
-	public void AUT_IT00018_STVA_ID00004_FRT004_CN00017_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
+	public void AUT_IT00012_STVA_ID00009_FRT009_CN00012_PEDIDO_REEDITADO_LOJA0045() {
 		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cadastrosVA.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", cadastrosVA.AUT_NUMERO_DOC_CNPJ_OUTPUT);
-			cadastrosVA.autCadastroFilhoPJExcecao(cadastrosVA.AUT_NUMERO_DOC_CNPJ_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_OUTPUT, cadastrosHMC.AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO, AUT_VA_PROPRIEDADE_RESIDENCIA.FINANCIADA);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);			
+			
+			cn00014.autStartProcess();
+
 		}
+
 		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 	
+	
+	
+	@Test
+	/**
+	 * 15
+	 * 
+	 * CN00015 - Pedido Televendas com loja diferente do pedido e depois editandow
+	 */
+	public void AUT_IT00013_STVA_ID00009_FRT009_CN00013_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_EDITANDO_LOJA0035() {
+		try {
+			
+			cn00015.autStartProcess();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 16
+	 * 
+	 * CN00016 -Pedido Televendas com loja diferente do pedido e depois copiando
+	 */
+	public void AUT_IT00014_STVA_ID00009_FRT009_CN00014_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_LOJA0045() {
+		try {
+			
+			cn00016.autStartProcess();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	/**
+	 * 17
+	 * 
+	 * CN00017 - Usuário televendas copiando um pedido do canal Loja
+	 */
+	public void AUT_IT00015_STVA_ID00009_FRT0097_CN00015_COPIAR_PEDIDO_CANAL_LOJA_LOJA0045() {
+		try {
+			
+			cn00017.autStartProcess();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 18
+	 * 
+	 * CN00018 - Pedido do canal televendas com opção de pagamento "Pagar na loja"
+	 */
+	public void AUT_IT00016_STVA_ID00009_FRT009_CN00016_PEDIDO_TELEVENDAS_PAGAR_LOJA_LOJA0035() {
+		try {
+			
+			cn00018.autStartProcess();
+
+		}
+
+		catch(java.lang.Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
 }
+	
