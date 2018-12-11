@@ -2,7 +2,9 @@ package br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00011;
 
 import org.junit.Test;
 
-public class CN00011 {
+import br.lry.components.AUTBaseComponent;
+
+public class CN00011  extends AUTBaseComponent{
 
 	@Test
 	public void autStartProcess11() {

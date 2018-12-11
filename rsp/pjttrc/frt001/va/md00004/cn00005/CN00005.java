@@ -1,12 +1,12 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00005;
 
 import org.junit.Test;
 
 import br.lry.components.AUTBaseComponent;
 
-public class CN00004  extends AUTBaseComponent{
+public class CN00005  extends AUTBaseComponent{
 	
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004.CTP00001 cn00004CTP00001;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004.CTP00001 cn00005CTP00001;
 
 	
 	/**
@@ -16,9 +16,9 @@ public class CN00004  extends AUTBaseComponent{
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
 	 */
-	public void autInitConfigurationCN00004() {
+	public void autInitConfigurationCN00005() {
 	
-		cn00004CTP00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004.CTP00001();
+		cn00005CTP00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004.CTP00001();
 	}
 	
 
@@ -33,8 +33,8 @@ public class CN00004  extends AUTBaseComponent{
 	
 	public void autStartProcess() {
 		
-		autInitConfigurationCN00004();
-		cn00004CTP00001.autAprovaAutoAntifraude();
+		autInitConfigurationCN00005();
+		cn00005CTP00001.autAprovaAutoAntifraude();
 	}
 
 

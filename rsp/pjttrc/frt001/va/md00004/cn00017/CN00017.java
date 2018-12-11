@@ -1,8 +1,9 @@
 package br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017;
 
+import br.lry.components.AUTBaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
-public class CN00017 {
+public class CN00017 extends AUTBaseComponent{
 	
 	public static br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017.CTR00001 cn00017CTR00001;
 	public static br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017.CTP00001 cn00017CTP00001;

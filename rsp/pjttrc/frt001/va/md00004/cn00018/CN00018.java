@@ -1,6 +1,8 @@
 package br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00018;
 
-public class CN00018 {
+import br.lry.components.AUTBaseComponent;
+
+public class CN00018 extends AUTBaseComponent{
 	
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00018.CTP00001 cn00018CTP00001;
 

@@ -2,7 +2,9 @@ package br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00001;
 
 import org.junit.Test;
 
-public class CN00001 {
+import br.lry.components.AUTBaseComponent;
+
+public class CN00001 extends AUTBaseComponent{
 	
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00001.CTP00001 cn00001CTP00001;
 
