@@ -22,7 +22,6 @@ import br.lry.components.safe.AUTSafeBaseComponent.AUT_SAFE_TYPE_PERSONS;
 import br.lry.components.safe.AUTSafeBaseServices;
 import br.lry.components.safe.AUTSafeConsultaValeTroca;
 import br.lry.components.sap.AUTSAPBaseServices;
-import br.lry.components.va.AUTVA03ConsultaStatusPedido;
 import br.lry.components.va.AUTVABaseServices;
 import br.lry.components.va.AUTVACadastros;
 import br.lry.components.va.AUTVACadastros.AUT_VA_CADASTROS;
@@ -258,8 +257,7 @@ public class AUTEntrega001{
 	public void AUT_IT00001_STHMC_ID00003_FRT003_CN00001_CADASTRO_USUARIO_LOJA0035() {
 		try {	
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);								
-			hmc.autHMCCadastros().autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);			
-			
+			hmc.autHMCCadastros().autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -279,6 +277,9 @@ public class AUTEntrega001{
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT);
 			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);  		
+			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT);
+			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);
+			
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
 		
 		}
@@ -441,7 +442,7 @@ public class AUTEntrega001{
 		try {
 			safe = new AUTSafeBaseServices();
  			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
-			safe.autSAFEGerarVoucher(AUT_SAFE_TYPE_PERSONS.FISICA,AUT_SAFE_TIPO_CONVENIO.ACORDO_EXTRAJUDICIAL);
+			safe.autSAFEGerarVoucher(AUT_SAFE_TYPE_PERSONS.FISICA,AUT_SAFE_TIPO_CONVENIO.ACORDO_EXTRAJUDICIAL,va.autVACadastros(false).AUT_NUMERO_DOC_CPF_OUTPUT,va.autVACadastros(false).autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_NOME").toString());
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
 		}
 		catch(java.lang.Exception e) {
@@ -460,7 +461,7 @@ public class AUTEntrega001{
 		try {
 			safe = new AUTSafeBaseServices();
  			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
-			safe.autSAFEGerarVoucher(AUT_SAFE_TYPE_PERSONS.ESTRANGEIRO,AUT_SAFE_TIPO_CONVENIO.CLUBE_DO_ESPECIALISTA);
+ 			safe.autSAFEGerarVoucher(AUT_SAFE_TYPE_PERSONS.FISICA,AUT_SAFE_TIPO_CONVENIO.CLUBE_DO_ESPECIALISTA,va.autVACadastros(false).autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF_ESTRANGEIRO").toString(),va.autVACadastros(false).autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_NOME_ESTRANGEIRO").toString());
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
 		}
 		catch(java.lang.Exception e) {
@@ -480,7 +481,7 @@ public class AUTEntrega001{
 		try {
 			safe = new AUTSafeBaseServices();
  			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
-			safe.autSAFEGerarVoucher(AUT_SAFE_TYPE_PERSONS.JURIDICA,AUT_SAFE_TIPO_CONVENIO.CLUBE_DO_ESPECIALISTA);
+ 			safe.autSAFEGerarVoucher(AUT_SAFE_TYPE_PERSONS.JURIDICA,AUT_SAFE_TIPO_CONVENIO.CONSTRUTORA,va.autVACadastros(false).AUT_NUMERO_DOC_CNPJ_OUTPUT,va.autVACadastros(false).autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_NOME_PJ").toString());
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
 		}
 		catch(java.lang.Exception e) {
@@ -550,8 +551,9 @@ public class AUTEntrega001{
 	 */
 	public void AUT_IT00014_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0035() {
 		try {
+
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -597,7 +599,7 @@ public class AUTEntrega001{
 	public void AUT_IT00016_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -610,24 +612,10 @@ public class AUTEntrega001{
 	public void AUT_IT00017_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PF_LOJA0035() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			sap.autSAPFaturamentos().AUT_SAP_RUNTIME_PARAMETERS = sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP);
-			sap.autSAPFaturamentos().autSetParameter("AUT_PEDIDO", va.autVAPedidos(false).AUT_NUMERO_PEDIDO);
-			sap.autSAPFaturamentos().autFaturarPedido(sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP));
-			try {
-				sap.autSAPFaturamentos().autSAPLogout();
-			}
-			catch(java.lang.Exception e) {
-				sap.autSAPFaturamentos();
-			}
+			sap.autSAPFaturarPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO);			
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
-			try {
-				sap.autSAPFaturamentos().autSAPLogout();
-			}
-			catch(java.lang.Exception e2) {
-				sap.autSAPFaturamentos();
-			}
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
 		}
 	}
@@ -642,7 +630,7 @@ public class AUTEntrega001{
 	public void AUT_IT00018_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -689,7 +677,7 @@ public class AUTEntrega001{
 	public void AUT_IT00020_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -744,6 +732,7 @@ public class AUTEntrega001{
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
 			va.autVAPedidos().autVAGeracaoPedidosV2(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA.toString(), AUT_VA_MEIOS_PAGAMENTO.DINHEIRO.toString(), AUT_VA_PLANO_PAGAMENTO.A_VISTA.toString(),va.autVACadastros(false).AUT_NUMERO_DOC_PASSAPORTE_OUTPUT);			
+			
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -762,7 +751,7 @@ public class AUTEntrega001{
 	public void AUT_IT00023_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -808,7 +797,7 @@ public class AUTEntrega001{
 	public void AUT_IT00024_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -821,24 +810,10 @@ public class AUTEntrega001{
 	public void AUT_IT00025_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_ESTRANGEIRO_LOJA0035() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			sap.autSAPFaturamentos().AUT_SAP_RUNTIME_PARAMETERS = sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP);
-			sap.autSAPFaturamentos().autSetParameter("AUT_PEDIDO", va.autVAPedidos(false).AUT_NUMERO_PEDIDO);
-			sap.autSAPFaturamentos().autFaturarPedido(sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP));
-			try {
-				sap.autSAPFaturamentos().autSAPLogout();
-			}
-			catch(java.lang.Exception e) {
-				sap.autSAPFaturamentos();
-			}
+			sap.autSAPFaturarPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO);			
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
-			try {
-				sap.autSAPFaturamentos().autSAPLogout();
-			}
-			catch(java.lang.Exception e2) {
-				sap.autSAPFaturamentos();
-			}
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
 		}
 	}
@@ -853,7 +828,7 @@ public class AUTEntrega001{
 	public void AUT_IT00026_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -900,7 +875,7 @@ public class AUTEntrega001{
 	public void AUT_IT00028_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -974,7 +949,7 @@ public class AUTEntrega001{
 	public void AUT_IT00031_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1021,7 +996,7 @@ public class AUTEntrega001{
 	public void AUT_IT00033_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1034,24 +1009,10 @@ public class AUTEntrega001{
 	public void AUT_IT00034_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PJ_LOJA0035() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			sap.autSAPFaturamentos().AUT_SAP_RUNTIME_PARAMETERS = sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP);
-			sap.autSAPFaturamentos().autSetParameter("AUT_PEDIDO", va.autVAPedidos(false).AUT_NUMERO_PEDIDO);
-			sap.autSAPFaturamentos().autFaturarPedido(sap.autGetDataFlow().autGetParameters(AUT_TABLE_PARAMETERS_NAMES.AUT_SAP_FATURAMENTO_ZOSDGCP));
-			try {
-				sap.autSAPFaturamentos().autSAPLogout();
-			}
-			catch(java.lang.Exception e) {
-				sap.autSAPFaturamentos();
-			}
+			sap.autSAPFaturarPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO);			
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
-			try {
-				sap.autSAPFaturamentos().autSAPLogout();
-			}
-			catch(java.lang.Exception e2) {
-				sap.autSAPFaturamentos();
-			}
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
 		}
 	}
@@ -1066,7 +1027,7 @@ public class AUTEntrega001{
 	public void AUT_IT00035_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1113,7 +1074,7 @@ public class AUTEntrega001{
 	public void AUT_IT00037_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1192,7 +1153,7 @@ public class AUTEntrega001{
 	public void AUT_IT00040_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1238,7 +1199,7 @@ public class AUTEntrega001{
 	public void AUT_IT00042_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1285,7 +1246,7 @@ public class AUTEntrega001{
 	public void AUT_IT00044_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1354,7 +1315,7 @@ public class AUTEntrega001{
 	public void AUT_IT00047_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1400,7 +1361,7 @@ public class AUTEntrega001{
 	public void AUT_IT00049_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1447,7 +1408,7 @@ public class AUTEntrega001{
 	public void AUT_IT00051_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1524,7 +1485,7 @@ public class AUTEntrega001{
 	public void AUT_IT00054_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1570,7 +1531,7 @@ public class AUTEntrega001{
 	public void AUT_IT00056_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1618,7 +1579,7 @@ public class AUTEntrega001{
 	public void AUT_IT00058_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1690,7 +1651,7 @@ public class AUTEntrega001{
 	public void AUT_IT00061_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1736,7 +1697,7 @@ public class AUTEntrega001{
 	public void AUT_IT00063_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1783,7 +1744,7 @@ public class AUTEntrega001{
 	public void AUT_IT00065_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1847,7 +1808,7 @@ public class AUTEntrega001{
 	public void AUT_IT00068_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1893,7 +1854,7 @@ public class AUTEntrega001{
 	public void AUT_IT00070_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -1940,7 +1901,7 @@ public class AUTEntrega001{
 	public void AUT_IT00072_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -2001,7 +1962,7 @@ public class AUTEntrega001{
 	public void AUT_IT00075_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -2047,7 +2008,7 @@ public class AUTEntrega001{
 	public void AUT_IT00077_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -2093,7 +2054,7 @@ public class AUTEntrega001{
 	public void AUT_IT00079_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0035() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas(false).AUTVA03ConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido");			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {

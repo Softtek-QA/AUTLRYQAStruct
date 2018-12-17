@@ -45,11 +45,6 @@ public class AUTEntrega003{
 	String hostExec = "192.168.0.116";
 	
 	
-//	@Test
-	public void AUT_00001_FRT001() {
-		
-	}
-	
 	public void AUT_INIT() {
 		 AUT_CFG_ID00009_FRT009_CN00000();
 	}
@@ -89,6 +84,13 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00001_STVA_ID00009_FRT009_CN00001_TROCA_LOJA_LOJA0045() {
 		try {
+			try {
+				cn00001.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
+			
 			cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00001.autStartProcess();
 			cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -111,6 +113,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00002_STVA_ID00009_FRT009_CN00002_IGNORAR_ANTIFRAUDE_LOJA0035() {
 		try {
+			try {
+				cn00002.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00002.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00002.autStartProcess();
 			cn00002.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -131,6 +139,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00003_STVA_ID00009_FRT009_CN00003_APROVAR_ANTIFRAUDE_LOJA0035() {
 		try {
+			try {
+				cn00003.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00003.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00003.autStartProcess();
 			cn00003.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -151,6 +165,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00004_STVA_ID00009_FRT009_CN00004_APROVAR_AUTO_ANTIFRAUDE_LOJA0035() {
 		try {
+			try {
+				cn00004.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00004.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00004.autStartProcess();
 			cn00004.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -172,6 +192,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00005_STVA_ID00009_FRT009_CN00005_CARTAO_ANTIFRAUDE_REPROVA_LOJA0035() {
 		try {
+			try {
+				cn00005.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00005.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00005.autStartProcess();
 			cn00005.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -193,6 +219,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00006_STVA_ID00009_FRT009_CN00006_CARTAO_ANTIFRAUDE_REPROVA_ATIVA_LOJA0035() {
 		try {
+			try {
+				cn00006.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00006.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00006.autStartProcess06();
 			cn00006.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -213,6 +245,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00007_STVA_ID00009_FRT009_CN00007_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
 		try {
+			try {
+				cn00007.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00007.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00007.autStartProcess07();
 			cn00007.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -233,6 +271,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00008_STVA_ID00009_FRT009_CN00008_PEDIDO_REEDITADO_Voucher_LOJA0045() {
 		try {
+			try {
+				cn00008.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00008.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00008.autStartProcess08();
 			cn00008.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -254,6 +298,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00009_STVA_ID00009_FRT009_CN00009_PEDIDO_ANTIFRAUDE_REPROVADO_LOJA0035() {
 		try {
+			try {
+				cn00009.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00009.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00009.autStartProcess();
 			cn00009.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -274,6 +324,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00010_STVA_ID00009_FRT009_CN00010_PEDIDO_IGNORAR_ANTIFRAUDE_REPROVADO_LOJA0035() {
 		try {
+			try {
+				cn00010.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00010.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00010.autStartProcess10();
 			cn00010.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -295,6 +351,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00011_STVA_ID00009_FRT009_CN00011_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
 		try {
+			try {
+				cn00011.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00011.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);		
 			cn00011.autStartProcess11();
 			cn00011.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -314,6 +376,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00012_STVA_ID00009_FRT009_CN00012_PEDIDO_REEDITADO_LOJA0045() {
 		try {
+			try {
+				cn00012.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00012.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00012.autStartProcess12();
 			cn00012.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -336,6 +404,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00013_STVA_ID00009_FRT009_CN00013_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_EDITANDO_LOJA0035() {
 		try {
+			try {
+				cn00013.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00013.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00013.autStartProcess();
 			cn00013.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -357,6 +431,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00014_STVA_ID00009_FRT009_CN00014_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_LOJA0045() {
 		try {
+			try {
+				cn00014.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00014.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00014.autStartProcess();
 			cn00014.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -377,11 +457,16 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00015_STVA_ID00009_FRT0097_CN00015_COPIAR_PEDIDO_CANAL_LOJA_LOJA0045() {
 		try {
+			try {
+				cn00015.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00015.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00015.autStartProcess();
 			cn00015.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
-
 		catch(java.lang.Exception e) {
 			cn00015.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
 			System.out.println(e.getMessage());
@@ -398,6 +483,12 @@ public class AUTEntrega003{
 	 */
 	public void AUT_IT00016_STVA_ID00009_FRT009_CN00016_PEDIDO_TELEVENDAS_PAGAR_LOJA_LOJA0035() {
 		try {
+			try {
+				cn00016.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
 			cn00016.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00016.autStartProcess();
 			cn00016.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);

@@ -30,8 +30,7 @@ public class CTP00001 extends AUTVABaseComponent{
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00011_CTP00001);
 		parametros.remove("AUT_NUMERO_PEDIDO");
 		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
-		
-		
+				
 		CMP00001(parametros);
 		CMP00043(parametros);
 		
