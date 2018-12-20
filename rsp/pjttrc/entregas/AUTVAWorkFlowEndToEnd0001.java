@@ -677,10 +677,7 @@ public class AUTVAWorkFlowEndToEnd0001{
 	
 	
 
-	//****************************************** PESSOA JURÍDICA **************************
-	
-	
-		
+	//****************************************** PESSOA JURÍDICA **************************		
 	@Test
 	/**
 	 * 
@@ -845,7 +842,7 @@ public class AUTVAWorkFlowEndToEnd0001{
 	 */
 	public void AUT_IT00039_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035() {
 		try {
-			entregas.autEntrega001().AUT_IT00039_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035();
+			entregas.autEntrega001().AUT_IT00013_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035();
 		}
 		catch(java.lang.Exception e) {
 			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);		
@@ -1089,6 +1086,7 @@ public class AUTVAWorkFlowEndToEnd0001{
 			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);		
 		}
 	}
+	
 	
 	@Test
 	/**
