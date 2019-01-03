@@ -15,17 +15,30 @@ import br.lry.components.AUTVABaseComponent;
 import br.lry.components.va.AUTVA03ConsultaStatusPedido;
 import br.lry.components.va.cat016.AUTFinalizarPedidoVA;
 
-
 public class AUTRecuperacao extends AUTVABaseComponent {
+	
+	
+	public static String  AUT_NUMERO_CARRINHO;
 
 	
+
 	/**
 	 * Recuperação de carrinho de compra
 	 * @return - Verdadeiro para carrinho de compra recuperado
 	 */
-	public boolean autRecuperarCarrinho() {
+	public boolean autRecuperarCarrinho(java.util.HashMap parametros) {
 		try {
-			AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.RecuperarCarrinho").click();
+			System.out.println("Parametros na Tela de Recuperaçaõ"+parametros);
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaInicialLoja.BotaoCarrinho").click();
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaInicialLoja.BuscarCarrinho").click();
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.BotaoFiltroPedido").click();
+			AUT_AGENT_SILK4J.<DomTextField>find("VA.TelaPedidos.NumeroPedido").setFocus();
+			AUT_AGENT_SILK4J.<DomTextField>find("VA.TelaPedidos.NumeroPedido").typeKeys(parametros.get("AUT_NUMERO_CARRINHO").toString());
+			AUT_AGENT_SILK4J.<DomButton>find("VA.TelaPedidos.OpcoesDeFiltro.Buscar").click();
+			
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.CopiarPedido").click();
+
+			
 			return true;
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
@@ -40,37 +53,37 @@ public class AUTRecuperacao extends AUTVABaseComponent {
 	 * @return - Verdadeiro para pedido de compra recuperado
 	 */
 	public boolean autRecuperarPedido(java.util.HashMap parametros) {
-		
-		System.out.println(parametros);
-		
-		System.out.println(parametros.get("AUT_NUMERO_PEDIDO").toString());
 
 		AUTVA03ConsultaStatusPedido consultaPedido = new AUTVA03ConsultaStatusPedido();
-		
+
 		try {
 			
-			AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.RecuperarPedido").click();
-			
-			consultaPedido.AUTVA03ConsultaPedido(parametros.get("AUT_NUMERO_PEDIDO").toString());
-			
+			System.out.println("Parametros na Recuperacao"+parametros);
 
-			AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaPedido.CopiarPedido").click();
-						
 			
-			boolean status = AUT_AGENT_SILK4J.<BrowserWindow>find("VA02.TelaPedido").exists("PrecosVigentes",10000);
-			if(status) {
-				
-				AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaPedido.PrecosVigentes").click();
-				
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaInicialLoja.BotaoCarrinho").click();
+			AUT_AGENT_SILK4J.<DomElement>find("VA.AtualizacaoDados.Buscar pedidos").click();
+
+			consultaPedido.AUTVA03ConsultaPedido(parametros.get("AUT_NUMERO_PEDIDO").toString());
+
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.CopiarPedido").click();
+
+
+			boolean status = AUT_AGENT_SILK4J.<BrowserWindow>find("VA.TelaPedidos").exists("PrecosVigentes", 10000);
+			if (status) {
+
+				AUT_AGENT_SILK4J.<DomButton>find("VA.TelaPedidos.PrecosVigentes").click();
+
 			}
-			
+
 			return true;
-			
+
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 			e.getMessage();
 			return false;
 		}
+
 
 	}
 
@@ -79,9 +92,26 @@ public class AUTRecuperacao extends AUTVABaseComponent {
 	 * Recuperação de orçamento
 	 * @return - Verdadeiro para orçamento recuperado
 	 */
-	public boolean autRecuperarOrcamento() {
+	public boolean autRecuperarOrcamento(java.util.HashMap parametros) {
 		try {
-			AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.RecuperarOrcamento").click();
+			AUT_AGENT_SILK4J.<DomLink>find("VA.TelaInicialLoja.BotaoRecuperarOrcamento").click();
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.BotaoFiltroPedido").click();
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.OpcoesDeFiltro").click();
+			AUT_AGENT_SILK4J.<DomRadioButton>find("VA.TelaPedidos.OpcoesDeFiltro.OpcaoNumeroPedidoVenda").select();
+			AUT_AGENT_SILK4J.<DomTextField>find("VA.TelaPedidos.NumeroPedido").setFocus();
+			AUT_AGENT_SILK4J.<DomTextField>find("VA.TelaPedidos.NumeroPedido").typeKeys(parametros.get("AUT_NUMERO_ORCAMENTO").toString());
+
+			AUT_AGENT_SILK4J.<DomButton>find("VA.TelaPedidos.OpcoesDeFiltro.Buscar").click();
+
+			AUT_AGENT_SILK4J.<DomElement>find("VA.TelaPedidos.CopiarPedido").click();
+
+			boolean status = AUT_AGENT_SILK4J.<BrowserWindow>find("VA.TelaPedidos").exists("PrecosVigentes", 10000);
+			if (status) {
+
+				AUT_AGENT_SILK4J.<DomButton>find("VA.TelaPedidos.PrecosVigentes").click();
+
+			}
+
 			return true;
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
@@ -97,7 +127,14 @@ public class AUTRecuperacao extends AUTVABaseComponent {
 	 */
 	public boolean autCriarCarrinho() {
 		try {
-			AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.CriarCarrinho").click();
+			AUT_AGENT_SILK4J.<DomLink>find("VA.TelaInicialLoja.CriarCarrinho").click();
+			
+			AUT_NUMERO_CARRINHO = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaInicialLoja.NumeroCarrinho").getText();
+
+			System.out.println("O número do carrinho é "+AUT_NUMERO_CARRINHO);
+			
+			
+			
 			return true;
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
@@ -147,16 +184,16 @@ public class AUTRecuperacao extends AUTVABaseComponent {
 	public boolean autVAIniciarAtendimento(java.util.HashMap parametros) {
 		try {
 			if(parametros.get("OPCAO_INICIAR_ATENDIMENTO") == AUT_VA_INICIAR_ATENDIMENTO.CRIAR_CARRINHO) {
-				AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.CriarCarrinho").click();
+				AUT_AGENT_SILK4J.<DomLink>find("VA.TelaInicialLoja.CriarCarrinho").click();
 			}
 			else if(parametros.get("OPCAO_INICIAR_ATENDIMENTO") == AUT_VA_INICIAR_ATENDIMENTO.RECUPERAR_PEDIDO) {
-				AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.RecuperarPedido").click();
+				AUT_AGENT_SILK4J.<DomLink>find("VA.TelaInicialLoja.RecuperarPedido").click();
 			}
 			else if(parametros.get("OPCAO_INICIAR_ATENDIMENTO") == AUT_VA_INICIAR_ATENDIMENTO.RECUPERAR_ORCAMENTO) {
-				AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.RecuperarOrcamento").click();
+				AUT_AGENT_SILK4J.<DomLink>find("VA.TelaInicialLoja.RecuperarOrcamento").click();
 			}
 			else if (parametros.get("OPCAO_INICIAR_ATENDIMENTO") == AUT_VA_INICIAR_ATENDIMENTO.RECUPERAR_CARRINHO){
-				AUT_AGENT_SILK4J.<DomLink>find("VA02.TelaInicialLoja.RecuperarCarrinho").click();
+				AUT_AGENT_SILK4J.<DomLink>find("VA.TelaInicialLoja.RecuperarCarrinho").click();
 			}
 			return true;
 		}

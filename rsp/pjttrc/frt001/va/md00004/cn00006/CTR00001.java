@@ -34,9 +34,9 @@ public class CTR00001 extends AUTVABaseComponent{
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();		
 		CMP00016(parameters);
 		CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00006_CTR00001)).autVAMultiplosMeiosPagamentoTelevendas(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00006_CTR00001));
-		AUT_AGENT_SILK4J.<DomCheckBox>find("VA02.TelaMeioPagamento.IgnAntiFraude").click();
+		AUT_AGENT_SILK4J.<DomCheckBox>find("VA.TelaMeioPagamento.IgnAntiFraude").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
+		AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
 		String conteudoElemento = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroPedido").getText();
 		java.util.regex.Pattern padrao = java.util.regex.Pattern.compile("\\d+");
 		java.util.regex.Matcher analise = padrao.matcher(conteudoElemento);

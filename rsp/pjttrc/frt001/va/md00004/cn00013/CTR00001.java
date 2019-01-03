@@ -38,19 +38,19 @@ public class CTR00001 extends AUTVABaseComponent{
 	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	CMP00013(parameters);
+	//CMP00013(parameters);
 	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 	CMP00016(parameters);
 	CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00013_CTR00001)).autVAMultiplosMeiosPagamentoTelevendas(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00006_CTR00001));
 	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	if (AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaMeioPagamento.CaixaConfirmarVT").isVisible()) {
-	AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaMeioPagamento.ConfirmarValeTroca").click();
+	if (AUT_AGENT_SILK4J.<DomElement>find("VA.TelaMeioPagamento.CaixaConfirmarVT").isVisible()) {
+	AUT_AGENT_SILK4J.<DomElement>find("VA.TelaMeioPagamento.ConfirmarValeTroca").click();
 	}
 	
-	AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
+	AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
 	
-	if(AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaMeioPagamento.PopUpConfirmar").isVisible()) {
-	AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaMeioPagamento.ConfirmarSim").click();
+	if(AUT_AGENT_SILK4J.<DomElement>find("VA.TelaMeioPagamento.PopUpConfirmar").isVisible()) {
+	AUT_AGENT_SILK4J.<DomElement>find("VA.TelaMeioPagamento.ConfirmarSim").click();
 	}
 	
 	String conteudoElemento = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroPedido").getText();

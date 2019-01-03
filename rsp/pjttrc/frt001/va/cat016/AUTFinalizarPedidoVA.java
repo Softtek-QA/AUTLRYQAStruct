@@ -19,13 +19,13 @@ public class AUTFinalizarPedidoVA extends AUTBaseComponent {
 	public boolean autFinalizarPedidoVA(java.util.HashMap parametros) {			
 		try {
 			
-			AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
+			AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
 			
 			
-			boolean status = AUT_AGENT_SILK4J.<BrowserWindow>find("VA02.TelaResumo").exists("FecharPopUp",10000);
+			boolean status = AUT_AGENT_SILK4J.<BrowserWindow>find("VA.TelaResumo").exists("FecharPopUp",10000);
 			if(status) {
 				
-				AUT_AGENT_SILK4J.<DomElement>find("VA02.TelaResumo.FecharPopUp").click();
+				AUT_AGENT_SILK4J.<DomElement>find("VA.TelaResumo.FecharPopUp").click();
 				
 			}
 			

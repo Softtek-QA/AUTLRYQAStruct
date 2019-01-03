@@ -30,10 +30,10 @@ public class CTP00001 extends AUTVABaseComponent {
 	 CMP00014(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00015_CTR00001));
 	 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 	 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	 AUT_AGENT_SILK4J.<DomCheckBox>find("VA02.FluxoSaida.DataMaisProxima").click();
-	 DomListBox listComboDep=  AUT_AGENT_SILK4J.<DomListBox>find("VA02.FluxoSaida.SelecionaDep");
+	 AUT_AGENT_SILK4J.<DomCheckBox>find("VA.FluxoSaida.DataMaisProxima").click();
+	 DomListBox listComboDep=  AUT_AGENT_SILK4J.<DomListBox>find("VA.FluxoSaida.SelecionaDep");
 	 selectValor(listComboDep);
-	 DomListBox listComboEntrega= AUT_AGENT_SILK4J.<DomListBox>find("VA02.ConfirmacaoLogin.Turno");
+	 DomListBox listComboEntrega= AUT_AGENT_SILK4J.<DomListBox>find("VA.ConfirmacaoLogin.Turno");
 	 selectValor(listComboEntrega);
 	 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 	 CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00002_CTP00001)).autSelecaoMeioPagamento(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00002_CTP00001));

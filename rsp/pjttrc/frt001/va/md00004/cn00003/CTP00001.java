@@ -30,7 +30,7 @@ public class CTP00001 extends AUTVABaseComponent {
 		CMP00016(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00003_CTP00001));
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00003_CTP00001)).autSelecaoMeioPagamento(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00003_CTP00001));
-		AUT_AGENT_SILK4J.<DomCheckBox>find("VA02.TelaMeioPagamento.IgnAntiFraude").click();
+		AUT_AGENT_SILK4J.<DomCheckBox>find("VA.TelaMeioPagamento.IgnAntiFraude").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00003_CTP00001));	
 		CMP00022();	

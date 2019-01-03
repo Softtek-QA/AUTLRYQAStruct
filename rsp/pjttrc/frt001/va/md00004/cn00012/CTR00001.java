@@ -42,9 +42,9 @@ public  static String AUT_NUMERO_PEDIDO;
 
 	CMP00016(parameters);
 	CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00011_CTR00001)).autVAMultiplosMeiosPagamentoTelevendas(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00012_CTR00001));
-//	AUT_AGENT_SILK4J.<DomCheckBox>find("VA02.TelaMeioPagamento.IgnAntiFraude").click();
+//	AUT_AGENT_SILK4J.<DomCheckBox>find("VA.TelaMeioPagamento.IgnAntiFraude").click();
 	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	AUT_AGENT_SILK4J.<DomButton>find("VA02.TelaResumo.Finalizar").click();
+	AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
 	
 	
 	String conteudoElemento = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroPedido").getText();
