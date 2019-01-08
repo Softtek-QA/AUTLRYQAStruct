@@ -1939,7 +1939,7 @@ public class AUTEntrega001_RGR002{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00074_STVA_ID00005_FRT005_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PJ_LOJA0035() {
+	public void AUT_IT00074_STVA_ID00005_FRT005_CN00013_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;

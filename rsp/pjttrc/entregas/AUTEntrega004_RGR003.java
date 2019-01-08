@@ -55,7 +55,7 @@ import br.lry.components.va.AUTVABaseServices;
 		String hostExec = "192.168.0.116";
 		
 		public void AUT_INIT() {
-			AUT_IT00000_STCFG_ID00013_FRT013_CN00000();
+			AUT_IT00000_STCFG_ID00014_FRT014_CN00000();
 		}
 		
 		
@@ -68,7 +68,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 */
 		@Test
-		public void AUT_IT00000_STCFG_ID00013_FRT013_CN00000() {				
+		public void AUT_IT00000_STCFG_ID00014_FRT014_CN00000() {				
 			cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00001.CN00001();
 			cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00002.CN00002();
 			cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00003.CN00003();
@@ -105,7 +105,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00001 - Realizar um pedido com recuperação de Orçamento
 		 */
-		public void AUT_IT00001_STVA_ID00013_FRT013_CN00001_REALIZAR_PEDIDO_COM_RECUPERACAO_ORCAMENTO_LOJA0035() {
+		public void AUT_IT00001_STVA_ID00014_FRT014_CN00001_REALIZAR_PEDIDO_COM_RECUPERACAO_ORCAMENTO_LOJA0035() {
 			try {
 				cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00001.autStartProcess01();
@@ -124,7 +124,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00002 - Realizar um pedido com solicitação de Serviço
 		 */
-		public void AUT_IT00002_STVA_ID00013_FRT013_CN00002_REALIZAR_PEDIDO_COM_SOLICITACAO_SERVICO_LOJA0035() {
+		public void AUT_IT00002_STVA_ID00014_FRT014_CN00002_REALIZAR_PEDIDO_COM_SOLICITACAO_SERVICO_LOJA0035() {
 			try {
 				cn00002.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00002.autStartProcess02();
@@ -142,7 +142,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00003 - Realizar pedido com serviço atrelado e outro sem serviço atrelado
 		 */
-		public void AUT_IT00003_STVA_ID00013_FRT013_CN00003_REALIZAR_PEDIDO_COM_SERVICO_E_COM_ITEM_SEM_SERVICO__LOJA0035() {
+		public void AUT_IT00003_STVA_ID00014_FRT014_CN00003_REALIZAR_PEDIDO_COM_SERVICO_E_COM_ITEM_SEM_SERVICO__LOJA0035() {
 			try {
 				cn00003.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00003.autStartProcess03();
@@ -162,7 +162,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00004 - Realizar um pedido com desconto e um serviço atrelado
 		 */
-		public void AUT_IT00004_STVA_ID00013_FRT013_CN00004_REALIZAR_PEDIDO_COM_SERVICO_E_DESCONTO_LOJA0035() {
+		public void AUT_IT00004_STVA_ID00014_FRT014_CN00004_REALIZAR_PEDIDO_COM_SERVICO_E_DESCONTO_LOJA0035() {
 			try {
 				cn00004.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00004.autStartProcess04();
@@ -182,7 +182,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00005 - Realizar um pedido através da recuperação do carrinho
 		 */
-		public void AUT_IT00005_STVA_ID00013_FRT013_CN00005_REALIZAR_PEDIDO_COM_RECUPERACAO_DE_CARRINHO_LOJA0035() {
+		public void AUT_IT00005_STVA_ID00014_FRT014_CN00005_REALIZAR_PEDIDO_COM_RECUPERACAO_DE_CARRINHO_LOJA0035() {
 			try {
 				cn00005.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);		
 				cn00005.autStartProcess05();
@@ -202,7 +202,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00006 - Realizar um pedido através da busca de pedido (em edição)
 		 */
-		public void AUT_IT00006_STVA_ID00013_FRT013_CN00006_REALIZAR_PEDIDO_PELA_BUSCA_DE_PEDIDO_LOJA0035() {
+		public void AUT_IT00006_STVA_ID00014_FRT014_CN00006_REALIZAR_PEDIDO_PELA_BUSCA_DE_PEDIDO_LOJA0035() {
 			try {
 				cn00006.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00006.autStartProcess06();
@@ -223,7 +223,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 *  CN00007 - Realizar um pedido através da inclusão em Massa
 		 */
-		public void AUT_IT00007_STVA_ID00013_FRT013_CN00007_REALIZAR_PEDIDO_INCLUSAO_EM_MASSA_LOJA0035() {
+		public void AUT_IT00007_STVA_ID00014_FRT014_CN00007_REALIZAR_PEDIDO_INCLUSAO_EM_MASSA_LOJA0035() {
 			try {
 				cn00007.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00007.autStartProcess07();
@@ -243,7 +243,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00008 - Realizar um pedido através da cópia de um pedido
 		 */
-		public void AUT_IT00008_STVA_ID00013_FRT013_CN00008_REALIZAR_PEDIDO_ATRAVES_DE_COPIA_LOJA0035() {
+		public void AUT_IT00008_STVA_ID00014_FRT014_CN00008_REALIZAR_PEDIDO_ATRAVES_DE_COPIA_LOJA0035() {
 			try {
 				cn00008.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);				
 				cn00008.autStartProcess08();
@@ -262,7 +262,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00009 - Realizar um pedido com Garantia Estendida
 		 */
-		public void AUT_IT00009_STVA_ID00013_FRT013_CN00009_REALIZAR_PEDIDO_COM_GARANTIA_ESTENDIDA_LOJA0035() {
+		public void AUT_IT00009_STVA_ID00014_FRT014_CN00009_REALIZAR_PEDIDO_COM_GARANTIA_ESTENDIDA_LOJA0035() {
 			try {
 				cn00009.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00009.autStartProcess09();
@@ -281,7 +281,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00010 - Realizar um pedido com Garantia Estendida para um Cliente PJ
 		 */
-		public void AUT_IT00010_STVA_ID00013_FRT013_CN00010_REALIZAR_PEDIDO_GARANTIA_ESTENDIDA_PJ_LOJA0035() {
+		public void AUT_IT00010_STVA_ID00014_FRT014_CN00010_REALIZAR_PEDIDO_GARANTIA_ESTENDIDA_PJ_LOJA0035() {
 			try {
 				cn00010.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);		
 				cn00010.autStartProcess010();
@@ -301,7 +301,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00011 - Realizar um pedido com item que tenha registro no Top -
 		 */
-		public void AUT_IT00011_STVA_ID00013_FRT013_CN00011_REALIZAR_PEDIDO_ITEM_TOP_LOJA0035() {
+		public void AUT_IT00011_STVA_ID00014_FRT014_CN00011_REALIZAR_PEDIDO_ITEM_TOP_LOJA0035() {
 			try {
 				cn00011.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00011.autStartProcess11();
@@ -321,7 +321,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00012 - Realizar um pedido e inserir desconto em um item
 		 */
-		public void AUT_IT00012_STVA_ID00013_FRT013_CN00012_REALIZAR_PEDIDO_COM_DECONTO_NO_ITEM_EM_REAIS_LOJA0035() {
+		public void AUT_IT00012_STVA_ID00014_FRT014_CN00012_REALIZAR_PEDIDO_COM_DECONTO_NO_ITEM_EM_REAIS_LOJA0035() {
 			try {
 				cn00012.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00012.autStartProcess12();
@@ -340,7 +340,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00013 - Pedido que não tenha estoque e item top 0 na filial de compra
 		 */
-		public void AUT_IT00013_STVA_ID00013_FRT013_CN00013_REALIZAR_PEDIDO_ITEM_SEM_EST0QUE_TOP_0_LOJA0035() {
+		public void AUT_IT00013_STVA_ID00014_FRT014_CN00013_REALIZAR_PEDIDO_ITEM_SEM_EST0QUE_TOP_0_LOJA0035() {
 			try {
 				cn00013.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);				
 				cn00013.autStartProcess013();
@@ -359,7 +359,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00014 - Pedido que não tenha estoque e item avs na filial de compra
 		 */
-		public void AUT_IT00014_STVA_ID00013_FRT013_CN00014_REALIZAR_PEDIDO_SEM_ESTOQUE_AVS_LOJA0035() {
+		public void AUT_IT00014_STVA_ID00014_FRT014_CN00014_REALIZAR_PEDIDO_SEM_ESTOQUE_AVS_LOJA0035() {
 			try {
 				cn00014.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00014.autStartProcess14();
@@ -379,7 +379,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00015 - Realizar um pedido com desconto fora da alçada do usuário
 		 */
-		public void AUT_IT00015_STVA_ID00013_FRT013_CN00015_REALIZAR_PEDIDO_COM_DESCONTO_FORA_DA_ALCADA_LOJA0035() {
+		public void AUT_IT00015_STVA_ID00014_FRT014_CN00015_REALIZAR_PEDIDO_COM_DESCONTO_FORA_DA_ALCADA_LOJA0035() {
 			try {
 				cn00015.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00015.autStartProcess15();	
@@ -398,7 +398,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00016 - Realizar um pedido e adicionar produtos complementares
 		 */
-		public void AUT_IT00016_STVA_ID00013_FRT013_CN000016_REALIZAR_PEDIDO_PRODUTOS_COMPLEMENTARES_BLOQUEADO_LOJA0035() {
+		public void AUT_IT00016_STVA_ID00014_FRT014_CN000016_REALIZAR_PEDIDO_PRODUTOS_COMPLEMENTARES_BLOQUEADO_LOJA0035() {
 			try {
 				cn00016.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00016.autStartProcess16();
@@ -418,7 +418,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * CN00017 - Pedido com desconto funcionario
 		 * 
 		 */
-		public void AUT_IT00017_STVA_ID00013_FRT013_CN00017_REALIZAR_PEDIDO_COM_DESCONTO_FUNCIONARIO_LOJA0035() {
+		public void AUT_IT00017_STVA_ID00014_FRT014_CN00017_REALIZAR_PEDIDO_COM_DESCONTO_FUNCIONARIO_LOJA0035() {
 			try {
 				cn00017.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00017.autStartProcess17();
@@ -439,7 +439,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00018 - Pedido com desconto funcionario e MDH - 20% desconto automatico
 		 */
-		public void AUT_IT00018_STVA_ID00013_FRT013_CN00018_REALIZAR_PEDIDO_COM_DESCONTO_FUNCIONARIO_MDH_LOJA0035() {
+		public void AUT_IT00018_STVA_ID00014_FRT014_CN00018_REALIZAR_PEDIDO_COM_DESCONTO_FUNCIONARIO_MDH_LOJA0035() {
 			try {
 				cn00018.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00018.autStartProcess18();
@@ -458,7 +458,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00019 - Pedido com desconto na seção em porcentagem
 		 */
-		public void AUT_IT00019_STVA_ID00013_FRT013_CN00019_REALIZAR_PEDIDO_COM_DESCONTO_NA_SECAO_EM_PORCENTAGEM_LOJA0035() {
+		public void AUT_IT00019_STVA_ID00014_FRT014_CN00019_REALIZAR_PEDIDO_COM_DESCONTO_NA_SECAO_EM_PORCENTAGEM_LOJA0035() {
 			try {
 				cn00019.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00019.autStartProcess19();
@@ -477,7 +477,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00020 - Pedido com desconto na seção em reais
 		 */
-		public void AUT_IT00020_STVA_ID00013_FRT013_CN00020_REALIZAR_PEDIDO_COM_DESCONTO_NA_SECAO_EM_REAIS_LOJA0035() {
+		public void AUT_IT00020_STVA_ID00014_FRT014_CN00020_REALIZAR_PEDIDO_COM_DESCONTO_NA_SECAO_EM_REAIS_LOJA0035() {
 			try {
 				cn00020.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00020.autStartProcess20();
@@ -497,7 +497,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00021 - Pedido com desconto na seção em porcentagem itens não elegiveis
 		 */
-		public void AUT_IT00021_STVA_ID00013_FRT013_CN00021_REALIZAR_PEDIDO_DESCONTO_NA_SECAO_ITENS_NAO_ELEGIVEIS_LOJA0035() {
+		public void AUT_IT00021_STVA_ID00014_FRT014_CN00021_REALIZAR_PEDIDO_DESCONTO_NA_SECAO_ITENS_NAO_ELEGIVEIS_LOJA0035() {
 			try {
 				cn00021.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);				
 				cn00021.autStartProcess21();
@@ -516,7 +516,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00022 - Pedido com desconto na seção em reais com itens não elegiveis
 		 */
-		public void AUT_IT00022_STVA_ID00013_FRT013_CN00022_REALIZAR_PEDIDO_COM_DESCONTO_EM_REAIS_ITENS_NAO_ELEGIVEIS_LOJA0035() {
+		public void AUT_IT00022_STVA_ID00014_FRT014_CN00022_REALIZAR_PEDIDO_COM_DESCONTO_EM_REAIS_ITENS_NAO_ELEGIVEIS_LOJA0035() {
 			try {
 				cn00022.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00022.autStartProcess22();
@@ -535,7 +535,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00023 - Pedido com desconto no total em porcentagem
 		 */
-		public void AUT_IT00023_STVA_ID00013_FRT013_CN00023_REAILZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_PORCENTAGEM_LOJA0035() {
+		public void AUT_IT00023_STVA_ID00014_FRT014_CN00023_REAILZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_PORCENTAGEM_LOJA0035() {
 			try {
 				cn00023.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00023.autStartProcess23();
@@ -554,7 +554,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00024 - Pedido com desconto no total em reais
 		 */
-		public void AUT_IT00024_STVA_ID00013_FRT013_CN00024_REALIZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_REAIS_LOJA0035() {
+		public void AUT_IT00024_STVA_ID00014_FRT014_CN00024_REALIZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_REAIS_LOJA0035() {
 			try {
 				cn00024.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00024.autStartProcess24();
@@ -574,7 +574,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00025 - Pedido com desconto no total em porcentagem itens não elegiveis
 		 */
-		public void AUT_IT00025_STVA_ID00013_FRT013_CN00025_REALIZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_PORCENTAGEM_ITENS_NAO_ELEGIVEIS_LOJA0035() {
+		public void AUT_IT00025_STVA_ID00014_FRT014_CN00025_REALIZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_PORCENTAGEM_ITENS_NAO_ELEGIVEIS_LOJA0035() {
 			try {
 				cn00025.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00025.autStartProcess25();
@@ -593,7 +593,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00026 - Pedido com desconto no total em reais com itens não elegiveis
 		 */
-		public void AUT_IT00026_STVA_ID00013_FRT013_CN00026_REALIZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_REAIS_ITENS_NAO_ELEGIVEIS_LOJA0035() {
+		public void AUT_IT00026_STVA_ID00014_FRT014_CN00026_REALIZAR_PEDIDO_COM_DESCONTO_TOTAL_EM_REAIS_ITENS_NAO_ELEGIVEIS_LOJA0035() {
 			try {
 				cn00026.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00026.autStartProcess26();
@@ -612,7 +612,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00027 - Pedido com desconto pontual sobre administrado não elegivel
 		 */
-		public void AUT_IT00027_STVA_ID00013_FRT013_CN00027_REALIZAR_PEDIDO_PONTUAL_SOBRE_ADMINISTRADO_NAO_ELEGIVEL_LOJA0035() {
+		public void AUT_IT00027_STVA_ID00014_FRT014_CN00027_REALIZAR_PEDIDO_PONTUAL_SOBRE_ADMINISTRADO_NAO_ELEGIVEL_LOJA0035() {
 			try {
 				cn00027.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00027.autStartProcess27();
@@ -631,7 +631,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * 
 		 * CN00028 - Pedido com desconto pontual sobre administrado elegivel
 		 */
-		public void AUT_IT00028_STVA_ID00013_FRT013_CN00028_REALIZAR_PEDIDO_PONTUAL_SOBRE_ADMINISTRADO_ELEGIVEL_LOJA0035() {
+		public void AUT_IT00028_STVA_ID00014_FRT014_CN00028_REALIZAR_PEDIDO_PONTUAL_SOBRE_ADMINISTRADO_ELEGIVEL_LOJA0035() {
 			try {
 				cn00028.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00028.autStartProcess28();			
@@ -651,7 +651,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * CN00029 - Pedido com desconto pontual sobre promoção complexa
 		 *
 		 */
-		public void AUT_IT00029_STVA_ID00013_FRT013_CN00029_REALIZAR_PEDIDO_COM_DESCONTO_PONTUAL_SOBRE_PROMOCAO_COMPLEXA_LOJA0035() {
+		public void AUT_IT00029_STVA_ID00014_FRT014_CN00029_REALIZAR_PEDIDO_COM_DESCONTO_PONTUAL_SOBRE_PROMOCAO_COMPLEXA_LOJA0035() {
 			try {
 				cn00029.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00029.autStartProcess29();			

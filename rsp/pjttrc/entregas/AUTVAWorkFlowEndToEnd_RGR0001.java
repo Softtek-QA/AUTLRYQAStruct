@@ -838,9 +838,9 @@ public class AUTVAWorkFlowEndToEnd_RGR0001{
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 *
 	 */
-	public void AUT_IT00039_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035() {
+	public void AUT_IT00039_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035() {
 		try {
-			entregas.autEntrega001RGR001().AUT_IT00013_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035();
+			entregas.autEntrega001RGR001().AUT_IT00039_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035();
 		}
 		catch(java.lang.Exception e) {
 			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);		
@@ -1446,9 +1446,9 @@ public class AUTVAWorkFlowEndToEnd_RGR0001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00076_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PJ_LOJA0035() {
+	public void AUT_IT00076_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
 		try {
-			entregas.autEntrega001RGR001().AUT_IT00074_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PJ_LOJA0035();
+			entregas.autEntrega001RGR001().AUT_IT00074_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_PJ_LOJA0035();
 		}
 		catch(java.lang.Exception e) {
 			entregas.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.ERROR);		
