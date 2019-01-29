@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
+import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 
 
 
@@ -73,6 +74,8 @@ public class AUTEntrega003_RGR003{
 		cn00016 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00016.CN00016();
 		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017.CN00017();
 		cn00018 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00018.CN00018();
+		
+		cn00018.autInitConfigurationProjectExecution(AUTEntrega004_RGR001.class, AUT_TEST_STATUS_EXECUCAO.WAIT);	
 	}
 
 	
@@ -87,20 +90,16 @@ public class AUTEntrega003_RGR003{
 			try {
 				cn00001.autCloseApplication();
 			}
-			catch(java.lang.Exception e) {
-				
-			}
-			
+			catch(java.lang.Exception e) {				
+			}			
 			cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00001.autStartProcess();
 			cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
-
 		catch(java.lang.Exception e) {
 			cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
 			System.out.println(e.getMessage());
-			e.printStackTrace();
-			
+			e.printStackTrace();			
 		}
 	}
 	

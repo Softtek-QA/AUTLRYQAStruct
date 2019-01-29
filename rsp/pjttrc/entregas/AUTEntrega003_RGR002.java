@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
+import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 
 
 
@@ -72,6 +73,8 @@ public class AUTEntrega003_RGR002{
 		cn00016 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00016.CN00016();
 		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017.CN00017();
 		cn00018 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00018.CN00018();
+		
+		cn00018.autInitConfigurationProjectExecution(AUTEntrega003_RGR002.class, AUT_TEST_STATUS_EXECUCAO.WAIT);	
 	}
 
 	

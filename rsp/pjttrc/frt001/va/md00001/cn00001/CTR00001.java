@@ -27,25 +27,16 @@ public class CTR00001 extends AUTVABaseComponent {
 	public void autCriaPedidoTelevendas() {
 		 autGetDataFlow().autInitDataFlow();
 		 CMP00002(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTR00001));
-		 autInsertScreenByScenario();
 		 CMP00037(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTR00001));
-		 autInsertScreenByScenario();
 		 CMP00009(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTR00001));
-		 autInsertScreenByScenario();
 		 CMP00008(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTR00001));
-		 autInsertScreenByScenario();
 		 CMP00061(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTR00001));
-		 autInsertScreenByScenario();
 		 CMP00004(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTR00001));
-		 autInsertScreenByScenario();
 		 CMP00014(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTR00001));
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 autInsertScreenByScenario();
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 autInsertScreenByScenario();
 		 AUT_AGENT_SILK4J.<DomRadioButton>find("VA.FluxoSaida.OpcaoCaixa").select();
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 autInsertScreenByScenario();
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();	
 		 String AUT_NUMERO_PEDIDO = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroOrcamento").getText();
 		 String str= new String(AUT_NUMERO_PEDIDO);
@@ -53,8 +44,8 @@ public class CTR00001 extends AUTVABaseComponent {
 		 System.out.println("O número do orçamento é "+AUT_NUMERO_ORCAMENTO);
 		 autSetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTP00001, "AUT_NUMERO_ORCAMENTO", AUT_NUMERO_ORCAMENTO);
 		 System.out.println("Pedido na tabela no CTP"+autGetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTP00001, "AUT_NUMERO_ORCAMENTO"));
-		 
 		 System.out.println("Pedido na tabela no CTP"+autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTP00001,"AUT_NUMERO_ORCAMENTO"));		 
-		 CMP00022();					 
+		 CMP00022();			
+		 
 	}
 }

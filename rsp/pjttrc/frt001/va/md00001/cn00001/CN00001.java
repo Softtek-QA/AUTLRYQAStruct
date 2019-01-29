@@ -46,7 +46,8 @@ public class CN00001 extends AUTVABaseComponent{
 	 */
 	
 	@Test
-	public void autStartProcess01() {	
+	public void autStartProcess01() {
+		
 		autInitConfigurationCN00001();
 		cn00001CTR00001.autCriaPedidoTelevendas();
 		System.out.println("Numero de orcamento no cenario"+cn00001CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTP00001,"AUT_NUMERO_ORCAMENTO"));

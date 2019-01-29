@@ -4,7 +4,6 @@ package br.lry.qa.rsp.pjttrc.entregas;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-
 import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
 import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 import br.lry.components.va.AUTVABaseServices;
@@ -98,7 +97,10 @@ import br.lry.components.va.AUTVABaseServices;
 			cn00027 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00027.CN00027();
 			cn00028 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00028.CN00028();
 			cn00029 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00029.CN00029();			
+		
+			cn00029.autInitConfigurationProjectExecution(AUTEntrega004_RGR003.class, AUT_TEST_STATUS_EXECUCAO.WAIT);				
 		}
+	
 		
 		@Test
 		/**

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import br.lry.components.AUTVABaseComponent;
 
-public class CN00027 extends AUTVABaseComponent{
+public class CN00027  extends AUTVABaseComponent{
 	
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00027.CTP00001 cn00027CTP00001;
 
