@@ -35,18 +35,10 @@ public class AUTEntrega002_RGR002 {
 	public static AUTFWKTestObjectBase gerTests;
 	String hostExec = "192.168.0.116";
 	private String numCPF;
-	
-	
-	public void AUT_INIT() {
-		AUT_00006_FRT006();
-		AUT_IT99999_STCFG_ID00006_FRT006_CN00000_CONFIG();	
-	}
-	
-	@Test
-	public void AUT_00006_FRT006() {
 		
-	}
-	
+	public void AUT_INIT() {
+		AUT_IT99999_STCFG_ID00006_FRT006_CN00000_CONFIG();	
+	}	
 	
 	/**
 	 * 

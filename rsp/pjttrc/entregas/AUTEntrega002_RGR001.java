@@ -38,15 +38,8 @@ public class AUTEntrega002_RGR001 {
 	
 	
 	public void AUT_INIT() {
-		AUT_00004_FRT004();
 		AUT_IT99999_STCFG_ID00004_FRT004_CN00000_CONFIG();	
 	}
-	
-	@Test
-	public void AUT_00004_FRT004() {
-		
-	}
-	
 	
 	/**
 	 * 

@@ -38,15 +38,8 @@ public class AUTEntrega002_RGR003 {
 	
 	
 	public void AUT_INIT() {
-		AUT_00008_FRT008();
 		AUT_IT99999_STCFG_ID00008_FRT008_CN00000_CONFIG();	
 	}
-	
-	@Test
-	public void AUT_00008_FRT008() {
-		
-	}
-	
 	
 	/**
 	 * 
@@ -79,7 +72,7 @@ public class AUTEntrega002_RGR003 {
 	/**
 	 * Executa os procedimentos de cadastro de usuário no HMC
 	 */
-	//@Test
+	@Test
 	public void AUT_IT00001_STHMC_ID00008_FRT008_CN00001_CADASTRO_USUARIO_LOJA0035() {
 		try {
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);

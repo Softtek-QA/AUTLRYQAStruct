@@ -203,7 +203,6 @@ public class AUTEntrega001_RGR002{
 	String hostExec = "192.168.0.116";
 	
 	public void AUT_INIT() {
-		AUT_00005_FRT005();
 		AUT_AUT_IT99999_STCFG_ID00005_FRT005_CN00000();
 		
 		hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT=hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER").toString();
@@ -213,16 +212,6 @@ public class AUTEntrega001_RGR002{
 		va.autVACadastros(false).AUT_NUMERO_DOC_CPF_OUTPUT = va.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
 		va.autVACadastros(false).AUT_NUMERO_DOC_PASSAPORTE_OUTPUT = va.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_PASSAPORTE").toString();		
 	}
-	/**
-	 * 
-	 * REGRESSIVO - TESTES INTEGRADOS - HMC-VA-PDV-SAP-SAFE
-	 * 
-	 */
-	@Test
-	public void AUT_00005_FRT005() {
-		
-	}	
-
 	
 	/**
 	 * 
@@ -248,6 +237,8 @@ public class AUTEntrega001_RGR002{
 		va = new AUTVABaseServices();
 		AUT_LOJA_CADASTRO = "0035";
 	}
+	
+	
 	/**
 	 * 
 	 * Executa os procedimentos de cadastro
@@ -258,7 +249,7 @@ public class AUTEntrega001_RGR002{
 		try {	
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);								
 			hmc.autHMCCadastros().autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);
-			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);			
 		}
 		catch(java.lang.Exception e) {
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
@@ -281,7 +272,7 @@ public class AUTEntrega001_RGR002{
 			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);
 			
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
-		
+			
 		}
 		catch(java.lang.Exception e) {
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
@@ -301,7 +292,7 @@ public class AUTEntrega001_RGR002{
 			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_TIPO_CADASTRO", AUT_VA_CADASTROS.FISICA);
 			va.autVACadastros(false).autInitClientMenuCadastroPF();
 			va.autVACadastros(false).autLogoutApplication();				
-			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
+			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);				
 		}catch(java.lang.Exception e) {
 			try {
 				va.autVACadastros(false).autLogoutApplication();
@@ -554,6 +545,7 @@ public class AUTEntrega001_RGR002{
 
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
+			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento","55000035","1234");						
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -628,9 +620,10 @@ public class AUTEntrega001_RGR002{
 	 *
 	 */
 	public void AUT_IT00018_STVA_ID00005_FRT005_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_PF_LOJA0035() {
-		try {
+		try {			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
+			//va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT,hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
+			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago","55000035","1234");			
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {

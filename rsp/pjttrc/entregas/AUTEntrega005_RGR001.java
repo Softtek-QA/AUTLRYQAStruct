@@ -54,13 +54,6 @@ public class AUTEntrega005_RGR001 {
 
 	public static AUTFWKTestObjectBase gerTests;
 	String hostExec = "192.168.0.116";
-
-	
-	@Test
-	public void AUT_00015_FRT015() {
-		
-	}
-	
 	
 	/**
 	 * 

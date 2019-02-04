@@ -75,7 +75,7 @@ public class AUTEntrega003_RGR003{
 		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00017.CN00017();
 		cn00018 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00018.CN00018();
 		
-		cn00018.autInitConfigurationProjectExecution(AUTEntrega004_RGR001.class, AUT_TEST_STATUS_EXECUCAO.WAIT);	
+		cn00018.autInitConfigurationProjectExecution(AUTEntrega003_RGR003.class, AUT_TEST_STATUS_EXECUCAO.WAIT);	
 	}
 
 	
