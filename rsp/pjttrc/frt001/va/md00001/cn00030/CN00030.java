@@ -1,0 +1,39 @@
+package br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00030;
+
+import org.junit.Test;
+
+public class CN00030 {
+	
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00030.CTP00001 cn00030CTP00001;
+
+	
+	/**
+	 * 
+	 * 
+	 * Configurações para execução dos casos de testes do CN00030
+	 * @param parametro - Parametros de entrada do sistema
+	 * @return
+	 */
+	
+	public void autInitConfigurationCN00030() {
+	
+		cn00030CTP00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00030.CTP00001();
+	}
+	
+
+	/**
+	 * 
+	 * 
+	 * CN00030 - Pedido com promoção complexa sobre desconto
+	 * @param parametro - Parametros de entrada do sistema
+	 * @return
+	 */
+	
+	@Test
+	public void autStartProcess30() {
+		
+		autInitConfigurationCN00030();
+		cn00030CTP00001.autCriaPedidoDescontoPontualPromocaoComplexa();
+	}
+
+}
