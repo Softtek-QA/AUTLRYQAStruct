@@ -72,6 +72,57 @@ public class AUTEntrega006_RGR001 {
 	public static AUTFWKTestObjectBase gerTests;
 	String hostExec = "192.168.0.116";
 	
+
+	public void AUT_INIT() {
+		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00032.CN00032();
+		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00034.CN00034();
+//		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00037.CN00037();
+		cn00004 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00038.CN00038();
+//		cn00005 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00039.CN00039();
+		cn00006 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00051.CN00051();
+		cn00007 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00052.CN00052();
+		cn00008 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00053.CN00053();
+		cn00009 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00058.CN00058();
+		cn00010 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00059.CN00059();
+		cn00011 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00060.CN00060();
+//		cn00012 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00061.CN00061();
+//		cn00013 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00062.CN00062();
+//		cn00014 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00063.CN00063();
+//		cn00015 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00064.CN00064();
+//		cn00016 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00065.CN00065();
+//		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00066.CN00066();
+//		cn00018 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00067.CN00067();
+//		cn00019 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00068.CN00068();
+//		cn00020 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00069.CN00069();
+		cn00021 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00070.CN00070();
+		cn00022 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00071.CN00071();
+		cn00023 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00072.CN00072();
+		cn00024 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00073.CN00073();
+		cn00025 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00074.CN00074();
+		cn00026 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00075.CN00075();
+		cn00027 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00076.CN00076();
+//		cn00028 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00077.CN00077();
+//		cn00029 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00078.CN00078();
+//		cn00030 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00079.CN00079();
+		cn00031 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00080.CN00080();
+		cn00032 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00081.CN00081();
+		cn00033 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00082.CN00082();
+		cn00034 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00083.CN00083();
+		cn00035 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00084.CN00084();
+		cn00036 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00085.CN00085();
+		cn00037 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00086.CN00086();
+		cn00038 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00087.CN00087();
+		cn00039 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00088.CN00088();
+		cn00040 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00089.CN00089();
+//		cn00041 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00090.CN00090();
+//		cn00042 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00091.CN00091();
+//		cn00043 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00092.CN00092();
+//		cn00044 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00093.CN00093();
+//		cn00045 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00094.CN00094();
+//		cn00046 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00095.CN00095();
+		
+		gerTests = new AUTFWKTestObjectBase();
+	}
 	
 	/**
 	 * 

@@ -55,6 +55,31 @@ public class AUTEntrega005_RGR001 {
 	public static AUTFWKTestObjectBase gerTests;
 	String hostExec = "192.168.0.116";
 	
+	public void AUT_INIT() {
+		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00030.CN00030();
+		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00031.CN00031();
+		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00033.CN00033();
+		cn00004 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00035.CN00035();
+		cn00005 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00036.CN00036();
+		cn00006 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00054.CN00054();
+		cn00007 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00040.CN00040();
+		cn00008 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00041.CN00041();
+		cn00009 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00042.CN00042();
+		cn00010 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00043.CN00043();
+		cn00011 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00044.CN00044();
+		cn00012 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00045.CN00045();
+		cn00013 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00046.CN00046();
+		cn00014 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00047.CN00047();
+		cn00015 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00048.CN00048();
+		cn00016 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00049.CN00049();
+		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00050.CN00050();
+		cn00018 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00055.CN00055();
+		cn00019 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00056.CN00056();
+		cn00020 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00057.CN00057();
+
+		gerTests = new AUTFWKTestObjectBase();		
+	}
+	
 	/**
 	 * 
 	 * Configuração dos parametros de inicialização para realização dos testes de geração de pedidos	 * 

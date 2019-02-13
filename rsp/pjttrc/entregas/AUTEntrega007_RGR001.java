@@ -57,7 +57,41 @@ public class AUTEntrega007_RGR001 {
 	String hostExec = "192.168.0.116";
 
 	
-	
+	public void AUT_INIT() {
+		
+		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00001.CN00001();
+		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00002.CN00002();
+		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00003.CN00003();
+		cn00004 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00004.CN00004();
+		cn00005 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00005.CN00005();
+		cn00006 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00006.CN00006();
+		cn00007 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00007.CN00007();
+		cn00008 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00008.CN00008();
+		cn00009 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00009.CN00009();
+		cn00010 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00010.CN00010();
+		cn00011 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00011.CN00011();
+		cn00012 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00012.CN00012();
+		cn00013 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00013.CN00013();
+		cn00014 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00014.CN00014();
+		cn00015 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00015.CN00015();
+		cn00016 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00016.CN00016();
+		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00017.CN00017();
+		cn00018 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00018.CN00018();
+		cn00019 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00019.CN00019();
+		cn00020 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00020.CN00020();
+		cn00021 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00021.CN00021();
+		cn00022 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00022.CN00022();
+		cn00023 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00023.CN00023();
+		cn00024 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00024.CN00024();
+		cn00025 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00025.CN00025();
+//		cn00026 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00026.CN00026();
+//		cn00027 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00027.CN00027();
+		cn00028 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00028.CN00028();
+		cn00029 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00029.CN00029();
+		cn00030 = new br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00030.CN00030();
+		
+		gerTests = new AUTFWKTestObjectBase();
+	}
 	/**
 	 * 
 	 * Configuração dos parametros de inicialização para realização dos testes de geração de pedidos	 * 

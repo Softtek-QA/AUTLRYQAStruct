@@ -36,6 +36,15 @@ public class AUTEntrega010_RGR001 {
 
 	public static AUTFWKTestObjectBase gerTests;
 	String hostExec = "192.168.0.116";
+
+	public void AUT_INIT() {
+		
+		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00007.cn00001.CN00001();
+		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00007.cn00002.CN00002();
+
+		gerTests = new AUTFWKTestObjectBase();
+
+	}
 	
 	/**
 	 * 

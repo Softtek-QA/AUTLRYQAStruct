@@ -37,7 +37,15 @@ public class AUTEntrega008_RGR001 {
 
 	public static AUTFWKTestObjectBase gerTests;
 	String hostExec = "192.168.0.116";
+	public void AUT_INIT() {
+		
+		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00006.cn00001.CN00001();
+		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00006.cn00002.CN00002();
+		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00006.cn00003.CN00003();
 
+		gerTests = new AUTFWKTestObjectBase();
+
+	}
 	/**
 	 * 
 	 * Configuração dos parametros de inicialização para realização dos testes de geração de pedidos	 * 

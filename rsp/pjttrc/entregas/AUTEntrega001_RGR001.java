@@ -176,6 +176,7 @@ import junit.framework.JUnit4TestAdapter;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTEntrega001_RGR001{	
+	public AUTEntrega001_RGR001() {}
 	//***********************************************************************************************************************	
 	//***********************************************************************************************************************	
 	//*********       LEROY MERLIN: ENTREGA 1 --> TESTES INTEGRADOS - WORKFLOW END-TO-END       *****************************
