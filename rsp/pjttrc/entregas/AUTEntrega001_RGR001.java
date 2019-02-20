@@ -212,6 +212,8 @@ public class AUTEntrega001_RGR001{
 		va.autVACadastros(false).AUT_NUMERO_DOC_CNPJ_OUTPUT = va.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ").toString();
 		va.autVACadastros(false).AUT_NUMERO_DOC_CPF_OUTPUT = va.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString();
 		va.autVACadastros(false).AUT_NUMERO_DOC_PASSAPORTE_OUTPUT = va.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_PASSAPORTE").toString();		
+		workflow = new AUTEntregasBase();
+		workflow.autInitConfigurationProjectExecution(AUTEntrega001_RGR001.class,AUT_TEST_STATUS_EXECUCAO.WAIT);
 	}
 	
 	
@@ -250,6 +252,7 @@ public class AUTEntrega001_RGR001{
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);								
 			hmc.autHMCCadastros().autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+			
 		}
 		catch(java.lang.Exception e) {
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
@@ -269,8 +272,7 @@ public class AUTEntrega001_RGR001{
 			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT);
 			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);  		
 			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT);
-			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);
-			
+			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);			
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
 		
 		}
@@ -279,6 +281,7 @@ public class AUTEntrega001_RGR001{
 		}	
 	}
 
+	
 	/**
 	 * 
 	 * 

@@ -43,6 +43,7 @@ public class AUTEntrega010_RGR001 {
 		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00007.cn00002.CN00002();
 
 		gerTests = new AUTFWKTestObjectBase();
+		gerTests.autInitConfigurationProjectExecution(AUTEntrega010_RGR001.class, AUT_TEST_STATUS_EXECUCAO.WAIT);
 
 	}
 	

@@ -293,10 +293,8 @@ public class AUTALMBaseServices extends AUTFWKTestObjectBase {
 	 * @throws IllegalArgumentException 
 	 * 
 	 */
-	@Test
-	public void autStartTestManager() throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
-		String test = System.getProperty("#sctm_test_name");
-		//String test = "AUT_IT00001_STHMC_ID00003_FRT003_CN00001_CADASTRO_USUARIO_LOJA0035";
+	public void autStartTestManager(String testName) throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		String test = testName;
 		java.util.List<String> scenariosFinded = new java.util.ArrayList<String>();
 		boolean scenarioOk = false;				
 		System.out.println("AUT INFO: START TEST MANAGER : CONTROLLER");
@@ -316,11 +314,26 @@ public class AUTALMBaseServices extends AUTFWKTestObjectBase {
 						}						
 					}
 				}
-			}
-			
+			}			
 			if(scenarioOk) {break;}
-		}		
-		
-		System.out.println();		
+		}			
+	}
+	
+	
+	/**
+	 * 
+	 * Método de inicialização do gerenciador de inicialização dos testes 
+	 * 
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 */
+	@Test
+	public void autStartTestManager() throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		autStartTestManager(System.getProperty("#sctm_test_name"));
 	}
 }
+
