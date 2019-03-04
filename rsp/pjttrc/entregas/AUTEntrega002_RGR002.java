@@ -1,11 +1,15 @@
 package br.lry.qa.rsp.pjttrc.entregas;
 
+import java.util.AbstractMap.SimpleEntry;
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import br.lry.components.AUTBaseComponent;
 import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
 import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
+import br.lry.components.AUTVABaseComponent;
 import br.lry.components.hmc.AUTHMCBaseServices;
 import br.lry.components.va.AUTVABaseServices;
 import br.lry.components.va.AUTVACadastros;
@@ -45,7 +49,7 @@ public class AUTEntrega002_RGR002 {
 	 * Configuração dos parametros de inicialização para realização de cadastro de usuário no HMC
 	 * 
 	 */
-	@Test
+	//@Test
 	public void AUT_IT00000_STCFG_ID00006_FRT006_CN00000_CONFIG() {
 		
 		hmc = new AUTHMCBaseServices();
@@ -66,33 +70,54 @@ public class AUTEntrega002_RGR002 {
 			
 		hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT = hmc.autHMCCadastros().autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER").toString();
 		hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT = hmc.autHMCCadastros().autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD").toString();
+		
 		gerTests = new AUTFWKTestObjectBase();					
 	}
+	
+	
+	
 	/**
+	 *
 	 * Executa os procedimentos de cadastro de usuário no HMC
-	 */
-	@Test
-	public void AUT_IT00001_STHMC_ID00006_FRT006_CN00001_CADASTRO_USUARIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			AUT_LOJA_CADASTRO = "0035";
-			hmc.autHMCCadastros().autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
-	}
-	
-	
+	 *
+	 */	
+	//public static void AUT_IT00001_STHMC_ID00009_FRT009_CN00001_CADASTRO_USUARIO_LOJA0035() {
+	public static void main(String[] args) {
+		java.util.HashMap<String,Object> params = new java.util.HashMap<String,Object>();
+		AUTVABaseComponent bs = new AUTVABaseComponent();
+		/**
+		 * 
+		 * Teste Delete
+		 * 
+		 */
+		params.put("PROJECT_ID", 13);
+		params.put("PROCESS_NAME","AUT_PRC_000001_CN000001");
+		
+		/**
+		 * 
+		 * Teste inclusão
+		 * 
+		 */
+		params.put("PROCESS_DESCRIPTION","AUT_PRC_000001_CN000000001 DESCRIPTION BY PROCESS NAME DESCRIPTION SCENARIO BUSINESS");
+		params.put("PARAMETER_NAME","AUT_PEDIDO");
+		params.put("PARAMETER_VALUE","123456666");
+		params.put("PARAMETER_ROW", 1);
+				
+		params.put("COLUMN_NAME", "DRV_PROCESS_DESCRIPTION");
+		params.put("COLUMN_VALUE", "AUT NEW DESCRIPTION BY TESTING");
 
+		//bs.autGetDataFlowDBIntegration().autRemoveParameters(params);
+		bs.autGetDataFlowDBIntegration().autUpdateParameters(params);
+	}
+
+	
 	
 	/**
 	 * 
 	 * Configura os parametros de inicialização para cadastros de clientes-VA
 	 * 
 	 */
-	@Test
+	//@Test
 	public void AUT_IT00002_STCFG_ID00006_FRT006_CN00002_VA_CADASTRO_CLIENTES() {
 		try {
 			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);			
@@ -112,12 +137,16 @@ public class AUTEntrega002_RGR002 {
 		
 	}
 			
-	@Test
+		
+	//@Test
 	/**
+	 *
 	 * CN00001 - Realizar um cadastro de um cliente Pessoa Juridica
+	 *
 	 */
 	public void AUT_IT00003_STVA_ID00006_FRT006_CN00003_CADASTRO_CLIENTE_PJ_LOJA0035() {
 		try{
+			
 			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.COMERCIAL, AUT_VA_TIPO_RESIDENCIA.DEPOSITO_OU_GALPAO);	
 			va.autVACadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
@@ -128,7 +157,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00002 - Realizar um cadastro de um cliente Pessoa Fisica
 	 */
@@ -143,7 +172,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
 	 */
@@ -158,7 +187,7 @@ public class AUTEntrega002_RGR002 {
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 -Realizar um cadastro de um cliente adicionando mais de um telefone
 	 */
@@ -174,7 +203,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00005 - Realizar um cadastro de um cliente com um CPF que já cadastrado
 	 */
@@ -192,7 +221,7 @@ public class AUTEntrega002_RGR002 {
 
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
 	 */
@@ -208,7 +237,7 @@ public class AUTEntrega002_RGR002 {
 	}	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00007 - Realizar cadastro de cliente utilizando "Não sei meu cep"
 	 */
@@ -225,7 +254,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00008 - Realizar cadastro de cliente por um cpf invalido
 	 */
@@ -241,7 +270,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00009 - Realizar cadastro de cliente por cep invalido
 	 */
@@ -260,7 +289,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 
-	@Test
+	//@Test
 	/**
 	 * CN00010 - Realizar cadastro com mais de um endereço
 	 */
@@ -280,7 +309,7 @@ public class AUTEntrega002_RGR002 {
 	
 
 	
-	@Test
+	//@Test
 	public void AUT_IT00013_STVA_ID00006_FRT006_CN00013_REQUISITO_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO(){
 		try{
 			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -293,7 +322,7 @@ public class AUTEntrega002_RGR002 {
 		}		
 	}	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00011 - Cadastrar um cliente PJ e classificá-lo como Exceção
 	 */
@@ -310,7 +339,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00012 - Classificar um cliente PJ já cadastrado como Exceção
 	 */
@@ -328,7 +357,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 		
-	@Test
+	//@Test
 	/**
 	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
@@ -347,7 +376,7 @@ public class AUTEntrega002_RGR002 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
@@ -363,7 +392,7 @@ public class AUTEntrega002_RGR002 {
 		}		
 	}
 
-	@Test
+	//@Test
 	/**
 	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
 	 */

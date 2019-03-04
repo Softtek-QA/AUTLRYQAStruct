@@ -98,12 +98,10 @@ public class AUTEntrega003_RGR001{
 			cn00001.autStartProcess();
 			cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
-
 		catch(java.lang.Exception e) {
 			cn00001.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
 			System.out.println(e.getMessage());
-			e.printStackTrace();
-			
+			e.printStackTrace();			
 		}
 	}
 	
