@@ -28,4 +28,20 @@ import br.stk.framework.tests.AUTFWKTestObjectBase;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTEntrega011_RGR001 {
 	
+	public static AUTFWKTestObjectBase gerTests;
+	String hostExec = "192.168.0.116";
+
+	public void AUT_INIT() {
+
+	}
+	
+	/**
+	 * 
+	 * Configuração dos parametros de inicialização para realização dos testes de geração de pedidos	 * 
+	 */
+	@Test
+	public void AUT_IT00000_STCFG_ID00030_FRT030_CN00000_CONFIG() {
+		
+	
+	}		
 }

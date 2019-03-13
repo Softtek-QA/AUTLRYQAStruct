@@ -99,15 +99,18 @@ public class AUTEntrega002_RGR002 {
 		 * 
 		 */
 		params.put("PROCESS_DESCRIPTION","AUT_PRC_000001_CN000000001 DESCRIPTION BY PROCESS NAME DESCRIPTION SCENARIO BUSINESS");
-		params.put("PARAMETER_NAME","AUT_PEDIDO");
-		params.put("PARAMETER_VALUE","123456666");
+		params.put("PARAMETER_NAME","AUT_RG");
+		params.put("PARAMETER_VALUE","222222");
 		params.put("PARAMETER_ROW", 1);
 				
-		params.put("COLUMN_NAME", "DRV_PROCESS_DESCRIPTION");
-		params.put("COLUMN_VALUE", "AUT NEW DESCRIPTION BY TESTING");
-
+		params.put("COLUMN_NAME_DATAFLOW", "AUT_DOC");
+		
+		params.put("COLUMN_NAME", "123456888");		
+		params.put("COLUMN_VALUE", "123456888");
+		
 		//bs.autGetDataFlowDBIntegration().autRemoveParameters(params);
-		bs.autGetDataFlowDBIntegration().autUpdateParameters(params);
+		bs.autGetDataFlowDBIntegration().autDBAddParameter(params);
+		System.out.println(bs.autGetDataFlowDBIntegration().autSelectValuesByParameters(params).size());
 	}
 
 	
