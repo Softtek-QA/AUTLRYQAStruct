@@ -13,8 +13,6 @@ import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
 
 import com.borland.silktest.jtf.SilkTestSuite;
-import com.borland.silktest.silk4j.playback.Silk4JRemoteTestRunner;
-
 import br.lry.qa.alm.webservices.scm.AUTALMManage;
 import br.lry.qa.alm.webservices.scm.filters.FilterServiceProxy;
 import br.lry.qa.alm.webservices.scm.requirements.RequirementsServiceProxy;
