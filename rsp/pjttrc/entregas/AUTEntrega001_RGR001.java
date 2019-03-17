@@ -197,7 +197,7 @@ public class AUTEntrega001_RGR001{
 	public static AUTVABaseServices va;
 	public static br.lry.components.pdv.AUTPDVBaseServices pdv;
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
-	public static String AUT_LOJA_CADASTRO ="0035";	
+	public static String AUT_LOJA_CADASTRO ="0019";	
 	public static br.lry.components.sap.AUTSAPBaseServices sap;
 	public static br.lry.components.safe.AUTSafeBaseServices safe;
 	public static br.lry.qa.rsp.pjttrc.entregas.AUTEntregasBase workflow;
@@ -230,7 +230,7 @@ public class AUTEntrega001_RGR001{
 		sap = new AUTSAPBaseServices();
 		va = new AUTVABaseServices();
 		hmc.autHMCCadastros().autInitConfigurationProjectExecution(AUTEntrega001_RGR001.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
-		AUT_LOJA_CADASTRO = "0035";
+		AUT_LOJA_CADASTRO = "0019";
 	}
 
 	public void AUT_AUT_IT99999_STCFG_ID00003_FRT003_CN00000() {	
@@ -239,7 +239,7 @@ public class AUTEntrega001_RGR001{
 		safe = new AUTSafeBaseServices();
 		sap = new AUTSAPBaseServices();
 		va = new AUTVABaseServices();
-		AUT_LOJA_CADASTRO = "0035";
+		AUT_LOJA_CADASTRO = "0019";
 	}
 	
 	/**
