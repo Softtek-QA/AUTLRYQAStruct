@@ -270,10 +270,6 @@ public class AUTEntrega001_RGR001{
 	public void AUT_IT00002_STCFG_ID00003_FRT003_CN00000_VA_CONFIG_CADASTRO_CLIENTES() {		
 		try {									
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
-			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString());
-			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());  		
-			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString());
-			va.autVAConsultas(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);				
 		}
 		catch(java.lang.Exception e) {
@@ -293,6 +289,8 @@ public class AUTEntrega001_RGR001{
 		try {
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_TIPO_CADASTRO", AUT_VA_CADASTROS.FISICA);
+			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString());
+			va.autVACadastros(false).autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());  		
 			va.autVACadastros(false).autInitClientMenuCadastroPF();
 			va.autVACadastros(false).autLogoutApplication();				
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
@@ -315,7 +313,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Estrangeiro
 	 * 
 	 */
-	//@Test
+	@Test
 	public void AUT_IT00004_STVA_ID00003_FRT003_CN00003_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
@@ -347,7 +345,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Jurídica
 	 * 
 	 */
-	//@Test
+	@Test
 	public void AUT_IT00005_STVA_ID00003_FRT003_CN00004_CADASTRO_CLIENTE_PJ_LOJA0035() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
@@ -376,7 +374,7 @@ public class AUTEntrega001_RGR001{
 	 * 8
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
-	//@Test
+	@Test
 	public void AUT_IT00006_STPDV_ID00003_FRT003_CN00005_LOGIN_LOJA0035() {				
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -390,7 +388,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	//@Test
+	@Test
 	/**
 	 * 3
 	 * Executa procedimentos para consulta de material de preço do material PDV
@@ -407,7 +405,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}	
 
-	//@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de estoque de material no SAP

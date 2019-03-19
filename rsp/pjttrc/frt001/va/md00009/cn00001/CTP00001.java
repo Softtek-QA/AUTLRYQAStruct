@@ -25,6 +25,7 @@ public class CTP00001 extends AUTVABaseComponent {
 			public boolean autInitProcess() {
 				// TODO Auto-generated method stub
 				CMP11001(parameters.get(1));
+				com.borland.silktest.jtf.Utils.sleep(5 * 1000);
 				CMP11002(parameters.get(1));
 				CMP11003(parameters.get(1));
 				return true;
