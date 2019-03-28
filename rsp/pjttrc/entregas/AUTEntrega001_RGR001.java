@@ -197,7 +197,7 @@ public class AUTEntrega001_RGR001{
 	public static AUTVABaseServices va;
 	public static br.lry.components.pdv.AUTPDVBaseServices pdv;
 	public static String USUARIO_GLOBAL = "00000000",SENHA_GLOBAL="1234";
-	public static String AUT_LOJA_CADASTRO ="0019";	
+	public static String AUT_LOJA_CADASTRO ="0045";	
 	public static br.lry.components.sap.AUTSAPBaseServices sap;
 	public static br.lry.components.safe.AUTSafeBaseServices safe;
 	public static br.lry.qa.rsp.pjttrc.entregas.AUTEntregasBase workflow;
@@ -230,7 +230,7 @@ public class AUTEntrega001_RGR001{
 		sap = new AUTSAPBaseServices();
 		va = new AUTVABaseServices();
 		hmc.autHMCCadastros().autInitConfigurationProjectExecution(AUTEntrega001_RGR001.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
-		AUT_LOJA_CADASTRO = "0019";
+		AUT_LOJA_CADASTRO = "0045";
 	}
 
 	public void AUT_AUT_IT99999_STCFG_ID00003_FRT003_CN00000() {	
@@ -239,7 +239,7 @@ public class AUTEntrega001_RGR001{
 		safe = new AUTSafeBaseServices();
 		sap = new AUTSAPBaseServices();
 		va = new AUTVABaseServices();
-		AUT_LOJA_CADASTRO = "0019";
+		AUT_LOJA_CADASTRO = "0045";
 	}
 	
 	/**
@@ -248,7 +248,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 */
 	@Test
-	public void AUT_IT00001_STHMC_ID00003_FRT003_CN00001_CADASTRO_USUARIO_LOJA0035() {
+	public void AUT_IT00001_STHMC_ID00003_FRT003_CN00001_CADASTRO_USUARIO_LOJA0019() {
 		try {	
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);								
 			hmc.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN, "AUT_PERFIL_ACESSO", AUT_HMC_PERFIL_ACESSO.USUARIO_LOJA.name());
@@ -260,21 +260,8 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
+	
 
-	/**
-	 * 
-	 * Configura os parametros de inicialização para cadastros de clientes-VA
-	 * 
-	 */
-	@Test
-	public void AUT_IT00002_STCFG_ID00003_FRT003_CN00000_VA_CONFIG_CADASTRO_CLIENTES() {		
-		try {									
-			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);				
-		}
-		catch(java.lang.Exception e) {
-			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
-		}	
-	}
 
 	
 	/**
@@ -283,10 +270,10 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Pessoa Física
 	 * 
 	 */
-	@Test
-	public void AUT_IT00003_STVA_ID00003_FRT003_CN00002_CADASTRO_CLIENTE_PF_LOJA0035() {		
+	//@Test
+	public void AUT_IT00003_STVA_ID00003_FRT003_CN00002_CADASTRO_CLIENTE_PF_LOJA0019() {		
 		try {
-			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
+			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);				
 			va.autVACadastros(false).autInitClientMenuCadastroPF();
 			va.autVACadastros(false).autLogoutApplication();				
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);	
@@ -310,7 +297,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 */
 	//@Test
-	public void AUT_IT00004_STVA_ID00003_FRT003_CN00003_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00004_STVA_ID00003_FRT003_CN00003_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0019() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
 			try {
@@ -342,7 +329,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 */
 	//@Test
-	public void AUT_IT00005_STVA_ID00003_FRT003_CN00004_CADASTRO_CLIENTE_PJ_LOJA0035() {
+	public void AUT_IT00005_STVA_ID00003_FRT003_CN00004_CADASTRO_CLIENTE_PJ_LOJA0019() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
 			try {
@@ -371,7 +358,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	//@Test
-	public void AUT_IT00006_STPDV_ID00003_FRT003_CN00005_LOGIN_LOJA0035() {				
+	public void AUT_IT00006_STPDV_ID00003_FRT003_CN00005_LOGIN_LOJA0019() {				
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autPDVAcessos().autPDVLoginDefault();
@@ -390,7 +377,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para consulta de material de preço do material PDV
 	 * 
 	 */
-	public void AUT_IT00007_STPDV_ID00003_FRT003_CN00006_VALIDA_PRECO_MATERIAL_LOJA0035() {
+	public void AUT_IT00007_STPDV_ID00003_FRT003_CN00006_VALIDA_PRECO_MATERIAL_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartConsultaDefault();
@@ -407,7 +394,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de estoque de material no SAP
 	 * 
 	 */
-	public void AUT_IT00008_STSAP_ID00003_FRT003_CN00007_VALIDA_ESTOQUE_MATERIAL_LOJA0035() {
+	public void AUT_IT00008_STSAP_ID00003_FRT003_CN00007_VALIDA_ESTOQUE_MATERIAL_LOJA0019() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			sap.autSAPEstoques().autGetStorageMaterial(AUT_LOJA_CADASTRO, sap.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_GERACAO_PEDIDOS, "AUT_CODIGO_ITEM").toString());
@@ -486,7 +473,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 */
 	//@Test
-	public void AUT_IT00012_STCFG_ID00003_FRT003_CN00000_CONFIG_GERADOR_PEDIDOS_LOJA0035() {
+	public void AUT_IT00012_STCFG_ID00003_FRT003_CN00000_CONFIG_GERADOR_PEDIDOS_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			va.autVAPedidos(false).AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
@@ -516,7 +503,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00013_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035() {
+	public void AUT_IT00013_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos(false).AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
@@ -537,7 +524,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00014_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0035() {
+	public void AUT_IT00014_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0019() {
 		try {
 
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -557,7 +544,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00015_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PF_LOJA0035() {
+	public void AUT_IT00015_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PF_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
@@ -584,7 +571,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00016_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0035() {
+	public void AUT_IT00016_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -597,7 +584,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	//@Test
-	public void AUT_IT00017_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PF_LOJA0035() {
+	public void AUT_IT00017_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PF_LOJA0019() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			sap.autSAPFaturarPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO);			
@@ -615,7 +602,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00018_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_PF_LOJA0035() {
+	public void AUT_IT00018_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -634,7 +621,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00019_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PF_LOJA0035() {
+	public void AUT_IT00019_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PF_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
@@ -662,7 +649,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00020_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0035() {
+	public void AUT_IT00020_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -680,7 +667,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00021_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PF_LOJA0035() {
+	public void AUT_IT00021_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PF_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString(), AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -715,7 +702,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00022_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00022_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
@@ -736,7 +723,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00023_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00023_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -755,7 +742,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00024_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00024_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
@@ -782,7 +769,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00024_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00024_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -795,7 +782,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	//@Test
-	public void AUT_IT00025_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00025_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			sap.autSAPFaturarPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO);			
@@ -813,7 +800,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00026_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00026_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -832,7 +819,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00027_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00027_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
@@ -860,7 +847,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00028_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00028_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -878,7 +865,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00029_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00029_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_ESTRANGEIRO_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).AUT_NUMERO_DOC_PASSAPORTE_OUTPUT, AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -914,7 +901,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00030_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PJ_LOJA0035() {
+	public void AUT_IT00030_STVA_ID00003_FRT003_CN00013_RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PJ_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
@@ -934,7 +921,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00031_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0035() {
+	public void AUT_IT00031_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -953,7 +940,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00032_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PJ_LOJA0035() {
+	public void AUT_IT00032_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PJ_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
@@ -981,7 +968,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00033_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0035() {
+	public void AUT_IT00033_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -994,7 +981,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	//@Test
-	public void AUT_IT00034_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PJ_LOJA0035() {
+	public void AUT_IT00034_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PJ_LOJA0019() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			sap.autSAPFaturarPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO);			
@@ -1012,7 +999,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00035_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_PJ_LOJA0035() {
+	public void AUT_IT00035_STVA_ID00003_FRT003_CN00018_VALIDA_STATUS_PEDIDO_FATURADO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultas().AUTVAConsultaStatusPedidoCompleto(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1031,7 +1018,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00036_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PJ_LOJA0035() {
+	public void AUT_IT00036_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PJ_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_EXTERNA_IMEDIATA);
@@ -1059,7 +1046,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00037_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0035() {
+	public void AUT_IT00037_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1078,7 +1065,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00038_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PJ_LOJA0035() {
+	public void AUT_IT00038_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PJ_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).AUT_NUMERO_DOC_CNPJ_OUTPUT, AUT_SAFE_TYPE_PERSONS.JURIDICA);
@@ -1119,7 +1106,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00039_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0035() {
+	public void AUT_IT00039_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PF_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
@@ -1139,7 +1126,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00040_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0035() {
+	public void AUT_IT00040_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1158,7 +1145,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00041_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PF_LOJA0035() {
+	public void AUT_IT00041_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PF_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA);
@@ -1185,7 +1172,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00042_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0035() {
+	public void AUT_IT00042_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1204,7 +1191,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00043_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PF_LOJA0035() {
+	public void AUT_IT00043_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PF_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA);
@@ -1232,7 +1219,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00044_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0035() {
+	public void AUT_IT00044_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1250,7 +1237,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00045_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PF_LOJA0035() {
+	public void AUT_IT00045_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PF_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString(), AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -1281,7 +1268,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00046_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00046_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
@@ -1301,7 +1288,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00047_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00047_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1320,7 +1307,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00048_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00048_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA);
@@ -1347,7 +1334,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00049_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00049_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1366,7 +1353,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00050_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00050_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA);
@@ -1394,7 +1381,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00051_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00051_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1412,7 +1399,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00052_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00052_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_ESTRANGEIRO_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).AUT_NUMERO_DOC_PASSAPORTE_OUTPUT, AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -1451,7 +1438,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00053_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PJ_LOJA0035() {
+	public void AUT_IT00053_STVA_ID00003_FRT003_CN00013_RETIRADA_INTERNA_IMEDIATA_PAG_DINHEIRO_PJ_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
@@ -1471,7 +1458,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00054_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0035() {
+	public void AUT_IT00054_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1490,7 +1477,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00055_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PJ_LOJA0035() {
+	public void AUT_IT00055_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PJ_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA);
@@ -1517,7 +1504,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00056_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0035() {
+	public void AUT_IT00056_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1537,7 +1524,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00057_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PJ_LOJA0035() {
+	public void AUT_IT00057_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PJ_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.REITRADA_INTERNA_IMEDIATA);
@@ -1565,7 +1552,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00058_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0035() {
+	public void AUT_IT00058_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1583,7 +1570,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00059_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PJ_LOJA0035() {
+	public void AUT_IT00059_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PJ_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).AUT_NUMERO_DOC_CNPJ_OUTPUT, AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -1617,7 +1604,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00060_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_PF_LOJA0035() {
+	public void AUT_IT00060_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_PF_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.FISICA;
@@ -1637,7 +1624,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00061_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0035() {
+	public void AUT_IT00061_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1656,7 +1643,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00062_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PF_LOJA0035() {
+	public void AUT_IT00062_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PF_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.CAIXA);
@@ -1683,7 +1670,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00063_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0035() {
+	public void AUT_IT00063_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1702,7 +1689,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00064_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PF_LOJA0035() {
+	public void AUT_IT00064_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PF_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.CAIXA);
@@ -1730,7 +1717,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00065_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0035() {
+	public void AUT_IT00065_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PF_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1748,7 +1735,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00066_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PF_LOJA0035() {
+	public void AUT_IT00066_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PF_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF").toString(), AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -1774,7 +1761,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00067_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00067_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.ESTRANGEIRO;
@@ -1794,7 +1781,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00068_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00068_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1813,7 +1800,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00069_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00069_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.CAIXA);
@@ -1840,7 +1827,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00070_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00070_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1859,7 +1846,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00071_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00071_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.CAIXA);
@@ -1887,7 +1874,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00072_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00072_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_ESTRANGEIRO_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1905,7 +1892,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00073_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_ESTRANGEIRO_LOJA0035() {
+	public void AUT_IT00073_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_ESTRANGEIRO_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).AUT_NUMERO_DOC_PASSAPORTE_OUTPUT, AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -1928,7 +1915,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
 	 */
-	public void AUT_IT00074_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_PJ_LOJA0035() {
+	public void AUT_IT00074_STVA_ID00003_FRT003_CN00013_CAIXA_PAG_DINHEIRO_PJ_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAPedidos().AUT_CLIENT_TYPE = AUT_VA_CADASTROS.JURIDICA;
@@ -1948,7 +1935,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00075_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0035() {
+	public void AUT_IT00075_STVA_ID00003_FRT003_CN00014_VA_VALIDA_STATUS_PEDIDO_CRIADO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Aguardando liberação de pagamento",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -1967,7 +1954,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 *
 	 */
-	public void AUT_IT00076_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PJ_LOJA0035() {
+	public void AUT_IT00076_STPDV_ID00003_FRT003_CN00015_PAGAMENTO_PEDIDO_PJ_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 			pdv.autStartPagamentoPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.CAIXA);
@@ -1994,7 +1981,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00077_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0035() {
+	public void AUT_IT00077_STVA_ID00003_FRT003_CN00016_VALIDA_STATUS_PEDIDO_PAGO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Pago",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -2012,7 +1999,7 @@ public class AUTEntrega001_RGR001{
 	 * Devolução do pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00078_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PJ_LOJA0035() {
+	public void AUT_IT00078_STPDV_ID00003_FRT003_CN00019_DEVOLUCAO_PEDIDO_PJ_LOJA0019() {
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autStartDevolucaoItem(va.autVAPedidos(false).AUT_NUMERO_PEDIDO,AUT_VA_FLUXO_SAIDA.CAIXA);
@@ -2040,7 +2027,7 @@ public class AUTEntrega001_RGR001{
 	 * Consulta de status do pedido no VA - Vendas Assistidas
 	 *
 	 */
-	public void AUT_IT00079_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0035() {
+	public void AUT_IT00079_STVA_ID00003_FRT003_CN00020_VALIDA_PEDIDO_DEVOLUCAO_PJ_LOJA0019() {
 		try {
 			va.autVAConsultas(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVAConsultaStatusPedido(va.autVAPedidos(false).AUT_NUMERO_PEDIDO, "Devolvido",hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_USER_ID").toString(),hmc.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN,"AUT_NOVA_SENHA").toString());			
@@ -2058,7 +2045,7 @@ public class AUTEntrega001_RGR001{
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
 	 *
 	 */
-	public void AUT_IT00080_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PJ_LOJA0035() {
+	public void AUT_IT00080_STSAFE_ID00003_FRT003_CN00021_VALIDA_VALE_TROCA_PJ_LOJA0019() {
 		try {
 			safe.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			safe.autCarregarValeTroca(va.autVACadastros(false).AUT_NUMERO_DOC_CNPJ_OUTPUT, AUT_SAFE_TYPE_PERSONS.FISICA);
@@ -2078,7 +2065,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 * 
 	 */
-	public void AUT_IT00081_STPDV_ID00003_FRT003_CN00038_LOGOUT_LOJA0035() {				
+	public void AUT_IT00081_STPDV_ID00003_FRT003_CN00038_LOGOUT_LOJA0019() {				
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			pdv.autPDVAcessos().autPDVLogoutDefault();

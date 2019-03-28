@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00002;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import com.borland.silktest.jtf.xbrowser.BrowserWindow;
 
 import br.lry.components.AUTVABaseComponent;
 
-public class CN00001 extends AUTVABaseComponent {
+public class CN00002 extends AUTVABaseComponent {
 
 	/**
 	 * 
@@ -34,7 +34,7 @@ public class CN00001 extends AUTVABaseComponent {
 	 * Construtor
 	 * 
 	 */
-	public CN00001() {
+	public CN00002() {
 		// TODO Auto-generated constructor stub
 	}
 

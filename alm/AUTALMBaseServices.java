@@ -80,6 +80,10 @@ public class AUTALMBaseServices extends AUTFWKTestObjectBase {
 		listClassForSearch.add(new AUTEntrega010_RGR001());
 		listClassForSearch.add(new AUTEntrega010_RGR002());
 		listClassForSearch.add(new AUTEntrega010_RGR003());
+		listClassForSearch.add(new AUTEntrega011_RGR001());
+		listClassForSearch.add(new AUTEntrega011_RGR002());
+		listClassForSearch.add(new AUTEntrega011_RGR003());
+		
 	}
 
 	

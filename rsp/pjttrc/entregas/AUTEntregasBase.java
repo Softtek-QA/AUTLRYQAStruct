@@ -17,7 +17,7 @@ import br.lry.components.AUTBaseComponent;
  */
 public class AUTEntregasBase extends AUTBaseComponent {
 	java.lang.Class currentSuite = null; 
-	br.lry.qa.rsp.pjttrc.entregas.AUTVAWorkFlowEndToEnd_RGR0001 entEndToEnd = null;	
+	//br.lry.qa.rsp.pjttrc.entregas.AUTVAWorkFlowEndToEnd_RGR0001 entEndToEnd = null;	
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega001_RGR001 ent1 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega002_RGR001 ent2 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega003_RGR001 ent3 = null;
