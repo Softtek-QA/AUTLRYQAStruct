@@ -32,8 +32,8 @@ public class AUTEntrega011_RGR001 {
 	String hostExec = "192.168.0.116";
 
 	br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001.CN00001 cn01;
-	br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001.CN00001 cn02;
-
+	br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00002.CN00002 cn02;
+	br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00003.CN00003 cn03;
 	public void AUT_INIT() {
 
 	}
@@ -45,22 +45,15 @@ public class AUTEntrega011_RGR001 {
 	}
 
 	@Test
-	public  void AUT_IT11002_STVA_ID00030_FRT030_CN00001_PEDIDO_CRIACAO_EDICAO_ALTERACAO_DEPOSITOS_LOJAS() {
-		
+	public  void AUT_IT11002_STVA_ID00030_FRT030_CN00002_PEDIDO_CRIACAO_EDICAO_ALTERACAO_DEPOSITOS_LOJAS() {
+		cn02 = new br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00002.CN00002();
+		cn02.autStartProcess();
 	}
 
 	@Test
-	public  void AUT_IT11003_STVA_ID00030_FRT030_CN00001_PEDIDO_CRIACAO_EDICAO_ALTERACAO_DEPOSITOS_LOJAS() {
-		
+	public  void AUT_IT11003_STVA_ID00030_FRT030_CN00003_PEDIDO_CRIACAO_EDICAO_ALTERACAO_DEPOSITOS_LOJAS() {
+		cn03 = new br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00003.CN00003();
+		cn03.autStartProcess();
 	}
-	
-	/**
-	 * 
-	 * Configuração dos parametros de inicialização para realização dos testes de geração de pedidos	 * 
-	 */
-	@Test
-	public void AUT_IT00000_STCFG_ID00030_FRT030_CN00000_CONFIG() {
 		
-	
-	}		
 }

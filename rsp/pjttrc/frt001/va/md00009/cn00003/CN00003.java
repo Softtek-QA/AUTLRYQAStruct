@@ -19,8 +19,8 @@ public class CN00003 extends AUTVABaseComponent {
 	public void autStartProcess() {
 		try {
 			System.out.println("AUT INFO: START LOGIN PROCESS");
-			br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001.CTP00001 ct1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001.CTP00001();			
-			ct1.AUT_IT00003_STVA_ID00004_FRT004_CN00001_GERACAO_PEDIDOS();				
+			br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00003.CTP00001 ct1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00003.CTP00001();			
+			ct1.AUT_IT00003_STVA_ID00004_FRT004_CN00003_GERACAO_PEDIDOS();				
 		}
 		catch(java.lang.Exception e) {
 			System.out.println("AUT ERROR: START LOGIN PROCESS");

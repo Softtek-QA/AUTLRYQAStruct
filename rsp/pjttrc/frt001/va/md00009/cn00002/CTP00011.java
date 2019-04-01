@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00003;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00002;
 
 import br.lry.components.AUTVABaseComponent;
 
