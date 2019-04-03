@@ -58,12 +58,6 @@ public class CTP00001 extends AUTVABaseComponent {
 				System.out.println(String.format("AUT INFO: NUMERO DO CARTAO PARA PEDIDO: PRE CONFIGURADO: %s",numeroCartao));
 				CMP11001(parameters); //Inicializa login pelo boitata
 				
-				
-				
-				
-				
-				
-				
 				com.borland.silktest.jtf.Utils.sleep(8 * 1000);
 				CMP11002(parameters);//Adiciona o item padrão pelo fluxo do boitatá
 				
@@ -73,7 +67,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_QUANTIDADE_MAXIMA_ITENS",5);
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_OPCAO_SELECAO_ITEM",AUT_SELECT_PRODUCT_OPTIONS_BY_STORE.CONDITION_BY_ID.name());
 				//Configuração de itens para cenário
-				//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","41,42,43,44,45,46,47,48,49,50,51");
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","41,42,43,44,45,46,47,48,49,50,51");
 					
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_UNITARIO",AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.toString());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_FRACIONADO",AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.toString());
@@ -113,7 +107,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11006(parameters);				
 				
 				CMP11007(parameters).autIrProximaPagina();
-				CMP11007(parameters).autGerarPedidosEntrega(FILIAIS.LOJA);				
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);				
 				CMP11007(parameters).autFinalizarPedido();				
 				String numeroPedido = CMP11009(parameters);
 
@@ -140,7 +134,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11011(parameters); //Habilitar opçao para ingnorar anti fraude
 
 				CMP11007(parameters).autIrProximaPagina();
-				CMP11007(parameters).autGerarPedidosEntrega(FILIAIS.LOJA);
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);
 				CMP11007(parameters).autFinalizarPedido();
 				
 				CMP11022(parameters);

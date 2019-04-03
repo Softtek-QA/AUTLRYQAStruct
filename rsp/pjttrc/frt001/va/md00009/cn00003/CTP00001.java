@@ -63,8 +63,8 @@ public class CTP00001 extends AUTVABaseComponent {
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001);												
 				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_QUANTIDADE_MAXIMA_ITENS",6);
-				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_OPCAO_SELECAO_ITEM",AUT_SELECT_PRODUCT_OPTIONS_BY_STORE.CONDITION_BY_STORE.name());
-				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO",FILIAIS.LJ0045.toString());
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_OPCAO_SELECAO_ITEM",AUT_SELECT_PRODUCT_OPTIONS_BY_STORE.CONDITION_BY_ID.name());
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","53,54,55,56,57,58");
 					
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_UNITARIO",AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.toString());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_FRACIONADO",AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.toString());
@@ -93,7 +93,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				
 				CMP11007(parameters).setFluxoEntregasGeral();
-				CMP11007(parameters).autGerarPedidosEntrega(FILIAIS.LOJA);
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);
 				CMP11007(parameters).autFinalizarPedido();
 				
 				
@@ -116,7 +116,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11011(parameters);
 
 				CMP11007(parameters).autIrProximaPagina();
-				CMP11007(parameters).autGerarPedidosEntrega(FILIAIS.LOJA);				
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);				
 				CMP11007(parameters).autFinalizarPedido();				
 				CMP11009(parameters);
 				
@@ -128,7 +128,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11011(parameters); //Altera datas para entrega a domicilio
 
 				CMP11007(parameters).autIrProximaPagina();
-				CMP11007(parameters).autGerarPedidosEntrega(FILIAIS.LOJA);				
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);				
 				CMP11007(parameters).autFinalizarPedido();				
 				CMP11009(parameters);
 
