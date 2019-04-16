@@ -14,6 +14,7 @@ import com.borland.silktest.jtf.xbrowser.DomTextField;
 
 import br.lry.components.AUTVABaseComponent;
 import br.lry.components.AUTBaseComponent.AUTStoreItem.AUT_SELECT_PRODUCT_OPTIONS_BY_STORE;
+import br.lry.components.AUTVABaseComponent.AUT_TIPO_ACESSO_LOGIN;
 import br.lry.components.AUTVABaseComponent.AUTVAFluxosSaidaComponente.AUT_VA_TURNOS_ENTREGA;
 import br.lry.components.AUTVABaseComponent.AUTVAFluxosSaidaComponente.ENCOMENDA;
 import br.lry.components.AUTVABaseComponent.AUTVAFluxosSaidaComponente.FILIAIS;
@@ -41,12 +42,15 @@ public class CTP00001 extends AUTVABaseComponent {
 	java.util.HashMap<String,Object> parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
 	AUT_TABLE_PARAMETERS_NAMES tbl;
 	@Test
-	public void AUT_IT00003_STVA_ID00004_FRT004_CN00001_GERACAO_PEDIDOS() {
+	public void AUT_IT00001_STVA_ID00004_FRT004_CN00001_GERACAO_PEDIDOS_DEBUG() {
 		AUTITestFlowProcess tst = new AUTITestFlowProcess() {
 			@Override
 			public boolean autInitProcess() {	
+				
 				//Carrega os parametros do banco de dados para os cenários específicos
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);								
+			
+				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_EDICAO_ITEM_OPCAO", AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.name());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM", AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO.name());
 				String numeroCartao = AUTProjectsFunctions.gerarItemChaveRandomico(10);
@@ -68,8 +72,9 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_QUANTIDADE_MAXIMA_ITENS",2);
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_ITEM",AUT_SELECT_PRODUCT_OPTIONS_BY_STORE.CONDITION_BY_ID.name());
-				//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","57,51,35,36,40");
-				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","57,51");
+				//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","33,34,35,36,40");
+				
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","33,34");
 				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_UNITARIO",AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.toString());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_FRACIONADO",AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.toString());
@@ -81,12 +86,8 @@ public class CTP00001 extends AUTVABaseComponent {
 								
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
 				
+				
 				java.util.List<AUTStoreItem> listItens = CMP11004(parameters);//Limpa o carrinho de compras e inclui os items especificos do cenário de negócio
-				/**
-				AUT_AGENT_SILK4J.<DomElement>find("//VA.//BrowserWindow//DIV[@textContents='LM:  87796485*']//DomButton[@id='batch-*']").click();
-				AUT_AGENT_SILK4J.<DomTextField>find("VA.//BrowserWindow//DomElement[@id='batch-consult']").setText("37");
-				AUT_AGENT_SILK4J.<DomElement>find("VA.AtualizacaoDados.//DomTextField[@type='submit' and @class='glyph glyph-magnifier addon right']").click();
-				**/
 				
 				Integer index = 1;
 				for(AUTStoreItem item : listItens) {
@@ -107,7 +108,6 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11006(parameters);				
 				
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);
-				
 				CMP11007(parameters).autFinalizarPedido();
 				
 				String numeroPedido = CMP11009(parameters);
@@ -117,7 +117,8 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_NUMERO_PEDIDO", numeroPedido);								
-				
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_PEDIDO",numeroPedido);
+
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
 				
 				parameters.remove("AUT_ITENS_EDICAO");
@@ -133,7 +134,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11011(parameters);				
 				
 								
-				CMP11007(parameters).autIrProximaPagina();				
+				CMP11007(parameters).autIrProximaPagina();		
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);				
 				CMP11007(parameters).autFinalizarPedido();
 				CMP11009(parameters);
@@ -172,6 +173,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
 
 				CMP11010(parameters);
+				
 				java.util.List<AUTStoreItem> ltsInclusao = CMP11004_V2(parameters);
 				System.out.println(String.format("AUT INFO : TOTAL DE ITENS PARA INCLUSAO NO PEDIDO: %s",ltsInclusao.size()));
 				index = 3;
@@ -183,6 +185,8 @@ public class CTP00001 extends AUTVABaseComponent {
 					it.setQuantidadePadrao(Integer.parseInt(parameters.get("AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_UNITARIO").toString()));
 				}				
 				
+				
+
 
 				parameters.remove("AUT_ITENS_EDICAO");
 				parameters.put("AUT_ITENS_EDICAO",ltsInclusao);	
@@ -205,7 +209,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				
 				//INICIA O NOVO CICLO DE EDICAO
-				CMP11010(parameters);
+				
 				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_ITEM",AUT_SELECT_PRODUCT_OPTIONS_BY_STORE.CONDITION_BY_ID.name());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","36,40");
@@ -232,7 +236,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				parameters.remove("AUT_ITENS_EDICAO");
 				parameters.put("AUT_ITENS_EDICAO",ltsInclusao2);	
-
+				CMP11010(parameters);
 				CMP11011(parameters);
 				
 				
@@ -283,15 +287,15 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				
 				//INICIA O NOVO CICLO DE EDICAO
-				CMP11010(parameters);
 				
-				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","57,51,36,40");
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_OPCAO_SELECAO_PARAMETRO","57,53,36,40");
 				
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
 				
 				java.util.List<AUTStoreItem> ltsFull = CMP11004_V2(parameters);				
 				parameters.remove("AUT_ITENS_EDICAO");
 				parameters.put("AUT_ITENS_EDICAO",ltsFull);									
+				CMP11010(parameters);
 				CMP11011(parameters);
 
 				CMP11007(parameters).autIrProximaPagina();				
@@ -313,14 +317,67 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11007(parameters).autFinalizarPedido();
 				CMP11009(parameters);
 
-				
 				//************************ CT20-CT23 *********************
 
 				
+				CMP11023(parameters); //FAZ LOGIN NO PDV
 				
-				//CMP11017(parameters); //Fatura o pedido
+				CMP11015(parameters); //FAZ PAGAMENTO DE PEDIDO
 				
-				//CMP11018(parameters); //Executa procedimento de devolução parcial
+				
+				
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM",AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EXIBICAO_DOCUMENTOS_VINCULADOS.name());
+				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
+				
+				CMP11001(parameters);
+				CMP11010(parameters); //VERIFICA STATUS DE PEDIDO PAGO
+					
+				//EDITA - LOTE
+				
+				
+				
+				//***************  Alteração de lote  *****************
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_INIT_APP", false);								
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_TIPO_ACESSO_LOGIN", AUT_TIPO_ACESSO_LOGIN.USUARIO_LOJA.name());								
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM",AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO_DO_BOITATA.name());
+				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
+				CMP11001(parameters);
+				CMP11010(parameters);				
+				CMP11027(parameters);
+								
+				CMP11007(parameters).autIrProximaPagina();				
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,0);
+				
+				
+				CMP11007(parameters).setHabilitarEncomenda(true);
+				CMP11007(parameters).setEncomendarItem(ENCOMENDA.SIM,2);
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.CENTRAL_DISTRIBUICAO,1);
+				CMP11007(parameters).setUsarDataMaisProxima(USAR_DATA_MAIS_PROXIMA.NAO, 2);
+				CMP11007(parameters).setFilialSaidaGeral(FILIAIS.LJ0045,2);
+				CMP11007(parameters).setDepositosGeral(DEPOSITOS.C010,2);
+				CMP11007(parameters).setTurnoEntrega(AUT_VA_TURNOS_ENTREGA.TARDE, 2);
+				
+				
+				
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,2);
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,3);				
+				CMP11007(parameters).autFinalizarPedido();
+				CMP11009(parameters);
+				//***************  Alteração de lote  *****************
+				//CT-25
+						
+				
+				
+				CMP11017(parameters); //Fatura o pedido
+				
+				
+				
+				
+				//CT-26
+				CMP11028(parameters); //VERIFICA ORDEM NO SAP	
+				
+				//CT-27
+				CMP11018(parameters); //Executa procedimento de devolução parcial
 				
 				return true;
 			}

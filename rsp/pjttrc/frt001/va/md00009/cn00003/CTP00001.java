@@ -92,11 +92,9 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11006(parameters);				
 				
 				
-				CMP11007(parameters).setFluxoEntregasGeral();
+				CMP11007(parameters).autIrProximaPagina();				
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);
 				CMP11007(parameters).autFinalizarPedido();
-				
-				
 				String numeroPedido = CMP11009(parameters);
 
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001, "AUT_NUMERO_PEDIDO", numeroPedido);								
@@ -133,6 +131,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11009(parameters);
 
 				CMP11015(parameters); //Executa procedimentos de pagamento no PDV
+				
 				
 				return true;
 			}

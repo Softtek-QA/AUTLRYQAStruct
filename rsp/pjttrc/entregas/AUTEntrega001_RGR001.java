@@ -200,8 +200,7 @@ public class AUTEntrega001_RGR001{
 	public static String AUT_LOJA_CADASTRO ="0045";	
 	public static br.lry.components.sap.AUTSAPBaseServices sap;
 	public static br.lry.components.safe.AUTSafeBaseServices safe;
-	public static br.lry.qa.rsp.pjttrc.entregas.AUTEntregasBase workflow;
-	
+	public static br.lry.qa.rsp.pjttrc.entregas.AUTEntregasBase workflow;	
 	String hostExec = "192.168.0.116";
 	
 	public void AUT_INIT() {
@@ -242,6 +241,7 @@ public class AUTEntrega001_RGR001{
 		AUT_LOJA_CADASTRO = "0045";
 	}
 	
+	
 	/**
 	 * 
 	 * Executa os procedimentos de cadastro
@@ -251,7 +251,7 @@ public class AUTEntrega001_RGR001{
 	public void AUT_IT00001_STHMC_ID00003_FRT003_CN00001_CADASTRO_USUARIO_LOJA0019() {
 		try {	
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);								
-			hmc.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN, "AUT_PERFIL_ACESSO", AUT_HMC_PERFIL_ACESSO.USUARIO_LOJA.name());
+			hmc.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN, "AUT_PERFIL_ACESSO", AUT_HMC_PERFIL_ACESSO.USUARIO_TELEVENDAS.name());
 			hmc.autHMCCadastros().autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);
 			hmc.autHMCCadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);			
 		}
@@ -270,7 +270,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Pessoa Física
 	 * 
 	 */
-	////@Test
+	@Test
 	public void AUT_IT00003_STVA_ID00003_FRT003_CN00002_CADASTRO_CLIENTE_PF_LOJA0019() {		
 		try {
 			va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);				
@@ -296,7 +296,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Estrangeiro
 	 * 
 	 */
-	////@Test
+	@Test
 	public void AUT_IT00004_STVA_ID00003_FRT003_CN00003_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0019() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
@@ -328,7 +328,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Jurídica
 	 * 
 	 */
-	////@Test
+	@Test
 	public void AUT_IT00005_STVA_ID00003_FRT003_CN00004_CADASTRO_CLIENTE_PJ_LOJA0019() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
@@ -357,7 +357,7 @@ public class AUTEntrega001_RGR001{
 	 * 8
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
-	////@Test
+	@Test
 	public void AUT_IT00006_STPDV_ID00003_FRT003_CN00005_LOGIN_LOJA0019() {				
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -371,7 +371,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 * 3
 	 * Executa procedimentos para consulta de material de preço do material PDV
@@ -388,7 +388,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}	
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de estoque de material no SAP
@@ -407,7 +407,7 @@ public class AUTEntrega001_RGR001{
 	}	
 
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Gera voucher para cliente PF
@@ -426,7 +426,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Gera voucher para cliente estrangeiro
@@ -446,7 +446,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Gera voucher para cliente PJ
@@ -472,7 +472,7 @@ public class AUTEntrega001_RGR001{
 	 * Configura os parametros de inicialização do gerador de pedidos
 	 * 
 	 */
-	////@Test
+	@Test
 	public void AUT_IT00012_STCFG_ID00003_FRT003_CN00000_CONFIG_GERADOR_PEDIDOS_LOJA0019() {
 		try {
 			va.autVAPedidos(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
@@ -498,7 +498,7 @@ public class AUTEntrega001_RGR001{
 	//********************************** FLUXO DE SAÍDA: RETIRADA EXTERNA IMEDIATA ******************************************
 	//***********************************************************************************************************************
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
@@ -516,7 +516,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -538,7 +538,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -565,7 +565,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -583,7 +583,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	public void AUT_IT00017_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PF_LOJA0019() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -596,7 +596,7 @@ public class AUTEntrega001_RGR001{
 	}
 		
 	
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -614,7 +614,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -643,7 +643,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -661,7 +661,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -697,7 +697,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
@@ -715,7 +715,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -736,7 +736,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -763,7 +763,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -781,7 +781,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	public void AUT_IT00025_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_ESTRANGEIRO_LOJA0019() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -794,7 +794,7 @@ public class AUTEntrega001_RGR001{
 	}
 		
 	
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -812,7 +812,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -841,7 +841,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -859,7 +859,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -896,7 +896,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Externa Imediata - Pagamento em Dinheiro
@@ -913,7 +913,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -934,7 +934,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -962,7 +962,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 	
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -980,7 +980,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	public void AUT_IT00034_STSAP_ID00003_FRT003_CN00017_FATURA_PEDIDO_PJ_LOJA0019() {
 		try {
 			sap.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -993,7 +993,7 @@ public class AUTEntrega001_RGR001{
 	}
 		
 	
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1011,7 +1011,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -1040,7 +1040,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1059,7 +1059,7 @@ public class AUTEntrega001_RGR001{
 
 	
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -1101,7 +1101,7 @@ public class AUTEntrega001_RGR001{
 
 	
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
@@ -1118,7 +1118,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -1139,7 +1139,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -1166,7 +1166,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1184,7 +1184,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 		
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -1213,7 +1213,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1231,7 +1231,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -1263,7 +1263,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
@@ -1280,7 +1280,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -1301,7 +1301,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -1328,7 +1328,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1346,7 +1346,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -1375,7 +1375,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1393,7 +1393,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -1433,7 +1433,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
@@ -1450,7 +1450,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -1471,7 +1471,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -1498,7 +1498,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1517,7 +1517,7 @@ public class AUTEntrega001_RGR001{
 		
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -1546,7 +1546,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1564,7 +1564,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -1599,7 +1599,7 @@ public class AUTEntrega001_RGR001{
 
 	
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Caixa - Pagamento em Dinheiro
@@ -1616,7 +1616,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -1637,7 +1637,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -1664,7 +1664,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1682,7 +1682,7 @@ public class AUTEntrega001_RGR001{
 	}
 	
 		
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -1711,7 +1711,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1729,7 +1729,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -1756,7 +1756,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
@@ -1773,7 +1773,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -1794,7 +1794,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -1821,7 +1821,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1839,7 +1839,7 @@ public class AUTEntrega001_RGR001{
 	}		
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -1868,7 +1868,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1886,7 +1886,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -1910,7 +1910,7 @@ public class AUTEntrega001_RGR001{
 	
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos de criação de pedido para pessoa física - Fluxo de saída - Retirada Interna Imediata - Pagamento em Dinheiro
@@ -1927,7 +1927,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 	
-	////@Test
+	@Test
 	/**
 	 *
 	 * 21
@@ -1948,7 +1948,7 @@ public class AUTEntrega001_RGR001{
 
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
@@ -1975,7 +1975,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	////@Test
+	@Test
 	/**
 	 *  
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -1992,7 +1992,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}		
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -2021,7 +2021,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de status do pedido no VA - Vendas Assistidas
@@ -2039,7 +2039,7 @@ public class AUTEntrega001_RGR001{
 	}
 
 
-	////@Test
+	@Test
 	/**
 	 * 
 	 * Carrega vale troca gerado automaticamento pelo sistema - Em função do fluxo de devolução
@@ -2058,7 +2058,7 @@ public class AUTEntrega001_RGR001{
 
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 
 	 * 38
