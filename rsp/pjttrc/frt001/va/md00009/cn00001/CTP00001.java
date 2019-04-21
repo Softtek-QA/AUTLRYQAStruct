@@ -50,7 +50,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				//Carrega os parametros do banco de dados para os cenários específicos
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);								
 			
-				
+				/*
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_EDICAO_ITEM_OPCAO", AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.name());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM", AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO.name());
 				String numeroCartao = AUTProjectsFunctions.gerarItemChaveRandomico(10);
@@ -328,7 +328,6 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM",AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EXIBICAO_DOCUMENTOS_VINCULADOS.name());
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
-				
 				CMP11001(parameters);
 				CMP11010(parameters); //VERIFICA STATUS DE PEDIDO PAGO
 					
@@ -345,6 +344,15 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11010(parameters);				
 				CMP11027(parameters);
 								
+				/*
+				CMP11001(parameters);
+				CMP11010(parameters);								
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM",AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO.name());
+				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
+				
+				
+				
+				
 				CMP11007(parameters).autIrProximaPagina();				
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,0);
 				
@@ -363,9 +371,12 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,3);				
 				CMP11007(parameters).autFinalizarPedido();
 				CMP11009(parameters);
+				
+				
 				//***************  Alteração de lote  *****************
 				//CT-25
 						
+				*/
 				
 				
 				CMP11017(parameters); //Fatura o pedido
@@ -380,8 +391,9 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11018(parameters); //Executa procedimento de devolução parcial
 				
 				return true;
+				
 			}
-
+			
 			@Override
 			public boolean autStartProcess() {
 				// TODO Auto-generated method stub

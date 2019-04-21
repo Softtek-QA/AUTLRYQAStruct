@@ -2,6 +2,8 @@ package br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00002;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Random;
 
 import org.junit.Test;
 
@@ -42,12 +44,14 @@ import br.stk.framework.tests.AUTFWKTestObjectBase.AUTTestFlowManager.AUTTestPro
 public class CTP00001 extends AUTVABaseComponent {
 	java.util.HashMap<String,Object> parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001);
 	AUT_TABLE_PARAMETERS_NAMES tbl;
+	
 	@Test
 	public void AUT_IT00003_STVA_ID00004_FRT004_CN00002_GERACAO_PEDIDOS() {
 		AUTITestFlowProcess tst = new AUTITestFlowProcess() {
 			@Override
-			public boolean autInitProcess() {	
+			public boolean autInitProcess() {					
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001);								
+				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_EDICAO_ITEM_OPCAO", AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.name());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_MODO_CONSULTA_ITEM", AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO.name());
 				String numeroCartao = AUTProjectsFunctions.gerarItemChaveRandomico(10);
@@ -88,6 +92,16 @@ public class CTP00001 extends AUTVABaseComponent {
 
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001);
 				
+				parameters.remove("AUT_FUNCTION_BY_ITEM_PROCESS");
+				parameters.put("AUT_FUNCTION_BY_ITEM_PROCESS",new AUTFunctionProcess() {				
+					@Override
+					public void autProcessByItem(HashMap<String, Object> parameters) {
+						// TODO Auto-generated method stub
+						parameters.remove("AUT_MATERIAL_QUANTIDADE");
+						parameters.put("AUT_MATERIAL_QUANTIDADE", new Random().nextInt(50));
+					}
+				});
+					
 				
 				java.util.List<AUTStoreItem> listItens = CMP11004(parameters);//Limpa o carrinho de compras e inclui os items especificos do cenário de negócio				
 				Integer index = 1;
@@ -96,8 +110,9 @@ public class CTP00001 extends AUTVABaseComponent {
 					autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, col, item.getLmMaterial());					
 					switch(index) {
 					case 1:{
+						Integer qtd = Integer.parseInt(parameters.get("AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_UNITARIO").toString());
 						item.setAutFluxoPedidoAlterarQuantidadePedido(true);						
-						item.setInputFluxoPedidoAlterarQuantidadePedido(Integer.parseInt(parameters.get("AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_UNITARIO").toString()));						
+						item.setInputFluxoPedidoAlterarQuantidadePedido(++qtd);						
 						break;
 					}
 					case 2:{		
@@ -125,7 +140,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				CMP11013(parameters);
 				
-				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_INIT_APP", false);								
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_INIT_APP", true);								
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_TIPO_ACESSO_LOGIN", AUT_TIPO_ACESSO_LOGIN.USUARIO_TELEVENDAS.name());								
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_MODO_CONSULTA_ITEM", AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO_DO_BOITATA.name());								
 
@@ -204,18 +219,22 @@ public class CTP00001 extends AUTVABaseComponent {
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_TIPO_ACESSO_LOGIN", AUT_TIPO_ACESSO_LOGIN.USUARIO_LOJA.name());								
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_MODO_CONSULTA_ITEM", AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO_DO_BOITATA.name());								
 
+				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001);
+				parameters.remove("AUT_ITENS_EDICAO");
+				parameters.put("AUT_ITENS_EDICAO", listItensInclusao);				
+				
 				CMP11001(parameters);
-				
-				/*
 				CMP11011(parameters);
-				
 				
 				CMP11007(parameters).autIrProximaPagina();
 				CMP11007(parameters).setUsarDataMaisProximaPorIndexLinha(USAR_DATA_MAIS_PROXIMA.SIM, 1, 2);				
 				CMP11007(parameters).autIrProximaPagina();
-*/
+
+				CMP11007(parameters).autFinalizarPedidoFromFluxosSaida();
 				
-				/*
+				CMP11028(parameters);
+				
+				
 				//EDITAR QUANTIDADE DOS ITEMS NO CARRINHO
 				CMP11010(parameters); //Incluir itens no carrinho 6-10
 				
@@ -231,7 +250,6 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11007(parameters).autFinalizarPedido();
 				
 				CMP11022(parameters);
-				*/
 				
 				return true;
 			}
