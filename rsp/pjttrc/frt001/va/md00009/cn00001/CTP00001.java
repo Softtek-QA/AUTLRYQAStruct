@@ -387,6 +387,8 @@ public class CTP00001 extends AUTVABaseComponent {
 				//CT-26
 				CMP11028(parameters); //VERIFICA ORDEM NO SAP	
 				
+				
+				
 				//CT-27
 				CMP11018(parameters); //Executa procedimento de devolução parcial
 				
