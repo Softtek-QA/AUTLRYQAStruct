@@ -46,7 +46,7 @@ public class CTP00001 extends AUTVABaseComponent {
 	AUT_TABLE_PARAMETERS_NAMES tbl;
 	
 	@Test
-	public void AUT_IT00003_STVA_ID00004_FRT004_CN00002_GERACAO_PEDIDOS() {
+	public void AUT_IT00003_STVA_ID00033_FRT033_CN00002_GERACAO_PEDIDOS() {
 		AUTITestFlowProcess tst = new AUTITestFlowProcess() {
 			@Override
 			public boolean autInitProcess() {					
@@ -127,9 +127,34 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11005(parameters);//Converte o carrinho para pedido de compra
 				CMP11006(parameters);				
 				
+				
+				/*
+				 * 
+				 *Fluxo de pagamento para canal : loja
+				 *
+				 */
 				CMP11007(parameters).autIrProximaPagina();
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);				
 				CMP11007(parameters).autFinalizarPedido();				
+				
+				
+				
+				/*
+				 * Fluxo de pagamento para canal: televendas
+				 *
+
+
+				CMP11007(parameters).autIrProximaPagina();
+				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);
+				CMP11007(parameters).autIrProximaPagina();
+
+				CMP11025(parameters).getGerenciadorFormasPagamentoCartoes().processarPagamento(parameters);
+				
+				CMP11007(parameters).autFinalizarPedidoFromConfigFormasPagamento();
+			
+				*/
+				
+				
 				String numeroPedido = CMP11009(parameters);
 				
 				
@@ -204,6 +229,10 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11019_V2(parameters);
 				//CT-8-9
 				
+				
+				
+				
+				/*
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001, "AUT_MODO_CONSULTA_ITEM", AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.CONSULTA_STATUS_PEDIDO.name());
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00002_CTP00001);								
 				
@@ -251,6 +280,8 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				CMP11022(parameters);
 				
+				CMP11017(parameters);
+				*/
 				return true;
 			}
 

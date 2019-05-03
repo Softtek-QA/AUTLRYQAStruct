@@ -28,4 +28,32 @@ import br.stk.framework.tests.AUTFWKTestObjectBase;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTEntrega011_RGR002 {
 	
+	public static AUTFWKTestObjectBase gerTests;
+	String hostExec = "192.168.0.116";
+
+	br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001.CN00001 cn01;
+	br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00002.CN00002 cn02;
+	br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00003.CN00003 cn03;
+	public void AUT_INIT() {
+
+	}
+	
+	@Test
+	public  void AUT_IT11001_STVA_ID00033_FRT033_CN00001_PEDIDO_CRIACAO_EDICAO_ALTERACAO_DEPOSITOS_LOJAS() {
+		cn01 = new br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001.CN00001();
+		cn01.autStartProcess();
+	}
+
+	@Test
+	public  void AUT_IT11002_STVA_ID00033_FRT033_CN00002_PEDIDO_CRIACAO_EDICAO_ANTIFRAUDE_E_APROVACOES() {
+		cn02 = new br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00002.CN00002();
+		cn02.autStartProcess();
+	}
+
+	@Test
+	public  void AUT_IT11003_STVA_ID00033_FRT033_CN00003_PEDIDO_CRIACAO_EDICAO_MULTIPLOS_ITENS_CARRINHO() {
+		cn03 = new br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00003.CN00003();
+		cn03.autStartProcess();
+	}
+		
 }

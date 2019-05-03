@@ -1,7 +1,17 @@
 package br.lry.qa.rsp.pjttrc.frt001.va.md00009.cn00001;
 
+import java.io.IOException;
+import java.net.CacheRequest;
+import java.net.CacheResponse;
+import java.net.ResponseCache;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.net.URI;
+import java.net.URLConnection;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -42,15 +52,14 @@ public class CTP00001 extends AUTVABaseComponent {
 	java.util.HashMap<String,Object> parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
 	AUT_TABLE_PARAMETERS_NAMES tbl;
 	@Test
-	public void AUT_IT00001_STVA_ID00004_FRT004_CN00001_GERACAO_PEDIDOS_DEBUG() {
+	public void AUT_IT00001_STVA_ID00033_FRT033_CN00001_GERACAO_PEDIDOS_DEBUG() {
 		AUTITestFlowProcess tst = new AUTITestFlowProcess() {
 			@Override
 			public boolean autInitProcess() {	
 				
 				//Carrega os parametros do banco de dados para os cenários específicos
 				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);								
-			
-				/*
+				
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_EDICAO_ITEM_OPCAO", AUT_EDICAO_PEDIDO.QUANTIDADE_ITEM_QUANT_ADICIONAR_PADRAO.name());
 				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM", AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO.name());
 				String numeroCartao = AUTProjectsFunctions.gerarItemChaveRandomico(10);
@@ -106,7 +115,6 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11005(parameters);//Converte o carrinho para pedido de compra
 				
 				CMP11006(parameters);				
-				
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);
 				CMP11007(parameters).autFinalizarPedido();
 				
@@ -331,7 +339,15 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11001(parameters);
 				CMP11010(parameters); //VERIFICA STATUS DE PEDIDO PAGO
 					
-				//EDITA - LOTE
+				
+				CMP11028(parameters); //VERIFICA ORDEM NO SAP
+				CMP11031(parameters); //FATURAMENTO PARCIAL - ITENS SEM LOTE
+				
+				
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM",AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EXIBICAO_DOCUMENTOS_VINCULADOS.name());
+				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
+				CMP11001(parameters);
+				CMP11010(parameters); //VERIFICA STATUS DE PEDIDO FATURADO
 				
 				
 				
@@ -343,54 +359,21 @@ public class CTP00001 extends AUTVABaseComponent {
 				CMP11001(parameters);
 				CMP11010(parameters);				
 				CMP11027(parameters);
-								
-				/*
-				CMP11001(parameters);
-				CMP11010(parameters);								
-				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM",AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EDICAO.name());
-				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
-				
-				
-				
-				
-				CMP11007(parameters).autIrProximaPagina();				
-				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,0);
-				
-				
-				CMP11007(parameters).setHabilitarEncomenda(true);
-				CMP11007(parameters).setEncomendarItem(ENCOMENDA.SIM,2);
-				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.CENTRAL_DISTRIBUICAO,1);
-				CMP11007(parameters).setUsarDataMaisProxima(USAR_DATA_MAIS_PROXIMA.NAO, 2);
-				CMP11007(parameters).setFilialSaidaGeral(FILIAIS.LJ0045,2);
-				CMP11007(parameters).setDepositosGeral(DEPOSITOS.C010,2);
-				CMP11007(parameters).setTurnoEntrega(AUT_VA_TURNOS_ENTREGA.TARDE, 2);
-				
-				
-				
-				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,2);
-				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA,3);				
-				CMP11007(parameters).autFinalizarPedido();
-				CMP11009(parameters);
-				
-				
-				//***************  Alteração de lote  *****************
-				//CT-25
-						
-				*/
-				
-				
-				CMP11017(parameters); //Fatura o pedido
-				
-				
-				
-				
-				//CT-26
+					
 				CMP11028(parameters); //VERIFICA ORDEM NO SAP	
 				
+				
+				CMP11030(parameters); //FATURAMENTO TOTAL - ITENS COM LOTE
+				
+				autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001, "AUT_MODO_CONSULTA_ITEM",AUT_MODO_CONSULTAS_VA_SELECAO_ITEM.EXIBICAO_DOCUMENTOS_VINCULADOS.name());
+				parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00001_CTP00001);
+				CMP11001(parameters);
+				CMP11010(parameters); //VERIFICA STATUS DE PEDIDO PAGO
 				
 				
 				//CT-27
 				CMP11018(parameters); //Executa procedimento de devolução parcial
+				
 				
 				return true;
 				

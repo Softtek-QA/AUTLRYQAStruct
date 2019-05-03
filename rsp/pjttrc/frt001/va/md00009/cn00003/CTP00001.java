@@ -41,7 +41,7 @@ public class CTP00001 extends AUTVABaseComponent {
 	java.util.HashMap<String,Object> parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00009_CN00003_CTP00001);
 	AUT_TABLE_PARAMETERS_NAMES tbl;
 	@Test
-	public void AUT_IT00003_STVA_ID00004_FRT004_CN00003_GERACAO_PEDIDOS() {
+	public void AUT_IT00003_STVA_ID00033_FRT033_CN00003_GERACAO_PEDIDOS() {
 		AUTITestFlowProcess tst = new AUTITestFlowProcess() {
 			@Override
 			public boolean autInitProcess() {
@@ -88,7 +88,7 @@ public class CTP00001 extends AUTVABaseComponent {
 					item.setInputFluxoPedidoAlterarQuantidadePedido(Integer.parseInt(parameters.get("AUT_QUANTIDADE_PADRAO_EDICAO_ITEM_UNITARIO").toString())+index);						
 					switch(index) {
 					case 6:{
-						item.autHTMLAdicionarServico();
+						item.autHTMLAdicionarServico(parameters);
 						item.autAdicionarFuncaoParaConfiguracaoAgendaServico(new AUTFunctionProcess() {
 							
 							@Override
@@ -177,7 +177,7 @@ public class CTP00001 extends AUTVABaseComponent {
 				
 				//EDITAR QUANTIDADE DOS ITEMS NO CARRINHO
 				CMP11011(parameters); //Altera datas para entrega a domicilio
-				itemGarantia.autHTMLGarantiaServico();
+				itemGarantia.autHTMLGarantiaServico(parameters);
 				CMP11007(parameters).autIrProximaPagina();
 				CMP11007(parameters).autConfigurarFluxosSaidaEntrega(FILIAIS.LOJA);				
 				CMP11007(parameters).autIrProximaPagina();
