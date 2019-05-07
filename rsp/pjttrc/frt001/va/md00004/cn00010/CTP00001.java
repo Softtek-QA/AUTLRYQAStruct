@@ -18,13 +18,14 @@ public class CTP00001 extends AUTVABaseComponent{
 		return (TGeradorPedido)new AUTVAGeradorPedido();
 	}
 	
-	public void ct00011(String numeroPedido) {
+	//public void ct00011(String numeroPedido) {
+	public void ct00010(String numeroPedido) {		
 		AUT_NUMERO_PEDIDO = numeroPedido;
-		ctp00011();
+		ctp00010();
 	}
 	
-	
-	public void ctp00011() {
+	//public void ctp00011() {	
+	public void ctp00010() {
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00011_CTP00001);

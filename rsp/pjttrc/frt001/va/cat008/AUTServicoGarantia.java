@@ -38,7 +38,7 @@ public class AUTServicoGarantia extends AUTVABaseComponent {
 			AUT_AGENT_SILK4J.<DomListBox>find("VA.GarantiaServicos.Turno").click();
 			AUT_AGENT_SILK4J.<DomLink>find("VA.GarantiaServicos.Avancar").click();
 		
-			if (AUT_AGENT_SILK4J.<DomElement>find("VA.Desconto.PopUp1").isVisible()) {
+			if (AUT_AGENT_SILK4J.<DomElement>find("VA.Desconto.PopUp1").exists("PopUp1", 5000)) {
 
 				AUT_AGENT_SILK4J.<DomTextField>find("VA.GarantiaServicos.Telefone").setText(parametros.get("AUT_TELEFONE_SERVIÇO").toString());
 				AUT_AGENT_SILK4J.<DomButton>find("VA.GarantiaServicos.InserirTEL").click();
@@ -66,11 +66,11 @@ public class AUTServicoGarantia extends AUTVABaseComponent {
 				AUT_AGENT_SILK4J.<DomLink>find("VA.GarantiaServicos.GarantiaEstendida").setFocus();
 				AUT_AGENT_SILK4J.<DomLink>find("VA.GarantiaServicos.GarantiaEstendida").click();
 				
-				AUT_AGENT_SILK4J.<DomButton>find("VA.GarantiaServicos.AdicionarGarantiaEstendida").setFocus();
-				AUT_AGENT_SILK4J.<DomButton>find("VA.GarantiaServicos.AdicionarGarantiaEstendida").click();
+				//String index = String.format("VA.GarantiaServicos.//DIV[@class='service-info'][%s]//BUTTON[@class='button button-primary button-full button-overflow']", parametros.get("AUT_INDEX_GARANTIA"));
+				String index = String.format("VA.GarantiaServicos.//DIV[@class='warranty-section mar*']//DIV[@class='service-info'][%s]//DIV[@class='margin-top']//BUTTON[@class='button button-primary button-full button-overflow']", parametros.get("AUT_INDEX_GARANTIA"));
+				AUT_AGENT_SILK4J.<DomElement>find(index).click();
+				
 			}
-
-			//verificar o PopUP
 
 			return true;
 		} catch (Exception e) {

@@ -1,5 +1,7 @@
 package br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00008;
 
+import com.borland.silktest.jtf.xbrowser.DomButton;
+
 import br.lry.components.AUTVABaseComponent;
 import br.lry.components.va.AUTVAGeradorPedido;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
@@ -26,14 +28,29 @@ public class CTP00001 extends AUTVABaseComponent {
 	
 	public void ctp00008() {
 		autGetDataFlow().autInitDataFlow();
+		
 		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00007_CTP00001);
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00008_CTP00001);
 		parametros.remove("AUT_NUMERO_PEDIDO");
 		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		
+		parametros.put("AUT_USER", parametros.get("AUT_USER_EDITOR").toString()).toString();
+		CMP00002(parametros);
+		CMP00037(parametros);
+		CMP00005_2(parametros);
+
+		CMP00024(parametros).autDescontoSecao(parametros);
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+		//Fluxo de  saida
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		
-		CMP00001(parametros);
-		CMP00040(parametros);
+		//Meio de pagamento
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+	    CMP00034(parametros);
+	
+		CMP00022();	
 		
 	}
 	

@@ -30,11 +30,9 @@ public class CTP00001 extends AUTVABaseComponent{
 		CMP00004(parameters);
 		CMP00014_CPF(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		//CMP00011(parameters);
-		
-		
+	
 		AUT_AGENT_SILK4J.<DomTextField>find("VA.AtualizacaoDados.eanOrCode").click();
-		AUT_AGENT_SILK4J.<DomTextField>find("VA.AtualizacaoDados.eanOrCode").setText("89455163");
+		AUT_AGENT_SILK4J.<DomTextField>find("VA.AtualizacaoDados.eanOrCode").setText(parameters.get("AUT_EAN_OR_CODE").toString());
 		AUT_AGENT_SILK4J.<DomButton>find("VA.TelaInicialLoja.ItemMassa").click();
 		
 	    AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();			

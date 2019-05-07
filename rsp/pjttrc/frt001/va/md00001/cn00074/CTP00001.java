@@ -28,45 +28,39 @@ public class CTP00001 extends AUTVABaseComponent{
 	@Test
 	public void ctp74() {
 		
-		 autGetDataFlow().autInitDataFlow();
-		 CMP00002(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001));
-		 CMP00070(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001)).autVAIncluirItensNoCarrinho(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001));
-		 CMP00012(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001));
-		 CMP00004(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001));
-		 CMP00014(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001));
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();		 
-
+		autGetDataFlow().autInitDataFlow();
+		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
+		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001);
 		
-		 AUT_AGENT_SILK4J.<DomRadioButton>find("VA.AtualizacaoDados.//INPUT[@id='itementrega-0']").click();		
-			boolean statusListaEndereco = AUT_AGENT_SILK4J.<BrowserWindow>find("VA.FluxoSaida")
-					.exists("ListaEndereco", 10000);
-			if (statusListaEndereco) {
-				AUT_AGENT_SILK4J.<DomElement>find("VA.FluxoSaida.ListaEndereco").click();
-				autInsertScreenByScenario();
-			}
-		 DomListBox listComboFrete= AUT_AGENT_SILK4J.<DomListBox>find("VA.FluxoSaida.SelecionarFrete");
-		 selectValor(listComboFrete);		 
-		 
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.FluxoSaida.BotaoSalvar").click();
+		
+    CMP00002(parameters);
 
-		 DomListBox listComboSelecaoFrete= AUT_AGENT_SILK4J.<DomListBox>find("VA.Desconto.Motivo_ITEM");
-		 selectValor(listComboSelecaoFrete);
-		 
-		 AUT_AGENT_SILK4J.<DomCheckBox>find("VA.FluxoSaida.DataMaisProxima").click();
-	
-		 
-		 DomListBox listComboSelecaoSaida= AUT_AGENT_SILK4J.<DomListBox>find("VA.FluxoSaida.FilialSaida");
-		 selectValor(listComboSelecaoSaida);
-		 
-		 DomListBox listComboEntrega= AUT_AGENT_SILK4J.<DomListBox>find("VA.ConfirmacaoLogin.Turno");
-		 selectValor(listComboEntrega);
-		 
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();		 
-		 CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001)).autSelecaoMeioPagamento(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001));
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00074_CTP00001));	
-		 CMP00022();		
+    CMP00009(parameters);
+
+	CMP00008(parameters);
+
+    CMP00011(parameters);
+
+    CMP00004(parameters);
+  
+    CMP00014(parameters);
+
+    CMP00012(parameters);
+
+    CMP00004(parameters);
+
+    CMP00014(parameters);
+	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();		 
+
+	CMP00016(parameters);
+	 
+	 CMP00020(parameters); 
+	 AUT_AGENT_SILK4J.<DomButton>find("VA.TelaInicialLoja.Avancar").click();
+
+	 CMP00034(parameters);
+
+	 CMP00022();		
 
 	}
 }

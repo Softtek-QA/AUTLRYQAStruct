@@ -33,7 +33,7 @@ public class CTR0001 extends AUTVABaseComponent {
 		 CMP00016(parameters);
 		// AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		 CMP00020(parameters).autPagamentoUnicoTodosOsValores(parameters);
-		 AUT_AGENT_SILK4J.<DomCheckBox>find("VA.TelaInicialLoja.IgnAntiFraude").click();
+		 //AUT_AGENT_SILK4J.<DomCheckBox>find("VA.TelaInicialLoja.IgnAntiFraude").click();
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		 
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();

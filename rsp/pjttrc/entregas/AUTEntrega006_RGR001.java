@@ -213,6 +213,8 @@ public class AUTEntrega006_RGR001 {
 		try{
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00002.autStartProcess34();
+			
+			
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
 		}
 		catch(java.lang.Exception e) {
@@ -434,7 +436,7 @@ public class AUTEntrega006_RGR001 {
 	
 
 	
-	@Test
+	//@Test
 	/**
 	 * CN00075 - Pedido com voucher e cartão de crédito
 	 */
@@ -596,7 +598,6 @@ public class AUTEntrega006_RGR001 {
 	}
 	
 
-	
 	
 	@Test
 	/**

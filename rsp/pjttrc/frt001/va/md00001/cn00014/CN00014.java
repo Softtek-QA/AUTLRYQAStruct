@@ -35,7 +35,7 @@ public class CN00014  extends AUTVABaseComponent{
 	public void autStartProcess14() {
 		
 		autInitConfigurationCN00014();
-		cn00014CTP00001.autCriaPedidoItemAvulsoFilialCompra();
+		cn00014CTP00001.autPedidoSemEstoque();
 	}
 
 }

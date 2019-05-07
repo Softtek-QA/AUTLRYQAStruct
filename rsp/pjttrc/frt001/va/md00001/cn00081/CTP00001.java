@@ -31,17 +31,31 @@ public class CTP00001 extends AUTVABaseComponent{
 		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
 		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00081_CTP00001);
 
-	
-		
-		
-		
 		CMP00002(parameters);
-		CMP00071(parameters);
+		
+		CMP00009(parameters);
+		
+		CMP00005(parameters);
+	
+		CMP00012(parameters);
+		
+		CMP00004(parameters);
+		
+		CMP00014_CPF(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+		//Fluxo de  saida
 		CMP00016(parameters);
+				
+		//Meio de pagamento
+		CMP00020(parameters).autSelecaoMeioPagamento(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		CMP00020(parameters).autVAMultiplosMeiosPagamentoTelevendas(parameters);
-		CMP00034(parameters);
+
+	    String numPedido = CMP00034(parameters).AUT_NUMERO_PEDIDO;
+	    
+	    autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00081_CTP00001, "AUT_NUMERO_PEDIDO", numPedido);
+	  	
 		CMP00022();	
 
 	}

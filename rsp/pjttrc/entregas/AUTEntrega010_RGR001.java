@@ -83,7 +83,7 @@ public class AUTEntrega010_RGR001 {
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00002 - Excluir itens da seção
 	 */

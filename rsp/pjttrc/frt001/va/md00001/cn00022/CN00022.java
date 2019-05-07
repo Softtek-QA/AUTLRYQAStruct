@@ -35,7 +35,7 @@ public class CN00022  extends AUTVABaseComponent{
 	public void autStartProcess22() {
 		
 		autInitConfigurationCN00022();
-		cn00022CTP00001.autCriaPedidoDescontoSecaoReaisItemNaoElegivel();
+		cn00022CTP00001.autCriaPedidoDescontoSecaoReaisItemNaoElegivel_Cn001();
 	}
 
 }

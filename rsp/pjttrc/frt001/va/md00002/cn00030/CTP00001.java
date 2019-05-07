@@ -32,20 +32,27 @@ public class CTP00001 extends AUTVABaseComponent{
 		CMP00002(parameters);
 		CMP00009(parameters);
 		CMP00008(parameters);		
-		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaComentarioItem.BotaoObservacao").click();
-		String comentario = parameters.get("AUT_COMENTARIO").toString();
-		AUT_AGENT_SILK4J.<DomElement>find("VA.TelaComentarioItem.Comentario").typeKeys(comentario);
-		AUT_AGENT_SILK4J.<DomButton>find("VA.TelaComentarioItem.BotaoSalvar").click();		
+		//AUT_AGENT_SILK4J.<DomElement>find("VA.TelaComentarioItem.BotaoObservacao").click();
+		//String comentario = parameters.get("AUT_COMENTARIO").toString();
+		//AUT_AGENT_SILK4J.<DomElement>find("VA.TelaComentarioItem.Comentario").typeKeys(comentario);
+		//AUT_AGENT_SILK4J.<DomButton>find("VA.TelaComentarioItem.BotaoSalvar").click();		
 		CMP00061(parameters);
 		CMP00004(parameters);		
 		CMP00014_CPF(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();	
-		CMP00016(parameters);
+		
+		CMP00081(parameters); //adiciona ocorrencia
+		
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();	
+		CMP00016(parameters);
+		
+		CMP00020(parameters).autSelecaoMeioPagamento(parameters);	
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click(); 
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();		
-		CMP00020(parameters).autSelecaoMeioPagamento(parameters);		
+		
 		CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00030_CTP00001));	
+		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00030_CTP00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
+		
 		CMP00022();}
 		 
 	

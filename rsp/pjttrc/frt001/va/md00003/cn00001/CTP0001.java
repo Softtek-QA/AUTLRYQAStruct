@@ -34,16 +34,10 @@ public class CTP0001 extends AUTVABaseComponent {
 		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00003_CN00001_CTP00001);
 		parametros.remove("AUT_NUMERO_PEDIDO");
-		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
-		
+		parametros.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00003_CN00001_CTP00001,"AUT_NUMERO_PEDIDO"));
 		
 		CMP00001(parametros);
-		
-		AUT_AGENT_SILK4J.<DomElement>find("VA.PesquisaCEP.Fechar").click();
-		AUT_AGENT_SILK4J.<DomElement>find("VA.LiberacaoPendentes.menu").click();
-		AUT_AGENT_SILK4J.<DomLink>find("VA.LiberacaoPendentes.MenuLiberacaoPendentes").click();
-		AUT_AGENT_SILK4J.<DomElement>find("VA.LiberacaoPendentes.Desconto").click();
-
+		CMP00040(parametros);
 		CMP00022();
 	}
 	

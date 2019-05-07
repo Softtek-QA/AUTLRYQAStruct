@@ -49,11 +49,11 @@ public class CN00006 extends AUTVABaseComponent{
 	public void autStartProcess06() {
 		
 		autInitConfigurationCN00006();
-		cn00006CTR00001.autCriaCarrinho();
+		cn00006CTR00001.autCriaPedido();
 		System.out.println("Numero de carrinho no cenario"+ cn00006CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTP00001,"AUT_NUMERO_CARRINHO"));
 		numeroCarrinho = cn00006CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTP00001,"AUT_NUMERO_CARRINHO").toString();
 		System.out.println("Numero do carrinho no CTR"+numeroCarrinho);
-		cn00006CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTP00001,"AUT_NUMERO_PEDIDO",numeroCarrinho);
+		cn00006CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTP00001,"AUT_NUMERO_PEDIDO", numeroCarrinho);
 		cn00006CTP00001.autRecuperarCarrinho();
 	}
 

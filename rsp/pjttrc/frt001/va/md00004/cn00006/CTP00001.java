@@ -27,12 +27,15 @@ public class CTP00001 extends AUTVABaseComponent {
 	public void ctp00006() {
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00006_CTP00001);
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTR00001);
 		parametros.remove("AUT_NUMERO_PEDIDO");
-		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
+		parametros.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTR00001,"AUT_NUMERO_PEDIDO"));
 		
-		
+		//Realizar Login no VA
+		parametros.put("AUT_USER", parametros.get("AUT_USER_APROVADOR").toString()).toString();
 		CMP00001(parametros);
+		
+		//Realiza a reaprovação
 		CMP00043(parametros);
 		
 	}

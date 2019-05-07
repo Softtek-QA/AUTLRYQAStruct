@@ -6,6 +6,7 @@ import com.borland.silktest.jtf.xbrowser.BrowserWindow;
 import com.borland.silktest.jtf.xbrowser.DomButton;
 import com.borland.silktest.jtf.xbrowser.DomCheckBox;
 import com.borland.silktest.jtf.xbrowser.DomElement;
+import com.borland.silktest.jtf.xbrowser.DomListBox;
 
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
@@ -23,29 +24,32 @@ public class CTP00001 extends AUTVABaseComponent {
 	 * @return
 	 */
 	@Test
-	public void autCriaPedidoItemAvulsoFilialCompra() {
-		 autGetDataFlow().autInitDataFlow();
-		 CMP00002(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));
-		 CMP00009(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));
-		 CMP00008(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));
-		 CMP00012(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));
-		 CMP00004(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));		 		
-		 CMP00014(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();		 
-		 CMP00016(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));
-		 CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001)).autSelecaoMeioPagamento(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001));
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-			AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
+	public void autPedidoSemEstoque() {
+		autGetDataFlow().autInitDataFlow();
+		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
+		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00014_CTP00001);
 			
+		CMP00002(parameters);
+		CMP00009(parameters);
+		CMP00008(parameters);
+		
+		CMP00012(parameters);
+		CMP00004(parameters);		 		
+		
+		CMP00014(parameters);
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();		 
+		
+		//Fecha janela de aviso de falta de estoque Top0 e/ou AVS
+		if(AUT_AGENT_SILK4J.<BrowserWindow>find("VA.LiberacaoPendentes").exists("Pedido", 5000)) {
+			String msg = AUT_AGENT_SILK4J.<DomElement>find("VA.LiberacaoPendentes.Pedido").getText();
 			
-			autInsertScreenByScenario();
-			boolean status = AUT_AGENT_SILK4J.<BrowserWindow>find("VA.TelaResumo").exists("FecharPopUp",10000);
-			if(status) {
-				
-				AUT_AGENT_SILK4J.<DomElement>find("VA.TelaResumo.FecharPopUp").click();
+			if(msg.matches(".*sem estoque.*")) {
 				autInsertScreenByScenario();
-			}
-		 CMP00022();		
+				AUT_AGENT_SILK4J.<DomButton>find("VA.Desconto.OkDesconto").click();
+			}		
+		}
+		
+		CMP00022();	
 	}
 }

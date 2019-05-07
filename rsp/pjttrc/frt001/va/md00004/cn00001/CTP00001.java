@@ -18,9 +18,13 @@ public class CTP00001 extends AUTVABaseComponent {
 	 */
 
 	public void autTrocaLoja() {
+	 
 		 autGetDataFlow().autInitDataFlow();
-		 CMP00002(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001));
-		 CMP00037(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001));
+		 java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
+		 parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00001_CTP00001);
+		 
+		 CMP00002(parameters);
+		 CMP00037(parameters);
 		 CMP00023();
 	}
 }

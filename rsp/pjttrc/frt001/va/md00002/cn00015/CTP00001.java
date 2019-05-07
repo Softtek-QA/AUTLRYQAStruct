@@ -36,26 +36,28 @@ public class CTP00001 extends AUTVABaseComponent{
 
 		CMP00002(parameters);
 		CMP00009(parameters);
-		CMP00008(parameters);		
-		AUT_AGENT_SILK4J.<DomElement>find("VA.GarantiaServicos.Servicos").click();		
-		AUT_AGENT_SILK4J.<DomElement>find("VA.GarantiaServicos.Garantia Estendida").click();
-		AUT_AGENT_SILK4J.<DomElement>find("VA.GarantiaServicos.AdicionarGarantiaEstendida").click();
-		CMP00024(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00015_CTP00001)).autDescontoItem(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00010_CTP00001));	
-		String motivo = parameters.get("AUT_MOTIVO").toString();
-		AUT_AGENT_SILK4J.<DomListBox>find("VA.Desconto.Motivo_ITEM").select(motivo);		
-		String desconto = parameters.get("AUT_DESCONTO").toString();
-		AUT_AGENT_SILK4J.<DomTextField>find("VA.Desconto.DescontoPorcentagem_ITEM").setText(desconto);
-		
+		CMP00008(parameters);
 		CMP00061(parameters);
-		CMP00004(parameters);		
+		CMP00004(parameters);	
+		
 		CMP00014_CPF(parameters);		
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+		
+		CMP00024(parameters).autDescontoItem(parameters);
+		
+		CMP00018(parameters);
+		
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();		
+		
 		CMP00016(parameters);
-		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();	
-		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();		
+
 		CMP00020(parameters).autSelecaoMeioPagamento(parameters);		
-		CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00013_CTP00001));	
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+		
+		CMP00034(parameters);	
+		
+		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00015_CTP00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
+		
 		CMP00022();
 	}
 	}

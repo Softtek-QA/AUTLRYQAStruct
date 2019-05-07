@@ -62,10 +62,13 @@ public class AUTEntrega003_RGR001{
 		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00001.CN00001();
 		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00002.CN00002();
 		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00003.CN00003();
+		cn00005 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00005.CN00005();		
 		cn00004 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00004.CN00004();
 		cn00006 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00006.CN00006();
+		cn00007 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00007.CN00007();
 		cn00008 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00008.CN00008();
 		cn00009 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00009.CN00009();
+		cn00010 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00010.CN00010();		
 		cn00011 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00011.CN00011();
 		cn00012 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00012.CN00012();
 		cn00013 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00013.CN00013();
@@ -136,7 +139,7 @@ public class AUTEntrega003_RGR001{
 	/**
 	 * 03
 	 * 
-	 * CN00004 - Pedido Televendas pagamento Cart Créd e Apro. Auto. antifraude
+	 * CN00003 - Pedido Televendas pagamento aprovar antifraude
 	 */
 	public void AUT_IT00003_STVA_ID00009_FRT009_CN00003_APROVAR_ANTIFRAUDE_LOJA0035() {
 		try {
@@ -245,7 +248,7 @@ public class AUTEntrega003_RGR001{
 	 * CN00008 - Pedido Televendas pag Cart Créd e Voucher pedido aprov comercial
 	 */
 	public void AUT_IT00007_STVA_ID00009_FRT009_CN00007_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
-		try {
+		try { 
 			try {
 				cn00007.autCloseApplication();
 			}
@@ -496,6 +499,32 @@ public class AUTEntrega003_RGR001{
 		}
 		catch(java.lang.Exception e) {
 			cn00016.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	/**
+	 * 17
+	 * 
+	 * CN00017 - Pedido do canal televendas com opção de pagamento "Pagar na loja"
+	 */
+	public void AUT_IT00017_STVA_ID00009_FRT009_CN00017_USUARIO_TELEVENDAS_COPIANDO_PEDIDO_CANAL_LOJA() {
+		try {
+			try {
+				cn00017.autCloseApplication();
+			}
+			catch(java.lang.Exception e) {
+				
+			}
+			cn00017.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+			cn00017.autStartProcess();
+			cn00017.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+		}
+		catch(java.lang.Exception e) {
+			cn00017.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}

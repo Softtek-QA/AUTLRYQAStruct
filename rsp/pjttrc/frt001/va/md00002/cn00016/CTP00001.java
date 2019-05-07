@@ -36,17 +36,21 @@ public class CTP00001 extends AUTVABaseComponent{
 		CMP00009(parameters);
 		
 		CMP00008(parameters);		
-		AUT_AGENT_SILK4J.<DomElement>find("VA.GarantiaServicos.Servicos").click();
-		AUT_AGENT_SILK4J.<DomElement>find("VA.GarantiaServicos.AdicionarServico").click();
+		//AUT_AGENT_SILK4J.<DomElement>find("VA.GarantiaServicos.Servicos").click();
+		//AUT_AGENT_SILK4J.<DomElement>find("VA.GarantiaServicos.AdicionarServico").click();
 		CMP00061(parameters);
 		CMP00004(parameters);	
 		CMP00014_CPF(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();			
-		CMP00016(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();	
-		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();		
+		
+		CMP00016(parameters);	
+		//AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();	
+		//AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();		
+
 		CMP00020(parameters).autSelecaoMeioPagamento(parameters);		
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+		
 		CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00016_CTP00001));	
 		CMP00022();
 		}	

@@ -25,32 +25,49 @@ public class CTP00001 extends AUTVABaseComponent{
 	
 	@Test
 	public void cn00059() {
-	autGetDataFlow().autInitDataFlow();
-	java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
-	parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00059_CTP00001);
-	parameters.remove("AUT_NUMERO_PEDIDO");
-	parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);		
-	CMP00002(parameters);
-	CMP00009(parameters);
-	CMP00008(parameters);
-	CMP00012(parameters);
-	CMP00004(parameters);
-	CMP00014(parameters);
-	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	AUT_AGENT_SILK4J.<DomRadioButton>find("VA.FluxoSaida.Entrega").click();
-	CMP00004(parameters);
-	AUT_AGENT_SILK4J.<DomLink>find("VA.FluxoSaida.ListaEndereco").click();
-	AUT_AGENT_SILK4J.<DomElement>find("VA.FluxoSaida.PopUpFreteAdicional").click();	
-	AUT_AGENT_SILK4J.<DomCheckBox>find("VA.FluxoSaida.FlagEncomenda").click();	
-//	AUT_AGENT_SILK4J.<DomListBox>find("VA.FluxoSaida.FilialEstoque").select("0014 - CD SAO BERNARDO");
-	DomListBox listTurno = AUT_AGENT_SILK4J.<DomListBox>find("VA.ConfirmacaoLogin.Turno");
-	selectValor(listTurno);		
-	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	CMP00020(parameters).autSelecaoMeioPagamento(parameters);
-	AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-	CMP00034(parameters);	
-	CMP00022();
+		autGetDataFlow().autInitDataFlow();
+		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
+		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00059_CTP00001);
+		parameters.remove("AUT_NUMERO_PEDIDO");
+		parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);		
+		CMP00002(parameters);
+
+		CMP00009(parameters);
+
+		CMP00008(parameters);
+
+		CMP00012(parameters);
+
+		CMP00004(parameters);
+
+		CMP00014(parameters);
+
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+		AUT_AGENT_SILK4J.<DomRadioButton>find("VA.FluxoSaida.Entrega").click();
+
+		CMP00004(parameters);
+
+		AUT_AGENT_SILK4J.<DomLink>find("VA.FluxoSaida.ListaEndereco").click();
+
+		AUT_AGENT_SILK4J.<DomElement>find("VA.FluxoSaida.PopUpFreteAdicional").click();
+
+		AUT_AGENT_SILK4J.<DomCheckBox>find("VA.FluxoSaida.FlagEncomenda").click();
+
+		DomListBox listTurno = AUT_AGENT_SILK4J.<DomListBox>find("VA.ConfirmacaoLogin.Turno");
+		selectValor(listTurno);		
+	
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+		CMP00020(parameters).autSelecaoMeioPagamento(parameters);
+
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+		CMP00034(parameters);	
+
+		CMP00022();
 
 	}
 }

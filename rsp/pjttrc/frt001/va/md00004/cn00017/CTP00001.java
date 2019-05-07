@@ -23,24 +23,36 @@ public class CTP00001 extends AUTVABaseComponent  {
 	 * @return
 	 */
 	@Test
-	public void autCopiaPedidoLoja() {
+	public void ctp00017() {
 		 autGetDataFlow().autInitDataFlow();
-	     String numeroPedido = CN00017.cn00017CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001,"AUT_NUMERO_PEDIDO").toString();
-	     CN00017.cn00017CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001,"AUT_NUMERO_PEDIDO",numeroPedido);
-		 CMP00001(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001));
-		 CMP00036(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001));
-		 CMP00005(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001));
-		 CMP00012(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001));
-		 CMP00014(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004));
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 AUT_AGENT_SILK4J.<DomCheckBox>find("VA.FluxoSaida.DataMaisProxima").click();
-		 AUT_AGENT_SILK4J.<DomListBox>find("VA.FluxoSaida.SelecionaDep").select(1);
-		 AUT_AGENT_SILK4J.<DomListBox>find("VA.ConfirmacaoLogin.Turno").select(1);
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 CMP00020(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001)).autSelecaoMeioPagamento(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001));
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		 CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001));
-		 CMP00022();	
+		 
+	 		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
+			parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001);
+			parametros.remove("AUT_NUMERO_PEDIDO");
+			parametros.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00017_CTP00001,"AUT_NUMERO_PEDIDO"));
+	     
+			CMP00001(parametros);	   
+			
+			CMP00036(parametros); // seleciona loja
+			
+			CMP00005(parametros);
+		
+			CMP00012(parametros);
+			
+			CMP00014_CPF(parametros);
+			AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+			AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+					 
+			//Fluxo de  saida
+			CMP00016(parametros);
+					
+			//Meio de pagamento
+			CMP00020(parametros).autSelecaoMeioPagamento(parametros);
+			AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
+		    CMP00034(parametros);
+		    
+			CMP00022();	
+		 	
 	}
 }

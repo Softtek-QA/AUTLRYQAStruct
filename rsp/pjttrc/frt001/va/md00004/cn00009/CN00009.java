@@ -35,10 +35,10 @@ public class CN00009  extends AUTBaseComponent{
 		
 		autInitConfigurationCN00009();
 		cn00009CTR00001.autCriaPedidoTelevendas();
-		System.out.println("Numero de pedido no cenario"+cn00009CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00009_CTP00001,"AUT_NUMERO_PEDIDO"));
-		String numeroPedido = cn00009CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00009_CTP00001,"AUT_NUMERO_PEDIDO").toString();
-		cn00009CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001,"AUT_NUMERO_PEDIDO",numeroPedido);
-		cn00009CTP00001.autPedidoReeditado();
+		//System.out.println("Numero de pedido no cenario"+cn00009CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00009_CTP00001,"AUT_NUMERO_PEDIDO"));
+		//String numeroPedido = cn00009CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00009_CTP00001,"AUT_NUMERO_PEDIDO").toString();
+		//cn00009CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001,"AUT_NUMERO_PEDIDO",numeroPedido);
+		//cn00009CTP00001.autPedidoReeditado();
 	}
 
 }

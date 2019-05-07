@@ -18,25 +18,39 @@ public class CTR00001 extends AUTVABaseComponent {
 		public void ctr83() {
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
-		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00082_CTR00001);
+		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00083_CTR00001);
 		parameters.remove("AUT_NUMERO_PEDIDO");
 		parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		
-			
-		 
-		 CMP00002(parameters);
+		CMP00002(parameters);
+
 	//	 CMP00037(parameters);
+
 		 CMP00009(parameters);
+
 		 CMP00008(parameters);
+
 		 CMP00012(parameters);
+
 		 CMP00004(parameters);
+
 		 CMP00014(parameters);
+
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
 		 CMP00016(parameters);
+
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+
 		 CMP00020(parameters).autMeioDePagamentoSimples(parameters);
+
+		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();
+
 		 CMP00034(parameters);
+		 autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00083_CTR00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
+
 		 CMP00022();
 	}
 }

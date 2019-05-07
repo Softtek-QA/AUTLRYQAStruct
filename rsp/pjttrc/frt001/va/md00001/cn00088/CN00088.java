@@ -48,13 +48,12 @@ public class CN00088 extends AUTVABaseComponent{
 	@Test
 	public void autStartProcess88() {
 		
-		autInitConfigurationCN00088();
-		cn00088CTR00001.ctr88();
-		System.out.println("Numero de pedido no cenario"+cn00088CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00088_CTP00001,"AUT_NUMERO_PEDIDO"));
-		numeroPedido = cn00088CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00088_CTP00001,"AUT_NUMERO_PEDIDO").toString();
-		System.out.println("Numero do pedido no CTR"+numeroPedido);
-		cn00088CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00088_CTP00001,"AUT_NUMERO_PEDIDO",numeroPedido);
-		cn00088CTP00001.ctp88();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00088.CTR00001 ctr1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00088.CTR00001();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00088.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00088.CTP00001();
+		
+		ctr1.ctr88();
+		ctr1.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00088_CTP00001,"AUT_NUMERO_PEDIDO");
+		ctp1.ctp88();
 	}
 
 }

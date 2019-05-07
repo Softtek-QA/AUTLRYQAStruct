@@ -9,7 +9,6 @@ import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 import br.stk.framework.tests.AUTFWKTestObjectBase;
 
 
-
 /**
  * 
  *Regressivo de testes do módulo de orçamento
@@ -432,7 +431,6 @@ public class AUTEntrega007_RGR001 {
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00017.autStartProcess17();
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
 		}
 		catch(java.lang.Exception e) {
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
@@ -465,6 +463,7 @@ public class AUTEntrega007_RGR001 {
 	 */
 	public void AUT_IT00019_STVA_ID00021_FRT021_CN00019_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_PORCENTAGEM_NA_SECAO_E_1_ITEM_NAO_ELEGIVEL_PARA_RATEIO_LOJA0035() {
 		try {
+			
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00019.autStartProcess19();
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
@@ -472,6 +471,7 @@ public class AUTEntrega007_RGR001 {
 		}
 		catch(java.lang.Exception e) {
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
+			
 		}
 	}
 

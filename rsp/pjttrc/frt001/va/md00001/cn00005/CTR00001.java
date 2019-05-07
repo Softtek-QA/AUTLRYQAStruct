@@ -1,6 +1,8 @@
 package br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00005;
 
 import org.junit.Test;
+
+import com.borland.silktest.jtf.xbrowser.BrowserWindow;
 import com.borland.silktest.jtf.xbrowser.DomButton;
 import com.borland.silktest.jtf.xbrowser.DomCheckBox;
 import com.borland.silktest.jtf.xbrowser.DomElement;
@@ -20,18 +22,37 @@ public class CTR00001 extends AUTVABaseComponent {
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
 	 */
-	
+	public  static String AUT_NUMERO_PEDIDO;
 	
 	@Test
 	public void autCriaCarrinho() {
+		
+		autGetDataFlow().autInitDataFlow();
+		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
+		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001);
+		parameters.remove("AUT_NUMERO_PEDIDO");
+		parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);	
+		
 		 autGetDataFlow().autInitDataFlow();
 		 CMP00002(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
-		 CMP00037(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
+	//	 CMP00037(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
 		 CMP00009(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
 		 CMP00008(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
-		 String carrinho = AUTRecuperacao.AUT_NUMERO_CARRINHO;
-		 autSetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTP00001, "AUT_NUMERO_CARRINHO", carrinho);		 
-		 System.out.println("O número do carrinho no CTR é"+carrinho);
+		
+			AUT_NUMERO_PEDIDO = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroCarrinho").getText();
+				
+			
+			System.out.println("O número do pedido é "+AUT_NUMERO_PEDIDO);
+			autInsertScreenByScenario();
+			java.util.regex.Pattern padrao = java.util.regex.Pattern.compile("\\d+");
+			java.util.regex.Matcher analise = padrao.matcher(AUT_NUMERO_PEDIDO);
+			if(analise.find()) {
+				AUT_NUMERO_PEDIDO = analise.group();
+			}
+			else {
+				AUT_NUMERO_PEDIDO= "00000000000";
+			}
+			
 		 CMP00022();		
 	}
 }
