@@ -72,14 +72,7 @@ public class AUTEntrega010_RGR001 {
 	 * CN00001 - Excluir item
 	 */
 	public void AUT_IT00001_STVA_ID00030_FRT030_CN00001_EXCLUIR_ITEM_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00001.autStartProcess01();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -88,13 +81,7 @@ public class AUTEntrega010_RGR001 {
 	 * CN00002 - Excluir itens da seção
 	 */
 	public void AUT_IT00002_STVA_ID00030_FRT030_CN00002_EXCLUIR_ITENS_DA_SECAO_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00002.autStartProcess02();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		}
 	}
 	
 		

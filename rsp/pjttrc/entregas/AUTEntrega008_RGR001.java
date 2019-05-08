@@ -72,14 +72,7 @@ public class AUTEntrega008_RGR001 {
 	 * CN00001 - Usuário aprovador antifraude aprovando um pedido
 	 */
 	public void AUT_IT00001_STVA_ID00024_FRT024_CN00001_USUARIO_APROVADOR_ANTIFRAUDE_APROVANDO_UM_PEDIDO_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00001.autStartProcess01();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -88,13 +81,7 @@ public class AUTEntrega008_RGR001 {
 	 * CN00002 - Usuário aprovador antifraude reprovando um pedido
 	 */
 	public void AUT_IT00002_STVA_ID00024_FRT024_CN00002_USUARIO_APROVADOR_ANTIFRAUDE_REPROVANDO_UM_PEDIDO_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00002.autStartProcess02();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		}
 	}
 	
 		
@@ -103,14 +90,7 @@ public class AUTEntrega008_RGR001 {
 	 * CN00003 - Aprovador antifraude encaminha pedido para análise pelo monitor
 	 */
 	public void AUT_IT00003_STVA_ID00024_FRT024_CN00003_APROVADOR_ANTIFRAUDE_ENCAMINHA_PEDIDO_PARA_ANALISE_PELO_MONITOR_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00003.autStartProcess03();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	

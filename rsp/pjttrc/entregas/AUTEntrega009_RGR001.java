@@ -77,14 +77,7 @@ public class AUTEntrega009_RGR001 {
 	 * CN00001 - Monitor de aprovação parcial
 	 */
 	public void AUT_IT00001_STVA_ID00027_FRT027_CN00001_MONITOR_APROVACAO_PARCIAL_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00001.autStartProcess01();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -93,13 +86,7 @@ public class AUTEntrega009_RGR001 {
 	 * CN00002 - Usuário aprovador aumentando o desconto aplicado e aprovando
 	 */
 	public void AUT_IT00002_STVA_ID00027_FRT027_CN00002_USUARIO_APROVADOR_AUMENTANDO_O_DESCONTO_APLICADO_E_APROVADO_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00002.autStartProcess02();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		}
 	}
 	
 		
@@ -108,14 +95,7 @@ public class AUTEntrega009_RGR001 {
 	 * CN00003 - Usuário aprovador diminuindo o desconto aplicado e aprovando
 	 */
 	public void AUT_IT00003_STVA_ID00027_FRT027_CN00003_USUARIO_APROVADOR_DIMINUINDO_O_DESCONTO_APLICADO_E_APROVANDO_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00003.autStartProcess03();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -125,14 +105,7 @@ public class AUTEntrega009_RGR001 {
 	 * CN00004 - Usuário aprovador parcial aumentando o desconto acima da alçada
 	 */
 	public void AUT_IT00004_STVA_ID00027_FRT027_CN00004_USUARIO_APROVADOR_PARCIAL_AUMENTANDO_O_DESCONTO_ACIMA_DA_ALCADA_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00004.autStartProcess04();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}	
 	
 	
@@ -141,14 +114,7 @@ public class AUTEntrega009_RGR001 {
 	 * CN00005 - Usuário aprovador alterando o desconto e abortando a operação
 	 */
 	public void AUT_IT00005_STVA_ID00027_FRT027_CN00005_USUARIO_APROVADOR_ALTERANDO_O_DESCONTO_E_ABORTANDO_A_OPERACAO_LOJAS0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00005.autStartProcess05();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
