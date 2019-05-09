@@ -193,14 +193,7 @@ public class AUTEntrega006_RGR001 {
 	 * CN00032 - pedido com desconto fora do mundo
 	 */
 	public void AUT_IT00001_STVA_ID00018_FRT018_CN00032_PEDIDO_COM_DESCONTO_FORA_DO_MUNDO_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00001.autStartProcess32();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -210,15 +203,8 @@ public class AUTEntrega006_RGR001 {
 	 * CN00034 - Pedido com desconto no frete
 	 */
 	public void AUT_IT00002_STVA_ID00018_FRT018_CN00034_PEDIDO_COM_DESCONTO_NO_FRETE_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00002.autStartProcess34();
-			
-			
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		}
 	}
 	
 	
@@ -228,14 +214,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00038 - Realizar pedido de item com lote e centro de distrib. diferente
 	 */
 	public void AUT_IT00003_STVA_ID00018_FRT018_CN00038_REALIZAR_PEDIDO_DE_ITEM_COM_LOTE_E_CD_DIFERENTE_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00004.autStartProcess38();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -245,14 +226,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00051 - Realizar um pedido com encomenda
 	 */
 	public void AUT_IT00004_STVA_ID00018_FRT018_CN00051_REALIZAR_PEDIDO_COM_ENCOMENDA_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00006.autStartProcess51();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}	
 	
 	
@@ -262,14 +238,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00052 - Realizar um pedido para que fique com Status Faturado Parcial
 	 */
 	public void AUT_IT00005_STVA_ID00018_FRT018_CN00052_REALIZAR_PEDIDO_COM_STATUS_FATURADO_PARCIAL_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00007.autStartProcess52();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -279,15 +250,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00053 - Realizar um pedido através do canal de Televendas
 	 */
 	public void AUT_IT00006_STVA_ID00018_FRT018_CN00054_REALIZAR_PEDIDO_ATRAVES_DO_CANAL_TELEVENDAS_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00008.autStartProcess53();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -297,15 +262,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00058 - Realizar pedido sem cliente cadast e efet. o cadast Cliente Estr.
 	 */
 	public void AUT_IT00007_STVA_ID00018_FRT018_CN00058_REALIZAR_PEDIDO_COM_CADASTRO_DE_PESSOA_ESTRANGEIRA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00009.autStartProcess58();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 	
 	
@@ -315,15 +274,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00059 - Realizar o pedido em uma loja e retirar em outra
 	 */
 	public void AUT_IT00008_STVA_ID00018_FRT018_CN00059_REALIZAR_PEDIDO_EM_UMA_LOJA_E_RETIRAR_EM_OUTRA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00010.autStartProcess59();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -333,15 +286,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00060 - Realizar um pedido onde não tenha o produto na loja selecionada
 	 */
 	public void AUT_IT00009_STVA_ID00018_FRT018_CN00060_REALIZAR_PEDIDO_EM_LOJA_QUE_NAO_TENHA_O_PRODUTO_SELECIONADO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00011.autStartProcess60();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -351,15 +298,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00070 - Pedido que usa mais de uma filial de saída
 	 */
 	public void AUT_IT00010_STVA_ID00018_FRT018_CN00070_REALIZAR_PEDIDO_QUE_USA_MAIS_DE_UMA_FILIAL_DE_SAIDA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00021.autStartProcess70();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -369,15 +310,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00071 - Pedido que usa mais de uma modalidade de frete
 	 */
 	public void AUT_IT00011_STVA_ID00018_FRT018_CN00071_REALIZAR_PEDIDO_QUE_USA_MAIS_DE_UMA_MODALIDADE_DE_FRETE_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+	
 			cn00022.autStartProcess71();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 	
 	
@@ -387,15 +322,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00072 - Pedido de um item plataforma para uma loja não plataforma
 	 */
 	public void AUT_IT00012_STVA_ID00018_FRT018_CN00072_REALIZAR_PEDIDO_DE_ITEM_PLATAFORMA_PARA_LOJA_NAO_PLATAFORMA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00023.autStartProcess72();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -405,15 +334,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00073 - Pedido de um item plataforma para uma loja plataforma
 	 */
 	public void AUT_IT00013_STVA_ID00018_FRT018_CN00073_REALIZAR_PEDIDO_DE_ITEM_PLATAFORMA_PARA_LOJA_PLATAFORMA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00024.autStartProcess73();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -423,33 +346,21 @@ public class AUTEntrega006_RGR001 {
 	 * CN00074 - Pedido com frete adicional
 	 */
 	public void AUT_IT00014_STVA_ID00018_FRT018_CN00074_REALIZAR_PEDIDO_COM_FRETE_ADICIONAL_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00025.autStartProcess74();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 	
 
 	
-	//@Test
+	@Test
 	/**
 	 * CN00075 - Pedido com voucher e cartão de crédito
 	 */
 	public void AUT_IT00015_STVA_ID00018_FRT018_CN00075_REALIZAR_PEDIDO_COM_VOUCHER_E_CARTAO_CREDITO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00026.autStartProcess75();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 	
 	
@@ -459,15 +370,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00076 - Pedido com voucher e vale credito
 	 */
 	public void AUT_IT00016_STVA_ID00018_FRT018_CN00076_REALIZAR_PEDIDO_COM_VOUCHER_E_VALE_CREDITO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00027.autStartProcess76();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 
@@ -478,15 +383,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00080 - Copiar pedido com status eliminado no prazo de D-1
 	 */
 	public void AUT_IT00017_STVA_ID00018_FRT018_CN00080_COPIAR_PEDIDO_COM_STATUS_ELIMINADO_NO_PRAZO_D1_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00031.autStartProcess80();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -496,15 +395,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00081 - Copiar pedido com status eliminado acima do prazo D-1
 	 */
 	public void AUT_IT00018_STVA_ID00018_FRT018_CN00081_COPIAR_PEDIDO_COM_STATUS_ELIMINADO_ACIMA_DO_PRAZO_D1_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00032.autStartProcess81();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -514,15 +407,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00082 - Copiar pedido com status cancelado no prazo de D-1
 	 */
 	public void AUT_IT00019_STVA_ID00018_FRT018_CN00082_COPIAR_PEDIDO_COM_STATUS_CANCELADO_NO_PRAZO_D1_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00033.autStartProcess82();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 
 	
@@ -532,15 +419,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00083 - Copiar pedido com status cancelado acima do prazo D-1
 	 */
 	public void AUT_IT00020_STVA_ID00018_FRT018_CN00083_COPIAR_PEDIDO_COM_STATUS_CANCELADO_ACIMA_DO_PRAZO_D1_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00034.autStartProcess83();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 	
 	
@@ -550,15 +431,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00084 - Copiar pedido com status devolvido no prazo de D-1
 	 */
 	public void AUT_IT00021_STVA_ID00018_FRT018_CN00084_COPIAR_PEDIDO_COM_STATUS_DEVOLVIDO_D1_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00035.autStartProcess84();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 	
 	
@@ -568,15 +443,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00085 - Copiar pedido com status devolvido acima do prazo D-1
 	 */
 	public void AUT_IT00022_STVA_ID00018_FRT018_CN00085_REALIZAR_PEDIDO_COM_STATUS_DEVOLVIDO_ACIMA_DO_PRAZO_D1_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00036.autStartProcess85();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 	
 
@@ -586,15 +455,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00086 - Copiar pedido mantendo condições negociadas
 	 */
 	public void AUT_IT00023_STVA_ID00018_FRT018_CN00086_COPIAR_PEDIDO_MANTENDO_CONDICOES_NEGOCIADAS_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00037.autStartProcess86();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 
@@ -604,15 +467,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00087 - Usuário loja copiando pedido do canal televendas
 	 */
 	public void AUT_IT00024_STVA_ID00018_FRT018_CN00087_REALIZAR_PEDIDO_COPIANDO_PEDIDO_TELEVENDAS_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00038.autStartProcess87();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 	
@@ -622,15 +479,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00088 - Copiar pedido não mantendo condições negociadas
 	 */
 	public void AUT_IT00025_STVA_ID00018_FRT018_CN00088_COPIAR_PEDIDO_NAO_MANTENDO_CONDICOES_NEGOCIADAS_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00039.autStartProcess88();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+
 	}
 	
 
@@ -640,15 +491,9 @@ public class AUTEntrega006_RGR001 {
 	 * CN00089 - Realizar edição de pedido com status pago com usuário com permiss
 	 */
 	public void AUT_IT00026_STVA_ID00018_FRT018_CN00089_REALIZAR_EDICAO_DE_PEDIDO_COM_STATUS_PAGO_COM_USUARIO_COM_PERMISSAO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
+
 			cn00040.autStartProcess89();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
+	
 	}
 
 
