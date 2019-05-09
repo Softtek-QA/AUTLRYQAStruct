@@ -89,7 +89,8 @@ public class AUTEntrega003_RGR001{
 	 * CN00001 - Realizar a troca de loja utilizando usuario televenda
 	 */
 	public void AUT_IT00001_STVA_ID00009_FRT009_CN00001_TROCA_LOJA_LOJA0045() {
-			cn00001.autStartProcess();
+			
+		cn00001.autStartProcess();
 	}
 	
 	
