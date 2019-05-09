@@ -387,16 +387,7 @@ import br.lry.components.va.AUTVABaseServices;
 		 * CN00029 - Pedido com desconto pontual sobre promoção complexa
 		 */
 		public void AUT_IT00029_STVA_ID00012_FRT012_CN00029_REALIZAR_PEDIDO_COM_DESCONTO_PONTUAL_SOBRE_PROMOCAO_COMPLEXA_LOJA0035() {
-			try {
-				cn00029.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 				cn00029.autStartProcess29();			
-				cn00029.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-			catch(java.lang.Exception e) {
-				cn00029.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-				System.out.println(e.getMessage());
-				e.printStackTrace();
-			}
 		}
 
 	}
