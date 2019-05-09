@@ -144,14 +144,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00001 - Realizar orçamento através do portal de Venda Assistida
 	 */
 	public void AUT_IT00001_STVA_ID00021_FRT021_CN00001_REALIZAR_ORCAMENTO_ATRAVES_DO_PORTAL_VENDA_ASSISTIDA_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cn00001.autStartProcess01();
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -161,13 +154,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00002 - Realizar orçamento com pagamento caixa
 	 */
 	public void AUT_IT00002_STVA_ID00021_FRT021_CN00002_REALIZAR_ORCAMENTO_PAGAMENTO_CAIXA_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00002.autStartProcess02();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		}
 	}
 	
 	
@@ -177,14 +164,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00003 - Realizar orçamento com retirada na loja
 	 */
 	public void AUT_IT00003_STVA_ID00021_FRT021_CN00003_REALIZAR_ORCAMENTO_COM_RETIRADA_CAIXA_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00003.autStartProcess03();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -194,14 +174,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00004 - Realizar orçamento com entrega
 	 */
 	public void AUT_IT00004_STVA_ID00021_FRT021_CN00004_REALIZAR_ORCAMENTO_COM_ENTREGA_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00004.autStartProcess04();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}	
 	
 	
@@ -211,14 +184,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00005 - Realizar orçamento com Garantia Estendidal
 	 */
 	public void AUT_IT00005_STVA_ID00021_FRT021_CN00005_REALIZAR_ORCAMENTO_COM_GARANTIA_ESTENDIDA_LOJA0035() {
-		try{
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00005.autStartProcess05();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -228,15 +194,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00006 - Realizar orçamento e conceder desconto
 	 */
 	public void AUT_IT00006_STVA_ID00021_FRT021_CN00006_REALIZAR_ORCAMENTO_E_CONCEDER_DESCONTO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00006.autStartProcess06();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -246,15 +204,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00007 - Realizar orçamento e conceder desconto fora da alçada do usuário
 	 */
 	public void AUT_IT00007_STVA_ID00021_FRT021_CN00007_REALIZAR_ORCAMENTO_E_CONCEDER_DESCONTO_FORA_DA_ALCADA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00007.autStartProcess07();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -264,15 +214,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00008 - Realizar orçamento com serviço vinculado
 	 */
 	public void AUT_IT00008_STVA_ID00021_FRT021_CN00008_REALIZAR_ORCAMENTO_COM_SERVICO_VINCULADO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			cn00008.autStartProcess08();
 			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -282,15 +224,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00009 - Realizar orçamento com serviço e rateio de desconto no serviço
 	 */
 	public void AUT_IT00009_STVA_ID00021_FRT021_CN00009_REALIZAR_ORCAMENTO_COM_SERVICO_E_RATEIO_DE_DESCONTO_NO_SERVICO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00009.autStartProcess09();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -300,15 +234,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00010 - Realizar orçamento com serviço com rateio de frete e entrega
 	 */
 	public void AUT_IT00010_STVA_ID00021_FRT021_CN00010_REALIZAR_ORCAMENTO_COM_SERVICO_COM_RATEIO_DE_FRETE_E_ENTREGA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00010.autStartProcess10();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -318,15 +244,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00011 - Realizar orçamento com serviço e desconto não eleg. para rateio
 	 */
 	public void AUT_IT00011_STVA_ID00021_FRT021_CN00011_REALIZAR_ORCAMENTO_COM_SERVICO_E_DESCONTO_NAO_ELEGIVEL_PARA_RATEIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00011.autStartProcess11();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -336,15 +254,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00012 - Realizar orçamento com garantia estendida vinculada
 	 */
 	public void AUT_IT00012_STVA_ID00021_FRT021_CN00012_REALIZAR_ORCAMENTO_COM_GARANTIA_ESTENDIDA_VINCULADA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00012.autStartProcess12();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -354,15 +264,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00013 - Realizar orçamento com garantia estendida, desconto e rateio
 	 */
 	public void AUT_IT00013_STVA_ID00021_FRT021_CN00013_REALIZAR_ORCAMENTO_COM_GARANTIA_ESTENDIDA_DESCONTO_E_RATEIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00013.autStartProcess13();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -372,15 +274,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00014 - Realizar orçamento com garantia estendida eleg p rateio e entrega
 	 */
 	public void AUT_IT00014_STVA_ID00021_FRT021_CN00014_REALIZAR_ORCAMENTO_COM_GARANTIA_ESTENDIDA_ELEGIVEL_PARA_RATEIO_E_ENTREGA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00014.autStartProcess14();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 
@@ -390,15 +284,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00015 - Realizar orçamento com garantia estendida, desc não eleg p rateio
 	 */
 	public void AUT_IT00015_STVA_ID00021_FRT021_CN00075_REALIZAR_ORCAMENTO_COM_GARANTIA_ESTENDIDA_DESCONTO_NAO_ELEGIVEL_PARA_RATEIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00015.autStartProcess15();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -408,15 +294,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00016 - Realizar orçamento com serviço avulso
 	 */
 	public void AUT_IT00016_STVA_ID00021_FRT021_CN00016_REALIZAR_ORCAMENTO_COM_SERVICO_AVULSO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00016.autStartProcess16();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 
@@ -427,14 +305,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00017 - Realizar orçamento, desc. pont item da alçada e seção do usuário
 	 */
 	public void AUT_IT00017_STVA_ID00021_FRT021_CN00017_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_TEM_DA_ALCADA_E_SECAO_USUARIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00017.autStartProcess17();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -444,15 +315,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00018 - Realizar orçamento, desc. pont fora da alçada e seção do usuário
 	 */
 	public void AUT_IT00018_STVA_ID00021_FRT021_CN00018_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_FORA_DA_ALCADA_E_SECAO_DO_USUARIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00018.autStartProcess18();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -462,17 +325,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00019 - Realizar orçam desc pontual % na seção e 1 item não eleg p rateio
 	 */
 	public void AUT_IT00019_STVA_ID00021_FRT021_CN00019_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_PORCENTAGEM_NA_SECAO_E_1_ITEM_NAO_ELEGIVEL_PARA_RATEIO_LOJA0035() {
-		try {
-			
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00019.autStartProcess19();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-			
-		}
 	}
 
 	
@@ -482,15 +335,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00020 - Realizar orçamento desc pontual % na seção e itens eleg p rateio
 	 */
 	public void AUT_IT00020_STVA_ID00021_FRT021_CN00020_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_PORCENTAGEM_NA_SECAO_E_ITENS_ELEGIVEIS_PARA_RATEIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00020.autStartProcess20();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -500,15 +345,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00021 - Realizar orçament desc pont R$ na seção e 1item não eleg p rateio
 	 */
 	public void AUT_IT00021_STVA_ID00021_FRT021_CN00021_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_REAIS_NA_SECAO_E_1_ITEM_NAO_ELEGIVEL_PARA_RATEIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00021.autStartProcess21();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -518,17 +355,8 @@ public class AUTEntrega007_RGR001 {
 	 * CN00022 - Realizar orçamento desc pont R$ na seção com itens eleg p rateio
 	 */
 	public void AUT_IT00022_STVA_ID00021_FRT021_CN00022_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_REAIS_NA_SECAO_E_ITENS_ELEGIVEIS_PARA_RATEIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00022.autStartProcess22();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
-	
 
 	
 	@Test
@@ -536,15 +364,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00023 - Realizar orçamento com desconto pontual no total
 	 */
 	public void AUT_IT00023_STVA_ID00021_FRT021_CN00023_REALIZAR_ORCAMENTO_COM_DESCONTO_PONTUAL_NO_TOTAL_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00023.autStartProcess23();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 
@@ -555,15 +375,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00024 - Realizar orçamento com desc pont sob desc administ não combinável
 	 */
 	public void AUT_IT00024_STVA_ID00021_FRT021_CN00024_REALIZAR_ORCAMENTO_COM_DESC_PONTUAL_SOBRE_DESCONTO_ADMINISTRADOR_NAO_COMBINAVEL_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00024.autStartProcess24();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -573,15 +385,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00025 - Realizar orçamento desc pont dentro da alçada sob desc adm combin
 	 */
 	public void AUT_IT00025_STVA_ID00021_FRT021_CN00025_REALIZAR_ORCAMENTO_DESCONTO_PONTUAL_DENTRO_DA_ALCADA_SOBRE_ADM_COMBIN_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00025.autStartProcess25();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 
@@ -591,15 +395,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00028 - Realizar orçamento e incluir observação no orçamento
 	 */
 	public void AUT_IT00026_STVA_ID00021_FRT021_CN00028_REALIZAR_ORCAMENTO_E_INCLUIR_OBSERVACAO_NO_ORCAMENTO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00028.autStartProcess28();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -608,15 +404,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00029 - Realizar orçamento e incluir observação no item
 	 */
 	public void AUT_IT00027_STVA_ID00021_FRT021_CN00029_REALIZAR_ORCAMENTO_E_INCLUIR_OBSERVACAO_NO_ITEM_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00029.autStartProcess29();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -625,15 +413,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00030 - Realizar orçamento e adicionar ocorrência
 	 */
 	public void AUT_IT00028_STVA_ID00021_FRT021_CN00089_REALIZAR_ORCAMENTO_E_ADICIONAR_OCORRENCIA_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			cn00030.autStartProcess30();
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 
 
