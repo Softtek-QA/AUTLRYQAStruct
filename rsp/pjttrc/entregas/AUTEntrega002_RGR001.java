@@ -74,15 +74,8 @@ public class AUTEntrega002_RGR001 {
 	 */
 	@Test
 	public void AUT_IT00001_STHMC_ID00004_FRT004_CN00001_CADASTRO_USUARIO_LOJA0035() {
-		try {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			AUT_LOJA_CADASTRO = "0035";
 			hmc.autHMCCadastros().autCadastrarUsuarioHMCV2(AUT_LOJA_CADASTRO);
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -95,8 +88,6 @@ public class AUTEntrega002_RGR001 {
 	 */
 	@Test
 	public void AUT_IT00002_STCFG_ID00004_FRT004_CN00002_VA_CADASTRO_CLIENTES() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);			
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_USER", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT);
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);  
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_HMC_LOGIN, "AUT_USER_ID", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT);
@@ -104,13 +95,6 @@ public class AUTEntrega002_RGR001 {
 		
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_USER", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT);
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_PASSWORD", hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);			
-		}
-		
 	}
 			
 	@Test
@@ -118,14 +102,7 @@ public class AUTEntrega002_RGR001 {
 	 * CN00001 - Realizar um cadastro de um cliente Pessoa Juridica
 	 */
 	public void AUT_IT00003_STVA_ID00004_FRT004_CN00003_CADASTRO_CLIENTE_PJ_LOJA0035() {
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.COMERCIAL, AUT_VA_TIPO_RESIDENCIA.DEPOSITO_OU_GALPAO);	
-			va.autVACadastros().autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -134,13 +111,7 @@ public class AUTEntrega002_RGR001 {
 	 * CN00002 - Realizar um cadastro de um cliente Pessoa Fisica
 	 */
 	public void AUT_IT00004_STVA_ID00004_FRT004_CN00004_CADASTRO_CLIENTE_PF_LOJA0035() {
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.CASA);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		}
 	}
 	
 	
@@ -149,13 +120,7 @@ public class AUTEntrega002_RGR001 {
 	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
 	 */
 	public void AUT_IT00005_STVA_ID00004_FRT004_CN00005_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.ESTRANGEIRO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-			}
 	}
 
 	
@@ -164,14 +129,7 @@ public class AUTEntrega002_RGR001 {
 	 * CN00004 -Realizar um cadastro de um cliente adicionando mais de um telefone
 	 */
 	public void AUT_IT00006_STVA_ID00004_FRT004_CN00006_CADASTRO_CLIENTE_VARIOS_TELEFONES_LOJA00035() {
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteMultiplosTelefonesVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.FISICA_ATUALIZACAO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -180,15 +138,7 @@ public class AUTEntrega002_RGR001 {
 	 * CN00005 - Realizar um cadastro de um cliente com um CPF que já cadastrado
 	 */
 	public void AUT_IT00007_STVA_ID00004_FRT004_CN00007_REQUISITO_CADASTRO_CLIENTE_PF_PREVIAMENTE_CADASTRADO() {
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);			
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.FISICA_ATUALIZACAO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CONDOMINIO);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 
 	
@@ -198,14 +148,7 @@ public class AUTEntrega002_RGR001 {
 	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
 	 */
 	public void AUT_IT00008_STVA_ID00004_FRT004_CN00008_CADASTRO_CLIENTE_PJ_PREVIAMENTE_CADASTRADO() {
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.JURIDICA_ATUALIZACAO, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CONDOMINIO);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}	
 	
 	
@@ -214,15 +157,8 @@ public class AUTEntrega002_RGR001 {
 	 * CN00007 - Realizar cadastro de cliente utilizando "Não sei meu cep"
 	 */
 	public void AUT_IT00009_STVA_ID00004_FRT004_CN00009_CADASTRO_CLIENTE_NAO_SEI_CEP() {
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF", AUTProjectsFunctions.gerarCPF());
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.CASA);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -231,14 +167,7 @@ public class AUTEntrega002_RGR001 {
 	 * CN00008 - Realizar cadastro de cliente por um cpf invalido
 	 */
 	public void AUT_IT00010_STVA_ID00004_FRT004_CN00010_CADASTRO_CLIENTE_PF_COM_CPF_INVALIDO() {
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteInvalido(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT,AUT_VA_TIPO_CLIENTE_INVALIDO.CPF);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -247,17 +176,8 @@ public class AUTEntrega002_RGR001 {
 	 * CN00009 - Realizar cadastro de cliente por cep invalido
 	 */
 	public void AUT_IT00011_STVA_ID00004_FRT004_CN00011_CADASTRO_CLIENTE_PF_COM_CEP_INVALIDO() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF", AUTProjectsFunctions.gerarCPF());
 			va.autVACadastros().autCadastroClienteCEPInvalido(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 
@@ -266,32 +186,16 @@ public class AUTEntrega002_RGR001 {
 	 * CN00010 - Realizar cadastro com mais de um endereço
 	 */
 	public void AUT_IT00012_STVA_ID00004_FRT004_CN00012_CADASTRO_CLIENTE_PF_COM_VARIOS_ENDERECOS() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CPF", AUTProjectsFunctions.gerarCPF());
 			va.autVACadastros().autCadastroClienteMultiplosEnderecosVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.FISICA, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.RESIDENCIAL, AUT_VA_TIPO_RESIDENCIA.CASA, AUT_VA_TIPO_ENDERECO.COBRANCA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
-		}
 	}
 	
 
 	
 	@Test
 	public void AUT_IT00013_STVA_ID00004_FRT004_CN00013_REQUISITO_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO(){
-		try{
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.COMERCIAL, AUT_VA_TIPO_RESIDENCIA.DEPOSITO_OU_GALPAO);
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", AUTProjectsFunctions.gerarCNPJ());
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);	
-		}		
 	}	
 	
 	@Test
@@ -299,15 +203,8 @@ public class AUTEntrega002_RGR001 {
 	 * CN00011 - Cadastrar um cliente PJ e classificá-lo como Exceção
 	 */
 	public void AUT_IT00014_STVA_ID00004_FRT004_CN00014_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", va.autVACadastros().AUT_NUMERO_DOC_CNPJ_OUTPUT);
 			va.autVACadastros().autCadastroClientePJExcecao(va.autVACadastros().AUT_NUMERO_DOC_CNPJ_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, false);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		
-		}
 	}
 	
 	
@@ -316,16 +213,8 @@ public class AUTEntrega002_RGR001 {
 	 * CN00012 - Classificar um cliente PJ já cadastrado como Exceção
 	 */
 	public void AUT_IT00015_STVA_ID00004_FRT004_CN00015_CLASSIFICAR_CLIENTE_PJ_COMO_EXCECAO() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			
 			va.autVACadastros().autCadastroClientePJExcecao(va.autVACadastros().AUT_NUMERO_DOC_CNPJ_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, true);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 		
@@ -334,17 +223,8 @@ public class AUTEntrega002_RGR001 {
 	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
 	public void AUT_IT00016_STVA_ID00004_FRT004_CN00016A_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
-			
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", AUTProjectsFunctions.gerarCNPJ());
 			va.autVACadastros().autCadastroClienteVA(hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_CADASTROS.JURIDICA, AUT_VA_TIPO_CONTATO.CELULAR, AUT_VA_TIPO_ENDERECO.COMERCIAL, AUT_VA_TIPO_RESIDENCIA.DEPOSITO_OU_GALPAO);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}
 	}
 	
 	
@@ -353,15 +233,7 @@ public class AUTEntrega002_RGR001 {
 	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
 	public void AUT_IT00017_STVA_ID00004_FRT004_CN00016B_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autVACadastros().autCadastroClientePJExcecao(va.autVACadastros().AUT_NUMERO_DOC_CNPJ_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, false);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
-			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);
-		}		
 	}
 
 	@Test
@@ -369,14 +241,7 @@ public class AUTEntrega002_RGR001 {
 	 *  CN00013 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
 	public void AUT_IT00018_STVA_ID00004_FRT004_CN00017_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
-		try {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
 			va.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_CADASTROS, "AUT_CNPJ", va.autVACadastros().AUT_NUMERO_DOC_CNPJ_OUTPUT);
 			va.autVACadastros().autCadastroFilhoPJExcecao(va.autVACadastros().AUT_NUMERO_DOC_CNPJ_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_OUTPUT, hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT, AUT_VA_TIPO_CONTATO.TELEFONE_FIXO, AUT_VA_TIPO_ENDERECO.ENTREGA, AUT_VA_TIPO_RESIDENCIA.APARTAMENTO, AUT_VA_PROPRIEDADE_RESIDENCIA.FINANCIADA);
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);			
-		}
-		catch(java.lang.Exception e) {
-			va.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.FAILED);		
-		}
-	}	
+	}
 }
