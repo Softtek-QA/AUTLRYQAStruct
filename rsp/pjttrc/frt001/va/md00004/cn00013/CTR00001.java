@@ -9,6 +9,7 @@ import com.borland.silktest.jtf.xbrowser.DomListBox;
 import br.lry.components.AUTVABaseComponent;
 import br.lry.components.va.AUTVAGeradorPedido;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 /**
  * 
@@ -51,6 +52,8 @@ public class CTR00001 extends AUTVABaseComponent{
     String numPedido = CMP00034(parameters).AUT_NUMERO_PEDIDO;
     
     autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00013_CTR00001, "AUT_NUMERO_PEDIDO", numPedido);
+    
+    AUTProjectsFunctions.aguardaTempo(5000);
     
 	CMP00022();
 	}

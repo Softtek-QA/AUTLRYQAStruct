@@ -8,6 +8,7 @@ import com.borland.silktest.jtf.xbrowser.DomTextField;
 
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 
 public class CTR0001 extends AUTVABaseComponent {
@@ -43,6 +44,8 @@ public class CTR0001 extends AUTVABaseComponent {
 		    
 		 autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00003_CN00003_CTP00001, "AUT_NUMERO_PEDIDO", numPedido);
 		    	
+		 AUTProjectsFunctions.aguardaTempo(5000);
+		    
 		 CMP00022();
 	}
 }

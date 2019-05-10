@@ -38,6 +38,8 @@ public class CTP00001 extends AUTVABaseComponent {
 		//Realiza a reaprovação
 		CMP00043(parametros);
 		
+		CMP00022();	
+		
 	}
 	
 	
