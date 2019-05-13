@@ -8,6 +8,7 @@ import br.lry.components.AUTVABaseComponent;
 import br.lry.components.va.cat002.AUTRecuperacao;
 import br.lry.components.va.cat016.AUTFinalizarPedidoVA;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 
 public class CTR00001 extends AUTVABaseComponent {
@@ -30,7 +31,7 @@ public class CTR00001 extends AUTVABaseComponent {
 			java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
 			parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTR00001);
 			parameters.remove("AUT_NUMERO_PEDIDO");
-			parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);	
+			parameters.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTR00001, "AUT_NUMERO_PEDIDO"));	
 		 
 		 
 		 
@@ -51,6 +52,8 @@ public class CTR00001 extends AUTVABaseComponent {
 		 String pedido = CMP00034(parameters).AUT_NUMERO_PEDIDO;
 		 
 		 autSetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTP00001, "AUT_NUMERO_PEDIDO", pedido);
+		 
+		 AUTProjectsFunctions.aguardaTempo(5000);
 		 
 		 CMP00022();		
 	}

@@ -2,14 +2,11 @@ package br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00008;
 
 import org.junit.Test;
 
-import com.borland.silktest.jtf.win32.AccessibleControl;
 import com.borland.silktest.jtf.xbrowser.DomButton;
-import com.borland.silktest.jtf.xbrowser.DomCheckBox;
-import com.borland.silktest.jtf.xbrowser.DomElement;
 
 import br.lry.components.AUTVABaseComponent;
-import br.lry.components.va.cat016.AUTFinalizarPedidoVA;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 
 public class CTR00001 extends AUTVABaseComponent {
@@ -50,6 +47,8 @@ public class CTR00001 extends AUTVABaseComponent {
 		 String pedido = CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTR00001)).AUT_NUMERO_PEDIDO;
 		 autSetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTP00001, "AUT_NUMERO_PEDIDO", pedido);
 		
+		 AUTProjectsFunctions.aguardaTempo(5000);
+		 
 		 CMP00022();		
 	}
 }
