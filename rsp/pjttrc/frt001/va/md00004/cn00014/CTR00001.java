@@ -6,6 +6,7 @@ import com.borland.silktest.jtf.xbrowser.DomButton;
 
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 
 public class CTR00001 extends AUTVABaseComponent {
@@ -48,6 +49,8 @@ public class CTR00001 extends AUTVABaseComponent {
 	    System.out.println("[ctr00014] O número do pedido é "+ numPedido);
 	    
 	    autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001, "AUT_NUMERO_PEDIDO", numPedido);
+	    
+	    AUTProjectsFunctions.aguardaTempo(5000);
 	    
 		CMP00022();		
 	}

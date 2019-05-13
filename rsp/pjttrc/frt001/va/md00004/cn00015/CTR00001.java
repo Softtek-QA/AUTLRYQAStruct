@@ -5,6 +5,7 @@ import org.junit.Test;
 import com.borland.silktest.jtf.xbrowser.DomButton;
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 
 public class CTR00001 extends AUTVABaseComponent {
@@ -43,6 +44,8 @@ public class CTR00001 extends AUTVABaseComponent {
 	   
 		autSetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00004_CN00015_CTP00001, "AUT_NUMERO_PEDIDO", pedido);
 	    
+	    AUTProjectsFunctions.aguardaTempo(5000);
+		
 		CMP00022();			 	
 	}
 }
