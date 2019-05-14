@@ -304,7 +304,8 @@ import br.lry.components.va.AUTVABaseServices;
 		@Test
 		/**
 		 * 
-		 * CN00021 - Pedido com desconto na seção em porcentagem itens não elegiveis
+		 * CN00021 - Pedido com desconto na seção em porcentagem itens 
+		 * não elegiveis
 		 */
 		public void AUT_IT00021_STVA_ID00012_FRT012_CN00021_REALIZAR_PEDIDO_DESCONTO_NA_SECAO_ITENS_NAO_ELEGIVEIS_LOJA0035() {
 				cn00021.autStartProcess21();
