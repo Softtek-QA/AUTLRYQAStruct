@@ -45,10 +45,11 @@ public  static String AUT_NUMERO_PEDIDO;
 		CMP00024(parameters).autDescontoSecao(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		
-		//CMP00080(parameters);
-		CMP00016(parameters);
+		CMP00080(parameters);
+		//CMP00016(parameters);
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		CMP00020(parameters).autSelecaoMeioPagamento(parameters);
-		
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		
 		//meio de pagamento
 		

@@ -1,7 +1,6 @@
 package br.lry.qa.rsp.pjttrc.frt001.va.md00002.cn00001;
 
 import org.junit.Test;
-
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
