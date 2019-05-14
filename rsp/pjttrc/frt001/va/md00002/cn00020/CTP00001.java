@@ -50,6 +50,7 @@ public  static String AUT_NUMERO_PEDIDO;
 		
 		//CMP00080(parameters);
 		CMP00020(parameters).autSelecaoMeioPagamento(parameters);
+		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		
 		
 		CMP00034(parameters);
