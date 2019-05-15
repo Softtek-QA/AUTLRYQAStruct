@@ -32,7 +32,7 @@ public class CTP0001 extends AUTVABaseComponent {
 		 CMP00024(parameters).descontoNormal(parameters);
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		 CMP00016(parameters);
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click(); // meio de pagto
+		 //AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click(); // meio de pagto
 		 //AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
 		
 		CMP00034(parameters);
