@@ -47,9 +47,9 @@ public class CTP00001 extends AUTVABaseComponent{
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 
 		CMP00020(parameters).autMeioDePagamentoSimples(parameters);
- 		AUT_AGENT_SILK4J.<DomButton>find("VA.TelaInicialLoja.Avancar").click();
+ 		//AUT_AGENT_SILK4J.<DomButton>find("VA.TelaInicialLoja.Avancar").click();
 	
-		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();
+		//AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();
 
 		CMP00034(parameters);
 

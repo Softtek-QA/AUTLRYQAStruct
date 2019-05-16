@@ -51,7 +51,7 @@ public class CTP00001 extends AUTVABaseComponent {
 
 		 CMP00020(parameters).autMeioDePagamentoSimples(parameters);
 
-		// AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		 CMP00034(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00072_CTP00001));
 
 		 CMP00022();	
