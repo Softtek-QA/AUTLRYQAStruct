@@ -4,21 +4,6 @@ import org.junit.Test;
 
 public class CN00060 {
 	
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00060.CTP00001 cn00060CTP00001;
-
-	
-	/**
-	 * 
-	 * 
-	 * Configurações para execução dos casos de testes do CN00060
-	 * @param parametro - Parametros de entrada do sistema
-	 * @return
-	 */
-	
-	public void autInitConfigurationCN00060() {
-	
-		cn00060CTP00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00060.CTP00001();
-	}
 	
 
 	/**
@@ -31,9 +16,9 @@ public class CN00060 {
 	
 	@Test
 	public void autStartProcess60() {
-		
-		autInitConfigurationCN00060();
-		cn00060CTP00001.autCriaPedidoEmLojaSemProduto();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00060.CTP00001 cn60 = new  br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00060.CTP00001();
+		//autInitConfigurationCN00060();
+		cn60.autCriaPedidoEmLojaSemProduto();
 	}
 
 }
