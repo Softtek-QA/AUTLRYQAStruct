@@ -188,7 +188,7 @@ public class AUTEntrega006_RGR001 {
 
 
 			
-	//@Test
+	@Test
 	/**
 	 * CN00032 - pedido com desconto fora do mundo
 	 */
@@ -198,7 +198,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00034 - Pedido com desconto no frete
 	 */
@@ -209,7 +209,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 		
-	//@Test
+	@Test
 	/**
 	 * CN00038 - Realizar pedido de item com lote e centro de distrib. diferente
 	 */
@@ -221,7 +221,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00051 - Realizar um pedido com encomenda
 	 */
@@ -233,7 +233,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00052 - Realizar um pedido para que fique com Status Faturado Parcial
 	 */
@@ -245,7 +245,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00053 - Realizar um pedido através do canal de Televendas
 	 */
@@ -257,7 +257,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00058 - Realizar pedido sem cliente cadast e efet. o cadast Cliente Estr.
 	 */
@@ -269,7 +269,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00059 - Realizar o pedido em uma loja e retirar em outra
 	 */
@@ -281,7 +281,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00060 - Realizar um pedido onde não tenha o produto na loja selecionada
 	 */
@@ -293,7 +293,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 
-	//@Test
+	@Test
 	/**
 	 * CN00070 - Pedido que usa mais de uma filial de saída
 	 */
@@ -305,7 +305,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 
-	//@Test
+	@Test
 	/**
 	 * CN00071 - Pedido que usa mais de uma modalidade de frete
 	 */
@@ -317,7 +317,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00072 - Pedido de um item plataforma para uma loja não plataforma
 	 */
@@ -329,7 +329,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00073 - Pedido de um item plataforma para uma loja plataforma
 	 */
@@ -341,7 +341,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 
-	//@Test
+	@Test
 	/**
 	 * CN00074 - Pedido com frete adicional
 	 */
@@ -353,7 +353,7 @@ public class AUTEntrega006_RGR001 {
 	
 
 	
-	//@Test
+	@Test
 	/**
 	 * CN00075 - Pedido com voucher e cartão de crédito
 	 */
@@ -365,7 +365,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00076 - Pedido com voucher e vale credito
 	 */
@@ -378,7 +378,7 @@ public class AUTEntrega006_RGR001 {
 
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00080 - Copiar pedido com status eliminado no prazo de D-1
 	 */
@@ -390,7 +390,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00081 - Copiar pedido com status eliminado acima do prazo D-1
 	 */
@@ -402,7 +402,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00082 - Copiar pedido com status cancelado no prazo de D-1
 	 */
@@ -414,7 +414,7 @@ public class AUTEntrega006_RGR001 {
 
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00083 - Copiar pedido com status cancelado acima do prazo D-1
 	 */
@@ -426,7 +426,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00084 - Copiar pedido com status devolvido no prazo de D-1
 	 */
@@ -438,7 +438,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00085 - Copiar pedido com status devolvido acima do prazo D-1
 	 */
@@ -450,7 +450,7 @@ public class AUTEntrega006_RGR001 {
 	
 
 	
-	//@Test
+	@Test
 	/**
 	 * CN00086 - Copiar pedido mantendo condições negociadas
 	 */
@@ -462,7 +462,7 @@ public class AUTEntrega006_RGR001 {
 	
 
 	
-	//@Test
+	@Test
 	/**
 	 * CN00087 - Usuário loja copiando pedido do canal televendas
 	 */
@@ -474,7 +474,7 @@ public class AUTEntrega006_RGR001 {
 	
 	
 	
-	//@Test
+	@Test
 	/**
 	 * CN00088 - Copiar pedido não mantendo condições negociadas
 	 */
