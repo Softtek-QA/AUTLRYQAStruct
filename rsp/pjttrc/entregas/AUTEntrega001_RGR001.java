@@ -301,7 +301,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Estrangeiro
 	 * 
 	 */
-	//@Test
+	@Test
 	public void AUT_IT00004_STVA_ID00003_FRT003_CN00003_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
@@ -333,7 +333,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para cadastro de cliente - Jurídica
 	 * 
 	 */
-	//@Test
+	@Test
 	public void AUT_IT00005_STVA_ID00003_FRT003_CN00004_CADASTRO_CLIENTE_PJ_LOJA0035() {
 		va.autVACadastros(false).autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);	
 		try {
@@ -362,7 +362,7 @@ public class AUTEntrega001_RGR001{
 	 * 8
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
-	//@Test
+	@Test
 	public void AUT_IT00006_STPDV_ID00003_FRT003_CN00005_LOGIN_LOJA0035() {				
 		try {
 			pdv.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.EXECUTION);
@@ -376,7 +376,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}
 
-	//@Test
+	@Test
 	/**
 	 * 3
 	 * Executa procedimentos para consulta de material de preço do material PDV
@@ -393,7 +393,7 @@ public class AUTEntrega001_RGR001{
 		}
 	}	
 
-	//@Test
+	@Test
 	/**
 	 * 
 	 * Consulta de estoque de material no SAP

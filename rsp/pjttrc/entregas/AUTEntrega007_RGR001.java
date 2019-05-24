@@ -6,6 +6,7 @@ import org.junit.runners.MethodSorters;
 
 import br.lry.components.AUTBaseComponent.AUT_SYNC_EXECUTION_STATE;
 import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
+import br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00008.CN00008;
 import br.stk.framework.tests.AUTFWKTestObjectBase;
 
 
@@ -214,7 +215,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00008 - Realizar orçamento com serviço vinculado
 	 */
 	public void AUT_IT00008_STVA_ID00021_FRT021_CN00008_REALIZAR_ORCAMENTO_COM_SERVICO_VINCULADO_LOJA0035() {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);
+			cn00008.autStartProcess08();
 	}
 	
 	
