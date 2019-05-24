@@ -26,34 +26,35 @@ public class CTP00001 extends AUTVABaseComponent {
 		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
 		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001);
 
-		 CMP00002(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00002(parameters);
 
-		 CMP00037(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00037(parameters);
 
-		 CMP00009(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00009(parameters);
 
-		 CMP00008(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00008(parameters);
 
-		 CMP00012(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00012(parameters);
 
-		 CMP00004(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00004(parameters);
 
-		 CMP00014_CPF(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00014_CPF(parameters);
 
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 	 
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 
-		 CMP00016(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001));
+		 CMP00016(parameters);
 
-		 AUT_AGENT_SILK4J.<DomListBox>find("VA.Desconto.Motivo_ITEM").select(AUTMeiosPagamento.AUT_VA_MEIOS_PAGAMENTO.VALE_TROCA.toString());
-		 AUT_AGENT_SILK4J.<DomListBox>find("VA.TelaMeioPagamento.Codigo_Voucher_VALETROCA_01").select(1);
+//		 AUT_AGENT_SILK4J.<DomListBox>find("VA.Desconto.Motivo_ITEM").select(AUTMeiosPagamento.AUT_VA_MEIOS_PAGAMENTO.VALE_TROCA.toString());
+//		 AUT_AGENT_SILK4J.<DomListBox>find("VA.TelaMeioPagamento.Codigo_Voucher_VALETROCA_01").select(1);
 
+		 CMP00020(parameters).autSelecaoMeioPagamento(parameters);
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").mouseMove();
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Confirmar").click();
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();
+//		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
+//
+//		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Confirmar").click();
+//		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();
 
 		 CMP00034(parameters);
 		 autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00049_CTP00001, "AUT_NUMERO_PEDIDO","");
