@@ -382,7 +382,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 		
-		//@Test
+		@Test
 		/**
 		 * 
 		 * CN00029 - Pedido com desconto pontual sobre promoção complexa
