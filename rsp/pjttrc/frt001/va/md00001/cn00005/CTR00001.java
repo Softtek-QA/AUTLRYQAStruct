@@ -10,6 +10,7 @@ import br.lry.components.AUTVABaseComponent;
 import br.lry.components.va.cat002.AUTRecuperacao;
 import br.lry.components.va.cat016.AUTFinalizarPedidoVA;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 
 public class CTR00001 extends AUTVABaseComponent {
@@ -39,20 +40,13 @@ public class CTR00001 extends AUTVABaseComponent {
 		 CMP00009(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
 		 CMP00008(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
 		
-			AUT_NUMERO_PEDIDO = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroCarrinho").getText();
-				
+	 
+	    String numCarrinho =  CMP00083().autCapturarNumeroCarrinho();
+	    
+	    autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001, "AUT_NUMERO_CARRINHO", numCarrinho);
+	    
+	    AUTProjectsFunctions.aguardaTempo(5000);
 			
-			System.out.println("O número do pedido é "+AUT_NUMERO_PEDIDO);
-			autInsertScreenByScenario();
-			java.util.regex.Pattern padrao = java.util.regex.Pattern.compile("\\d+");
-			java.util.regex.Matcher analise = padrao.matcher(AUT_NUMERO_PEDIDO);
-			if(analise.find()) {
-				AUT_NUMERO_PEDIDO = analise.group();
-			}
-			else {
-				AUT_NUMERO_PEDIDO= "00000000000";
-			}
-			
-		 CMP00022();		
+		CMP00022();		
 	}
 }
