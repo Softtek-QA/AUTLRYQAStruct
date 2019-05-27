@@ -145,7 +145,7 @@ public class AUTEntrega007_RGR001 {
 	 * CN00001 - Realizar orçamento através do portal de Venda Assistida
 	 */
 	public void AUT_IT00001_STVA_ID00021_FRT021_CN00001_REALIZAR_ORCAMENTO_ATRAVES_DO_PORTAL_VENDA_ASSISTIDA_LOJA0035() {
-			gerTests.autSyncStateExecution(AUT_SYNC_EXECUTION_STATE.PASSED);		
+			cn00001.autStartProcess01();
 	}
 	
 	
