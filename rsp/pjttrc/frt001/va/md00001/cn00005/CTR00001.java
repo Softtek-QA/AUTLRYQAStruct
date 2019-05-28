@@ -34,11 +34,10 @@ public class CTR00001 extends AUTVABaseComponent {
 		parameters.remove("AUT_NUMERO_PEDIDO");
 		parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);	
 		
-		 autGetDataFlow().autInitDataFlow();
-		 CMP00002(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
-	//	 CMP00037(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
-		 CMP00009(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
-		 CMP00008(autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001));
+		 CMP00002(parameters);
+	//	 CMP00037(parameters);
+		 CMP00009(parameters);
+		 CMP00008(parameters);
 		
 	 
 	    String numCarrinho =  CMP00083().autCapturarNumeroCarrinho();

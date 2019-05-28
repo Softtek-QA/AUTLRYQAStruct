@@ -37,19 +37,21 @@ public class CTP00001 extends AUTVABaseComponent{
 		CMP00014_CPF(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();	
 		
-		CMP00081(parameters); //adiciona ocorrencia
-		
+		CMP00081(parameters); //adiciona ocorrencia	
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
-		CMP00016(parameters);
 		
-		CMP00020(parameters).autSelecaoMeioPagamento(parameters);	
+		// Fluxo de saida		
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click(); 
-		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Finalizar").click();		
 		
+		CMP00034(parameters);	
+		
+<<<<<<< HEAD
 
 		CMP00034(parameters);	
 		//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00030_CTP00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		
+=======
+>>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 		CMP00022();
 		}
 		 

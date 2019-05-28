@@ -40,10 +40,9 @@ public class CTP00001 extends AUTVABaseComponent {
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTP00001);
-		parametros.remove("AUT_NUMERO_PEDIDO");
+		parametros.remove("AUT_NUMERO_PEDIDO");		
 		parametros.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00001_CTP00001, "AUT_NUMERO_PEDIDO"));
 
-		autGetDataFlow().autInitDataFlow();
 		CMP00001(parametros);
 		//CMP00036(parametros);
 		//AUT_AGENT_SILK4J.<DomElement>find("Boitata.MenuLogOff.list list-salesman").click();

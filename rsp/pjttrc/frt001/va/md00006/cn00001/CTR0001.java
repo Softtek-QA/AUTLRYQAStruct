@@ -8,6 +8,7 @@ import com.borland.silktest.jtf.xbrowser.DomElement;
 
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+import br.lry.functions.AUTProjectsFunctions;
 
 
 public class CTR0001 extends AUTVABaseComponent {
@@ -36,22 +37,26 @@ public class CTR0001 extends AUTVABaseComponent {
 		 //AUT_AGENT_SILK4J.<DomCheckBox>find("VA.TelaInicialLoja.IgnAntiFraude").click();
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		 
-		 AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
+	    String numPedido = CMP00034(parameters).AUT_NUMERO_PEDIDO;
 		 
-		 AUT_NUMERO_PEDIDO = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroPedido").getText();
-
-			System.out.println("O número do pedido é "+ AUT_NUMERO_PEDIDO);
-			autInsertScreenByScenario();
-			java.util.regex.Pattern padrao = java.util.regex.Pattern.compile("\\d+");
-			java.util.regex.Matcher analise = padrao.matcher(AUT_NUMERO_PEDIDO);
-			if(analise.find()) {
-				AUT_NUMERO_PEDIDO = analise.group();
-			}
-			else {
-				AUT_NUMERO_PEDIDO= "00000000000";
-			}
+//		 AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
+//		 
+//		 AUT_NUMERO_PEDIDO = AUT_AGENT_SILK4J.<DomElement>find("VA.TelaFinalPedidos.NumeroPedido").getText();
+//
+//			System.out.println("O número do pedido é "+ AUT_NUMERO_PEDIDO);
+//			autInsertScreenByScenario();
+//			java.util.regex.Pattern padrao = java.util.regex.Pattern.compile("\\d+");
+//			java.util.regex.Matcher analise = padrao.matcher(AUT_NUMERO_PEDIDO);
+//			if(analise.find()) {
+//				AUT_NUMERO_PEDIDO = analise.group();
+//			}
+//			else {
+//				AUT_NUMERO_PEDIDO= "00000000000";
+//			}
 			autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00006_CN00001_CTR00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		
+		    AUTProjectsFunctions.aguardaTempo(5000);
+			
 		 CMP00022();
 	}
 }
