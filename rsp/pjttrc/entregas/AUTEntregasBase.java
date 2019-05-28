@@ -19,7 +19,7 @@ public class AUTEntregasBase extends AUTBaseComponent {
 	java.lang.Class currentSuite = null; 
 	br.lry.qa.rsp.pjttrc.entregas.AUTVAWorkFlowEndToEnd_RGR0001 entEndToEnd = null;	
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega001_RGR001 ent1 = null;
-	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega002_RGR001 ent2 = null;
+	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega002_RGR001_OLD ent2 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega003_RGR001 ent3 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega004_RGR001 ent4 = null;
 	br.lry.qa.rsp.pjttrc.entregas.AUTEntrega005_RGR001 ent5 = null;
@@ -116,9 +116,9 @@ public class AUTEntregasBase extends AUTBaseComponent {
 	 * @return TSuiteModuloCadastros - Suite de testes
 	 * 
 	 */
-	public <TSuiteModuloCadastros extends br.lry.qa.rsp.pjttrc.entregas.AUTEntrega002_RGR001> TSuiteModuloCadastros autEntrega002RGR001() {
+	public <TSuiteModuloCadastros extends br.lry.qa.rsp.pjttrc.entregas.AUTEntrega002_RGR001_OLD> TSuiteModuloCadastros autEntrega002RGR001() {
 		if(ent2==null) {			
-			ent2 = new AUTEntrega002_RGR001();		
+			ent2 = new AUTEntrega002_RGR001_OLD();		
 			
 			return (TSuiteModuloCadastros)ent2;
 		}

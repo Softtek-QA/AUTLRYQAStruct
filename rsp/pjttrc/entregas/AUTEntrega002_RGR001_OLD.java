@@ -27,7 +27,7 @@ import br.stk.framework.tests.AUTFWKTestObjectBase;
  *
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class AUTEntrega002_RGR001 {
+public class AUTEntrega002_RGR001_OLD {
 	public static AUTHMCBaseServices hmc;	
 	public static AUTVABaseServices va;
 	public static String USUARIO_GLOBAL = "00000000", SENHA_GLOBAL="1234";
@@ -56,7 +56,7 @@ public class AUTEntrega002_RGR001 {
 		hmc.autHMCCadastros().AUT_USUARIO_CADASTRO_PWD_OUTPUT = hmc.autHMCCadastros().autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.AUT_VA_LOGIN, "AUT_PASSWORD").toString();
 		gerTests = new AUTFWKTestObjectBase();
 				
-		gerTests.autInitConfigurationProjectExecution(AUTEntrega002_RGR001.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
+		gerTests.autInitConfigurationProjectExecution(AUTEntrega002_RGR001_OLD.class, AUT_TEST_STATUS_EXECUCAO.WAIT.toString());
 	
 	}
 	

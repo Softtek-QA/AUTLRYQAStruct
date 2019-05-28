@@ -22,7 +22,7 @@ import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class AUTEntrega002_RGR2_2{	
+public class AUTEntrega002_RGR001{	
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00001.CN00001 cn00001;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00002.CN00002 cn00002;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003 cn00003;
