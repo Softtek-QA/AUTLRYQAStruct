@@ -103,7 +103,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 03
 	 * 
@@ -131,7 +131,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
+	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
 	 */
 	
 	public void AUT_IT00005_STVA_ID00004_FRT004_CN00005_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
