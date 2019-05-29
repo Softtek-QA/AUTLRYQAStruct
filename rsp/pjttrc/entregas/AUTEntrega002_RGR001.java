@@ -23,8 +23,6 @@ import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTEntrega002_RGR001{	
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00001.CN00001 cn00001;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00002.CN00002 cn00002;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003 cn00003;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00004 cn00004;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005 cn00005;
@@ -60,8 +58,8 @@ public class AUTEntrega002_RGR001{
 	@Test
 	public void AUT_CFG_ID00009_FRT009_CN00000() {	
 		//Não Utilizados Mais
-		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00001.CN00001();
-		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00002.CN00002();
+	//	cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003();
+	//	cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00002();
 
 		//Cadastros VA	
 		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003();
@@ -114,7 +112,7 @@ public class AUTEntrega002_RGR001{
 	public void AUT_IT00003_STVA_ID00004_FRT004_CN00003_CADASTRO_CLIENTE_PJ_LOJA0035() {
 		
 		//Ajustar para  chamar o cn00003 e ficar com o nome coerente
-		cn00001.autStartProcess01();
+		cn00003.autStartProcess03();
 	}
 
 	
@@ -127,12 +125,12 @@ public class AUTEntrega002_RGR001{
 	
 	public void AUT_IT00004_STVA_ID00004_FRT004_CN00004_CADASTRO_CLIENTE_PF_LOJA0035() {
 		//Ajustar para  chamar o cn00004 e ficar com o nome coerente
-		cn00003.autStartProcess03();
+		cn00004.autStartProcess04();
 		
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
@@ -144,7 +142,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00004 - Realizar um cadastro de um cliente adicionando mais de um telefone
@@ -155,7 +153,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00005 - Realizar um cadastro de um cliente com um CPF que já cadastrado
@@ -166,7 +164,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
@@ -178,7 +176,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00007 - Realizar cadastro de cliente utilizando "Não sei meu cep"
@@ -190,7 +188,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00008 - Realizar cadastro de cliente por um cpf invalido
@@ -202,7 +200,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00009 - Realizar cadastro de cliente por cep invalido
@@ -214,7 +212,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00010 - Realizar cadastro com mais de um endereço
@@ -227,7 +225,7 @@ public class AUTEntrega002_RGR001{
 	
 	
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00011 - Realizar cadastro cliente pj e classificar como excecao
@@ -240,7 +238,7 @@ public class AUTEntrega002_RGR001{
 	
 
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00012 - Cadastrar um cliente PJ e classificá-lo como Exceção
@@ -252,7 +250,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00013 - Classificar um cliente PJ já cadastrado como Exceção
@@ -264,7 +262,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00014 - Realizar um cadastro "filho" para um PJ Exceção
@@ -275,7 +273,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00015 - Realizar um cadastro "filho" para um PJ Exceção
@@ -287,7 +285,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00016 - Realizar um cadastro "filho" para um PJ Exceção

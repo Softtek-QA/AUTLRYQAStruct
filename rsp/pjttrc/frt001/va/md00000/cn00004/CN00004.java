@@ -23,6 +23,7 @@ public class CN00004 extends AUTVABaseComponent{
 		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CTP00001 ctr1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CTP00001();
 	
 		
+		ctr1.autCadastroPF();
 		
 	}
 
