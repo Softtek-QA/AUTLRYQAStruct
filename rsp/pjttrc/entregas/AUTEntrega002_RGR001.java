@@ -27,7 +27,7 @@ public class AUTEntrega002_RGR001{
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00002.CN00002 cn00002;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003 cn00003;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00004 cn00004;
-//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005 cn00005;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005 cn00005;
 //	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CN00006 cn00006;
 //	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CN00007 cn00007;
 //	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00008.CN00008 cn00008;
@@ -66,7 +66,7 @@ public class AUTEntrega002_RGR001{
 		//Cadastros VA	
 		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003();
 		cn00004 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00004();
-//		cn00005 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005();
+		cn00005 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005();
 //		cn00006 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CN00006();
 //		cn00007 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CN00007();
 //		cn00008 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00008.CN00008();
@@ -105,7 +105,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 03
 	 * 
@@ -118,7 +118,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * 
@@ -135,11 +135,11 @@ public class AUTEntrega002_RGR001{
 	@Test
 	/**
 	 * 
-	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
+	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
 	 */
 	
 	public void AUT_IT00005_STVA_ID00004_FRT004_CN00005_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
-		//cn00005.autStartProcess05();
+		cn00005.autStartProcess05();
 		
 	}
 	
