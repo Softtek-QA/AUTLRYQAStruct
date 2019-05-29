@@ -110,8 +110,6 @@ public class AUTEntrega002_RGR001{
 	 * CN00003 - Realizar um cadastro de um cliente Pessoa Juridica
 	 */
 	public void AUT_IT00003_STVA_ID00004_FRT004_CN00003_CADASTRO_CLIENTE_PJ_LOJA0035() {
-		
-		//Ajustar para  chamar o cn00003 e ficar com o nome coerente
 		cn00003.autStartProcess03();
 	}
 
