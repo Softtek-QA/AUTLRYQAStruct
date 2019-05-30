@@ -10,8 +10,8 @@ public class CN00003 extends AUTVABaseComponent{
 
 	/**
 	 * 
-	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
-	 * Agrupamento de todos os casos de testes do CN00003
+	 * CN00001 - Realizar um cadastro de um cliente Pessoa Juridica
+	 * Agrupamento de todos os casos de testes do CN00001
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
 	 */
@@ -20,9 +20,9 @@ public class CN00003 extends AUTVABaseComponent{
 	public void autStartProcess03() {
 		
 			
-		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CTP00001 ctr1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CTP00001();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CTP00001 ctr = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CTP00001();
 		
-		ctr1.autCadastroEstrangeiro();
+		ctr.autCadastro();
 		
 		
 	}

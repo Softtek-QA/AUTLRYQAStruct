@@ -48,5 +48,16 @@ public class AUTCadastroCliente extends AUTVABaseComponent{
 			return false;
 		}
 	}
+	
+	/**
+	 * Acessa Menu para  Cadastro de Cliente
+	 * @return - Verdadeiro para a ação realizada com sucesso
+	 */
+	public boolean autMenuCadastroCliente() {
+		
+		
+		
+		return true;
+	}
 
 }

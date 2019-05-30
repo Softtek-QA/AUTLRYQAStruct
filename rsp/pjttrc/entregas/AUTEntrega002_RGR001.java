@@ -23,10 +23,23 @@ import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTEntrega002_RGR001{	
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00001.CN00001 cn00001;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00002.CN00002 cn00002;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003 cn00003;
-
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00004 cn00004;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005 cn00005;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CN00006 cn00006;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CN00007 cn00007;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00008.CN00008 cn00008;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00009.CN00009 cn00009;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00010.CN00010 cn00010;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00011.CN00011 cn00011;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00012.CN00012 cn00012;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CN00013 cn00013;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CN00014 cn00014;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00015.CN00015 cn00015;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CN00016A cn00016A;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016B.CN00016B cn00016B;
+//	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00017.CN00017 cn00017;
+	
 
 	String hostExec = "192.168.0.116";
 	
@@ -38,30 +51,71 @@ public class AUTEntrega002_RGR001{
 	/**
 	 * 
 	 * 
-	 * Mapeamento das configurações para execução dos cenários do módulo de Televendas
+	 * Mapeamento das configurações para execução dos cenários do módulo de Cadastro (Entrega 02)
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
 	 */
 	@Test
 	public void AUT_CFG_ID00009_FRT009_CN00000() {	
-		cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00001.CN00001();
-		cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00002.CN00002();
+		//Não Utilizados Mais
+	//	cn00001 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003();
+	//	cn00002 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00002();
+
+		//Cadastros VA	
 		cn00003 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003();
+		cn00004 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00004();
+		cn00005 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005();
+//		cn00006 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CN00006();
+//		cn00007 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CN00007();
+//		cn00008 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00008.CN00008();
+//		cn00009 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00009.CN00009();
+//		cn00010 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00010.CN00010();
+//		cn00011 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00011.CN00011();
+//		cn00012 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00012.CN00012();
+//		cn00013 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CN00013();
+//		cn00014 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CN00014();
+//		cn00015 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00015.CN00015();
+//		cn00016A = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CN00016A();
+//		cn00016B = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016B.CN00016B();
+//		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00017.CN00017();		
 	}
 
 	
-	@Test
+	
+	//@Test
 	/**
 	 * 01
 	 * 
-	 * CN00001 - Realizar um cadastro de um cliente Pessoa Juridica
+	 * CN00001 - Executa os procedimentos de cadastro de usuário no HMC
 	 */
-	public void AUT_IT00003_STVA_ID00004_FRT004_CN00003_CADASTRO_CLIENTE_PJ_LOJA0035() {
+	public void AUT_IT00001_STHMC_ID00004_FRT004_CN00001_CADASTRO_USUARIO_LOJA0035() {
 			
-		cn00001.autStartProcess01();
 	}
 	
 	//@Test
+	/**
+	 * 02
+	 * 
+	 * CN00002 - Configura os parametros de inicialização para cadastros de clientes-VA
+	 */
+	public void AUT_IT00002_STCFG_ID00004_FRT004_CN00002_VA_CADASTRO_CLIENTES() {
+			
+	}
+	
+	
+	//@Test
+	/**
+	 * 03
+	 * 
+	 * CN00003 - Realizar um cadastro de um cliente Pessoa Juridica
+	 */
+	public void AUT_IT00003_STVA_ID00004_FRT004_CN00003_CADASTRO_CLIENTE_PJ_LOJA0035() {
+		cn00003.autStartProcess03();
+	}
+
+	
+	//@Test
+<<<<<<< HEAD
 	/**
 	 * 01
 	 * 
@@ -73,14 +127,17 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	//@Test
+=======
+>>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
 	 * 
 	 * 
-	 * CN00002 - Realizar um cadastro de um cliente Pessoa Fisica
+	 * CN00004 - Realizar um cadastro de um cliente Pessoa Fisica
 	 */
 	
 	public void AUT_IT00004_STVA_ID00004_FRT004_CN00004_CADASTRO_CLIENTE_PF_LOJA0035() {
-		cn00003.autStartProcess03();
+		//Ajustar para  chamar o cn00004 e ficar com o nome coerente
+		cn00004.autStartProcess04();
 		
 	}
 	
@@ -88,11 +145,11 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
+	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
 	 */
 	
 	public void AUT_IT00005_STVA_ID00004_FRT004_CN00005_CADASTRO_CLIENTE_ESTRANGEIRO_LOJA0035() {
-	
+		cn00005.autStartProcess05();
 		
 	}
 	
