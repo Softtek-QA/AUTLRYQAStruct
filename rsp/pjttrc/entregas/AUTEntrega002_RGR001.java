@@ -114,21 +114,6 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	//@Test
-<<<<<<< HEAD
-	/**
-	 * 01
-	 * 
-	 * CN00001 - Realizar a troca de loja utilizando usuario televenda
-	 */
-	public void AUT_IT00001_STVA_ID00009_FRT009_CN00001_TROCA_LOJA_LOJA0045() {
-			
-		cn00002.autStartProcess02();
-	}
-	
-	//@Test
-=======
->>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
 	 * 
 	 * 
