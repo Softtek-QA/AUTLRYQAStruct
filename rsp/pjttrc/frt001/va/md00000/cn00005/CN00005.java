@@ -23,5 +23,4 @@ public class CN00005 extends AUTVABaseComponent{
 		ctp1.autCadastroEstrangeiro();
 			
 	}
-
 }
