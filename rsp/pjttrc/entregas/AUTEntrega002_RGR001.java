@@ -114,7 +114,6 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	@Test
 	/**
 	 * 
 	 * 
