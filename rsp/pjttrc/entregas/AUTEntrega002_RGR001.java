@@ -113,11 +113,6 @@ public class AUTEntrega002_RGR001{
 		cn00003.autStartProcess03();
 	}
 
-<<<<<<< HEAD
-	
-=======
-	
->>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	/**
 	 * 
 	 * 
