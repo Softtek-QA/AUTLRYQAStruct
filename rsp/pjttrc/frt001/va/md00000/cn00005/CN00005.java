@@ -18,7 +18,6 @@ public class CN00005 extends AUTVABaseComponent{
 	
 	@Test
 	public void autStartProcess05() {
-		
 		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CTP00001();	
 		ctp1.autCadastroEstrangeiro();
 			
