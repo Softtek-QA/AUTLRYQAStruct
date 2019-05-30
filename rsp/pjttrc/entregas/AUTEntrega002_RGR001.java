@@ -103,7 +103,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 03
 	 * 
@@ -114,7 +114,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * 
@@ -122,13 +122,12 @@ public class AUTEntrega002_RGR001{
 	 */
 	
 	public void AUT_IT00004_STVA_ID00004_FRT004_CN00004_CADASTRO_CLIENTE_PF_LOJA0035() {
-		//Ajustar para  chamar o cn00004 e ficar com o nome coerente
 		cn00004.autStartProcess04();
 		
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
