@@ -61,7 +61,7 @@ public class AUTEntrega002_RGR001{
 		cn00001.autStartProcess01();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 01
 	 * 
@@ -72,7 +72,7 @@ public class AUTEntrega002_RGR001{
 		cn00002.autStartProcess02();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * 
@@ -85,7 +85,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00003 - Realizar um cadastro de um cliente Estrangeiro
@@ -97,7 +97,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00004 - Realizar um cadastro de um cliente adicionando mais de um telefone
@@ -108,7 +108,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00005 - Realizar um cadastro de um cliente com um CPF que já cadastrado
@@ -119,7 +119,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
@@ -131,7 +131,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00007 - Realizar cadastro de cliente utilizando "Não sei meu cep"
@@ -143,7 +143,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00008 - Realizar cadastro de cliente por um cpf invalido
@@ -155,7 +155,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00009 - Realizar cadastro de cliente por cep invalido
@@ -167,7 +167,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00010 - Realizar cadastro com mais de um endereço
@@ -180,7 +180,7 @@ public class AUTEntrega002_RGR001{
 	
 	
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00011 - Realizar cadastro cliente pj e classificar como excecao
@@ -193,7 +193,7 @@ public class AUTEntrega002_RGR001{
 	
 
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00012 - Cadastrar um cliente PJ e classificá-lo como Exceção
@@ -205,7 +205,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00013 - Classificar um cliente PJ já cadastrado como Exceção
@@ -217,7 +217,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00014 - Realizar um cadastro "filho" para um PJ Exceção
@@ -228,7 +228,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00015 - Realizar um cadastro "filho" para um PJ Exceção
@@ -240,7 +240,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00016 - Realizar um cadastro "filho" para um PJ Exceção
