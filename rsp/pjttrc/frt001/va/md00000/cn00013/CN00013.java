@@ -18,6 +18,9 @@ public class CN00013 extends AUTVABaseComponent{
 	
 	@Test
 	public void autStartProcess13() {
-			CMP00066();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CTP00001 ctr = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CTP00001();
+		
+		ctr.autCadastroExecao();
+		
 	}
 }

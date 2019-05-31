@@ -10,14 +10,15 @@ public class CN00014 extends AUTVABaseComponent{
 
 	/**
 	 * 
-	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
-	 * Agrupamento de todos os casos de testes do CN00005
+	 * 
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
 	 */
 	
 	@Test
 	public void autStartProcess14(){
-			CMP00066();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CTP00001 ctr = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CTP00001();
+		
+		ctr.autCadastroExecao();
 	}
 }

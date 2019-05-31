@@ -103,7 +103,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 03
 	 * 
@@ -233,7 +233,7 @@ public class AUTEntrega002_RGR001{
 	
 
 
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00012 - Cadastrar um cliente PJ e classificá-lo como Exceção
