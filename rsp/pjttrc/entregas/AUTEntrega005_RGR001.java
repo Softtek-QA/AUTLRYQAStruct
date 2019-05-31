@@ -119,7 +119,7 @@ public class AUTEntrega005_RGR001 {
 	
 
 			
-	@Test
+	//@Test
 	/**
 	 * CN00030 - Pedido com promoção complexa sobre desconto
 	 */
@@ -128,7 +128,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00031 - Pedido com desconto dentro do mundo do usuário e fora da seção
 	 */
@@ -137,7 +137,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 		
-	@Test
+	//@Test
 	/**
 	 * CN00033 - Pedido com desconto dentro da seção
 	 */
@@ -147,7 +147,7 @@ public class AUTEntrega005_RGR001 {
 	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00035 - Realizar um pedido com Aprovação de alçada
 	 */
@@ -156,7 +156,7 @@ public class AUTEntrega005_RGR001 {
 	}	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00036 - Pedido com aprovação de alçada de multiplas lojas - Televendas
 	 */
@@ -166,7 +166,7 @@ public class AUTEntrega005_RGR001 {
 	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00054 - Realizar um pedido através do canal Ecommerce
 	 */
@@ -176,7 +176,7 @@ public class AUTEntrega005_RGR001 {
 	
 
 	
-	@Test
+	//@Test
 	/**
 	 * CN00040 - Realizar um pedido com itens que tenha lote sem estoque
 	 */
@@ -186,7 +186,7 @@ public class AUTEntrega005_RGR001 {
 	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00041 - Realizar um pedido com saída de Fluxo Entrega expressa
 	 */
@@ -196,7 +196,7 @@ public class AUTEntrega005_RGR001 {
 	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00042 - Realizar um pedido com saída de Fluxo Entrega economica
 	 */
@@ -206,7 +206,7 @@ public class AUTEntrega005_RGR001 {
 	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00043 - Realizar um pedido com pagamento Cartão de Crédito
 	 */
@@ -215,7 +215,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00044 - Realizar pedido com pgto Cartão de Crédito e Aprovação Antifraude
 	 */
@@ -224,7 +224,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00045 - Realizar pedido pgto Cart Créd. vlr menor R$100 divido 2X ou mais
 	 */
@@ -234,7 +234,7 @@ public class AUTEntrega005_RGR001 {
 	
 
 	
-	@Test
+	//@Test
 	/**
 	 * CN00046 - Realizar um pedido com pagamento Cartão de Crédito Visa
 	 */
@@ -244,7 +244,7 @@ public class AUTEntrega005_RGR001 {
 	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00047 - Realizar um pedido com pagamento Cartão de Crédito Mastercard
 	 */
@@ -253,7 +253,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 *  CN00048 - Realizar um pedido com pagamento Cheque
 	 */
@@ -262,7 +262,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 *  CN00049 - Realizar um pedido com pagamento Vale Troca
 	 */
@@ -271,7 +271,7 @@ public class AUTEntrega005_RGR001 {
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 *  CN00050 - Realizar um pedido com pagamento Voucher
 	 */
@@ -280,7 +280,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 *  CN00055 - Realizar um pedido através da opção de Clique e Retira
 	 */
@@ -289,7 +289,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 *  CN00056 - Realizar pedido sem cliente cadastro e efetuar cadastro PF
 	 */
