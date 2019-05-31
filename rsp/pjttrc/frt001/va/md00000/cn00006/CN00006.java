@@ -21,6 +21,6 @@ public class CN00006 extends AUTVABaseComponent{
 		
 		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CTP00001();	
 		ctp1.autCadastroPFVariosTelefones();
-			
+	
 	}
 }

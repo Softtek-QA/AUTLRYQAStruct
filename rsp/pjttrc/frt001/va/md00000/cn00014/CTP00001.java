@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014;
 
 import java.util.HashMap;
 
@@ -27,17 +27,18 @@ public class CTP00001 extends AUTVABaseComponent {
 	 * @return
 	 */
 	@Test
-	public void autCadastro() {
+	public void autCadastroExecao() {
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00000_CN00003_CTP00001);
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00000_CN00014_CTP00001);
 
 		CMP00001(parametros);
-		CMP00066();
+		//CMP00066();
 		
 		
-		CMP00067(parametros).autCadastrarPJ(parametros);
+		CMP00067(parametros).autCadastroClientePJExcecao(parametros);
+		//CMP00034();
 		//CMP00022();
 
 	}
