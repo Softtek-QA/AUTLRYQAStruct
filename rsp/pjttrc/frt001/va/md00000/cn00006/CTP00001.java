@@ -39,7 +39,7 @@ public class CTP00001 extends AUTVABaseComponent {
 
 		CMP00066();
 	
-		CMP00013(parametros);
+		CMP00013(parametros).autCadastroClienteMultiplosTelefonesVA(parametros);
 		
 		//CMP00022();
 
