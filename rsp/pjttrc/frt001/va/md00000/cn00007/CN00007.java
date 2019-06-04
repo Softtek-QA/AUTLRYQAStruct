@@ -10,15 +10,16 @@ public class CN00007 extends AUTVABaseComponent{
 
 	/**
 	 * 
-	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
-	 * Agrupamento de todos os casos de testes do CN00005
+	 * CN00007 - Realizar um cadastro de cliente com CPF já previamente cadastrado
+	 * Agrupamento de todos os casos de testes do CN00007
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
 	 */
 	
 	@Test
 	public void autStartProcess07() {
-		CMP00066();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CTP00001();	
+		ctp1.autCadastroClientePFExistente();
 			
 	}
 }
