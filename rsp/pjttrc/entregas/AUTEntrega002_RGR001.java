@@ -248,7 +248,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 
-	@Test
+	//@Test
 	/**
 	 * 
 	 * CN00013 - Classificar um cliente PJ já cadastrado como Exceção
@@ -271,7 +271,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00015 - Realizar um cadastro "filho" para um PJ Exceção
