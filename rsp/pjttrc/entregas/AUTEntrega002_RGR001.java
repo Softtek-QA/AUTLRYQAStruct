@@ -82,7 +82,7 @@ public class AUTEntrega002_RGR001{
 
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 01
 	 * 
@@ -92,7 +92,7 @@ public class AUTEntrega002_RGR001{
 			
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * 02
 	 * 
@@ -103,7 +103,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	////@Test
+	@Test
 	/**
 	 * 03
 	 * 
@@ -114,20 +114,19 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * 
 	 * CN00004 - Realizar um cadastro de um cliente Pessoa Fisica
 	 */
-	//@Test
 	public void AUT_IT00004_STVA_ID00004_FRT004_CN00004_CADASTRO_CLIENTE_PF_LOJA0035() {
 		cn00004.autStartProcess04();
 		
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
@@ -139,7 +138,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00006 - Realizar um cadastro de um cliente adicionando mais de um telefone
@@ -151,10 +150,10 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 
-	 * CN00005 - Realizar um cadastro de um cliente com um CPF que já cadastrado
+	 * CN00007 - Realizar um cadastro de um cliente com um CPF que já cadastrado
 	 */
 	
 	public void AUT_IT00007_STVA_ID00004_FRT004_CN00007_REQUISITO_CADASTRO_CLIENTE_PF_PREVIAMENTE_CADASTRADO() {
@@ -162,7 +161,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
@@ -174,7 +173,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00007 - Realizar cadastro de cliente utilizando "Não sei meu cep"
@@ -186,10 +185,10 @@ public class AUTEntrega002_RGR001{
 	}
 
 
-	//@Test
+	@Test
 	/**
 	 * 
-	 * CN00008 - Realizar cadastro de cliente por um cpf invalido
+	 * CN00010 - Realizar cadastro de cliente com um cpf invalido
 	 */
 	
 	public void AUT_IT00010_STVA_ID00004_FRT004_CN00010_CADASTRO_CLIENTE_PF_COM_CPF_INVALIDO() {
@@ -198,10 +197,10 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 
-	 * CN00009 - Realizar cadastro de cliente por cep invalido
+	 * CN00011 - Realizar cadastro de cliente com cep invalido
 	 */
 	
 	public void AUT_IT00011_STVA_ID00004_FRT004_CN00011_CADASTRO_CLIENTE_PF_COM_CEP_INVALIDO() {
@@ -210,10 +209,10 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 
-	 * CN00010 - Realizar cadastro com mais de um endereço
+	 * CN00012 - Realizar cadastro com mais de um endereço
 	 */
 	
 	public void AUT_IT00012_STVA_ID00004_FRT004_CN00012_CADASTRO_CLIENTE_PF_COM_VARIOS_ENDERECOS() {
@@ -223,7 +222,7 @@ public class AUTEntrega002_RGR001{
 	
 	
 
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00011 - Realizar cadastro cliente pj e classificar como excecao
@@ -236,7 +235,7 @@ public class AUTEntrega002_RGR001{
 	
 
 
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00012 - Cadastrar um cliente PJ e classificá-lo como Exceção
@@ -260,7 +259,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00014 - Realizar um cadastro "filho" para um PJ Exceção
@@ -271,7 +270,7 @@ public class AUTEntrega002_RGR001{
 		
 	}
 
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00015 - Realizar um cadastro "filho" para um PJ Exceção
@@ -283,7 +282,7 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	//@Test
+	@Test
 	/**
 	 * 
 	 * CN00016 - Realizar um cadastro "filho" para um PJ Exceção
