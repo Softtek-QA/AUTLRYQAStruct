@@ -20,8 +20,7 @@ public class CTP00001 extends AUTVABaseComponent {
 	
 	/**
 	 * 
-	 * 
-	 * CTP00001 - Pedido Televendas com loja diferente do pedido e depois copiando *  
+	 * autCadastroPF() - Cadastro de novo cliente  
 	 * parametro - Parametros de entrada do sistema
 	 * @param
 	 * @return
@@ -36,8 +35,7 @@ public class CTP00001 extends AUTVABaseComponent {
 		CMP00001(parametros);
 		CMP00066();
 		
-		CMP00015(parametros);
-		//CMP00022();
-
+		CMP00013(parametros).autCadastrarClienteComCep(parametros);//Cadastro de Cliente Novo
+		CMP00022();
 	}
 }
