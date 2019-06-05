@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00005;
 
 import java.util.HashMap;
 
@@ -17,31 +17,19 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
 public class CTP00001 extends AUTVABaseComponent {
 	
-	
+	public static br.lry.components.pdv.AUTPDVBaseServices pdv;
 	/**
 	 * 
 	 * 
-	 * CTP00001 - Realiza cadastro de um cliente Estrangeiro  
+	 *  
 	 * parametro - Parametros de entrada do sistema
 	 * @param
 	 * @return
 	 */
 	@Test
-	public void autCadastroPFVariosTelefones() {
+	public void loginPDV() {
 
-		autGetDataFlow().autInitDataFlow();
-		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
-
-		parametros = autGetDataFlow()
-				.autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00000_CN00006_CTP00001);
-
-		CMP00001(parametros);
-
-		CMP00066();
-	
-		CMP00013(parametros).autCadastroClienteMultiplosTelefonesVA(parametros);
-		
-		CMP00022();
+		pdv.autPDVAcessos().autPDVLoginDefault();
 
 	}
 }
