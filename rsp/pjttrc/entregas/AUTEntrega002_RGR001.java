@@ -36,7 +36,7 @@ public class AUTEntrega002_RGR001{
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CN00013 cn00013;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CN00014 cn00014;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00015.CN00015 cn00015;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CN00016A cn00016A;
+	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016.CN00016A cn00016A;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016B.CN00016B cn00016B;
 	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00017.CN00017 cn00017;
 	
@@ -75,7 +75,7 @@ public class AUTEntrega002_RGR001{
 		cn00013 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CN00013();
 		cn00014 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CN00014();
 		cn00015 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00015.CN00015();
-		cn00016A = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CN00016A();
+		cn00016A = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016.CN00016A();
 		cn00016B = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016B.CN00016B();
 		cn00017 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00017.CN00017();		
 	}
@@ -103,7 +103,7 @@ public class AUTEntrega002_RGR001{
 	}
 	
 	
-	////@Test
+	//@Test
 	/**
 	 * 03
 	 * 
@@ -154,7 +154,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00005 - Realizar um cadastro de um cliente com um CPF que já cadastrado
+	 * CN00007 - Realizar um cadastro de um cliente com um CPF que já cadastrado
 	 */
 	
 	public void AUT_IT00007_STVA_ID00004_FRT004_CN00007_REQUISITO_CADASTRO_CLIENTE_PF_PREVIAMENTE_CADASTRADO() {
@@ -165,7 +165,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00006 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
+	 * CN00008 - Realizar um cadastro de um cliente com um CNPJ que já cadastrado
 	 */
 	
 	public void AUT_IT00008_STVA_ID00004_FRT004_CN00008_CADASTRO_CLIENTE_PJ_PREVIAMENTE_CADASTRADO() {
@@ -177,7 +177,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00007 - Realizar cadastro de cliente utilizando "Não sei meu cep"
+	 * Realizar cadastro de cliente utilizando "Não sei meu cep"
 	 */
 	
 	public void AUT_IT00009_STVA_ID00004_FRT004_CN00009_CADASTRO_CLIENTE_NAO_SEI_CEP() {
@@ -189,7 +189,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00008 - Realizar cadastro de cliente por um cpf invalido
+	 * Realizar cadastro de cliente por um cpf invalido
 	 */
 	
 	public void AUT_IT00010_STVA_ID00004_FRT004_CN00010_CADASTRO_CLIENTE_PF_COM_CPF_INVALIDO() {
@@ -226,7 +226,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00011 - Realizar cadastro cliente pj e classificar como excecao
+	 * CN00013 - Realizar cadastro cliente pj e classificar como excecao
 	 */
 	
 	public void AUT_IT00013_STVA_ID00004_FRT004_CN00013_REQUISITO_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO(){
@@ -239,7 +239,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00012 - Cadastrar um cliente PJ e classificá-lo como Exceção
+	 * CN00014 - Cadastrar um cliente PJ e classificá-lo como Exceção
 	 */
 	
 	public void AUT_IT00014_STVA_ID00004_FRT004_CN00014_CADASTRO_CLIENTE_PJ_E_CLASSIFICAR_COMO_EXCECAO() {
@@ -248,10 +248,10 @@ public class AUTEntrega002_RGR001{
 	}
 	
 
-	@Test
+	//@Test
 	/**
 	 * 
-	 * CN00013 - Classificar um cliente PJ já cadastrado como Exceção
+	 * CN00015 - Classificar um cliente PJ já cadastrado como Exceção
 	 */
 	
 	public void AUT_IT00015_STVA_ID00004_FRT004_CN00015_CLASSIFICAR_CLIENTE_PJ_COMO_EXCECAO() {
@@ -263,7 +263,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00014 - Realizar um cadastro "filho" para um PJ Exceção
+	 * CN00016 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
 	
 	public void AUT_IT00016_STVA_ID00004_FRT004_CN00016A_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
@@ -274,7 +274,7 @@ public class AUTEntrega002_RGR001{
 	//@Test
 	/**
 	 * 
-	 * CN00015 - Realizar um cadastro "filho" para um PJ Exceção
+	 * CN00016B - Realizar um cadastro "filho" para um PJ Exceção
 	 */
 	
 	public void AUT_IT00017_STVA_ID00004_FRT004_CN00016B_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
@@ -283,10 +283,10 @@ public class AUTEntrega002_RGR001{
 	}
 
 	
-	//@Test
+	@Test
 	/**
 	 * 
-	 * CN00016 - Realizar um cadastro "filho" para um PJ Exceção
+	 * CN00017 - Realizar um cadastro "filho" para um PJ Exceção
 	 */
 	
 	public void AUT_IT00018_STVA_ID00004_FRT004_CN00017_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
