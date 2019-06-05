@@ -16,7 +16,7 @@ import com.borland.silktest.jtf.SilkTestSuite;
 import br.lry.qa.alm.webservices.scm.AUTALMManage;
 import br.lry.qa.alm.webservices.scm.filters.FilterServiceProxy;
 import br.lry.qa.alm.webservices.scm.requirements.RequirementsServiceProxy;
-import br.lry.qa.rsp.pjttrc.entregas.AUTEntrega001_RGR001;
+import br.lry.qa.rsp.pjttrc.entregas.AUTEntrega001_RGR001_OLD;
 import br.lry.qa.rsp.pjttrc.entregas.AUTEntrega001_RGR002;
 import br.lry.qa.rsp.pjttrc.entregas.AUTEntrega001_RGR003;
 import br.lry.qa.rsp.pjttrc.entregas.*;
@@ -50,7 +50,7 @@ public class AUTALMBaseServices extends AUTFWKTestObjectBase {
 	 */
 	public AUTALMBaseServices() {
 		// TODO Auto-generated constructor stub
-		listClassForSearch.add(new AUTEntrega001_RGR001());
+		listClassForSearch.add(new AUTEntrega001_RGR001_OLD());
 		listClassForSearch.add(new AUTEntrega001_RGR002());
 		listClassForSearch.add(new AUTEntrega001_RGR003());
 		listClassForSearch.add(new AUTEntrega002_RGR001_OLD());

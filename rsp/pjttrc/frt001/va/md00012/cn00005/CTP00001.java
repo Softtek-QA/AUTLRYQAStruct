@@ -1,0 +1,35 @@
+package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00005;
+
+import java.util.HashMap;
+
+import org.junit.Test;
+
+import com.borland.silktest.jtf.xbrowser.DomButton;
+import com.borland.silktest.jtf.xbrowser.DomCheckBox;
+import com.borland.silktest.jtf.xbrowser.DomElement;
+import com.borland.silktest.jtf.xbrowser.DomLink;
+import com.borland.silktest.jtf.xbrowser.DomListBox;
+import com.borland.silktest.jtf.xbrowser.DomRadioButton;
+
+import br.lry.components.AUTVABaseComponent;
+import br.lry.components.va.AUTVAGeradorPedido;
+import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
+
+public class CTP00001 extends AUTVABaseComponent {
+	
+	public static br.lry.components.pdv.AUTPDVBaseServices pdv;
+	/**
+	 * 
+	 * 
+	 *  
+	 * parametro - Parametros de entrada do sistema
+	 * @param
+	 * @return
+	 */
+	@Test
+	public void loginPDV() {
+
+		pdv.autPDVAcessos().autPDVLoginDefault();
+
+	}
+}
