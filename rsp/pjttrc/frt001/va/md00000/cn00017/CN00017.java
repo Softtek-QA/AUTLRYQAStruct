@@ -7,6 +7,7 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
 public class CN00017 extends AUTVABaseComponent{
 	
+	
 
 	/**
 	 * 
@@ -25,8 +26,8 @@ public class CN00017 extends AUTVABaseComponent{
 		CMP00001(parametros);
 		
 		
-		CMP00067(parametros).autCadastroFilhoPJExcecao(parametros);
-		CMP00034(parametros);
+		CMP00067(parametros).autCadastroClientePJExcecao(parametros);
+		//CMP00034();
 		CMP00022();
 	}
 }
