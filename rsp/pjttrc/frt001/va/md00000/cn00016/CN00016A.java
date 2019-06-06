@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016;
 
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ public class CN00016A extends AUTVABaseComponent{
 
 	/**
 	 * 
-	 * CN00005 - Realizar um cadastro de um cliente Estrangeiro
+	 * CN00016A - REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO
 	 * Agrupamento de todos os casos de testes do CN00005
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
@@ -18,6 +18,8 @@ public class CN00016A extends AUTVABaseComponent{
 	
 	@Test
 	public void autStartProcess16A() {
-			CMP00066();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CTP00001 ctp = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CTP00001();
+		
+		ctp.autCadastroFilhoPJExcecao();
 	}
 }
