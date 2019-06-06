@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A;
 
 import org.junit.Test;
 
