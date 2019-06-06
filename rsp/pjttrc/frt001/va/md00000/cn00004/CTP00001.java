@@ -36,6 +36,8 @@ public class CTP00001 extends AUTVABaseComponent {
 		CMP00066();
 		
 		CMP00013(parametros).autCadastrarClienteComCep(parametros);//Cadastro de Cliente Novo
+		
+	
 		CMP00022();
 	}
 }
