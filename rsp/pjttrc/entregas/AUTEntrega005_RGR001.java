@@ -289,7 +289,7 @@ public class AUTEntrega005_RGR001 {
 	}
 	
 	
-	//@Test
+	@Test
 	/**
 	 *  CN00056 - Realizar pedido sem cliente cadastro e efetuar cadastro PF
 	 */
