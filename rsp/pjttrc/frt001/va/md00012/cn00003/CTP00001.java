@@ -32,7 +32,7 @@ public class CTP00001 extends AUTVABaseComponent {
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00001);
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00003_CTP00001);
 
 		CMP00002(parametros);
 		CMP00009(parametros);
@@ -40,7 +40,7 @@ public class CTP00001 extends AUTVABaseComponent {
 		CMP00012(parametros);
 		CMP00004(parametros);
 		
-		CMP00014_CPF(parametros);
+		CMP00014(parametros);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		 
@@ -53,8 +53,8 @@ public class CTP00001 extends AUTVABaseComponent {
 		
 		AUT_STATUS_ESPERADO = "Aguardando liberação de pagamento";
 		 
-		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO); 
-		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00001, "AUT_STATUS_ESPERADO",AUT_STATUS_ESPERADO);
+		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00003_CTP00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO); 
+		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00003_CTP00001, "AUT_STATUS_ESPERADO",AUT_STATUS_ESPERADO);
 
 		CMP00022();	
 

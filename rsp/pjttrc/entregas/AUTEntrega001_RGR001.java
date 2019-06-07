@@ -4,7 +4,6 @@ package br.lry.qa.rsp.pjttrc.entregas;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import br.stk.framework.tests.AUTFWKTestObjectBase;
 
 
 /**
@@ -164,10 +163,10 @@ public class AUTEntrega001_RGR001{
 	 */
 	public void AUT_IT00002_STPDV_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
 		cn00001_2.autStartProcess01(AUT_NUMERO_PEDIDO);
-		//cn00001_2.autStartProcess01("1000014998");	
+		//cn00001_2.autStartProcess01("1000014998");	//1000015172
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
@@ -177,7 +176,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_3.autStartProcess02(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 4
 	 * 
@@ -187,7 +186,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_4.autStartProcess02(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 5
 	 * 
@@ -200,6 +199,7 @@ public class AUTEntrega001_RGR001{
 	}
 	//************************* FIM RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
+	
 	
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO ******************************************
 
@@ -223,7 +223,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_2.autStartProcess02(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00002 - Parte 3
 	 * 
@@ -233,7 +233,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_3.autStartProcess02(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00002 - Parte 4
 	 * 
@@ -243,7 +243,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_4.autStartProcess02(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00002 - Parte 5
 	 * 
@@ -259,14 +259,14 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE1 ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00003 - Parte 1
 	 * 
 	 * Executa procedimentos Criar Pedido e Consultar Status no VA
 	 */
 	public void AUT_IT00011_STVA_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE1() {
-		//AUT_NUMERO_PEDIDO = cn00003_1.autStartProcess03();
+		AUT_NUMERO_PEDIDO = cn00003_1.autStartProcess03();
 	}
 	
 	//@Test
@@ -279,7 +279,7 @@ public class AUTEntrega001_RGR001{
 		//cn00003_2.autStartProcess03(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00003 - Parte 3
 	 * 
@@ -289,7 +289,7 @@ public class AUTEntrega001_RGR001{
 		//cn00003_3.autStartProcess03(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00003 - Parte 4
 	 * 
@@ -299,7 +299,7 @@ public class AUTEntrega001_RGR001{
 		//cn00003_4.autStartProcess03(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00003 - Parte 5
 	 * 
@@ -334,7 +334,7 @@ public class AUTEntrega001_RGR001{
 		//cn00004_2.autStartProcess04(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Parte 3
 	 * 
@@ -344,7 +344,7 @@ public class AUTEntrega001_RGR001{
 		//cn00004_3.autStartProcess04(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Parte 4
 	 * 
@@ -354,7 +354,7 @@ public class AUTEntrega001_RGR001{
 		//cn00004_4.autStartProcess04(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Parte 5
 	 * 
