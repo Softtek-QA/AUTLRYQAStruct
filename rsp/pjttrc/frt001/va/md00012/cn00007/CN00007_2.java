@@ -1,11 +1,11 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00003;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00007;
 
 import org.junit.Test;
 
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
-public class CN00001_5 {
+public class CN00007_2 {
 	
 	@Test
 	public void autStartProcess01(String numPedido) {
