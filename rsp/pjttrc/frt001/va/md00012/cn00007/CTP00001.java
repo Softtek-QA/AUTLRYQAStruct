@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00005;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00007;
 
 import java.util.HashMap;
 
