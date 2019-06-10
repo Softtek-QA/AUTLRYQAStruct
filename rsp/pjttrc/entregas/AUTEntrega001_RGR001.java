@@ -163,17 +163,18 @@ public class AUTEntrega001_RGR001{
 	 */
 	public void AUT_IT00002_STPDV_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
 		cn00001_2.autStartProcess01(AUT_NUMERO_PEDIDO);
-		//cn00001_2.autStartProcess01("1000014998");	//1000015172
+		//cn00001_2.autStartProcess01("1000015179");	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
 	 * Executa procedimentos para faturar pedido no SAP
 	 */
 	public void AUT_IT00003_STSAP_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
-		cn00002_3.autStartProcess02(AUT_NUMERO_PEDIDO);	
+		//cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
+		cn00001_3.autStartProcess01("1000015179");
 	}
 	
 	//@Test
@@ -183,7 +184,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para Devolução do pedido no PDV
 	 */
 	public void AUT_IT00004_STPDV_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
-		cn00002_4.autStartProcess02(AUT_NUMERO_PEDIDO);	
+		cn00001_4.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
 	//@Test
@@ -193,8 +194,8 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00005_STSAFE_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE5() {
-		cn00002_5.autStartProcess02(AUT_NUMERO_PEDIDO);
-		//cn00001_2.autStartProcess01("1000014998");
+		cn00001_5.autStartProcess01(AUT_NUMERO_PEDIDO);
+		//cn00001_5.autStartProcess01("1000014998");
 		
 	}
 	//************************* FIM RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
@@ -230,7 +231,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para faturar pedido no SAP
 	 */
 	public void AUT_IT00008_STSAP_ID00003_FRT003_CN00002_RETIR_EXT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO_PARTE3() {
-		cn00002_3.autStartProcess02(AUT_NUMERO_PEDIDO);	
+		cn00002_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
 	//@Test
@@ -259,7 +260,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE1 ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00003 - Parte 1
 	 * 
