@@ -231,7 +231,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para faturar pedido no SAP
 	 */
 	public void AUT_IT00008_STSAP_ID00003_FRT003_CN00002_RETIR_EXT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO_PARTE3() {
-		cn00002_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
+		cn00002_3.autStartProcess02(AUT_NUMERO_PEDIDO);	
 	}
 	
 	//@Test
