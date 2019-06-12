@@ -9,14 +9,14 @@ public class CN00001_4 {
 	
 	@Test
 	public void autStartProcess01(String numPedido) {
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00003 ctp3 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00003();	
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00004 ctp4 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00004();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00007 ctp7 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00007();	
+		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00008 ctp8 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00008();
 			
-		ctp3.PagaPedidoPDV(numPedido); //PAGAMENTO_PEDIDO_PF;
+		ctp7.DevolucaoPedidoPDV(numPedido); //DEVOLVUCAO_PEDIDO_PF;
 	
-		ctp4.AUT_NUMERO_PEDIDO=ctp3.AUT_NUMERO_PEDIDO;	
-		ctp4.AUT_STATUS_ESPERADO=ctp3.AUT_STATUS_ESPERADO;
+		ctp8.AUT_NUMERO_PEDIDO=ctp7.AUT_NUMERO_PEDIDO;	
+		ctp8.AUT_STATUS_ESPERADO=ctp7.AUT_STATUS_ESPERADO;
 			
-		ctp4.ValidaStatusVA(); //VALIDA_STATUS_PEDIDO_PAGO_PF;
+		ctp8.ValidaStatusVA(); //VALIDA_STATUS_PEDIDO_DEVOLUCAO_PF;
 	}
 }
