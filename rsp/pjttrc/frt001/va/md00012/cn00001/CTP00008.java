@@ -17,7 +17,7 @@ import com.borland.silktest.jtf.xbrowser.DomTextField;
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
-public class CTP00006 extends AUTVABaseComponent {
+public class CTP00008 extends AUTVABaseComponent {
 	
 	public static String AUT_NUMERO_PEDIDO;
 	public static String AUT_STATUS_ESPERADO;
@@ -35,8 +35,7 @@ public class CTP00006 extends AUTVABaseComponent {
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00006);
-		
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00001);
 		parametros.remove("AUT_NUMERO_PEDIDO");
 		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		

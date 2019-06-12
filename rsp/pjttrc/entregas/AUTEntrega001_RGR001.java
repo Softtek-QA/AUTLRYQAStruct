@@ -142,10 +142,10 @@ public class AUTEntrega001_RGR001{
 		cn00009_4 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00009.CN00009_4();
 		cn00009_5 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00009.CN00009_5();			
 	}
-
+ 
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 1
 	 * 
@@ -155,7 +155,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00001_1.autStartProcess01();
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 2
 	 * 
@@ -163,10 +163,10 @@ public class AUTEntrega001_RGR001{
 	 */
 	public void AUT_IT00002_STPDV_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
 		cn00001_2.autStartProcess01(AUT_NUMERO_PEDIDO);
-		//cn00001_2.autStartProcess01("1000015179");	
+		//cn00001_2.autStartProcess01("1000015436");	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
@@ -231,7 +231,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para faturar pedido no SAP
 	 */
 	public void AUT_IT00008_STSAP_ID00003_FRT003_CN00002_RETIR_EXT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO_PARTE3() {
-		cn00002_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
+		cn00002_3.autStartProcess02(AUT_NUMERO_PEDIDO);	
 	}
 	
 	//@Test
@@ -277,7 +277,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_IT00012_STVA_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE1() {
-		//cn00003_2.autStartProcess03(AUT_NUMERO_PEDIDO);		
+		cn00003_2.autStartProcess03(AUT_NUMERO_PEDIDO);		
 	}
 	
 	//@Test
