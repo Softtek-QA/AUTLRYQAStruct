@@ -163,18 +163,18 @@ public class AUTEntrega001_RGR001{
 	 */
 	public void AUT_IT00002_STPDV_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
 		cn00001_2.autStartProcess01(AUT_NUMERO_PEDIDO);
-		//cn00001_2.autStartProcess01("1000015436");	
+		//cn00001_2.autStartProcess01("1000015731");	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
 	 * Executa procedimentos para faturar pedido no SAP
 	 */
 	public void AUT_IT00003_STSAP_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
-		//cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
-		cn00001_3.autStartProcess01("1000015179");
+		cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
+		//cn00001_3.autStartProcess01("1000015454");
 	}
 	
 	//@Test
@@ -287,7 +287,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para faturar pedido no SAP
 	 */
 	public void AUT_IT00013_STSAP_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE3() {
-		//cn00003_3.autStartProcess03(AUT_NUMERO_PEDIDO);	
+		cn00003_3.autStartProcess03(AUT_NUMERO_PEDIDO);	
 	}
 	
 	//@Test
