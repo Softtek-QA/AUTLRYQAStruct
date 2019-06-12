@@ -145,7 +145,7 @@ public class AUTEntrega001_RGR001{
  
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 1
 	 * 
@@ -155,7 +155,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00001_1.autStartProcess01();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 2
 	 * 
@@ -166,7 +166,7 @@ public class AUTEntrega001_RGR001{
 		//cn00001_2.autStartProcess01("1000015436");	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
@@ -174,7 +174,7 @@ public class AUTEntrega001_RGR001{
 	 */
 	public void AUT_IT00003_STSAP_ID00003_FRT003_CN00001_RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
 		//cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
-		cn00001_3.autStartProcess01("1000015179");
+		cn00001_3.autStartProcess01("1000015731");
 	}
 	
 	//@Test
