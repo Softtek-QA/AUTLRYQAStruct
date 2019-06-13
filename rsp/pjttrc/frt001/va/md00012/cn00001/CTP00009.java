@@ -14,10 +14,11 @@ import com.borland.silktest.jtf.xbrowser.DomListBox;
 import com.borland.silktest.jtf.xbrowser.DomRadioButton;
 import com.borland.silktest.jtf.xbrowser.DomTextField;
 
+import br.lry.components.AUTSafeBaseComponent;
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
-public class CTP00008 extends AUTVABaseComponent {
+public class CTP00009 extends AUTSafeBaseComponent {
 	
 	public static String AUT_NUMERO_PEDIDO;
 	public static String AUT_STATUS_ESPERADO;
@@ -31,22 +32,22 @@ public class CTP00008 extends AUTVABaseComponent {
 	 * @return
 	 */
 	@Test
-	public void ValidaStatusVA() {
+	public void CarregarValeTroca() {
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00008);
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_SAFE_MD00012_CN00001_CTP00009);
 		parametros.remove("AUT_NUMERO_PEDIDO");
 		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		
 		parametros.remove("AUT_STATUS_ESPERADO");
 		parametros.put("AUT_STATUS_ESPERADO", AUT_STATUS_ESPERADO);
 		
-		CMP00001(parametros);
+		CMP00093(parametros);
 		
-		CMP00074(parametros);
+		CMP00094(parametros).autConsultaValeTrocaClientePF(parametros);
 		
-		CMP00022();
+		//NAO TEM LOGOUT NO SAFE (?)
 
 	}
 }
