@@ -321,8 +321,8 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos Criar Pedido e Consultar Status no VA
 	 */
-	public void AUT_IT00016_STVA_ID00003_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
-		//AUT_NUMERO_PEDIDO = cn00004_1.autStartProcess04();
+	public void AUT_IT00016_STVA_ID00004_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+		AUT_NUMERO_PEDIDO = cn00004_1.autStartProcess04();
 	}
 	
 	//@Test
@@ -331,8 +331,8 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
-	public void AUT_IT00017_STVA_ID00003_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
-		//cn00004_2.autStartProcess04(AUT_NUMERO_PEDIDO);		
+	public void AUT_IT00017_STVA_ID00004_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+		cn00004_2.autStartProcess04(AUT_NUMERO_PEDIDO);		
 	}
 	
 	//@Test
@@ -342,7 +342,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para faturar pedido no SAP
 	 */
 	public void AUT_IT00018_STSAP_ID00003_FRT003_CN00004_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE3() {
-		//cn00004_3.autStartProcess04(AUT_NUMERO_PEDIDO);	
+		cn00004_3.autStartProcess04(AUT_NUMERO_PEDIDO);	
 	}
 	
 	//@Test

@@ -34,7 +34,10 @@ public class CTP00005 extends AUTSAPBaseComponent {
 	 */
 	@Test
 	public void FaturaPedidoSAP(String numPedido) {
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 		String remessa;
 		
 		autGetDataFlow().autInitDataFlow();
@@ -61,9 +64,12 @@ public class CTP00005 extends AUTSAPBaseComponent {
 		CMP00093().autFiltroInicial(parametros);
 		CMP00093().autValidaFaturamentoSAP();
 		
+<<<<<<< HEAD
+=======
 		//Logout
 		CMP00095();
 		
+>>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 		AUT_STATUS_ESPERADO = "Faturado total";
 		AUT_NUMERO_PEDIDO = numPedido;
 		 
