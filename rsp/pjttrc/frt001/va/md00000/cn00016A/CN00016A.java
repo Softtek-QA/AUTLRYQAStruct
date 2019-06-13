@@ -21,5 +21,9 @@ public class CN00016A extends AUTVABaseComponent{
 		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CTP00001 ctp = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CTP00001();
 		
 		ctp.autCadastroFilhoPJExcecao();
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'new_develop' of https://github.com/Softtek-QA/AUTLRYQAStruct.git
 	}
 }
