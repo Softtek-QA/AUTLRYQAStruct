@@ -15,6 +15,7 @@ import com.borland.silktest.jtf.xbrowser.DomRadioButton;
 import com.borland.silktest.jtf.xbrowser.DomTextField;
 
 import br.lry.components.AUTPDVBaseComponent;
+import br.lry.components.AUTSAPBaseComponent;
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
