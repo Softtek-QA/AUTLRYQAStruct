@@ -297,7 +297,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para Devolução do pedido no PDV
 	 */
 	public void AUT_IT00014_STPDV_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE4() {
-		//cn00003_4.autStartProcess03(AUT_NUMERO_PEDIDO);		
+		cn00003_4.autStartProcess03(AUT_NUMERO_PEDIDO);		
 	}
 	
 	//@Test
@@ -307,13 +307,13 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00015_STSAFE_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE5() {
-		//cn00003_5.autStartProcess03(AUT_NUMERO_PEDIDO);	
+		cn00003_5.autStartProcess03(AUT_NUMERO_PEDIDO);	
 	}
 	//************************* FIM RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
 
 	
 	
-	//************************* INI _RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1 ******************************************
+	//************************* INI RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
 	//@Test
 	/**
@@ -331,7 +331,7 @@ public class AUTEntrega001_RGR001{
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
-	public void AUT_IT00017_STVA_ID00004_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+	public void AUT_IT00017_STPDV_ID00003_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
 		cn00004_2.autStartProcess04(AUT_NUMERO_PEDIDO);		
 	}
 	
@@ -339,9 +339,9 @@ public class AUTEntrega001_RGR001{
 	/**
 	 * CN00004 - Parte 3
 	 * 
-	 * Executa procedimentos para faturar pedido no SAP
+	 * Executa procedimentos para Devolução do pedido no PDV
 	 */
-	public void AUT_IT00018_STSAP_ID00003_FRT003_CN00004_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE3() {
+	public void AUT_IT00018_STPDV_ID00003_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
 		cn00004_3.autStartProcess04(AUT_NUMERO_PEDIDO);	
 	}
 	
@@ -349,22 +349,239 @@ public class AUTEntrega001_RGR001{
 	/**
 	 * CN00004 - Parte 4
 	 * 
-	 * Executa procedimentos para Devolução do pedido no PDV
+	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
-	public void AUT_IT00019_STPDV_ID00003_FRT003_CN00004_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE4() {
-		//cn00004_4.autStartProcess04(AUT_NUMERO_PEDIDO);		
+	public void AUT_IT00019_STSAFE_ID00003_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
+		cn00004_4.autStartProcess04(AUT_NUMERO_PEDIDO);		
+	}
+	
+
+	//************************* FIM RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
+	
+	
+	//************************* INI RETIR_INT_IMEDIATA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
+
+	//@Test
+	/**
+	 * CN00005 - Parte 1
+	 * 
+	 * Executa procedimentos Criar Pedido e Consultar Status no VA
+	 */
+	public void AUT_IT00020_STVA_ID00004_FRT003_CN00005_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+		AUT_NUMERO_PEDIDO = cn00005_1.autStartProcess05();
 	}
 	
 	//@Test
 	/**
-	 * CN00004 - Parte 5
+	 * CN00005 - Parte 2
+	 * 
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_IT00021_STPDV_ID00003_FRT003_CN00005_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
+		//cn00005_2.autStartProcess05(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//@Test
+	/**
+	 * CN00005 - Parte 3
+	 * 
+	 * Executa procedimentos para Devolução do pedido no PDV
+	 */
+	public void AUT_IT00022_STPDV_ID00003_FRT003_CN00005_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
+		//cn00005_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
+	}
+	
+	//@Test
+	/**
+	 * CN00005 - Parte 4
 	 * 
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
-	public void AUT_IT00020_STSAFE_ID00003_FRT003_CN00004_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE5() {
-		//cn00004_5.autStartProcess04(AUT_NUMERO_PEDIDO);	
+	public void AUT_IT00023_STSAFE_ID00003_FRT003_CN00005_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
+		//cn00005_4.autStartProcess05(AUT_NUMERO_PEDIDO);		
 	}
-	//************************* FIM RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
 	
+	//************************* FIM RETIR_INT_IMEDIATA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
+
+	
+	//************************* INI RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
+
+	//@Test
+	/**
+	 * CN00006 - Parte 1
+	 * 
+	 * Executa procedimentos Criar Pedido e Consultar Status no VA
+	 */
+	public void AUT_IT00024_STVA_ID00004_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+		//AUT_NUMERO_PEDIDO = cn00006_1.autStartProcess06();
+	}
+	
+	//@Test
+	/**
+	 * CN00006 - Parte 2
+	 * 
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_IT00025_STPDV_ID00003_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
+		//cn00006_2.autStartProcess06(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//@Test
+	/**
+	 * CN00006 - Parte 3
+	 * 
+	 * Executa procedimentos para Devolução do pedido no PDV
+	 */
+	public void AUT_IT00026_STPDV_ID00003_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
+		//cn00006_3.autStartProcess06(AUT_NUMERO_PEDIDO);	
+	}
+	
+	//@Test
+	/**
+	 * CN00006 - Parte 4
+	 * 
+	 * Executa procedimentos para validar Vale Troca no SAFE
+	 */
+	public void AUT_IT00027_STSAFE_ID00003_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
+		//cn00006_4.autStartProcess06(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//************************* FIM RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
+
+
+	//************************* INI CAIXA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
+
+	//@Test
+	/**
+	 * CN00007 - Parte 1
+	 * 
+	 * Executa procedimentos Criar Pedido e Consultar Status no VA
+	 */
+	public void AUT_IT00028_STVA_ID00004_FRT003_CN00007_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+		//AUT_NUMERO_PEDIDO = cn00007_1.autStartProcess07();
+	}
+	
+	//@Test
+	/**
+	 * CN00007 - Parte 2
+	 * 
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_IT00029_STPDV_ID00003_FRT003_CN00007_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
+		//cn00007_2.autStartProcess07(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//@Test
+	/**
+	 * CN00007 - Parte 3
+	 * 
+	 * Executa procedimentos para Devolução do pedido no PDV
+	 */
+	public void AUT_IT00030_STPDV_ID00003_FRT003_CN00007_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
+		//cn00007_3.autStartProcess07(AUT_NUMERO_PEDIDO);	
+	}
+	
+	//@Test
+	/**
+	 * CN00007 - Parte 4
+	 * 
+	 * Executa procedimentos para validar Vale Troca no SAFE
+	 */
+	public void AUT_IT00031_STSAFE_ID00003_FRT003_CN00007_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
+		//cn00007_4.autStartProcess07(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//************************* FIM CAIXA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
+	
+	
+	
+	//************************* INI CAIXA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
+
+	//@Test
+	/**
+	 * CN00008 - Parte 1
+	 * 
+	 * Executa procedimentos Criar Pedido e Consultar Status no VA
+	 */
+	public void AUT_IT00032_STVA_ID00004_FRT003_CN00008_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+		//AUT_NUMERO_PEDIDO = cn00008_1.autStartProcess08();
+	}
+	
+	//@Test
+	/**
+	 * CN00008 - Parte 2
+	 * 
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_IT00033_STPDV_ID00003_FRT003_CN00008_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
+		//cn00008_2.autStartProcess08(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//@Test
+	/**
+	 * CN00008 - Parte 3
+	 * 
+	 * Executa procedimentos para Devolução do pedido no PDV
+	 */
+	public void AUT_IT00034_STPDV_ID00003_FRT003_CN00008_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
+		//cn00008_3.autStartProcess08(AUT_NUMERO_PEDIDO);	
+	}
+	
+	//@Test
+	/**
+	 * CN00008 - Parte 4
+	 * 
+	 * Executa procedimentos para validar Vale Troca no SAFE
+	 */
+	public void AUT_IT00035_STSAFE_ID00003_FRT003_CN00008_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
+		//cn00008_4.autStartProcess08(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//************************* FIM CAIXA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
+	
+	
+	//************************* INI CAIXA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
+
+	//@Test
+	/**
+	 * CN00009 - Parte 1
+	 * 
+	 * Executa procedimentos Criar Pedido e Consultar Status no VA
+	 */
+	public void AUT_IT00036_STVA_ID00004_FRT003_CN00009_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE1() {
+		//AUT_NUMERO_PEDIDO = cn00009_1.autStartProcess09();
+	}
+	
+	//@Test
+	/**
+	 * CN00009 - Parte 2
+	 * 
+	 * Executa procedimentos para pagamento de pedido no PDV
+	 */
+	public void AUT_IT00037_STPDV_ID00003_FRT003_CN00009_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE2() {
+		//cn00009_2.autStartProcess09(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//@Test
+	/**
+	 * CN00009 - Parte 3
+	 * 
+	 * Executa procedimentos para Devolução do pedido no PDV
+	 */
+	public void AUT_IT00038_STPDV_ID00003_FRT003_CN00009_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE3() {
+		//cn00009_3.autStartProcess09(AUT_NUMERO_PEDIDO);	
+	}
+	
+	//@Test
+	/**
+	 * CN00009 - Parte 4
+	 * 
+	 * Executa procedimentos para validar Vale Troca no SAFE
+	 */
+	public void AUT_IT00039_STSAFE_ID00003_FRT003_CN00009_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
+		//cn00009_4.autStartProcess09(AUT_NUMERO_PEDIDO);		
+	}
+	
+	//************************* FIM CAIXA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
 	
 }
