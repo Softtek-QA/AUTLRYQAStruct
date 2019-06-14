@@ -9,9 +9,9 @@ public class CN00006_1 {
 
 	
 	@Test
-	public String autStartProcess01() {
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00001();	
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00002 ctp2 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00002();
+	public String autStartProcess06() {
+		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00001();	
+		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00002 ctp2 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00002();
 			
 		ctp1.CriaPedido(); //RETIRADA_EXTERNA_IMEDIATA_PAG_DINHEIRO_PF;
 		
