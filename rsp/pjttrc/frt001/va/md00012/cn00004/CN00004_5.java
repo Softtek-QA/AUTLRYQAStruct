@@ -9,8 +9,8 @@ public class CN00004_5 {
 	
 	@Test
 	public void autStartProcess01(String numPedido) {
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00003 ctp3 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00003();	
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00004 ctp4 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CTP00004();
+		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00004.CTP00003 ctp3 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00004.CTP00003();	
+		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00004.CTP00004 ctp4 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00004.CTP00004();
 			
 		ctp3.PagaPedidoPDV(numPedido); //PAGAMENTO_PEDIDO_PF;
 	

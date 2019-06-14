@@ -47,7 +47,7 @@ public class CTP00009 extends AUTSafeBaseComponent {
 		
 		CMP00094(parametros).autConsultaValeTrocaClientePF(parametros);
 		
-		//NAO TEM LOGOUT NO SAFE (?)
+		CMP00095();
 
 	}
 }

@@ -14,7 +14,7 @@ public class CN00002_4 {
 		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00002.CTP00007 ctp7 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00002.CTP00007();	
 		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00002.CTP00008 ctp8 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00002.CTP00008();
 			
-		//IMPLEMENTAR CODIGO - DEVOLUCAO_PEDIDO_ESTRANGEIRO
+		ctp7.DevolucaoPedidoPDV(numPedido); //DEVOLVUCAO_PEDIDO_ESTRANGEIRO;
 			
 		ctp8.ValidaStatusVA(); //VALIDA_STATUS_PEDIDO_DEVOLUCAO_ESTRANGEIRO;
 	}
