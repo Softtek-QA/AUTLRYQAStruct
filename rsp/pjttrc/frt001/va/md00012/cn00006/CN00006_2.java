@@ -12,12 +12,12 @@ public class CN00006_2 {
 		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00003 ctp3 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00003();	
 		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00004 ctp4 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00004();
 			
-		ctp3.PagaPedidoPDV(numPedido); //PAGAMENTO_PEDIDO_ESTRANJEIRO;
+		ctp3.PagaPedidoPDV(numPedido); //PAGAMENTO_PEDIDO_PJ;
 	
 		ctp4.AUT_NUMERO_PEDIDO=ctp3.AUT_NUMERO_PEDIDO;	
 		ctp4.AUT_STATUS_ESPERADO=ctp3.AUT_STATUS_ESPERADO;
 			
-		ctp4.ValidaStatusVA(); //VALIDA_STATUS_PEDIDO_PAGO_ESTRANJEIRO;
+		ctp4.ValidaStatusVA(); //VALIDA_STATUS_PEDIDO_PAGO_PJ;
 	}
 
 }
