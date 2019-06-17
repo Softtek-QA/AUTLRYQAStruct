@@ -346,7 +346,7 @@ public class AUTEntrega001_RGR001{
 		cn00004_3.autStartProcess04(AUT_NUMERO_PEDIDO);	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00004 - Parte 4
 	 * 
@@ -362,7 +362,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_INT_IMEDIATA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00005 - Parte 1
 	 * 
@@ -372,7 +372,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00005_1.autStartProcess05();
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00005 - Parte 2
 	 * 
