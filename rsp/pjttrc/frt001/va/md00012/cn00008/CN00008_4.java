@@ -9,14 +9,8 @@ public class CN00008_4 {
 	
 	@Test
 	public void autStartProcess08(String numPedido) {
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00008.CTP00003 ctp3 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00008.CTP00003();	
-		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00008.CTP00004 ctp4 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00008.CTP00004();
-			
-		ctp3.PagaPedidoPDV(numPedido); //PAGAMENTO_PEDIDO_PF;
-	
-		ctp4.AUT_NUMERO_PEDIDO=ctp3.AUT_NUMERO_PEDIDO;	
-		ctp4.AUT_STATUS_ESPERADO=ctp3.AUT_STATUS_ESPERADO;
-			
-		ctp4.ValidaStatusVA(); //VALIDA_STATUS_PEDIDO_PAGO_PF;
+		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00008.CTP00007 ctp7 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00008.CTP00007();	
+		
+		ctp7.CarregarValeTroca(); //VALIDA_VALE_TROCA_PF;
 	}
 }
