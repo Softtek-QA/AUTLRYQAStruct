@@ -36,7 +36,7 @@ public class CTP00003 extends AUTPDVBaseComponent {
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_PDV_MD00012_CN00001_CTP00003);
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_PDV_MD00012_CN00005_CTP00003);
 
 		parametros.remove("AUT_NUMERO_PEDIDO");
 		parametros.put("AUT_NUMERO_PEDIDO", numPedido);
@@ -48,8 +48,8 @@ public class CTP00003 extends AUTPDVBaseComponent {
 		AUT_STATUS_ESPERADO = "Faturado total";
 		AUT_NUMERO_PEDIDO = numPedido;
 		 
-		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00004, "AUT_STATUS_ESPERADO",AUT_STATUS_ESPERADO);
-		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00004, "AUT_NUMERO_PEDIDO",AUT_NUMERO_PEDIDO);
+		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00005_CTP00004, "AUT_STATUS_ESPERADO",AUT_STATUS_ESPERADO);
+		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00005_CTP00004, "AUT_NUMERO_PEDIDO",AUT_NUMERO_PEDIDO);
 
 		CMP00096(parametros);
 	}

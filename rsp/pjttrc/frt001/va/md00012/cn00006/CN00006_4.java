@@ -11,6 +11,6 @@ public class CN00006_4 {
 	public void autStartProcess06(String numPedido) {
 		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00007 ctp7 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00006.CTP00007();	
 		
-		ctp7.CarregarValeTroca(); //VALIDA_VALE_TROCA_ESTRANGEIRO;
+		ctp7.CarregarValeTroca(); //VALIDA_VALE_TROCA_PJ;
 	}
 }
