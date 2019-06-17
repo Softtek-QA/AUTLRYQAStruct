@@ -24,8 +24,6 @@ public class CTP00005 extends AUTPDVBaseComponent {
 	public static String AUT_STATUS_ESPERADO;
 	
 	/**
-	 * 
-	 * 
 	 *  
 	 * parametro - Parametros de entrada do sistema
 	 * @param
