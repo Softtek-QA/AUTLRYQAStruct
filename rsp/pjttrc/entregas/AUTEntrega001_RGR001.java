@@ -316,7 +316,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Parte 1
 	 * 
@@ -326,7 +326,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00004_1.autStartProcess04();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Parte 2
 	 * 
@@ -346,7 +346,7 @@ public class AUTEntrega001_RGR001{
 		cn00004_3.autStartProcess04(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Parte 4
 	 * 
@@ -362,7 +362,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_INT_IMEDIATA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00005 - Parte 1
 	 * 
@@ -372,7 +372,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00005_1.autStartProcess05();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00005 - Parte 2
 	 * 
@@ -407,7 +407,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00006 - Parte 1
 	 * 
@@ -417,17 +417,18 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00006_1.autStartProcess06();
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00006 - Parte 2
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
 	public void AUT_IT00025_STPDV_ID00003_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE2() {
-		cn00006_2.autStartProcess06(AUT_NUMERO_PEDIDO);		
+		//cn00006_2.autStartProcess06(AUT_NUMERO_PEDIDO);	
+		cn00006_2.autStartProcess06("1000016348");	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00006 - Parte 3
 	 * 
@@ -435,6 +436,7 @@ public class AUTEntrega001_RGR001{
 	 */
 	public void AUT_IT00026_STPDV_ID00003_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE3() {
 		cn00006_3.autStartProcess06(AUT_NUMERO_PEDIDO);	
+		//cn00006_3.autStartProcess06("1000016348");	
 	}
 	
 	//@Test
