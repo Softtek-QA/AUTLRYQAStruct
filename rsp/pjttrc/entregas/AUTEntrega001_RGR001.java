@@ -439,14 +439,15 @@ public class AUTEntrega001_RGR001{
 		//cn00006_3.autStartProcess06("1000016348");	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00006 - Parte 4
 	 * 
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00027_STSAFE_ID00003_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE4() {
-		cn00006_4.autStartProcess06(AUT_NUMERO_PEDIDO);		
+		//cn00006_4.autStartProcess06(AUT_NUMERO_PEDIDO);		
+		cn00006_4.autStartProcess06("1000016348");		
 	}
 	
 	//************************* FIM RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
@@ -454,7 +455,7 @@ public class AUTEntrega001_RGR001{
 
 	//************************* INI CAIXA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00007 - Parte 1
 	 * 
@@ -464,7 +465,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00007_1.autStartProcess07();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00007 - Parte 2
 	 * 
@@ -474,7 +475,7 @@ public class AUTEntrega001_RGR001{
 		cn00007_2.autStartProcess07(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00007 - Parte 3
 	 * 
