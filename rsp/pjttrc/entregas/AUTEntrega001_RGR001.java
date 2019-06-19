@@ -85,7 +85,7 @@ public class AUTEntrega001_RGR001{
 	 * @param parametro - Parametros de entrada do sistema
 	 * @return
 	 */
-	@Test
+	//@Test
 	public void AUT_CFG_ID00009_FRT009_CN00000() {	
 		
 		cn00001_1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00001.CN00001_1();
@@ -145,7 +145,7 @@ public class AUTEntrega001_RGR001{
  
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 1
 	 * 
@@ -155,7 +155,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00001_1.autStartProcess01();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 2
 	 * 
@@ -165,7 +165,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_2.autStartProcess01(AUT_NUMERO_PEDIDO);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
@@ -175,7 +175,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 4
 	 * 
@@ -185,7 +185,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_4.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 5
 	 * 
