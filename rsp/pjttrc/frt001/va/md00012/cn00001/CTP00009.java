@@ -37,11 +37,6 @@ public class CTP00009 extends AUTSafeBaseComponent {
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_SAFE_MD00012_CN00001_CTP00009);
-//		parametros.remove("AUT_NUMERO_PEDIDO");
-//		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
-//		
-//		parametros.remove("AUT_STATUS_ESPERADO");
-//		parametros.put("AUT_STATUS_ESPERADO", AUT_STATUS_ESPERADO);
 		
 		CMP00093(parametros);
 		

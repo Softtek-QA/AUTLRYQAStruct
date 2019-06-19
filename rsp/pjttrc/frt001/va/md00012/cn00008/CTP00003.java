@@ -45,7 +45,7 @@ public class CTP00003 extends AUTPDVBaseComponent {
 		
 		CMP00091(parametros);
 		
-		AUT_STATUS_ESPERADO = "Pago";
+		AUT_STATUS_ESPERADO = "Faturado total";
 		AUT_NUMERO_PEDIDO = numPedido;
 		 
 		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00008_CTP00004, "AUT_STATUS_ESPERADO",AUT_STATUS_ESPERADO);
