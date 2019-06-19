@@ -240,7 +240,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_4.autStartProcess02(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00002 - Parte 5
 	 * 
@@ -296,7 +296,7 @@ public class AUTEntrega001_RGR001{
 		cn00003_4.autStartProcess03(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00003 - Parte 5
 	 * 
@@ -341,7 +341,7 @@ public class AUTEntrega001_RGR001{
 		cn00004_3.autStartProcess04(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Parte 4
 	 * 
@@ -387,7 +387,7 @@ public class AUTEntrega001_RGR001{
 		cn00005_3.autStartProcess05(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00005 - Parte 4
 	 * 
@@ -432,7 +432,7 @@ public class AUTEntrega001_RGR001{
 		cn00006_3.autStartProcess06(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00006 - Parte 4
 	 * 
@@ -477,7 +477,7 @@ public class AUTEntrega001_RGR001{
 		cn00007_3.autStartProcess07(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00007 - Parte 4
 	 * 
@@ -524,7 +524,7 @@ public class AUTEntrega001_RGR001{
 		cn00008_3.autStartProcess08("1000016684");	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00008 - Parte 4
 	 * 
@@ -569,7 +569,7 @@ public class AUTEntrega001_RGR001{
 		cn00009_3.autStartProcess09(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00009 - Parte 4
 	 * 

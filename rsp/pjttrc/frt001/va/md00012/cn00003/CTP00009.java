@@ -40,7 +40,7 @@ public class CTP00009 extends AUTSafeBaseComponent {
 		
 		CMP00093(parametros);
 		
-		CMP00094(parametros).autConsultaValeTrocaClientePF(parametros);
+		CMP00094(parametros).autConsultaValeTrocaClientePJ(parametros);
 		
 		CMP00095();
 
