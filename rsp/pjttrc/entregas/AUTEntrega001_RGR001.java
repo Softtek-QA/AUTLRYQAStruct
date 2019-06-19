@@ -145,7 +145,7 @@ public class AUTEntrega001_RGR001{
  
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 1
 	 * 
@@ -155,7 +155,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00001_1.autStartProcess01();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 2
 	 * 
@@ -165,7 +165,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_2.autStartProcess01(AUT_NUMERO_PEDIDO);
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
@@ -175,7 +175,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 4
 	 * 
@@ -185,7 +185,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_4.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 5
 	 * 
@@ -303,7 +303,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00015_STSAFE_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE5() {
-		cn00003_5.autStartProcess03(AUT_NUMERO_PEDIDO);	
+		cn00003_5.autStartProcess03();	
 	}
 	//************************* FIM RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
 
@@ -394,7 +394,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00023_STSAFE_ID00003_FRT003_CN00005_RETIR_INT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO_PARTE4() {
-		cn00005_4.autStartProcess05(AUT_NUMERO_PEDIDO);		
+		cn00005_4.autStartProcess05();		
 	}
 	
 	//************************* FIM RETIR_INT_IMEDIATA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
@@ -439,8 +439,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00027_STSAFE_ID00003_FRT003_CN00006_RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE4() {
-		//cn00006_4.autStartProcess06(AUT_NUMERO_PEDIDO);		
-		cn00006_4.autStartProcess06("1000016348");		
+		cn00006_4.autStartProcess06();		
 	}
 	
 	//************************* FIM RETIR_INT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
@@ -532,7 +531,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00035_STSAFE_ID00003_FRT003_CN00008_CAIXA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO_PARTE4() {
-		cn00008_4.autStartProcess08(AUT_NUMERO_PEDIDO);		
+		cn00008_4.autStartProcess08();		
 	}
 	
 	//************************* FIM CAIXA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
@@ -577,7 +576,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00039_STSAFE_ID00003_FRT003_CN00009_CAIXA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE4() {
-		cn00009_4.autStartProcess09(AUT_NUMERO_PEDIDO);		
+		cn00009_4.autStartProcess09();		
 	}
 	
 	//************************* FIM CAIXA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
