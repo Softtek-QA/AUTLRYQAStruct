@@ -247,7 +247,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00010_STSAFE_ID00003_FRT003_CN00002_RETIR_EXT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO_PARTE5() {
-		cn00002_5.autStartProcess02(AUT_NUMERO_PEDIDO);	
+		cn00002_5.autStartProcess02();	
 	}
 	
 	//************************* FIM RETIR_EXT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO ******************************************
@@ -348,7 +348,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00019_STSAFE_ID00003_FRT003_CN00004_RETIR_INT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
-		cn00004_4.autStartProcess04(AUT_NUMERO_PEDIDO);		
+		cn00004_4.autStartProcess04();		
 	}
 	
 
@@ -432,7 +432,7 @@ public class AUTEntrega001_RGR001{
 		cn00006_3.autStartProcess06(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00006 - Parte 4
 	 * 
@@ -485,7 +485,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para validar Vale Troca no SAFE
 	 */
 	public void AUT_IT00031_STSAFE_ID00003_FRT003_CN00007_CAIXA_DINHEIRO_PF_COM_DEVOLUCAO_PARTE4() {
-		cn00007_4.autStartProcess07(AUT_NUMERO_PEDIDO);		
+		cn00007_4.autStartProcess07();		
 	}
 	
 	//************************* FIM CAIXA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
