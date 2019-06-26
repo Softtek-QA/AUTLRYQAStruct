@@ -617,7 +617,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI GERAR_VOUCHER_EST ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00012
 	 * 
