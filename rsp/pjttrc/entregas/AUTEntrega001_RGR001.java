@@ -164,7 +164,7 @@ public class AUTEntrega001_RGR001{
  
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PF_COM_DEVOLUCAO ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 1
 	 * 
@@ -174,7 +174,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00001_1.autStartProcess01();
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 2
 	 * 
@@ -184,7 +184,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_2.autStartProcess01(AUT_NUMERO_PEDIDO);
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 3
 	 * 
@@ -194,7 +194,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 4
 	 * 
@@ -204,7 +204,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_4.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00001 - Parte 5
 	 * 
@@ -398,6 +398,7 @@ public class AUTEntrega001_RGR001{
 	
 	//@Test
 	/**
+	 * 
 	 * CN00005 - Parte 3
 	 * 
 	 * Executa procedimentos para Devolução do pedido no PDV
@@ -532,6 +533,7 @@ public class AUTEntrega001_RGR001{
 		cn00008_2.autStartProcess08(AUT_NUMERO_PEDIDO);	
 	}
 	
+	
 	//@Test
 	/**
 	 * CN00008 - Parte 3
@@ -539,8 +541,7 @@ public class AUTEntrega001_RGR001{
 	 * Executa procedimentos para Devolução do pedido no PDV
 	 */
 	public void AUT_IT00034_STPDV_ID00003_FRT003_CN00008_CAIXA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO_PARTE3() {
-		//cn00008_3.autStartProcess08(AUT_NUMERO_PEDIDO);	
-		cn00008_3.autStartProcess08("1000016684");	
+		cn00008_3.autStartProcess08(AUT_NUMERO_PEDIDO);	
 	}
 	
 	//@Test
@@ -556,7 +557,7 @@ public class AUTEntrega001_RGR001{
 	//************************* FIM CAIXA_DINHEIRO_ESTRANGEIRA_COM_DEVOLUCAO ******************************************
 	
 	
-	//************************* INI CAIXA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
+	//************************* I1NI CAIXA_DINHEIRO_PJ_COM_DEVOLUCAO ******************************************
 
 	//@Test
 	/**
