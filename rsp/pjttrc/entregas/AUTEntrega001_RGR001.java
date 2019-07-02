@@ -194,7 +194,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_3.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 4
 	 * 
@@ -204,7 +204,7 @@ public class AUTEntrega001_RGR001{
 		cn00001_4.autStartProcess01(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Parte 5
 	 * 
@@ -219,7 +219,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_ESTRANGEIRO_COM_DEVOLUCAO ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00002 - Parte 1
 	 * 
@@ -229,7 +229,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00002_1.autStartProcess02();
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00002 - Parte 2
 	 * 
@@ -239,7 +239,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_2.autStartProcess02(AUT_NUMERO_PEDIDO);		
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00002 - Parte 3
 	 * 
@@ -275,7 +275,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE1 ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00003 - Parte 1
 	 * 
@@ -285,17 +285,17 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00003_1.autStartProcess03();
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00003 - Parte 2
 	 * 
 	 * Executa procedimentos para pagamento de pedido no PDV
 	 */
-	public void AUT_IT00012_STVA_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE1() {
+	public void AUT_IT00012_STPDV_ID00003_FRT003_CN00003_RETIR_EXT_IMEDIATA_DINHEIRO_PJ_COM_DEVOLUCAO_PARTE2() {
 		cn00003_2.autStartProcess03(AUT_NUMERO_PEDIDO);		
 	}
 	
-	//@Test
+	@Test
 	/**
 	 * CN00003 - Parte 3
 	 * 
@@ -452,7 +452,7 @@ public class AUTEntrega001_RGR001{
 		cn00006_3.autStartProcess06(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00006 - Parte 4
 	 * 
@@ -618,7 +618,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI GERAR_VOUCHER_EST ******************************************
 
-	@Test
+	//@Test
 	/**
 	 * CN00012
 	 * 
