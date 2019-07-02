@@ -38,7 +38,7 @@ public class CTP00001 extends AUTVABaseComponent {
 		
 		
 		CMP00067(parametros).autCadastrarPJ(parametros);
-		//CMP00022();
+		CMP00022();
 
 	}
 }

@@ -41,7 +41,7 @@ public class CTP00001 extends AUTVABaseComponent {
 	
 		CMP00072(parametros);
 		
-		//CMP00022();
+		CMP00022();
 
 	}
 }
