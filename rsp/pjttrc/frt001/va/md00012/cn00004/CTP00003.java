@@ -34,7 +34,7 @@ public class CTP00003 extends AUTPDVBaseComponent {
 	@Test
 	public void PagaPedidoPDV(String numPedido) {
 
-		//autGetDataFlow().autInitDataFlow();
+		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_PDV_MD00012_CN00004_CTP00003);
 
@@ -48,9 +48,6 @@ public class CTP00003 extends AUTPDVBaseComponent {
 		AUT_STATUS_ESPERADO = "Faturado total";
 		AUT_NUMERO_PEDIDO = numPedido;
 		 
-		//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00004_CTP00004, "AUT_STATUS_ESPERADO",AUT_STATUS_ESPERADO);
-		//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00004_CTP00004, "AUT_NUMERO_PEDIDO",AUT_NUMERO_PEDIDO);
-
 		//CMP00096(parametros);
 	}
 }
