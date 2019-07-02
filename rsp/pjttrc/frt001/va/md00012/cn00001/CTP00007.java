@@ -41,7 +41,7 @@ public class CTP00007 extends AUTPDVBaseComponent {
 		parametros.remove("AUT_NUMERO_PEDIDO");
 		parametros.put("AUT_NUMERO_PEDIDO", numPedido);
 		
-		CMP00090(parametros);
+		//CMP00090(parametros);
 		
 		CMP00092(parametros);
 		
@@ -51,6 +51,6 @@ public class CTP00007 extends AUTPDVBaseComponent {
 		//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00008, "AUT_STATUS_ESPERADO",AUT_STATUS_ESPERADO);
 		//autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00001_CTP00008, "AUT_NUMERO_PEDIDO",AUT_NUMERO_PEDIDO);
 
-		CMP00096(parametros);
+		//CMP00096(parametros);
 	}
 }
