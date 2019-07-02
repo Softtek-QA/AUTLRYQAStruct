@@ -451,7 +451,7 @@ public class AUTEntrega001_RGR001{
 		cn00006_3.autStartProcess06(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * CN00006 - Parte 4
 	 * 
@@ -603,7 +603,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI GERAR_VOUCHER_PF ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00011
 	 * 
@@ -631,7 +631,7 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI GERAR_VOUCHER_PJ ******************************************
 
-	//@Test
+	@Test
 	/**
 	 * CN00013
 	 * 

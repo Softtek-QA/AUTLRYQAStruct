@@ -41,6 +41,8 @@ public class CTP00001 extends AUTSafeBaseComponent {
 		CMP00093(parametros);
 		
 		CMP00098(parametros).autIniCadastroClienteConveniadoPJ(parametros);
+
+		CMP00099(parametros).autIniAssocClienteConveniadoPJ( parametros ); // Gera voucher
 		
 		CMP00095();
 

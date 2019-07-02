@@ -12,6 +12,6 @@ public class CN00012{
 	public void autStartProcess12() {
 		br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00012.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00012.CTP00001();	
 		
-		ctp1.GeraVoucherEst(); //VALIDA_VALE_TROCA_ESTRANGEIRA;
+		ctp1.GeraVoucherEst(); //Gera voucher para pessoa estrangeira;
 	}
 }

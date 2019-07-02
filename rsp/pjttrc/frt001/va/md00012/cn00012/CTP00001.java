@@ -42,6 +42,8 @@ public class CTP00001 extends AUTSafeBaseComponent {
 		
 		CMP00098(parametros).autIniCadastroClienteConveniadoEst(parametros);
 		
+		CMP00099(parametros).autIniAssocClienteConveniadoEst( parametros ); // Gera voucher Pessoa Estrangeira
+		
 		CMP00095();
 
 	}
