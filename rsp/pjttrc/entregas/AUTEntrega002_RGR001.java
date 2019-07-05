@@ -266,7 +266,7 @@ public class AUTEntrega002_RGR001{
 	 */
 	
 	public void AUT_IT00016_STVA_ID00004_FRT004_CN00016A_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
-		cn00016A.autStartProcess16A();
+		cn00016A.autStartProcess16A(); 
 		
 	}
 

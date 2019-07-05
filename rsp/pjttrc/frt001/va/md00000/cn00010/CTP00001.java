@@ -27,7 +27,7 @@ public class CTP00001 extends AUTVABaseComponent {
 	 * @return
 	 */
 	@Test
-	public void autCadastroClienteCPFInvalido() {
+	public void autCadastroClienteCPFInvalido() { 
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();

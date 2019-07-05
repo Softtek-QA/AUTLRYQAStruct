@@ -19,6 +19,6 @@ public class CN00011 extends AUTVABaseComponent{
 	@Test
 	public void autStartProcess11() {
 		br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00011.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00011.CTP00001();	
-		ctp1.autCadastroClienteCEPInvalido();
+		ctp1.autCadastroClienteCEPInvalido(); 
 	}
 }
