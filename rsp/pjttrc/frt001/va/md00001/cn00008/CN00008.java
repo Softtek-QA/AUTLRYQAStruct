@@ -50,10 +50,14 @@ public class CN00008 extends AUTVABaseComponent{
 		
 		autInitConfigurationCN00008();
 		cn00008CTR00001.autCriaPedidoTelevendas();
-		System.out.println("Numero de pedido no cenario"+cn00008CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTP00001,"AUT_NUMERO_PEDIDO"));
-		numeroPedido = cn00008CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTP00001,"AUT_NUMERO_PEDIDO").toString();
-		System.out.println("Numero do pedido no CTR"+numeroPedido);
-		cn00008CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTP00001,"AUT_NUMERO_PEDIDO",numeroPedido);
+		
+		cn00008CTR00001.AUT_NUMERO_PEDIDO=cn00008CTR00001.AUT_NUMERO_PEDIDO;	
+		
+		//System.out.println("Numero de pedido no cenario"+cn00008CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTP00001,"AUT_NUMERO_PEDIDO"));
+		//numeroPedido = cn00008CTR00001.autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTP00001,"AUT_NUMERO_PEDIDO").toString();
+		//System.out.println("Numero do pedido no CTR"+numeroPedido);
+		//cn00008CTP00001.autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTP00001,"AUT_NUMERO_PEDIDO",numeroPedido);
+		
 		cn00008CTP00001.autCopiaPedido();
 	}
 

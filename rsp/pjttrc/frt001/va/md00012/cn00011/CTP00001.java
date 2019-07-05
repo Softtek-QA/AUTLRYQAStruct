@@ -32,7 +32,7 @@ public class CTP00001 extends AUTSafeBaseComponent {
 	 * @return
 	 */
 	@Test
-	public void GeraVoucherPF() {
+	public void GeraVoucherPJ() {
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
@@ -40,9 +40,9 @@ public class CTP00001 extends AUTSafeBaseComponent {
 		
 		CMP00093(parametros);
 		
-		CMP00098(parametros).autIniCadastroClienteConveniadoPF(parametros); // Cadastra cliente
-		
-		CMP00099(parametros).autIniAssocClienteConveniadoPF( parametros ); // Gera voucher
+		CMP00098(parametros).autIniCadastroClienteConveniadoPJ(parametros);
+
+		CMP00099(parametros).autIniAssocClienteConveniadoPJ( parametros ); // Gera voucher
 		
 		CMP00095();
 

@@ -14,6 +14,7 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 public class CTP00001 extends AUTVABaseComponent {
 
 	public String AUT_NUMERO_PEDIDO;
+	
 	public <TGeradorPedido extends br.lry.components.va.AUTVAGeradorPedido> TGeradorPedido ct00006V1() {		
 		return (TGeradorPedido)new AUTVAGeradorPedido();
 	}

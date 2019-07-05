@@ -22,7 +22,10 @@ public class CN00014 extends AUTBaseComponent{
 		br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00014.CTP00001 ctp1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00014.CTP00001();
 		br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00014.CTR00001 ctr1 = new br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00014.CTR00001();
 		ctr1.ctr00014();
-		ctr1.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001,"AUT_NUMERO_PEDIDO");
+		
+		ctp1.AUT_NUMERO_PEDIDO=ctr1.AUT_NUMERO_PEDIDO;	
+
+		//ctr1.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001,"AUT_NUMERO_PEDIDO");
 		System.out.println("[autStartProcess] O número do pedido é "+autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001,"AUT_NUMERO_PEDIDO"));
 		
 		ctp1.ctp00014();

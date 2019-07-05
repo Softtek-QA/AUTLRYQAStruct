@@ -19,6 +19,8 @@ import br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00015.CN00015;
  */
 public class CTP00001 extends AUTVABaseComponent {
 	
+	public String AUT_NUMERO_PEDIDO;
+	
 	@Test
 	public void ctp00014 () {
 		autGetDataFlow().autInitDataFlow();
@@ -26,7 +28,8 @@ public class CTP00001 extends AUTVABaseComponent {
 		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001);
 		parametros.remove("AUT_NUMERO_PEDIDO");
-		parametros.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001,"AUT_NUMERO_PEDIDO"));
+		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
+		//parametros.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00014_CTP00001,"AUT_NUMERO_PEDIDO"));
 			
 		parametros.put("AUT_USER", parametros.get("AUT_USER_EDITOR").toString()).toString();
 		CMP00001(parametros);	   

@@ -15,7 +15,9 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 import br.lry.qa.rsp.pjttrc.frt001.va.md00001.cn00008.CN00008;
 
 public class CTP00001 extends AUTVABaseComponent {
-	
+
+	//public String AUT_NUMERO_PEDIDO;
+	public String AUT_NUMERO_CARRINHO;
 	
 	/**
 	 * 
@@ -26,13 +28,15 @@ public class CTP00001 extends AUTVABaseComponent {
 	 * @return
 	 */
 	
-	public String AUT_NUMERO_PEDIDO;
 	public <TGeradorPedido extends br.lry.components.va.AUTVAGeradorPedido> TGeradorPedido ct00005V1() {		
 		return (TGeradorPedido)new AUTVAGeradorPedido();
 	}
 	
 	public void ct00005(String numeroPedido) {
-		AUT_NUMERO_PEDIDO = numeroPedido;
+		
+		//AUT_NUMERO_PEDIDO = numeroPedido;
+		//AUT_NUMERO_CARRINHO = numeroCarrinho;
+
 		autRecuperarCarrinho();
 	}
 	
@@ -42,8 +46,10 @@ public class CTP00001 extends AUTVABaseComponent {
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001);
+		
 		parametros.remove("AUT_NUMERO_CARRINHO");
-		parametros.put("AUT_NUMERO_CARRINHO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001, "AUT_NUMERO_CARRINHO"));
+		parametros.put("AUT_NUMERO_CARRINHO", AUT_NUMERO_CARRINHO);
+		//parametros.put("AUT_NUMERO_CARRINHO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001, "AUT_NUMERO_CARRINHO"));
 
 		CMP00001(parametros);
 		CMP00007(parametros);
