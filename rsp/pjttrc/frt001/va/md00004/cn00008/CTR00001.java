@@ -22,7 +22,7 @@ public class CTR00001 extends AUTVABaseComponent{
 		autGetDataFlow().autInitDataFlow();
 		
 		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
-		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00008_CTR00001);
+		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00008_CTR00001);
 		parameters.remove("AUT_NUMERO_PEDIDO");
 		parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		

@@ -28,7 +28,7 @@ public  static String AUT_NUMERO_PEDIDO;
 		
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
-		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00022_CTP00001);
+		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00022_CTP00001);
 		parameters.remove("AUT_NUMERO_PEDIDO");
 		parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		
@@ -53,7 +53,7 @@ public  static String AUT_NUMERO_PEDIDO;
 		
 		CMP00034(parameters);
 		
-		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00022_CTP00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
+		autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00002_CN00022_CTP00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 		 		
 		CMP00022();
 		
