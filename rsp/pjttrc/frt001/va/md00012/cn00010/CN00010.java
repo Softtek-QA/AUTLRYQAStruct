@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import br.lry.components.AUTVABaseComponent;
 import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
-import br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00011.CN00011.CTP00001;
+
 
 public class CN00010{
 
