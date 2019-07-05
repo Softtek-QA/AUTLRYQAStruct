@@ -21,8 +21,7 @@ import br.lry.functions.AUTProjectsFunctions;
 public class CTR00001 extends AUTVABaseComponent{
 
 	public  static String AUT_NUMERO_PEDIDO;
-	
-	
+		
 	public void ct00013() {
 	autGetDataFlow().autInitDataFlow();
 	
@@ -51,7 +50,7 @@ public class CTR00001 extends AUTVABaseComponent{
 	
     String numPedido = CMP00034(parameters).AUT_NUMERO_PEDIDO;
     
-    autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00013_CTR00001, "AUT_NUMERO_PEDIDO", numPedido);
+    //autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00013_CTR00001, "AUT_NUMERO_PEDIDO", numPedido);
     
     AUTProjectsFunctions.aguardaTempo(5000);
     

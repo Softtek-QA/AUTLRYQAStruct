@@ -29,7 +29,7 @@ public class CTP00001 extends AUTVABaseComponent {
 	@Test
 	public void autCadastroClienteCEPInvalido() {
 
-		autGetDataFlow().autInitDataFlow();
+		autGetDataFlow().autInitDataFlow(); 
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 
 		parametros = autGetDataFlow()

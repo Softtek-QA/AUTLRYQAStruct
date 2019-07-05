@@ -59,7 +59,9 @@ public class CTP00001 extends AUTVABaseComponent{
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 
 	    CMP00034(parametros);
-	
+	    
+		AUT_NUMERO_PEDIDO = CMP00034(parametros).AUT_NUMERO_PEDIDO;
+	    	
 		CMP00022();	
 	}
 	

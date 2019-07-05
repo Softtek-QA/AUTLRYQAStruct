@@ -23,24 +23,23 @@ import br.lry.components.AUTBaseComponent.AUT_TEST_STATUS_EXECUCAO;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AUTEntrega002_RGR001{	
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003 cn00003;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00004 cn00004;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005 cn00005;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CN00006 cn00006;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CN00007 cn00007;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00008.CN00008 cn00008;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00009.CN00009 cn00009;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00010.CN00010 cn00010;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00011.CN00011 cn00011;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00012.CN00012 cn00012;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CN00013 cn00013;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CN00014 cn00014;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00015.CN00015 cn00015;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CN00016A cn00016A;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016B.CN00016B cn00016B;
-	public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00017.CN00017 cn00017;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00003.CN00003 cn00003;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00004.CN00004 cn00004;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00005.CN00005 cn00005;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00006.CN00006 cn00006;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00007.CN00007 cn00007;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00008.CN00008 cn00008;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00009.CN00009 cn00009;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00010.CN00010 cn00010;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00011.CN00011 cn00011;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00012.CN00012 cn00012;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00013.CN00013 cn00013;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00014.CN00014 cn00014;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00015.CN00015 cn00015;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016A.CN00016A cn00016A;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00016B.CN00016B cn00016B;
+    public static  br.lry.qa.rsp.pjttrc.frt001.va.md00000.cn00017.CN00017 cn00017;
 	
-
 	String hostExec = "192.168.0.116";
 	
 	
@@ -267,7 +266,7 @@ public class AUTEntrega002_RGR001{
 	 */
 	
 	public void AUT_IT00016_STVA_ID00004_FRT004_CN00016A_REALIZAR_CADASTRO_FILHO_PARA_CLIENTE_PJ_EXCECAO() {
-		cn00016A.autStartProcess16A();
+		cn00016A.autStartProcess16A(); 
 		
 	}
 

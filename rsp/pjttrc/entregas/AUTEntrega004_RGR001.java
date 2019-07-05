@@ -101,7 +101,7 @@ import br.lry.components.va.AUTVABaseServices;
 			cn00029.autInitConfigurationProjectExecution(AUTEntrega004_RGR001.class, AUT_TEST_STATUS_EXECUCAO.WAIT);
 		}
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00001 - Realizar um pedido com recuperação de Orçamento
@@ -111,7 +111,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00002 - Realizar um pedido com solicitação de Serviço
@@ -120,7 +120,7 @@ import br.lry.components.va.AUTVABaseServices;
 				cn00002.autStartProcess02();
 		}
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00003 - Realizar pedido com serviço atrelado e outro sem serviço atrelado
@@ -130,7 +130,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00004 - Realizar um pedido com desconto e um serviço atrelado
@@ -150,7 +150,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00006 - Realizar um pedido através da busca de pedido (em edição)
@@ -160,7 +160,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 *  CN00007 - Realizar um pedido através da inclusão em Massa
@@ -170,7 +170,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00008 - Realizar um pedido através da cópia de um pedido
@@ -180,7 +180,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00009 - Realizar um pedido com Garantia Estendida
@@ -190,7 +190,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00010 - Realizar um pedido com Garantia Estendida para um Cliente PJ
@@ -200,7 +200,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00011 - Realizar um pedido com item que tenha registro no Top -
@@ -210,7 +210,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00012 - Realizar um pedido e inserir desconto em um item
@@ -220,7 +220,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00013 - Pedido que não tenha estoque e item top 0 na filial de compra
@@ -230,7 +230,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00014 - Pedido que não tenha estoque e item avs na filial de compra
@@ -240,7 +240,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00015 - Realizar um pedido com desconto fora da alçada do usuário
@@ -250,7 +250,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00016 - Realizar um pedido e adicionar produtos complementares
@@ -260,7 +260,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00017 - Pedido com desconto funcionario
@@ -271,7 +271,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00018 - Pedido com desconto funcionario e MDH - 20% desconto automatico
@@ -281,7 +281,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 	
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00019 - Pedido com desconto na seção em porcentagem
@@ -291,7 +291,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00020 - Pedido com desconto na seção em reais
@@ -301,7 +301,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00021 - Pedido com desconto na seção em porcentagem itens 
@@ -312,7 +312,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00022 - Pedido com desconto na seção em reais com itens não elegiveis
@@ -322,7 +322,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00023 - Pedido com desconto no total em porcentagem
@@ -332,7 +332,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00024 - Pedido com desconto no total em reais
@@ -342,7 +342,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00025 - Pedido com desconto no total em porcentagem itens não elegiveis
@@ -352,7 +352,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00026 - Pedido com desconto no total em reais com itens não elegiveis
@@ -362,7 +362,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 	
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00027 - Pedido com desconto pontual sobre administrado não elegivel
@@ -372,7 +372,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00028 - Pedido com desconto pontual sobre administrado elegivel
@@ -382,7 +382,7 @@ import br.lry.components.va.AUTVABaseServices;
 		}
 		
 		
-		@Test
+		//@Test
 		/**
 		 * 
 		 * CN00029 - Pedido com desconto pontual sobre promoção complexa

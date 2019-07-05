@@ -1,4 +1,4 @@
-package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00013;
+package br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00010;
 
 import java.util.HashMap;
 
@@ -32,17 +32,17 @@ public class CTP00001 extends AUTSafeBaseComponent {
 	 * @return
 	 */
 	@Test
-	public void GeraVoucherPJ() {
+	public void GeraVoucherPF() {
 
 		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
-		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_SAFE_MD00012_CN00013_CTP00001);
+		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_SAFE_MD00012_CN00010_CTP00001);
 		
 		CMP00093(parametros);
 		
-		CMP00098(parametros).autIniCadastroClienteConveniadoPJ(parametros);
-
-		CMP00099(parametros).autIniAssocClienteConveniadoPJ( parametros ); // Gera voucher
+		CMP00098(parametros).autIniCadastroClienteConveniadoPF(parametros); // Cadastra cliente
+		
+		CMP00099(parametros).autIniAssocClienteConveniadoPF( parametros ); // Gera voucher
 		
 		CMP00095();
 

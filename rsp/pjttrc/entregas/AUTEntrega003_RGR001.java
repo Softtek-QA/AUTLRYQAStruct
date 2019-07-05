@@ -82,7 +82,7 @@ public class AUTEntrega003_RGR001{
 	}
 
 	
-	@Test
+	//@Test
 	/**
 	 * 01
 	 * 
@@ -94,7 +94,7 @@ public class AUTEntrega003_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 02
 	 * 
@@ -104,7 +104,7 @@ public class AUTEntrega003_RGR001{
 			cn00002.autStartProcess();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 03
 	 * 
@@ -114,7 +114,7 @@ public class AUTEntrega003_RGR001{
 			cn00003.autStartProcess();
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 04
 	 * 
@@ -125,7 +125,7 @@ public class AUTEntrega003_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 06
 	 * 
@@ -136,61 +136,61 @@ public class AUTEntrega003_RGR001{
 	}
 	
 	
-	@Test
+	//@Test
 	/**
-	 * 07
+	 * 06
 	 * 
-	 * CN00007 - Cartão caindo na antifraude e reprovando
+	 * CN00006 - Cartão caindo na antifraude e reprovando
 	 */
 	public void AUT_IT00006_STVA_ID00009_FRT009_CN00006_CARTAO_ANTIFRAUDE_REPROVA_ATIVA_LOJA0035() {
 			cn00006.autStartProcess06();
 	}
 	
-	@Test
+	//@Test
 	/**
-	 * 08
+	 * 07
 	 * 
-	 * CN00008 - Pedido Televendas pag Cart Créd e Voucher pedido aprov comercial
+	 * CN00007 - Pedido Televendas pag Cart Créd e Voucher pedido aprov comercial
 	 */
 	public void AUT_IT00007_STVA_ID00009_FRT009_CN00007_PEDIDO_APROVACAO_COMERCIAL_LOJA0035() {
 			cn00007.autStartProcess07();
 	}
 	
 	
-	@Test
+	//@Test
 	/**
-	 * 09
+	 * 08
 	 * 
-	 * CTP00001 - Pedido Televendas pag Cart Créd e Voucher pedido reeditado
+	 * CN00008 - Pedido Televendas pag Cart Créd e Voucher pedido reeditado
 	 */
 	public void AUT_IT00008_STVA_ID00009_FRT009_CN00008_PEDIDO_REEDITADO_Voucher_LOJA0045() {
 			cn00008.autStartProcess08();
 	}
 	
 	
-	@Test
+	//@Test
 	/**
-	 * 11
+	 * 09
 	 * 
-	 * CN00011 - Pedido Televendas pag Cart Créd e Vale Créd cart antifra e reprov
+	 * CN00009 - Pedido Televendas pag Cart Créd e Vale Créd cart antifra e reprov
 	 */
 	public void AUT_IT00009_STVA_ID00009_FRT009_CN00009_PEDIDO_ANTIFRAUDE_REPROVADO_LOJA0035() {
 			cn00009.autStartProcess();
 	}	
 	
 	
-	@Test
+	//@Test
 	/**
-	 * 12
+	 * 10
 	 * 
-	 * CN00012 - Pedido Televenda pag Cart Créd e Vale Créd ign. antifraude e rep.
+	 * CN00010 - Pedido Televenda pag Cart Créd e Vale Créd ign. antifraude e rep.
 	 */
 	public void AUT_IT00010_STVA_ID00009_FRT009_CN00010_PEDIDO_IGNORAR_ANTIFRAUDE_REPROVADO_LOJA0035() {
 			cn00010.autStartProcess10();
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 13
 	 * 
@@ -200,11 +200,11 @@ public class AUTEntrega003_RGR001{
 			cn00011.autStartProcess11();
 	}	
 	
-	@Test
+	//@Test
 	/**
-	 * 14
+	 * 12
 	 * 
-	 * CN00014 - Pedido Televenda pag Cart Créd e Vale Créd, pedido reeditado
+	 * CN00012 - Pedido Televenda pag Cart Créd e Vale Créd, pedido reeditado
 	 */
 	public void AUT_IT00012_STVA_ID00009_FRT009_CN00012_PEDIDO_REEDITADO_LOJA0045() {
 			cn00012.autStartProcess12();
@@ -212,50 +212,50 @@ public class AUTEntrega003_RGR001{
 	
 	
 	
-	@Test
+	//@Test
 	/**
-	 * 15
+	 * 13
 	 * 
-	 * CN00015 - Pedido Televendas com loja diferente do pedido e depois editandow
+	 * CN00013 - Pedido Televendas com loja diferente do pedido e depois editandow
 	 */
 	public void AUT_IT00013_STVA_ID00009_FRT009_CN00013_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_EDITANDO_LOJA0035() {
 			cn00013.autStartProcess();
 	}
 	
 	
-	@Test
+	//@Test
 	/**
-	 * 16
+	 * 14
 	 * 
-	 * CN00016 -Pedido Televendas com loja diferente do pedido e depois copiando
+	 * CN00014 -Pedido Televendas com loja diferente do pedido e depois copiando
 	 */
 	public void AUT_IT00014_STVA_ID00009_FRT009_CN00014_COPIAR_PEDIDO_PARA_LOJA_DIFERENTE_LOJA0045() {
 			cn00014.autStartProcess();
 	}
 	
-	@Test
+	//@Test
 	/**
-	 * 17
+	 * 15
 	 * 
-	 * CN00017 - Usuário televendas copiando um pedido do canal Loja
+	 * CN00015 - Usuário televendas copiando um pedido do canal Loja
 	 */
 	public void AUT_IT00015_STVA_ID00009_FRT0097_CN00015_COPIAR_PEDIDO_CANAL_LOJA_LOJA0045() {
 			cn00015.autStartProcess();
 	}
 	
 	
-	@Test
+	//@Test
 	/**
-	 * 18
+	 * 16
 	 * 
-	 * CN00018 - Pedido do canal televendas com opção de pagamento "Pagar na loja"
+	 * CN00016 - Pedido do canal televendas com opção de pagamento "Pagar na loja"
 	 */
 	public void AUT_IT00016_STVA_ID00009_FRT009_CN00016_PEDIDO_TELEVENDAS_PAGAR_LOJA_LOJA0035() {
 			cn00016.autStartProcess();
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 17
 	 * 

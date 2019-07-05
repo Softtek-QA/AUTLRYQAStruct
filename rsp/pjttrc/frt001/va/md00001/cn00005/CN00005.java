@@ -8,6 +8,9 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 public class CN00005 extends AUTVABaseComponent{
 	
 	public static String numeroCarrinho;
+	public static String AUT_NUMERO_CARRINHO;
+	public static String AUT_NUMERO_PEDIDO;
+	
 	
 	/**
 	 * 
@@ -25,7 +28,11 @@ public class CN00005 extends AUTVABaseComponent{
 		
 	
 		cn00005CTR00001.autCriaCarrinho();
-		cn00005CTR00001.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001,"AUT_NUMERO_CARRINHO");
+		
+		cn00005CTR00001.AUT_NUMERO_CARRINHO=cn00005CTR00001.AUT_NUMERO_CARRINHO;	
+
+		//cn00005CTR00001.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00005_CTR00001,"AUT_NUMERO_CARRINHO");
+		
 		cn00005CTP00001.autRecuperarCarrinho();
 		
 	}
