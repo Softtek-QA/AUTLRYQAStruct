@@ -69,10 +69,8 @@ public class AUTEntrega009_RGR001 {
 	}
 	
 
-	
-
 			
-	@Test
+	//@Test
 	/**
 	 * CN00001 - Monitor de aprovação parcial
 	 */
@@ -81,7 +79,7 @@ public class AUTEntrega009_RGR001 {
 	}
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00002 - Usuário aprovador aumentando o desconto aplicado e aprovando
 	 */
@@ -90,7 +88,7 @@ public class AUTEntrega009_RGR001 {
 	}
 	
 		
-	@Test 
+	//@Test 
 	/**
 	 * CN00003 - Usuário aprovador diminuindo o desconto aplicado e aprovando
 	 */
@@ -100,7 +98,7 @@ public class AUTEntrega009_RGR001 {
 	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00004 - Usuário aprovador parcial aumentando o desconto acima da alçada
 	 */
@@ -109,14 +107,11 @@ public class AUTEntrega009_RGR001 {
 	}	
 	
 	
-	@Test
+	//@Test
 	/**
 	 * CN00005 - Usuário aprovador alterando o desconto e abortando a operação
 	 */
 	public void AUT_IT00005_STVA_ID00027_FRT027_CN00005_USUARIO_APROVADOR_ALTERANDO_O_DESCONTO_E_ABORTANDO_A_OPERACAO_LOJAS0035() {
 			cn00005.autStartProcess05();
 	}
-	
-	
-	
 }
