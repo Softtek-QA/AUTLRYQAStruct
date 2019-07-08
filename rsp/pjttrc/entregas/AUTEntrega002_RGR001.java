@@ -81,7 +81,7 @@ public class AUTEntrega002_RGR001{
 
 	
 	
-	@Test
+	//@Test
 	/**
 	 * 01
 	 * 
@@ -91,7 +91,7 @@ public class AUTEntrega002_RGR001{
 			
 	}
 	
-	@Test
+	//@Test
 	/**
 	 * 02
 	 * 
