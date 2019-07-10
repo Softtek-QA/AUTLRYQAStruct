@@ -11,6 +11,7 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 import br.lry.qa.rsp.pjttrc.frt001.va.md00004.cn00016.CN00016;
 public class CTP00001 extends AUTVABaseComponent {
 
+	public static String AUT_NUMERO_PEDIDO;
 /**
  * 
  * 
@@ -25,8 +26,8 @@ public class CTP00001 extends AUTVABaseComponent {
  		java.util.HashMap<String,Object> parametros = new java.util.HashMap<String,Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00015_CTP00001);
 		parametros.remove("AUT_NUMERO_PEDIDO");
-		parametros.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00015_CTP00001,"AUT_NUMERO_PEDIDO"));
-     
+		parametros.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO); 
+		
 		CMP00001(parametros);	   
 		
 		CMP00036(parametros); // seleciona loja
