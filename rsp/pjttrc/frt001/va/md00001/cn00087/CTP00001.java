@@ -13,6 +13,7 @@ import br.lry.dataflow.AUTDataFlow.AUT_TABLE_PARAMETERS_NAMES;
 
 public class CTP00001 extends AUTVABaseComponent {
 	
+	public  static String AUT_NUMERO_PEDIDO;
 	
 	/**
 	 * 
