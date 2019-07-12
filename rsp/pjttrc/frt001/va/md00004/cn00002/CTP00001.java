@@ -26,7 +26,7 @@ public class CTP00001 extends  AUTVABaseComponent {
 	 */
 
 	public void autIgnorarAntiFraude() {
-		 autGetDataFlow().autInitDataFlow();
+		 //autGetDataFlow().autInitDataFlow();
 
 		 java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
 		 parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00004_CN00002_CTP00001);
