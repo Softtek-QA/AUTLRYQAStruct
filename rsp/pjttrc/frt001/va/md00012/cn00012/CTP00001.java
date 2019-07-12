@@ -38,13 +38,13 @@ public class CTP00001 extends AUTSafeBaseComponent {
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_SAFE_MD00012_CN00012_CTP00001);
 		
-		CMP00093(parametros);
+		CMP00084(parametros);
 		
 		CMP00098(parametros).autIniCadastroClienteConveniadoEst(parametros);
 		
 		CMP00099(parametros).autIniAssocClienteConveniadoEst( parametros ); // Gera voucher Pessoa Estrangeira
 		
-		CMP00095();
+		CMP00086();
 
 	}
 }

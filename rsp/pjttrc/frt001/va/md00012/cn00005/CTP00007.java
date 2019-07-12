@@ -38,11 +38,11 @@ public class CTP00007 extends AUTSafeBaseComponent {
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_SAFE_MD00012_CN00005_CTP00007);
 		
-		CMP00093(parametros);
+		CMP00084(parametros);
 		
-		CMP00094(parametros).autConsultaValeTrocaClienteEstrangeiro(parametros);
+		CMP00085(parametros).autConsultaValeTrocaClienteEstrangeiro(parametros);
 		
-		CMP00095();
+		CMP00086();
 
 	}
 }
