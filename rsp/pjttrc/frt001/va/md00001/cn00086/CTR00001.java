@@ -42,10 +42,8 @@ public class CTR00001 extends AUTVABaseComponent {
 		CMP00020(parameters).autMeioDePagamentoSimples(parameters);
 		AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		
-		AUT_NUMERO_PEDIDO = CMP00034(parameters).AUT_NUMERO_PEDIDO;
-	    
-	    //autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00086_CTP00001, "AUT_NUMERO_PEDIDO", numPedido);
-	    
+	    AUT_NUMERO_PEDIDO = CMP00034(parameters).AUT_NUMERO_PEDIDO;
+	    	    
 		CMP00022();	
 	}
 }
