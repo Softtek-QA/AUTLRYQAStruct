@@ -218,7 +218,7 @@ public class AUTEntrega001_RGR001{
 		AUT_NUMERO_PEDIDO = cn00002_1.autStartProcess02();
 	}
 	
-	@Test
+	////@Test
 	/**
 	 * CN00002 - Parte 2
 	 * 
@@ -228,7 +228,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_2.autStartProcess02(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	////@Test
 	/**
 	 * CN00002 - Parte 3
 	 * 
@@ -238,7 +238,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_3.autStartProcess02(AUT_NUMERO_PEDIDO);	
 	}
 	
-	@Test
+	///@Test
 	/**
 	 * CN00002 - Parte 4
 	 * 
@@ -248,7 +248,7 @@ public class AUTEntrega001_RGR001{
 		cn00002_4.autStartProcess02(AUT_NUMERO_PEDIDO);		
 	}
 	
-	@Test
+	////@Test
 	/**
 	 * CN00002 - Parte 5
 	 * 
@@ -621,9 +621,9 @@ public class AUTEntrega001_RGR001{
 	
 	//************************* INI GERAR_VOUCHER_EST ******************************************
 
-	@Test
+	////@Test 
 	/**
-	 * CN00012
+	 * CN00012 // Cenário removido do escopo
 	 * 
 	 * Executa procedimentos Criar Voucher Estrangeiro
 	 */
