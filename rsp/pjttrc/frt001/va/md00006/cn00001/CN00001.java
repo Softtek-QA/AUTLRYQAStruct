@@ -15,9 +15,7 @@ public class CN00001 {
 		ctr1.ctr01();
 		
 		ctp1.AUT_NUMERO_PEDIDO = ctr1.AUT_NUMERO_PEDIDO;
-		
-		//ctr1.autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00006_CN00001_CTR00001,"AUT_NUMERO_PEDIDO");
-		
+
 		ctp1.ctp1();
 		
 	}

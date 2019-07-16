@@ -13,12 +13,14 @@ import br.lry.functions.AUTProjectsFunctions;
 
 public class CTR0001 extends AUTVABaseComponent {
 	
-	
 	public  static String AUT_NUMERO_PEDIDO;
+	
 	
 	@Test
 		public void ctr01() {
-		autGetDataFlow().autInitDataFlow();
+
+		
+	    autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
 		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00006_CN00001_CTR00001);
 		parameters.remove("AUT_NUMERO_PEDIDO");
@@ -37,7 +39,7 @@ public class CTR0001 extends AUTVABaseComponent {
 		 //AUT_AGENT_SILK4J.<DomCheckBox>find("VA.TelaInicialLoja.IgnAntiFraude").click();
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		 
-	    String numPedido = CMP00034(parameters).AUT_NUMERO_PEDIDO;
+		 AUT_NUMERO_PEDIDO = CMP00034(parameters).AUT_NUMERO_PEDIDO;
 		 
 //		 AUT_AGENT_SILK4J.<DomButton>find("VA.TelaResumo.Finalizar").click();
 //		 
@@ -53,8 +55,7 @@ public class CTR0001 extends AUTVABaseComponent {
 //			else {
 //				AUT_NUMERO_PEDIDO= "00000000000";
 //			}
-			autSetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00006_CN00001_CTR00001, "AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
-		
+			
 		    AUTProjectsFunctions.aguardaTempo(5000);
 			
 		 CMP00022();

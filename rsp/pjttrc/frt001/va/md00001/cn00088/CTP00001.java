@@ -39,8 +39,8 @@ public class CTP00001 extends AUTVABaseComponent{
 		java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
 		parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00088_CTP00001);
 		parameters.remove("AUT_NUMERO_PEDIDO");
-		parameters.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00088_CTP00001,"AUT_NUMERO_PEDIDO"));
-
+		parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO); 
+		
 		CMP00002(parameters);
 		
 		//ìcone do carrinho > Buscar Pedidos

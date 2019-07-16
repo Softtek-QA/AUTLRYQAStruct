@@ -43,7 +43,7 @@ public class CTP00007 extends AUTPDVBaseComponent {
 		
 		//CMP00090(parametros);
 		
-		CMP00092(parametros);
+		CMP00097(parametros);
 		
 		AUT_STATUS_ESPERADO = "Devolvido"; 
 		AUT_NUMERO_PEDIDO = numPedido;

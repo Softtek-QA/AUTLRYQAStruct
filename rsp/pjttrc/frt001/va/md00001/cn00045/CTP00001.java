@@ -50,6 +50,7 @@ public class CTP00001 extends AUTVABaseComponent {
 		 CMP00016(parameters);
 
 		 CMP00020(parameters).autSelecaoMeioPagamento(parameters);
+		 AUT_AGENT_SILK4J.<DomButton>find("VA.TelaMeioPagamento.Avancar").click();
 
 		 //Fecha janela informativa sobre valor acima do permitido e seleciona pagto em 1x para passar
 		 if(AUT_AGENT_SILK4J.<BrowserWindow>find("VA.TelaMeioPagamento").exists("PopUPValorMinimo", 5000)) {

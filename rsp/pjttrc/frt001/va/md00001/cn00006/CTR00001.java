@@ -33,7 +33,7 @@ public class CTR00001 extends AUTVABaseComponent {
 			java.util.HashMap<String,Object> parameters = new java.util.HashMap<String,Object>();
 			parameters = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTR00001);
 			parameters.remove("AUT_NUMERO_PEDIDO");
-			parameters.put("AUT_NUMERO_CARRINHO", AUT_NUMERO_CARRINHO);
+			parameters.put("AUT_NUMERO_PEDIDO", AUT_NUMERO_PEDIDO);
 			//parameters.put("AUT_NUMERO_PEDIDO", autGetCurrentParameter(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTR00001, "AUT_NUMERO_PEDIDO"));	
 		 
 		 
@@ -42,6 +42,9 @@ public class CTR00001 extends AUTVABaseComponent {
 		 CMP00037(parameters);
 		 CMP00009(parameters);
 		 CMP00008(parameters);
+		 
+		 AUT_NUMERO_CARRINHO =  CMP00083().autCapturarNumeroCarrinho();
+		 
 		 CMP00012(parameters);
 		 CMP00004(parameters);
 		 CMP00014(parameters);
@@ -52,9 +55,9 @@ public class CTR00001 extends AUTVABaseComponent {
 		 CMP00020(parameters).autSelecaoMeioPagamento(parameters);
 		 AUT_AGENT_SILK4J.<DomButton>find("VA.AtualizacaoDados.Avançar").click();
 		
-		 String pedido = CMP00034(parameters).AUT_NUMERO_PEDIDO;
+		 AUT_NUMERO_PEDIDO = CMP00034(parameters).AUT_NUMERO_PEDIDO;
 		 
-		 autSetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTP00001, "AUT_NUMERO_PEDIDO", pedido);
+		// autSetCurrentParameter(AUT_CURRENT_PARAMETERS_TABLE_NAME.RSP_PJTTRC_FRT001_VA_MD00001_CN00006_CTP00001, "AUT_NUMERO_PEDIDO", pedido);
 		 
 		 AUTProjectsFunctions.aguardaTempo(5000);
 		 

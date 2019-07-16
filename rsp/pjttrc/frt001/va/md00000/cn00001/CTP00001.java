@@ -45,7 +45,7 @@ public class CTP00001 extends AUTVABaseComponent {
 		AUT_AGENT_SILK4J.<DomLink>find("VA.CadastroClientesDados.AdicionarNovo").click();
 		//end recording
 		
-		CMP00067(parametros);
+		CMP00067(parametros).autCadastrarPJ(parametros);
 		//CMP00022();
 
 	}

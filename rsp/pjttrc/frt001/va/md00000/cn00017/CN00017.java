@@ -25,9 +25,8 @@ public class CN00017 extends AUTVABaseComponent{
 
 		CMP00001(parametros);
 		
-		
 		CMP00067(parametros).autCadastroClientePJExcecao(parametros);
-		//CMP00034();
+
 		CMP00022();
 	}
 }

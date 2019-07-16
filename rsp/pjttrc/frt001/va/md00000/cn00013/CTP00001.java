@@ -34,12 +34,11 @@ public class CTP00001 extends AUTVABaseComponent {
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00000_CN00013_CTP00001);
 
 		CMP00001(parametros);
-		//CMP00066();
-		
+	
 		
 		CMP00067(parametros).autCadastroClientePJExcecao(parametros);
-		//CMP00034();
-		//CMP00022();
+
+		CMP00022();
 
 	}
 }
