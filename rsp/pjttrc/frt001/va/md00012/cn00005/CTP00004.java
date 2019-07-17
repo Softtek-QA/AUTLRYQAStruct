@@ -33,7 +33,7 @@ public class CTP00004 extends AUTVABaseComponent {
 	@Test
 	public void ValidaStatusVA() {
 
-		//autGetDataFlow().autInitDataFlow();
+		autGetDataFlow().autInitDataFlow();
 		java.util.HashMap<String, Object> parametros = new java.util.HashMap<String, Object>();
 		parametros = autGetDataFlow().autGetParametersFromTable(AUT_TABLE_PARAMETERS_NAMES.RSP_PJTTRC_FRT001_VA_MD00012_CN00005_CTP00004);
 		
