@@ -147,7 +147,7 @@ public class AUTEntrega001_RGR001{
 		cn00009_5 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00009.CN00009_5();			
 
 		cn00010 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00010.CN00010();			
-		cn00010 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00010.CN00010();			
+		cn00011 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00011.CN00011();			
 		cn00012 = new br.lry.qa.rsp.pjttrc.frt001.va.md00012.cn00012.CN00012();			
 }
  
